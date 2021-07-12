@@ -14,9 +14,9 @@ margin-right:1cm;
 {
 margin-left:1.5cm;
 }
-t{
+h1{
 font-family:Edwardian Script ITC;
-font-size:42px;
+font-size:45px;
 }
 L{
 background-color:#333
@@ -146,11 +146,28 @@ ul,li{
 
 
 
+<script type="text/javascript">  
+$(function () {  
+  
+    $('[js-tab=2]').tab({  
+        mouse: 'over',   //切换方式：over，click  
+        autoPlay: true,  //播放方式：false，true  
+        curDisplay: 1,     //当前第一个打开  
+        changeMethod: 'horizontal'  //切换选项：默认default，horizontal，vertical，opacity这4种方式  
+    });  
+  
+    $('[js-tab=3]').tab({  
+        curDisplay: 2,  
+        changeMethod: 'horizontal'  
+    });  
+      
+});  
+</script>  
+ 
 
 
-
-<h1><t><center><strong>summer vacation plan</strong></center></t></h1>
-<center><p>——吾日三打吾脸 (ｏ・_・)ノ”(ノ_＜。)</center></p>
+<h1><center><strong>summer vacation plan</strong></center></h1>
+<center><p>吾日三打吾脸 (ｏ・_・)ノ”(ノ_＜。)</center></p>
 <p><font color=#00DDFF><center><b>这个暑假，没有虚度！！</b></font></center></p>
 <p class="ex1">
 <font color="black">
@@ -200,7 +217,7 @@ ul,li{
 
 
 
-<h1>网站安利</h1>
+<h1><center>网站安利</center></h1>
 <p class="ex1">
 <a href="https://charat.me/dressup/create/">https://charat.me/dressup/create/</a>
 
