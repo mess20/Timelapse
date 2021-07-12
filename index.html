@@ -103,16 +103,20 @@ ul,li{
       -moz-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
-  .tabs .tab-2 {
+  .tabs .tab-3 {
     width: 50%; }
-    .tabs .tab-2 [type="radio"] + div {
+    .tabs .tab-3 [type="radio"] + div {
       width: 200%;
       margin-left: 200%; }
-    .tabs .tab-2 [type="radio"]:checked + div {
+    .tabs .tab-3 [type="radio"]:checked + div {
       margin-left: 0; }
-    .tabs .tab-2:last-child [type="radio"] + div {
+    .tabs .tab-3 [type="radio"]:checked + div {
+      margin-left: 0; }
+    .tabs .tab-3:last-child [type="radio"] + div {
       margin-left: 100%; }
-    .tabs .tab-2:last-child [type="radio"]:checked + div {
+    .tabs .tab-3:last-child [type="radio"]:checked + div {
+      margin-left: -100%; }
+    .tabs .tab-3:last-child [type="radio"]:checked + div {
       margin-left: -100%; }
 </style>
 </head>
@@ -125,43 +129,35 @@ ul,li{
 <body>
 
 <div class="tabs">
-  <div class="tab-2">
-    <label for="tab2-1">一</label>
-    <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+  <div class="tab-3">
+    <label for="tab3-1">一</label>
+    <input id="tab3-1" name="tabs-three" type="radio" checked="checked">
     <div>
       <h4>第一个标签页</h4>
       <p>内容1</p>
     </div>
   </div>
-  <div class="tab-2">
-    <label for="tab2-2">二</label>
-    <input id="tab2-2" name="tabs-two" type="radio">
+  <div class="tab-3">
+    <label for="tab3-2">二</label>
+    <input id="tab3-2" name="tabs-three" type="radio">
     <div>
       <h4>第二个标签页</h4>
       <p>内容2</p>
     </div>
   </div>
+  <div class="tab-3">
+    <label for="tab3-3">二</label>
+    <input id="tab3-3" name="tabs-three" type="radio">
+    <div>
+      <h4>第三个标签页</h4>
+      <p>内容3</p>
+    </div>
+  </div>
+
 </div>
 
 
 
-<hr>
-
-<div class="building-page-attr">
-<ul class="building-attr-tab">
-<li onclick="tab('tab1')" class="tab-active">标题1</li>
-<li onclick="tab('tab2')">标题2</li>
-<li onclick="tab('tab3')">标题3</li>
-</ul>
-<div class="building-attr-tabcontent">
-<div id="tab1">内容1
-</div>
-<div id="tab2">内容2
-</div>
-<div id="tab3" style="display: none">内容3
-</div>
-</div>
-</div>
 
 
 <t><center><strong>summer vacation plan</strong></center></t>
