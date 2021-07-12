@@ -58,6 +58,7 @@ ul,li{
   margin: 0;
   overflow: hidden; }
   .tabs [class^="tab"] label,
+  .tabs [class*=" tab"] label,
   .tabs [class*=" tab"] label {
 /*     color: black; */
     cursor: pointer;
@@ -68,6 +69,7 @@ ul,li{
     padding: 2rem 0;
     text-align: center; }
   .tabs [class^="tab"] [type="radio"],
+  .tabs [class*=" tab"] [type="radio"] ,
   .tabs [class*=" tab"] [type="radio"] {
 /*     border-bottom: 1px solid rgba(239, 237, 239, 0.5); */
     cursor: pointer;
@@ -81,19 +83,23 @@ ul,li{
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out; }
     .tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
-    .tabs [class*=" tab"] [type="radio"]:hover,
-    .tabs [class*=" tab"] [type="radio"]:focus {
+    .tabs [class*=" tab"] [type="radio"]:hover,.tabs [class*=" tab"] [type="radio"]:focus,
+    .tabs [class*=" tab"] [type="radio"]:hover,.tabs [class*=" tab"] [type="radio"]:focus {
 /*    tab标签选中的颜色标志      */
       border-bottom: 1px solid #40a9ff;
 }
     .tabs [class^="tab"] [type="radio"]:checked,
+    .tabs [class*=" tab"] [type="radio"]:checked,
     .tabs [class*=" tab"] [type="radio"]:checked {
       border-bottom: 2px solid #40a9ff; 
 }
     .tabs [class^="tab"] [type="radio"]:checked + div,
+    .tabs [class*=" tab"] [type="radio"]:checked + div,
     .tabs [class*=" tab"] [type="radio"]:checked + div {
+{
       opacity: 1; }
     .tabs [class^="tab"] [type="radio"] + div,
+    .tabs [class*=" tab"] [type="radio"] + div,
     .tabs [class*=" tab"] [type="radio"] + div {
       display: block;
       opacity: 0;
@@ -162,7 +168,7 @@ ul,li{
 
 <t><center><strong>summer vacation plan</strong></center></t>
 <p><center>——吾日三打吾脸 (ｏ・_・)ノ”(ノ_＜。)</center></p>
-<p><font color=#00DDFF><center>这个暑假，没有虚度！！</font></center></p>
+<p><font color=#00DDFF><center><b>这个暑假，没有虚度！！</b></font></center></p>
 <p class="ex1">
 <font color="black">
 <l>06:00-06:15</l> 洗漱<br>
