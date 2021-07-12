@@ -50,29 +50,6 @@ li{
 }
 
 
-	.icon1{
-		height: 0;
-		width: 100px;
-		float: left;
-		border-bottom: 55px solid #1979CA;
-		border-left: 30px solid transparent;
-		/* border-right: 30px solid transparent; */
-		border-top-left-radius: 40px;
-		border-top-right-radius: 5px;
-		color: #fff;
-		text-align: center;
-		line-height: 55px;
-	}
-	.content{
-		width: 518px;
-		height: 300px;
-		border: 1px solid #1979CA;
-		border-top: none;
-		clear: both;
-	}
-
-
-
 p{
 font-size:14px;
 word-spacing:24px
@@ -195,18 +172,6 @@ ul,li{
 
 <body>
 
-
-	<div class="tab_head">
-		<ul>
-			<li id="tab1" data-season="1" class="active">春天</li>
-			<li id="tab2" data-season="2">夏天</li>
-			<li id="tab3" data-season="3">秋天</li>
-			<li id="tab4" data-season="4">冬天</li>
-		</ul>
-	</div>
-
-
-
 	<div class="tab_content">
 		<div id="content_1" class="init show">春天的雨是柔和的，只见春雨在竹枝、竹叶上跳动着。那雨时而直线滑落，时而随风飘洒，
 		留下如烟、如雾、如纱、如丝的倩影，飞溅的雨花仿佛是琴铉上跳动的音符，奏出优美的旋律。</div>
@@ -314,4 +279,5 @@ ul,li{
 			$("#content_"+num).addClass("show");
 		});
 	})
+</script>
 </html>
