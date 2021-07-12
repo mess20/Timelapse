@@ -48,49 +48,8 @@ li{
 .show{
 	display: block;
 }
-</style>
-</head>
-<body>
-	<div class="tab_head">
-		<ul>
-			<li id="tab1" data-season="1" class="active">春天</li>
-			<li id="tab2" data-season="2">夏天</li>
-			<li id="tab3" data-season="3">秋天</li>
-			<li id="tab4" data-season="4">冬天</li>
-		</ul>
-	</div>
-	<div class="tab_content">
-		<div id="content_1" class="init show">春天的雨是柔和的，只见春雨在竹枝、竹叶上跳动着。那雨时而直线滑落，时而随风飘洒，
-		留下如烟、如雾、如纱、如丝的倩影，飞溅的雨花仿佛是琴铉上跳动的音符，奏出优美的旋律。</div>
-		<div id="content_2" class="init">小鸟不知躲匿到什么地方去了；草木都垂头丧气，像是奄奄等毙；只有那知了，不住地在枝头发出破碎
-		的高叫；真是破锣碎鼓在替烈日呐喊助威！</div>
-		<div id="content_3" class="init">秋天的风，秋天的叶，秋天的色调，秋天的阳光，构成了一幅绝妙的秋景图。图画中埋藏了许许多多的秘密，
-		只要我们善于发现，就可以揭开；图画中蕴藏了许许多多的人生哲理，只要我们积极求索，就可以领悟。
-		图画中展现了许许多多多姿的人生，只要我们端正态度，就可以拥有。</div>
-		<div id="content_4" class="init">阳光给人们的一种感觉是温暖的，冬日的阳光也不例外，它给人们的第一种感觉是温暖，在寒冷的冬天里，
-		早晨太阳升了起来，把金色的光辉洒在大地上，大地妈妈苏醒了，不再那么寒冷。</div>
-	</div>
-
-<script type="text/javascript">
-	$(function(){
-		$("#tab1,#tab2,#tab3,#tab4").click(function() {
-			//获取标签页代号
-			var num = $.trim($(this).attr("data-season"));
-			//删除兄弟元素的 active 类样式
-			$("#tab"+num).siblings().removeClass("active");
-			$("#tab"+num).addClass("active");
-			$("#content_"+num).siblings().removeClass("show");
-			$("#content_"+num).addClass("show");
-		});
-	})
 
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>flowicon</title>
-<style type="text/css">
 	.icon1{
 		height: 0;
 		width: 100px;
@@ -113,36 +72,7 @@ li{
 	}
 
 
-</head>
-<body>
-	<div class="icon1">标签一</div>
-	<div class="icon1">标签二</div>
-	<div class="icon1">标签三</div>
-	<div class="icon1">标签四</div>
-	<div class="content"></div>
-</body>
-<script type="text/javascript">
-	$(function(){
-		$("#tab1,#tab2,#tab3,#tab4").click(function() {
-			//获取标签页代号
-			var num = $.trim($(this).attr("data-season"));
-			//删除兄弟元素的 active 类样式
-			$("#tab"+num).siblings().removeClass("active");
-			$("#tab"+num).addClass("active");
-			$("#content_"+num).siblings().removeClass("show");
-			$("#content_"+num).addClass("show");
-		});
-	})
-</style>
-</html>
 
-
-
-
-
-
-<head>
-<style>
 p{
 font-size:14px;
 word-spacing:24px
@@ -256,7 +186,6 @@ ul,li{
       margin-left: 100%; }
     .tabs .tab-2:last-child [type="radio"]:checked + div {
       margin-left: -100%; }
-
 </style>
 </head>
 
@@ -264,8 +193,32 @@ ul,li{
 
 
 
-
 <body>
+
+
+	<div class="tab_head">
+		<ul>
+			<li id="tab1" data-season="1" class="active">春天</li>
+			<li id="tab2" data-season="2">夏天</li>
+			<li id="tab3" data-season="3">秋天</li>
+			<li id="tab4" data-season="4">冬天</li>
+		</ul>
+	</div>
+
+
+
+	<div class="tab_content">
+		<div id="content_1" class="init show">春天的雨是柔和的，只见春雨在竹枝、竹叶上跳动着。那雨时而直线滑落，时而随风飘洒，
+		留下如烟、如雾、如纱、如丝的倩影，飞溅的雨花仿佛是琴铉上跳动的音符，奏出优美的旋律。</div>
+		<div id="content_2" class="init">小鸟不知躲匿到什么地方去了；草木都垂头丧气，像是奄奄等毙；只有那知了，不住地在枝头发出破碎
+		的高叫；真是破锣碎鼓在替烈日呐喊助威！</div>
+		<div id="content_3" class="init">秋天的风，秋天的叶，秋天的色调，秋天的阳光，构成了一幅绝妙的秋景图。图画中埋藏了许许多多的秘密，
+		只要我们善于发现，就可以揭开；图画中蕴藏了许许多多的人生哲理，只要我们积极求索，就可以领悟。
+		图画中展现了许许多多多姿的人生，只要我们端正态度，就可以拥有。</div>
+		<div id="content_4" class="init">阳光给人们的一种感觉是温暖的，冬日的阳光也不例外，它给人们的第一种感觉是温暖，在寒冷的冬天里，
+		早晨太阳升了起来，把金色的光辉洒在大地上，大地妈妈苏醒了，不再那么寒冷。</div>
+	</div>
+
 
 <div class="tabs">
   <div class="tab-2">
@@ -349,3 +302,16 @@ ul,li{
 </p>
 </font>
 </body>
+<script type="text/javascript">
+	$(function(){
+		$("#tab1,#tab2,#tab3,#tab4").click(function() {
+			//获取标签页代号
+			var num = $.trim($(this).attr("data-season"));
+			//删除兄弟元素的 active 类样式
+			$("#tab"+num).siblings().removeClass("active");
+			$("#tab"+num).addClass("active");
+			$("#content_"+num).siblings().removeClass("show");
+			$("#content_"+num).addClass("show");
+		});
+	})
+</html>
