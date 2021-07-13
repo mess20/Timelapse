@@ -1,61 +1,88 @@
 <!DOCTYPE html>
 <html>
-<title>vacation resolution</title>
-
-
+<title>Cloud Savour</title>
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
-a {
-text-decoration: none;
-color: black
+body{
+margin: 0px;
+padding: 0px;
+background-image: url("https://www.hualigs.cn/image/60ed30ed36d2a.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+width: 100%;
+height: 100%;
+top: 0px;
+left: 0px;
+position: absolute;
 }
-.link { color: #FF0000; } 
-.link:hover { color: purple; } 
-p{
-font-size:14px;
-word-spacing:24px
+.tabs {
+  display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  overflow: hidden; }
+  .tabs [class^="tab"] label,
+  .tabs [class*=" tab"] label {
+/*     color: black; */
+    cursor: pointer;
+    display: block;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1em;
+    padding: 2rem 0;
+    text-align: center; }
+  .tabs [class^="tab"] [type="radio"],
+  .tabs [class*=" tab"] [type="radio"] {
+/*     border-bottom: 1px solid rgba(239, 237, 239, 0.5); */
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; }
+    .tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
+    .tabs [class*=" tab"] [type="radio"]:hover,
+    .tabs [class*=" tab"] [type="radio"]:focus {
+/*    tab标签选中的颜色标志      */
+      border-bottom: 1px solid #40a9ff;
 }
-p.ex1 {
-margin-left:1cm;
-margin-right:1cm;
+    .tabs [class^="tab"] [type="radio"]:checked,
+    .tabs [class*=" tab"] [type="radio"]:checked {
+      border-bottom: 2px solid #40a9ff; 
 }
-p.ex2{
-font-size:16px;
-}
-#p1
-{
-margin-left:1.5cm;
-}
-h1{
-font-family:Edwardian Script ITC;
-font-size:45px;
-}
-L{
-background-color:#333
-}
-l{
-box-shadow:0px -100px #BFEAEF inset;
-border-radius:10px
-}
-i1{
-box-shadow:0px -100px hsla(254,20%,60%,30%) inset;
-border-radius:10px
-}
-i2{
-box-shadow:0px -100px hsla(0,79%,88%,92%) inset;
-border-radius:10px
-}
-i3{
-box-shadow:0px -100px hsla(200,75%,80%,100%) inset;
-border-radius:10px
-}
-i4{
-box-shadow:0px -100px #fceca3 inset;
-border-radius:10px
-}
-
-
+    .tabs [class^="tab"] [type="radio"]:checked + div,
+    .tabs [class*=" tab"] [type="radio"]:checked + div {
+      opacity: 1; }
+    .tabs [class^="tab"] [type="radio"] + div,
+    .tabs [class*=" tab"] [type="radio"] + div {
+      display: block;
+      opacity: 0;
+      padding: 2rem 0;
+      width: 90%;
+      -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      -o-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out; }
+  .tabs .tab-2 {
+    width: 50%; }
+    .tabs .tab-2 [type="radio"] + div {
+      width: 200%;
+      margin-left: 100%; }
+    .tabs .tab-2 [type="radio"]:checked + div {
+      margin-left: 0%; }
+    .tabs .tab-2:last-child [type="radio"] + div {
+      margin-left: 100%; }
+    .tabs .tab-2:last-child [type="radio"]:checked + div {
+      margin-left: -100%; }
 </style>
 </head>
 
@@ -65,83 +92,34 @@ border-radius:10px
 
 <body>
 
-
-
-
-
-
-    <h1>目录</h1>
-    <div><a href="#id-1">Summer Vacation Plan</a>
-            <br />
-        <a href="#id-2">网站安利</a>
-            <br />
-        <a href="#id-3"></a>
-            <br />
-        <a href="#id-4"></a>
-            <br />
-    </div>
-
-
-<div id="id-1">
-<h1><center><strong>Summer Vacation Plan</strong></center></h1>
-<center><p>吾日三打吾脸 (ｏ・_・)ノ”(ノ_＜。)</center></p>
-<p class="ex2"><font color=#00DDFF><center><b>这个暑假，<br>没有虚度！！</b></font></center></p>
-<p class="ex1">
-<font color="black">
-<l>06:00-06:15</l>  洗漱<br>
-<l>06:15-06:45</l>  晨读<br>
-<l>06:45-07:10</l>  早餐<br></p>
-<hr>
-<p class="ex1">
-<l>07:10-07:50</l>  <i2>理科作业(化)</i2><br>
-<l>08:00-08:40</l>  <i2>数学作业(练习)</i2><br>
-<l>09:00-11:30</l>  考试<br></p>
-<p id="p1">奇：<br>
-09:00-10:30  <i1>语文考试</i1><br>
-10:30-11:30  <i1>语文作文/试卷订正</i1><br>
-偶：<br>
-09:00-11:30  <i1>理综考试</i1>→<i4>外语阅读</i4></p>
-<p class="ex1">
-<l>11:30-12:00</l>  <i2>生物作业</i2>/跑步<br>
-<l>12:00-12:20</l>  午餐<br>
-<l>12:20-12:50</l>  <i4>练字/背语言文字运用/百度扫荡</i4><br>
-<l>12:40-13:40</l>  午休<br>
-<l>13:40-14:00</l>  锻炼<br></p>
-<hr>
-<p class="ex1">
-<l>14:00-14:40</l>  语文作业/知乎扫荡→<i4>整理语文</i4><br>
-<l>15:00-17:00</l>  考试→<i4>英语听力特训</i4><br></p>
-<p id="p1">奇：<br>
-15:00-17:00  <i1>数学考试</i1><br>
-偶：<br>
-15:00-15:20  <i1>卓尔英语</i1><br>
-15:00-16:30  <i1>外语考试</i1> <br>
-16:30-17:00  <i4>整理英语</i4></p>
-<hr>
-<p class="ex1">
-<l>17:20-18:20</l>  晚餐，自由时间<br>
-<l>18:20-18:50</l>  <i2>数学作业(资料)</i2>→<i4>整理数学</i4><br>
-<l>19:00-19:40</l>  <i2>理科作业(物)</i2>→<i4>整理理科</i4><br>
-<l>19:50-20:40</l>  <i3>数学拓展(108技+辅导书)</i3><br>
-<l>21:00-22:00</l>  <i3>理科拓展</i3><br>
-<l>22:00-22:30</l>  <i2>英语两篇阅读</i2>+<i4>3500背诵+3500检测</i4></p>
-<br>
-<p class="ex1"><b>postscript:</b><br>
-空白时间: 眼保健操-转眼法-闭目养神
-</p>    
+<div class="tabs">
+  <div class="tab-2">
+    <label for="tab2-1">diary</label>
+    <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+    <div> 
+<textarea rows="6" cols="2px" style="
+width: 900px;
+height: 100px;
+resize: none; 
+margin:10px 20px 10px 20px;
+padding:1px 1px 1px 1px;
+vertical-align:baseline | sub | super | top | text-top | middle | bottom | text-bottom;">
+内容
+</textarea> 
 </div>
-<br>
-<br>       
-</font>
 
+</div>
 
+  <div class="tab-2">
+    <label for="tab2-2">Cloud Savour</label>
+    <input id="tab2-2" name="tabs-two" type="radio"> 
+<div>
+内容区
+</div>
 
+</div>
 
-<div id="id-2">
-<h1><center>网站安利</center></h1>
-<p class="ex1">
-<a href="https://charat.me/dressup/create/">https://charat.me/dressup/create/</a>
-</p>   
 </div>
 </body>
 </html>
+
