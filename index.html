@@ -6,6 +6,7 @@ https://imgtu.com/i/WZ7uQJ</font>
 <!DOCTYPE html>
 <html>
 <title>Cloud Savour</title>
+script src="jquery.js"></script>  
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
@@ -95,7 +96,7 @@ height: 100%;
 top: 0px;
 left: 0px;
 position: absolute;
-z-index:0
+z-index:-1
 }
 #tab2-2{
 background-image: url("https://z3.ax1x.com/2021/07/14/WZf4PJ.jpg");
@@ -106,7 +107,7 @@ height: 100%;
 top: 0px;
 left: 0px;
 position: absolute;
-z-index:-1
+z-index:-2
 }
 label{
 }
@@ -276,3 +277,113 @@ vertical-align:baseline | sub | super | top | text-top | middle | bottom | text-
 </body>
 </html>
 
+<script>  
+var  pullRefreshss = true;
+    $(window).scroll(
+            function () {
+                
+                var top = $(document).scrollTop();
+                
+                var height = document.body.clientHeight;
+                
+                var z_height = $(document).height();
+                /*判断（网页的body高度减去当前浏览器的可视高度是否等于滚动条到顶部的距离）
+                 * 相等：则判定当前页面在底部
+                 * 不相等：判定当前页面不在底部
+                 * */
+                var stats = ( z_height - height-top < 5) ;
+                    $("#show_s").html("top:"+top+",z_height:"+z_height+",height:"+height+",是否底部:"+stats);
+
+                if (stats) {
+                    
+                    upPullfreshFunction();
+                }else {
+                    if (!pullRefreshss) {
+                        $("#show_view").html("没有更多的数据");
+                    }
+                }
+            }
+    );
+    function upPullfreshFunction() {
+        if (!pullRefreshss) {
+            return;
+        }
+        
+        var page=$("#page").val();
+        
+        page=Number(page)+Number(1)+0;
+        var keyWord= $("#key").val();
+        var orders=$("#orders").val();
+        if(orders=="up"){
+            orders="down";
+        }else{
+            orders="up";
+        }
+
+        var imgurl=$("#imgurl").val();
+
+        var voteimgurl = "${path }/resource/images/vote.png"
+
+        
+        var opt={}
+        var url="${path}/winxin/peopleMediation/toMediatorApplyAjax?keyWord="+keyWord+"&page="+page+"&orders="+orders;
+        
+
+        $.post(url, opt, function(res) {
+            if(res.code=="0"){
+                alert(res.errorMessage);
+            }else{
+                var data=eval(res);
+                $("#page").val(data.page);
+                var mediatorList=data.mediatorList.list;
+
+                for ( var i = 0; i < mediatorList.length; i++) {
+                    var url="${path}/winxin/peopleMediation/mediatorApplyDetail?userUuid="+mediatorList[i].uuid+"&useruuid="+'${useruuid}'+"&source="+source;
+                    var img = mediatorList[i].headimgurl;
+                    if(mediatorList[i].source==2){
+                        img = imgurl+mediatorList[i].headimgurl;
+                    }
+
+                    var str="<li class='mui-table-view-cell mui-media mui-col-xs-3' style='height: 40%'>";
+                    str=str+"<a href="+url+">";
+                    str=str+"<img class='mui-media-object ' src='"+img+ "'style='height:30%'>";
+                    str=str+"</a>";
+                    str=str+"<div class='mui-media-body' style='height:70%'>";
+
+                    str=str+"<div class='m-txt-box' style='height:70%；text-align:center;'>";
+                    str=str+"<div style = ' font-size: 10 ' >"+mediatorList[i].sequenceNumber+"-"+mediatorList[i].realname+"</div>";
+                    str = str +"<br>";
+                    str=str+"<div style='height: 30%;width: 100%'>";
+                    str = str +"<button class='mui-btn btn-bg border-none'  style='width:80%;height:100%' id='submit' "+"onclick=voteOn('"+mediatorList[i].uuid+"')"+">"+"投票"+"</button>";
+                    str=str+"</div>";
+                    str=str+"</div>";
+
+
+                    str=str+"<p>";
+                    str = str +"<img src = ${path }/resource/images/vote.png width = '15' height = '15'>";
+                    str = str +" "+mediatorList[i].vote+" ";
+                    str=str+"</p>";
+
+                    str=str+"</div>";
+
+                    str=str+"</li>";
+                    ;
+                    $("#mediatorList").append(str);
+                }
+            }
+
+            if(mediatorList.length>0){
+            }else{
+                pullRefreshss = false;
+            }
+        });
+    }
+
+    /*function upload(){
+        if (pullRefreshss) {
+            upPullfreshFunction();
+        } else {
+            $("#show_view").html("没有更多的数据");
+        }
+    }*/
+</script>  
