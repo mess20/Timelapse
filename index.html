@@ -187,19 +187,22 @@ color: white;
     .tabs .tab-2:last-child [type="radio"]:checked + div {
       margin-left: -100%; }
 
-</style>
-<script language="javascript">
-<!--
-accesscode = prompt("input access code:","");
-if (accesscode != "jiekst"){
-alert("You are not allowed to access this page.");
-window.location.href='跳转目标页面';
-}else{
-//alert("welcome");
-}
+<script>
+var _p=document.getElementById("p");
+if(_p=="0123456789"){   
+document.getElementById("download").style.display='block';}
+else{   
+alert('密码错误');}
+</script>
+
 
 </head>
 
+密码：
+<input type="password" id="pwd"><input type="button" onclick="check()" value="确定">
+<div id="download" style="display:none">
+下载地址：点击下载
+<div>
 
 
 
