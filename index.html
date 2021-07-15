@@ -6,8 +6,16 @@ https://imgtu.com/i/WZ7uQJ</font>
 
 <head>
 <meta charset="UTF-8">
-<style type="text/css">
+<script>
+var _pwd=document.getElementById("pwd");
+if(_pwd=="0123456789"){   
+document.getElementById("download").style.display='block';}
+else{   
+alert('密码错误');}
+</script>
 
+
+<style type="text/css">
 body{
 font-size:1rem;
 margin: 0px;
@@ -187,19 +195,13 @@ color: white;
     .tabs .tab-2:last-child [type="radio"]:checked + div {
       margin-left: -100%; }
 </style>
-<script>
-var _p=document.getElementById("p");
-if(_p=="0123456789"){   
-document.getElementById("download").style.display='block';}
-else{   
-alert('密码错误');}
-</script>
+
 
 
 </head>
 
 密码：
-<input type="password" id="p"><input type="button" onclick="check()" value="确定">
+<input type="password" id="pwd"><input type="button" onclick="check()" value="确定">
 <div id="download" style="display:none">
 下载地址：点击下载
 <div>
