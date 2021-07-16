@@ -29,7 +29,10 @@ left: 0px;
 position: absolute;
 background-attachment: fixed;
 }
-
+iframe{
+float: right;
+right: 0px;
+}
 ul {
  float: left;
  list-style-type: none;
@@ -37,6 +40,7 @@ ul {
   padding: 0;
   width: 20%;
   background-color: #f1f1f1;
+left: 0px;
 }
 
 li span {
@@ -262,47 +266,6 @@ color: white;
 
 <img src="../../source/images/what_ever.jpg" class="round_icon"  alt="">
 
-<ul id="menu">
-    <li>
-        <h2>水果</h2>
-        <ul>
-            <li>苹果</li>
-            <li>香蕉</li>
-            <li>榴莲</li>
-        </ul>
-    </li>
-    <li>
-        <h2>动物</h2>
-        <ul>
-            <li>猫猫</li>
-            <li>狗狗</li>
-            <li>鸭鸭</li>
-        </ul>
-    </li>
-</ul>
-<script>
-    var aH2 = document.getElementsByTagName("h2");
-    // var flag = false;
-    for(var i =0;i<aH2.length;i++){
-        aH2[i].flag = false;
-        aH2[i].onclick = function(){
-
-            var oNext = next(this);
-            if(this.flag){
-                oNext.style.display = "none";
-            }else{
-                oNext.style.display = "block";
-            }
-            this.flag = !this.flag;
-        }
-    }
-    function next(elem){
-        do{
-            elem = elem.nextSibling;
-        }while(elem && elem.nodeType != 1 );//先获得回车加空格，然后回到循环继续找，找到空格的兄弟节点ul，并输出
-        return elem;
-    }
-</script>
 
 
 <h1>垂直导航栏</h1>
@@ -318,7 +281,7 @@ color: white;
 <span class="">（*不可用）</span></a></li>
 </ul>
 </div>
-<iframe src="blank.html" name="right" width="80%" height="1000"></iframe>
+<iframe src="blank.html" name="right" width="80%" height="1000" ></iframe>
 32 
 
 <div class="n">
