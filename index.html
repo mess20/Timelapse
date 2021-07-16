@@ -39,11 +39,12 @@ background:rgba(255,255, 255, 48%);
 resize: none; 
 margin:0 auto;
 overflow-x: hidden;
-margin-left: auto;
-margin-right: auto;
-padding:20px 6px 20px 6px;
+padding:10px 20px 10px 20px;
 outline: 0;
 vertical-align:baseline | sub | super | top | text-top | middle | bottom | text-bottom;
+justify-content: center;
+align-items: center;
+background-position: center;
 }
 /*n.note 便签
 r.record 随笔
@@ -128,7 +129,15 @@ object-fit:contain;
 width: 1080px;
 length: 2400px
 }
-
+.round_icon{
+  width: 34px;
+  height: 34px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
 .tabs {
   display: block;
@@ -202,13 +211,14 @@ color: white;
 
 
 </head>
-密码：
 
-<input type="password" id="pwd"><input type="button" onclick="check()" value="确定">
+
+
 
 
 <body>
 
+<img src="../../source/images/what_ever.jpg" class="round_icon"  alt="">
 
 <div class="n">
 房间门上贴的一张纸
