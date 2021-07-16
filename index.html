@@ -31,7 +31,8 @@ background-attachment: fixed;
 }
 
 ul {
-  list-style-type: none;
+ float: left;
+ list-style-type: none;
   margin: 0;
   padding: 0;
   width: 200px;
@@ -39,7 +40,8 @@ ul {
 }
 
 
-
+li span {
+  }
 li a {
   display: block;
   color: #000;
@@ -227,7 +229,29 @@ color: white;
       margin-left: 100%; }
     .tabs .tab-2:last-child [type="radio"]:checked + div {
       margin-left: -100%; }
-</style>
+
+
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style:none;
+        }
+        #menu{
+            width: 200px;
+            border:1px solid #000;
+            margin:0 auto;
+        }
+        h2{
+            background:#ffff00;
+            color: #fff;
+        }
+        #menu ul{
+            display:none;
+        }
+    </style>
 
 
 
@@ -241,19 +265,60 @@ color: white;
 
 <img src="../../source/images/what_ever.jpg" class="round_icon"  alt="">
 
+<ul id="menu">
+    <li>
+        <h2>水果</h2>
+        <ul>
+            <li>苹果</li>
+            <li>香蕉</li>
+            <li>榴莲</li>
+        </ul>
+    </li>
+    <li>
+        <h2>动物</h2>
+        <ul>
+            <li>猫猫</li>
+            <li>狗狗</li>
+            <li>鸭鸭</li>
+        </ul>
+    </li>
+</ul>
+<script>
+    var aH2 = document.getElementsByTagName("h2");
+    // var flag = false;
+    for(var i =0;i<aH2.length;i++){
+        aH2[i].flag = false;
+        aH2[i].onclick = function(){
+
+            var oNext = next(this);
+            if(this.flag){
+                oNext.style.display = "none";
+            }else{
+                oNext.style.display = "block";
+            }
+            this.flag = !this.flag;
+        }
+    }
+    function next(elem){
+        do{
+            elem = elem.nextSibling;
+        }while(elem && elem.nodeType != 1 );//先获得回车加空格，然后回到循环继续找，找到空格的兄弟节点ul，并输出
+        return elem;
+    }
+</script>
 
 
 <h1>垂直导航栏</h1>
 <div id="" >
-<div class="moreSetup">
+<div class="nav">
 <em class="NMTip"></em>
 <ul>
   <li><a href="#home">Home</a></li>
   <li><a href="#news">News</a></li>
   <li><a href="#contact">Contact</a></li>
-  <li><a id="foot_index_link"  href="/wap_juice233.html?showWelcome=1">
-<em><img src="https://aimg8.dlssyht.cn/u/2125239/wap/defineIcon/3257/6512924_1625827591.png?x-oss-process=image/resize,w_40,h_40" width="20px" height="20px"></em>
-<span class="navText">（*不可用）</span></a></li>
+  <li><a id="foot_index_link"  href="">
+<em><img src="" width="20px" height="20px"></em>
+<span class="">（*不可用）</span></a></li>
 </ul>
 </div>
 
