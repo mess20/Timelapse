@@ -29,6 +29,31 @@ left: 0px;
 position: absolute;
 background-attachment: fixed;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+background-image:url("https://z3.ax1x.com/2021/07/14/WZf4PJ.jpg");
+  color: black;
+}
+
+
 textarea{
 width: 900px;
 height: 100px;
@@ -215,69 +240,22 @@ color: white;
 <body>
 
 <img src="../../source/images/what_ever.jpg" class="round_icon"  alt="">
+
+
+
+<h1>垂直导航栏</h1>
 <div id="NMore" class="NMore_1004" style="display:none;" state="close">
 <div class="moreSetup">
 <em class="NMTip"></em>
 <ul>
-<li class="listSetup hover_icon">
-<a id="foot_index_link"  href="/wap_juice233.html?showWelcome=1">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a id="foot_index_link"  href="/wap_juice233.html?showWelcome=1">
 <em><img src="https://aimg8.dlssyht.cn/u/2125239/wap/defineIcon/3257/6512924_1625827591.png?x-oss-process=image/resize,w_40,h_40" width="20px" height="20px"></em>
-<span class="navText">（*不可用）</span>
-</a>
-</li>
-<li class="listSetup hover_icon">
-<a   href="/wap/blank.php?username=juice233&channel_id=24716435">
-<em><img src="https://aimg8.dlssyht.cn/u/2125239/wap/defineIcon/3257/6512797_1625826432.png?x-oss-process=image/resize,w_40,h_40" width="20px" height="20px"></em>
-<span class="navText">*DOORS／黑森林</span>
-</a>
-</li>
-<li class="listSetup hover_icon">
-<a   href="/wap/bbs_myinfo.php?username=juice233&is_check=1&wap=1&channel_id=24636410&user_user_id=">
-<em><img src="https://aimg8.dlssyht.cn/u/2125239/wap/defineIcon/3257/6512924_1625827591.png?x-oss-process=image/resize,w_40,h_40" width="20px" height="20px"></em>
-<span class="navText">*Home／梦开始的地方</span>
-</a>
-</li>
-<li class="listSetup hover_icon">
-<a   href="/juice233/wap_single/24673407.html">
-<em><img src="https://aimg8.dlssyht.cn/u/2125239/wap/defineIcon/3257/6512924_1625827591.png?x-oss-process=image/resize,w_40,h_40" width="20px" height="20px"></em>
-<span class="navText">About／于我 于世界</span>
-</a>
-</li>
-<li class="listSetup hover_icon">
-<a   href="/wap/bbs_index.php?username=juice233&channel_id=24636410">
-<em><img src="https://aimg8.dlssyht.cn/u/2125239/wap/defineIcon/3257/6512924_1625827591.png?x-oss-process=image/resize,w_40,h_40" width="20px" height="20px"></em>
-<span class="navText">Feedback／反馈</span>
-</a>
-</li>
-<li class="listSetup hover_icon">
-<a   href="/juice233/wap_doc/24690401_0_0_0.html">
-<em><img src="https://aimg8.dlssyht.cn/u/2125239/wap/defineIcon/3257/6512944_1625827760.png?x-oss-process=image/resize,w_40,h_40" width="20px" height="20px"></em>
-<span class="navText">News／新知</span>
-</a>
-</li>
-<li class="listSetup hover_icon">
-<a   href="/juice233/wap_doc/24637210_0_0_0.html">
-<em><img src="https://aimg8.dlssyht.cn/u/2125239/wap/defineIcon/3257/6512818_1625826590.png?x-oss-process=image/resize,w_40,h_40" width="20px" height="20px"></em>
-<span class="navText">学习</span>
-</a>
-</li>
-<li class="listSetup hover_icon">
-<a   href="/juice233/wap_doc/24640567_0_0_0.html">
-<em><img src="https://aimg8.dlssyht.cn/u/2125239/wap/defineIcon/3257/6512924_1625827591.png?x-oss-process=image/resize,w_40,h_40" width="20px" height="20px"></em>
-<span class="navText">Arts</span>
-</a>
-</li>
+<span class="navText">（*不可用）</span></a></li>
+
 </ul>
-</div>
-</div>
-<script>
-$(function(){
-newMenu();
-$(window).size(function(){
-newMenu();
-})
-})
-</script>
 
 
 <div class="n">
