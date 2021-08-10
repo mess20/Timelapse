@@ -1,8 +1,137 @@
 <html>
 <head>
- <title>在静态页面中显示文章被阅读的次数-测试</title>
+ <title></title>
+<style>
+.td-progress {
+    height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;   
+}
+.td-progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;   
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body,
+html {
+    font-family: 'Raleway', sans-serif;
+}
+li {
+    font-size: 0.6em;
+    font-weight: 500;
+    list-style-type: none;
+}
+section h1 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: 900;
+    color: white;
+    padding-top: 45vh;
+}
+#title {
+    text-align: center;
+    width: 100%;
+    top: 40%;
+    color: white;
+    font-size: 3em;
+    position: fixed;
+    z-index: 10;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+#triangle-up {
+    width: 0;
+    height: 0;
+</style>
 </head>
  <body>
- <script  src="counter.asp?id=1"></script>
+
+<div class="td-progress">
+	<div class="td-progress-bar"  aria-valuenow="40"
+		 aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+		<span>40% 完成</span>
+	</div>
+</div>
+<div id="startscreen">
+    <div id="title">this is a title</div>
+    <div id="triangle-down"></div>
+    <div id="triangle-up"></div>
+    <button id="button">⟷</button>
+</div>
+
+<div id="menuContent">
+    <ul>
+        <li><a rel="nofollow" rel="noreferrer" href=".section1">Menu 1</a>
+        </li>
+        <li><a rel="nofollow" rel="noreferrer" href=".section2">Menu 2</a>
+        </li>
+        <li><a rel="nofollow" rel="noreferrer" href=".section3">Menu 3</a>
+        </li>
+    </ul>
+    <div id="menuClose">✕</div>
+</div>
+
+<content>
+    <section class="section1">
+        <h1>Section 1</h1>
+    </section>
+    <section class="section2">
+        <h1>Section 2</h1>
+    </section>
+    <section class="section3">
+        <h1>Section 3</h1>
+    </section>
+</content>
+
+
+ <script>
+$(document).ready(function() {
+    $("#button").click(function() {
+        $("#triangle-down").addClass("usenand");
+        $("#triangle-up").addClass("usenand");
+        $('content').addClass('krassInefade');
+        $("#triangle-up").delay(1500).fadeOut();
+        $("#title").fadeOut(500);
+        $("#triangle-down").delay(1500).fadeOut();
+        $("#button").addClass("toMenu");
+        $("#button").text('+');
+        setTimeout(function() {
+            $("#button").attr("id", "menu");
+        }, 1);
+    });
+
+    $("#menuClose, #menuContent a").click(function() {
+        $("#menu").removeClass("menuTransition");
+        $("#menuContent").fadeOut(300);
+        $("#menu").text('+');
+        $("#menu.toMenu").css('transition', '.5s ease-in-out');
+    });
+
+    $('a').click(function() {
+        $('html, body').delay(500).animate({
+            scrollTop: $($(this).attr('href')).offset().top
+        }, 1000);
+        return false;
+    });
+
+});
+
+$(document).on("click", "#menu", function() {
+    $("#menu").addClass("menuTransition");
+    $("#menuContent").delay(500).fadeIn(1);
+    $("#menu").text(' ');
+});
+</script>
  </body>
 </html>
