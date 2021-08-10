@@ -3,6 +3,23 @@
  <title></title>
 
 <style>
+.td-progress {
+    height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;   
+}
+.td-progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;   
+}
 * {
     margin: 0;
     padding: 0;
@@ -212,6 +229,13 @@ section {
 </head>
  <body>
 
+
+<div class="td-progress">
+	<div class="td-progress-bar"  aria-valuenow="40"
+		 aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+		<span>40% 完成</span>
+	</div>
+</div>
 
 <div id="startscreen">
     <div id="title">this is a title</div>
