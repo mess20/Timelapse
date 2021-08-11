@@ -203,21 +203,17 @@ page{
 display:none;
 }
 
-.avatar{
-  width: 50px;
-  height: 50px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
 
 
 
 section {
     padding:1rem 3rem;
+display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
 .section1 {
     background:black
@@ -239,15 +235,19 @@ border-radius: 25px;
 box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.3);
 }
 /*井盖*/
-.indexblock{
-display:block;
-
-margin:2.4rem 0rem 2.4rem 0rem;
+.section1 .indexblock{
+  width: 20%;
+  height: 50px;
+  display: block;
+  margin: 2rem 3rem;
 padding:0.5rem 1rem;
-border-radius: 30px;
-color:orange;
-background-color:black;
+color:white;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
+
 
 
 /*tags*/
