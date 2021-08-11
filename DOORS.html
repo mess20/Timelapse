@@ -233,7 +233,7 @@ left:0;
 }
 
 
-.indexblock-box .indexblock{
+.indexblock{
   width: 180px;
   height: 180px;
   display: block;
@@ -246,7 +246,15 @@ line-height: 180px;
   justify-content: center;
   overflow: hidden;
 }
-
+tip{
+display:none;
+}
+.indexblock:hover tip{
+tip{
+display:block;
+background:black;
+padding:0.2rem 0.3rem;
+}
 
 .section1 img{
     background:;
@@ -537,19 +545,19 @@ border-radius:10px
 
 <p>Please choose one. 请选择其中一项。</p>
 <div class="indexblock-box">
-<a class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">A <tip>art 艺术</tip></a>
-<a class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">B <tip>book 阅读</tip></a>
-<a class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">G <tip>game 游戏</tip></a>
+<a id="a1" class="indexblock" href="javascript:void(0); " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">A <tip>art 艺术</tip></a>
+<a id="a2" class="indexblock" href="javascript:void(0); " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">B <tip>book 阅读</tip></a>
+<a id="a3" class="indexblock" href="javascript:void(0); " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">G <tip>game 游戏</tip></a>
 </div>
 <div class="indexblock-box">
-<a class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">L <tip>learn 学习</tip></a>
-<a class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">M<tip> movie 电影</tip></a>
-<a class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">W <tip>write 写作</tip></a>
+<a id="a4" class="indexblock" href="javascript:void(0); " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">L <tip>learn 学习</tip></a>
+<a id="a5" class="indexblock" href="javascript:void(0); " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">M<tip> movie 电影</tip></a>
+<a id="a6" class="indexblock" href=" javascript:void(0);" style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">W <tip>write 写作</tip></a>
 </div>
 <div class="indexblock-box">
-<a class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">X <tip>Magic 神秘</tip></a>
-<a class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">Y <tip>hearsay 西风信息</tip></a>
-<a class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">N <tip>others 其他</tip></a>
+<a id="a7" class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">X <tip>Magic 神秘</tip></a>
+<a id="a8" class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">Y <tip>hearsay 西风信息</tip></a>
+<a id="a9" class="indexblock" href=" " style="background:url('https://z3.ax1x.com/2021/07/22/WDced1.jpg');">N <tip>others 其他</tip></a>
 </div>
 
     </section>
@@ -836,6 +844,27 @@ $(document).on("click", "#menu", function() {
     $("#menuContent").delay(500).fadeIn(1);
     $("#menu").text(' ');});
 </script>
+
+
+<script type="text/javascript">  
+document.getElementById('a1').addEventListener('click',function(){
+window.location ="https://utopiapublishinghouse.github.io/#id-4";});
+document.getElementById('a2').addEventListener('click',function(){
+window.location ="https://utopiapublishinghouse.github.io/#id-3";});
+document.getElementById('a3').addEventListener('click',function(){
+window.location ="https://utopiapublishinghouse.github.io/#id-2";});
+document.getElementById('a4').addEventListener('click',function(){
+window.location ="";});
+document.getElementById('a5').addEventListener('click',function(){
+window.location ="";});
+document.getElementById('a6').addEventListener('click',function(){
+window.location ="";});
+document.getElementById('a7').addEventListener('click',function(){
+window.location ="";});
+document.getElementById('a8').addEventListener('click',function(){
+window.location ="";});
+document.getElementById('a9').addEventListener('click',function(){
+window.location ="";});
 
 
 </body>
