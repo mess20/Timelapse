@@ -1,0 +1,68 @@
+
+
+
+<style>
+body{
+font-size:2.7rem;
+line-height:5rem;
+background:rgb(246,246,246);
+width:100%;
+left:0;
+top:0
+}
+.appear1{
+position:relative;
+border:none;
+background:url(' https://www.hualigs.cn/image/6114c0cf44e43.jpg');
+width: 100%;
+height: 40%;
+  animation-name: down;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+zoom:-1;
+}
+.appear2{
+position:relative;
+background:white;
+margin:2.4rem auto;
+padding:2.4rem;
+border-radius: 25px;
+-webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.3);
+width:90%;
+min-height:60%;
+  animation-name: up;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+.show{
+position:relative;
+}
+@keyframes down {
+  0%   { left:0px; top:-40%;}
+  100% { left:0px; top:0px;}
+}
+@keyframes up {
+  0%   { left:0px;bottom:-60%;}
+  100% { left:0px; bottom:0%}
+}
+</style>
+<body>
+<div id="down" class="appear1">gsgsggs</div>
+<div id="up" class="appear2">gs的兄弟g<br>
+sggs比我还v只是v还是喜欢v周三周四
+wzw是谷歌zezhezez<br>
+ezezzejz</div>
+</body>
+
+<script>
+setTimeout(function(){
+document.getElementById('appear1').className="show';
+document.getElementById('appear2').className="show';
+},5000)
+</script>
+
+
+
