@@ -28,9 +28,14 @@ padding:0 5rem;
 }
 
 
-
-
 .button{
+display: -webkit-flex;
+display: flex;
+flex-direction: row; 
+justify-content: space-around;
+}
+
+button{
 font-style:italic;
 font-weight:100;
 font-family:Serif;
@@ -46,7 +51,7 @@ font-size:3rem;
  background-color: rgba(248,248,255,50%);
  border-radius: 32px;
 }
-.button:hover{
+button:hover{
 font-weight:430;
 color:white;
 background:#74a1a0;
@@ -68,9 +73,9 @@ The site configured at this address does not contain the requested file.
 </p>
 </h6>
 
-<div class="button"> date back</div>
-
-<div class="button"> look ahead</div>
+<div class="button"> 
+<button>Date back</button>
+<button>Look ahead</button>
 </div>
 
 
