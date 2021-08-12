@@ -76,11 +76,27 @@ The site configured at this address does not contain the requested file.
 </h6>
 
 <div class="button"> 
-<button>Date back</button>
-<button>Look ahead</button>
+<button onclick="javascript:RandomHref1();">Date back</button>
+<button onclick="javascript:RandomHref2();">Look ahead</button>
 </div>
 
 
 </body>
 
+<script>
+function RandomHref1(){
+location.href= https://restrechinamynd.github.io/child;
+}
 
+
+function RandomHref2(){
+var urls = new Array();
+urls[0] = "https://ps.gaoding.com/sources/21ae98f8e9dabe552b/index.html";
+urls[1] = "https://restrechinamynd.github.io/DOOR";
+urls[2] = "https://restrechinamynd.github.io/DOOR";
+urls[3] = "https://z3.ax1x.com/2021/08/12/f0qS5n.jpg";
+urls[4] = "https://restrechinamynd.github.io/child";
+n = Math.floor(Math.random()*5);
+location.href= urls[n];
+}
+</script>
