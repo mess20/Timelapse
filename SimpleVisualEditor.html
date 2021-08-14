@@ -121,8 +121,8 @@ display:block;
 
 
 <div class="textarea-container">
-<div id="textarea" contenteditable="true">
-文本1文本2文本3文本4文本5文本6
+<div class="textarea-container">
+<div id="textarea" contenteditable="true" onkeyup="wordCount()">文本1文本2文本3文本4文本5文本6
 swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新手机号现金转文字很危险混血儿我就我自己
 我等会i动物搞笑独孤信度想问一下我想跌<b>6171hxxhhx</b>xdxdhwdihxdih<font color="red">wdwdxw第五个训诂学额wjhw</red>邪恶u邪恶也想过点我头像东莞阳光网下一位也想问下
 
@@ -234,6 +234,9 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 </textarea>
 
 
+<button onclick="replace()">替换</button>
+<div id="output1">替换结果</div>
+<div id="output2">字数</div>
 
 </body>
 
@@ -241,12 +244,29 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 
 
 <script>
+<!--替换-->
+function replace() {
+var C = document.getElementById("replace-input1").value;
+var D = document.getElementById("replace-input2").value;
+var A = prompt("replace-input1","");
+var B = prompt("replace-input2","");
+
+var str = document.getElementById("textarea").innerHTML;
+document.getElementById("output1").innerHTML=str.replace(new RegExp( A, "g"), B);
+}
+
+<!--字数统计 -->
+function wordCount() {
+var length = document.getElementById("textarea");
+document.getElementById("output2").innerHTML= length.innerHTML.length;
+}
+
+
+
 function getCode() {
 var code = document.getElementById("textarea").innerHTML;
 document.getElementById("code").innerText = code;
 } 
-
-document.getElementById(input-length).innerHTML= document.getElementById(textarea).value.length;
 
 
 function open() {
