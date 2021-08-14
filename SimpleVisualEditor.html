@@ -88,7 +88,15 @@ top:12%;
 left:50%;
 z-index:1;
 }
-
+thecolor,fc-btn,bc-btn{
+display:none;
+}
+#fc-button:hover thecolor,fc-btn{
+display:block;
+}
+#bc-button:hover thecolor,bc-btn{
+display:block;
+}
 
 .fs_nav{
 display:none;
@@ -152,13 +160,15 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 <button id="sub-button" onclick="subscript()">下标</button>
 
 
-<button id="fc-button">字体颜色</button>
-<button id="bc-button">背景颜色</button>
-
+<button id="fc-button">字体颜色
 <input type="color" id="thecolor" value=""/>
 <button id="fc-btn" onclick="fc()">设置字体颜色</button>
-<button id="bc-btn" onclick="bc()">设置背景颜色</button>
+</button>
 
+<button id="bc-button">背景颜色
+<input type="color" id="thecolor" value=""/>
+<button id="bc-btn" onclick="bc()">设置背景颜色</button>
+</button>
 
 <!--链接-->
 <button id="a1-button" onclick="a1()">链接</button>
@@ -170,9 +180,11 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 
 
 <!--图片-->
-<button id="img1-button">图片</button>
+<button id="img1-button">图片
 <input type="file" id="imagefile">上传图片</input>
 <button id="img2-button" onclick="img2();">插入图片</button>
+</button>
+
 
 <button id="iu-button" onclick="iu()">实心无序列表</button>
 <button id="io-button" onclick="io()">有序列表</button>
