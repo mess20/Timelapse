@@ -1,0 +1,417 @@
+<title>可视化编辑器</title>1
+<style>
+body{
+font-size:200%;
+}
+.textarea-container{
+display:flex;
+top:0;
+left:0;
+height:100%;
+width:100%;
+}
+#textarea{
+font-size:120%;
+top:10%;
+left:10%;
+/*margin:auto;*/
+height:40%;
+width:80%;
+border:solid 3px blue;
+}
+#code{
+top:50%;
+left:10%;
+height:20%;
+}
+.button-container{
+display:flex;
+position:absolute;
+left:0;
+bottom:0;
+height:auto;
+width:100%;
+z-index:1;
+}
+.button{
+width:auto;
+height:auto;
+margin:0 auto;
+}
+button{
+font-size:100%;
+color:white;
+background:#6699ff;
+border:none;
+border-radius:6px;
+padding:1rem 3rem;
+-webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+}
+button:hover{
+color:white;
+background:rgba(102, 153, 255,75%)
+}
+#href{
+display:none;
+top:20%;
+left:20%;
+width:80%;
+height:40%;
+}
+#a2-button{
+display:none;
+}
+
+#src{
+display:none;
+top:20%;
+left:80%;
+width:80%;
+height:40%;
+}
+#imagefile{
+display:none;
+top:12%;
+left:80%;
+}
+#img2-button{
+display:none;
+top:40%;
+left:80%;
+}
+.fs_nav{
+display:none;
+}
+#fs-button:hover .fs_nav{
+display:block;
+}
+
+
+
+
+</style>
+
+<body>
+
+
+<div class="textarea-container">
+<div id="textarea" contenteditable="true">
+文本1文本2文本3文本4文本5文本6
+swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新手机号现金转文字很危险混血儿我就我自己
+我等会i动物搞笑独孤信度想问一下我想跌<b>6171hxxhhx</b>xdxdhwdihxdih<font color="red">wdwdxw第五个训诂学额wjhw</red>邪恶u邪恶也想过点我头像东莞阳光网下一位也想问下
+
+
+</div>
+</div>
+
+
+
+<div class="button-container">
+<div class="button">
+
+<button id="redo-button" onclick="redo()">redo</button>
+<button id="undo-button" onclick="un()">undo</button>
+<button id="open-button" onclick="open()">打开</button>
+<button id="saveas-button" onclick="saveas()">另存为</button>
+<button id="rf-button" onclick="rf()">清除格式</button>
+
+<button id="copy-button" onclick="copy()">复制</button>
+
+<button id="ff-button" onclick="ff()">字体</button>
+
+<div id="fs-button">字体大小
+
+<div class="fs_nav">
+<button id="fs1-button" onclick="fs1()">1</button>
+<button id="fs2-button" onclick="fs2()">2</button>
+<button id="fs3-button" onclick="fs3()">3</button>
+<button id="fs4-button" onclick="fs4()">4</button>
+<button id="fs5-button" onclick="fs5()">5</button>
+<button id="fs6-button" onclick="fs6()">6</button>
+<button id="fs7-button" onclick="fs7()">7</button>
+</div>
+</div>
+
+
+<button id="b-button" onclick="b()">加粗</button>
+<button id="i-button" onclick="i()">斜体</button>
+<button id="u-button" onclick="u()">下划线</button>
+<button id="s-button" onclick="s()">删除线</button>
+<button id="super-button" onclick="superscript()">上标</button>
+<button id="sub-button" onclick="subscript()">下标</button>
+<button id="fc-button" onclick="fc()">字体颜色</button>
+<button id="bc-button" onclick="bc()">背景颜色</button>
+
+<!--链接-->
+<button id="a1-button" onclick="a1()">链接</button>
+<button id="a2-button" onclick="a2()">添加链接</button>
+<textarea id="href" placeholder="输入链接" value=" "></textarea>
+
+
+<button id="pre-button" onclick="pre()">代码块</button>
+
+
+<!--图片-->
+<button  id="img1-button" onclick="img1();">图片</button>
+<input type="file" id="imagefile" />
+<button  id="img2-button" onclick="img2();">插入图片</button>
+
+<button id="iu-button" onclick="iu()">实心无序列表</button>
+<button id="io-button" onclick="io()">有序列表</button>
+
+
+
+<button id="hr-button" onclick="hr()">分割线</button>
+<button id="p-button" onclick="p()">换行</button>
+
+<button id="in-button" onclick="indent()">缩进</button>
+<button id="out-button" onclick="outdent()">减少缩进</button>
+
+
+
+<button id="jf-button" onclick="jf()">justifyFull</button>
+<button id="jc-button" onclick="jc()">justifyCenter</button>
+<button id="jl-button" onclick="jl()">justifyLeft</button>
+<button id="jr-button" onclick="jr()">justifyRight</button>
+
+<button id="h1-button" onclick="h1()">h1</button>
+<button id="h2-button" onclick="h2()">h2</button>
+<button id="h3-button" onclick="h3()">h3</button>
+<button id="h4-button" onclick="h4()">h4</button>
+<button id="h5-button" onclick="h5()">h5</button>
+<button id="h6-button" onclick="h6()">h6</button>
+
+
+<button id="aud-button" onclick="aud()">更改浏览器自动链接行为</button>
+<button id="t-button" onclick="t()">列表</button>
+<button id="inserttext-button" onclick="insertText()">insertText</button>
+
+
+</div>
+</div>
+<button onclick="getCode();">获取代码</button>
+<textarea id="code">
+</textarea>
+
+
+
+</body>
+
+
+
+
+<script>
+function getCode() {
+var code = document.getElementById("textarea").innerHTML;
+document.getElementById("code").innerText = code;
+} 
+
+
+
+function open() {
+document.execCommand("Open")
+} ;
+function saveas() {
+document.execCommand("SaveAs")
+};
+function copy() {
+document.execCommand("Copy")
+};
+//改变选中区域的字体;
+function ff() {
+document.execCommand("FontName","false",sFontName);
+};
+//改变选中区域的字体大小;
+function fs() {
+document.execCommand("FontSize","false","7");
+};
+function fs1() {
+document.execCommand("FontSize","false","1");
+};
+function fs2() {
+document.execCommand("FontSize","false","2");
+};
+function fs3() {
+document.execCommand("FontSize","false","3");
+};
+function fs4() {
+document.execCommand("FontSize","false","4");
+};
+function fs5() {
+document.execCommand("FontSize","false","5");
+};
+function fs6() {
+document.execCommand("FontSize","false","6");
+};
+function fs7() {
+document.execCommand("FontSize","false","7");
+};
+
+//加粗;
+function b() {
+document.execCommand("Bold","false",null);
+}; 
+//斜体   
+function i(){
+document.execCommand('Italic');   
+};
+//下划线
+function u() {
+document.execCommand("Underline")
+} ;
+//删除线
+function s() {
+document.execCommand("StrikeThrough")
+} ;
+//上标
+function superscript(){
+document.execCommand("SuperScript")
+} ;
+//下标
+function subscript(){
+document.execCommand('subscript', 'false', null);
+};
+//设置文字颜色;
+function fc(){
+document.execCommand("ForeColor","false","#BBDDCC");
+};
+//设置背景颜色;
+function bc(){
+document.execCommand("BackColor","false","#BBDDCC");
+};
+//链接
+function a1(){
+document.getElementById("href").style.display = "block";
+document.getElementById("a2-button").style.display = "block";
+};
+function a2() {
+var linkURL = document.getElementById("href").value;
+document.execCommand('CreateLink', true, linkURL );
+};
+//图片
+function img1() {
+document.getElementById(imagefile).style.display = "block";
+document.getElementById(img2-button).style.display = "block";
+} 
+function img2(){
+if(typeof FileReader=='undifined'){result.innerHTML="<p>抱歉，你的浏览器不支持 FileReader</p>";return false;}var file=document.getElementById("imagefile").files[0];
+if(!/image\/\w+/.test(file.type))           
+{alert("请确保文件为图像文件");return false;}
+var reader=new FileReader();
+reader.readAsDataURL(file);
+reader.onload=function(e){
+document.execCommand("insertImage",true,this.result)
+}}
+
+//显示代码
+function pre(){
+document.execCommand("FormatBlock",false,"<PRE>")
+};
+//标题
+function h1(){
+document.execCommand("FormatBlock","false","<h1>")
+};
+function h2(){
+document.execCommand("FormatBlock","false","<h2>")
+};
+function h3(){
+document.execCommand("FormatBlock","false","<h3>")
+};
+function h4(){
+document.execCommand("FormatBlock","false","<h4>")
+};
+function h5(){
+document.execCommand("FormatBlock","false","<h5>")
+};
+function h6(){
+document.execCommand("FormatBlock","false","<h6>")
+};
+
+
+
+//缩进
+function indent(){
+document.execCommand('Indent');  
+};
+//减少缩进
+function outdent(){
+document.execCommand('outdent', 'false', null );
+};
+
+
+//分割线
+
+function hr() {
+document.execCommand("InsertHorizontalRule")
+} ;
+//换行
+function p() {
+document.execCommand("InsertParagraph")
+} 
+
+//文本对齐
+function jf() {
+document.execCommand('justifyFull', 'false', null );
+};
+//文本居中
+function jc(){
+document.execCommand('justifyCenter', 'false', null );
+};
+//文本左对齐
+function jl(){
+document.execCommand('justifyLeft', 'false', null );
+};
+//文本右对齐
+function jr(){
+document.execCommand('justifyRight', 'false', null );
+};
+//实心无序列排列   
+function iu(){
+document.execCommand('InsertUnorderedList');   
+};
+
+//有序列排列   
+function io(){
+document.execCommand('InsertOrderedList');   
+};
+
+
+//撤销
+function un() {
+document.execCommand('undo', 'false', null );
+} ;
+//恢复
+function redo() {
+document.execCommand('redo', 'false', null );
+} ;
+//清除格式
+function rf() {
+document.execCommand('RemoveFormat')
+} 
+//列表
+function t() {
+document.execCommand("InsertSelectListbox",true,"x.x.v")
+} 
+
+
+//更改自动链接行为
+function aud() {
+document.execCommand("AutoUrlDetect",true)
+} 
+
+function insertText(){
+document.execCommand('insertText', 'false', "<hi>");
+};
+</script>
+
+
+
+
+
+
+
+
+
+
