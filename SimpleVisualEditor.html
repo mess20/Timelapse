@@ -170,8 +170,8 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 
 
 <!--图片-->
-<button id="img1-button" onclick="img1();">图片</button>
-<input type="file" id="imagefile" />
+<button id="img1-button">图片</button>
+<input type="file" id="imagefile">上传图片</input>
 <button id="img2-button" onclick="img2();">插入图片</button>
 
 <button id="iu-button" onclick="iu()">实心无序列表</button>
@@ -309,10 +309,6 @@ var linkURL = document.getElementById("href").value;
 document.execCommand('CreateLink', true, linkURL );
 };
 //图片
-function img1() {
-document.getElementById(imagefile).style.display = "block";
-document.getElementById(img-button).style.display = "block";
-};
 function img2(){
 if(typeof FileReader=='undifined'){result.innerHTML="<p>抱歉，你的浏览器不支持 FileReader</p>";return false;}var file=document.getElementById("imagefile").files[0];
 if(!/image\/\w+/.test(file.type))           
