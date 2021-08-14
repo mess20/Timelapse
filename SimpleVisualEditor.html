@@ -1,4 +1,7 @@
-<title>可视化编辑器</title>1
+
+
+
+<title>可视化编辑器</title>
 <style>
 body{
 font-size:200%;
@@ -147,8 +150,15 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 <button id="s-button" onclick="s()">删除线</button>
 <button id="super-button" onclick="superscript()">上标</button>
 <button id="sub-button" onclick="subscript()">下标</button>
-<button id="fc-button" onclick="fc()">字体颜色</button>
-<button id="bc-button" onclick="bc()">背景颜色</button>
+
+
+<button id="fc-button">字体颜色</button>
+<button id="bc-button">背景颜色</button>
+
+<input type="color" id="thecolor" value=""/>
+<button id="fc-btn" onclick="fc()">设置字体颜色</button>
+<button id="bc-btn" onclick="bc()">设置背景颜色</button>
+
 
 <!--链接-->
 <button id="a1-button" onclick="a1()">链接</button>
@@ -281,11 +291,13 @@ document.execCommand('subscript', 'false', null);
 };
 //设置文字颜色;
 function fc(){
-document.execCommand("ForeColor","false","#BBDDCC");
+var color =document.getElementById("thecolor").value;
+document.execCommand("ForeColor","false",color);
 };
 //设置背景颜色;
 function bc(){
-document.execCommand("BackColor","false","#BBDDCC");
+var color =document.getElementById("thecolor").value;
+document.execCommand("BackColor","false",color);
 };
 //链接
 function a1(){
