@@ -244,13 +244,10 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 <script>
 <!--替换-->
 function replace() {
-var C = document.getElementById("replace-input1").value;
-var D = document.getElementById("replace-input2").value;
-var A = prompt("replace-input1","");
-var B = prompt("replace-input2","");
-
+var A = prompt("替换内容","");
+var B = prompt("替换为","");
 var str = document.getElementById("textarea").innerHTML;
-document.getElementById("output1").innerHTML=str.replace(new RegExp( A, "g"), B);
+document.getElementById("textarea").innerHTML= str.replace(new RegExp(A , "g"), B);
 }
 
 <!--字数统计 -->
@@ -267,12 +264,7 @@ document.getElementById("code").innerText = code;
 } 
 
 
-function open() {
-document.execCommand("Open")
-} ;
-function saveas() {
-document.execCommand("SaveAs",false,"hi")
-};
+
 function copy() {
 document.execCommand("Copy")
 };
@@ -448,6 +440,12 @@ document.execCommand('RemoveFormat')
 
 
 <!--不会使用-->
+function open() {
+document.execCommand("Open")
+} ;
+function saveas() {
+document.execCommand("SaveAs",false,"hi")
+};
 //更改自动链接行为
 function aud() {
 document.execCommand("AutoUrlDetect",true)
