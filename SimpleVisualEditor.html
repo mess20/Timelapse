@@ -246,10 +246,11 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 function replace() {
 var A = prompt("替换内容","");
 var B = prompt("替换为","");
+        if(A!=null&&A!=''&&B!=null&&B!=''){
 var str = document.getElementById("textarea").innerHTML;
 document.getElementById("textarea").innerHTML= str.replace(new RegExp(A , "g"), B);
 }
-
+}
 <!--字数统计 -->
 function wordCount() {
 var length = document.getElementById("textarea");
