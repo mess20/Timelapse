@@ -88,16 +88,16 @@ top:12%;
 left:50%;
 z-index:1;
 }
-#thecolor,#fc-btn,#bc-btn{
+#fc-thecolor,#bc-thecolor,#fc-btn,#bc-btn{
 display:none;
 }
-#fc:hover #thecolor{
+#fc:hover #fc-thecolor{
 display:block;
 }
 #fc:hover #fc-btn{
 display:block;
 }
-#bc:hover #thecolor{
+#bc:hover #bc-thecolor{
 display:block;
 }
 #bc:hover #bc-btn{
@@ -167,13 +167,13 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 
 <div id="fc">
 <button id="fc-button">字体颜色</button>
-<input type="color" id="thecolor" value=""/>
+<input type="color" id="fc-thecolor" value=""/>
 <button id="fc-btn" onclick="fc()">设置字体颜色</button>
 </div>
 
 <div id="bc">
 <button id="bc-button">背景颜色</button>
-<input type="color" id="thecolor" value=""/>
+<input type="color" id="bc-thecolor" value=""/>
 <button id="bc-btn" onclick="bc()">设置背景颜色</button>
 </div>
 
@@ -310,12 +310,12 @@ document.execCommand('subscript', 'false', null);
 };
 //设置文字颜色;
 function fc(){
-var color =document.getElementById("thecolor").value;
+var color =document.getElementById("fc-thecolor").value;
 document.execCommand("ForeColor","false",color);
 };
 //设置背景颜色;
 function bc(){
-var color =document.getElementById("thecolor").value;
+var color =document.getElementById("bc-thecolor").value;
 document.execCommand("BackColor","false",color);
 };
 //链接
