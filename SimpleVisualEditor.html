@@ -120,8 +120,8 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 <div class="button-container">
 <div class="button">
 
-<button id="redo-button" onclick="redo()">redo</button>
-<button id="undo-button" onclick="un()">undo</button>
+<button id="undo-button" onclick="un()">撤销</button>
+<button id="redo-button" onclick="redo()">恢复</button>
 <button id="open-button" onclick="open()">打开</button>
 <button id="saveas-button" onclick="saveas()">另存为</button>
 <button id="rf-button" onclick="rf()">清除格式</button>
@@ -199,7 +199,7 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 <button id="h5-button" onclick="h5()">h5</button>
 <button id="h6-button" onclick="h6()">h6</button>
 
-
+<!--x-->
 <button id="aud-button" onclick="aud()">更改浏览器自动链接行为</button>
 <button id="t-button" onclick="t()">列表</button>
 <button id="inserttext-button" onclick="insertText()">insertText</button>
@@ -230,7 +230,7 @@ function open() {
 document.execCommand("Open")
 } ;
 function saveas() {
-document.execCommand("SaveAs")
+document.execCommand("SaveAs",false,"hi")
 };
 function copy() {
 document.execCommand("Copy")
@@ -404,20 +404,25 @@ document.execCommand('redo', 'false', null );
 function rf() {
 document.execCommand('RemoveFormat')
 } 
+
+
+<!--不会使用-->
+//更改自动链接行为
+function aud() {
+document.execCommand("AutoUrlDetect",true)
+} 
+
 //列表
 function t() {
 document.execCommand("InsertSelectListbox",true,"x.x.v")
 } 
 
 
-//更改自动链接行为
-function aud() {
-document.execCommand("AutoUrlDetect",true)
-} 
-
+<!--目前暂定不用-->
 function insertText(){
 document.execCommand('insertText', 'false', "<hi>");
 };
+
 </script>
 
 
