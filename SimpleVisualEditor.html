@@ -88,13 +88,13 @@ top:12%;
 left:50%;
 z-index:1;
 }
-thecolor,fc-btn,bc-btn{
+#thecolor,#fc-btn,#bc-btn{
 display:none;
 }
-#fc-button:hover thecolor,fc-btn{
+#fc:hover #thecolor,#fc-btn{
 display:block;
 }
-#bc-button:hover thecolor,bc-btn{
+#bc:hover #thecolor,#bc-btn{
 display:block;
 }
 
@@ -159,16 +159,17 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 <button id="super-button" onclick="superscript()">上标</button>
 <button id="sub-button" onclick="subscript()">下标</button>
 
-
-<button id="fc-button">字体颜色
+<div id="fc">
+<button id="fc-button">字体颜色</button>
 <input type="color" id="thecolor" value=""/>
 <button id="fc-btn" onclick="fc()">设置字体颜色</button>
-</button>
+</div>
 
-<button id="bc-button">背景颜色
+<div id="bc">
+<button id="bc-button">背景颜色</button>
 <input type="color" id="thecolor" value=""/>
 <button id="bc-btn" onclick="bc()">设置背景颜色</button>
-</button>
+</div>
 
 <!--链接-->
 <button id="a1-button" onclick="a1()">链接</button>
