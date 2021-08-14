@@ -53,6 +53,8 @@ button:hover{
 color:white;
 background:rgba(102, 153, 255,75%)
 }
+
+
 #href{
 display:none;
 top:20%;
@@ -63,18 +65,26 @@ height:40%;
 #a2-button{
 display:none;
 }
-#imagefile{
+
+
+#img2-button{
+display:none;
+}
+#img1-button:hover #img2-button{
+display:block;
+top:40%;
+left:80%;
+z-index:1;
+}
+#img1-button:hover #imagefile{
+display:block;
 display:none;
 top:12%;
 left:80%;
 z-index:1;
 }
-#img-button{
-display:none;
-top:40%;
-left:80%;
-z-index:1;
-}
+
+
 .fs_nav{
 display:none;
 }
@@ -150,7 +160,7 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 <!--图片-->
 <button id="img1-button" onclick="img1();">图片</button>
 <input type="file" id="imagefile" />
-<button id="img-button" onclick="img();">插入图片</button>
+<button id="img2-button" onclick="img2();">插入图片</button>
 
 <button id="iu-button" onclick="iu()">实心无序列表</button>
 <button id="io-button" onclick="io()">有序列表</button>
@@ -289,7 +299,7 @@ function img1() {
 document.getElementById(imagefile).style.display = "block";
 document.getElementById(img-button).style.display = "block";
 };
-function img(){
+function img2(){
 if(typeof FileReader=='undifined'){result.innerHTML="<p>抱歉，你的浏览器不支持 FileReader</p>";return false;}var file=document.getElementById("imagefile").files[0];
 if(!/image\/\w+/.test(file.type))           
 {alert("请确保文件为图像文件");return false;}
