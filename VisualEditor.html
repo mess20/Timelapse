@@ -63,14 +63,6 @@ height:40%;
 #a2-button{
 display:none;
 }
-
-#src{
-display:none;
-top:20%;
-left:80%;
-width:80%;
-height:40%;
-}
 #imagefile{
 display:none;
 top:12%;
@@ -154,9 +146,9 @@ swswhbwbyxyurhuedj一梦江湖风云录，孙武湖和自信色号i西四环新�
 
 
 <!--图片-->
-<button  id="img1-button" onclick="img1();">图片</button>
+<button id="img1-button" onclick="img1();">图片</button>
 <input type="file" id="imagefile" />
-<button  id="img2-button" onclick="img2();">插入图片</button>
+<button id="img2-button" onclick="img2();">插入图片</button>
 
 <button id="iu-button" onclick="iu()">实心无序列表</button>
 <button id="io-button" onclick="io()">有序列表</button>
@@ -294,7 +286,7 @@ document.execCommand('CreateLink', true, linkURL );
 function img1() {
 document.getElementById(imagefile).style.display = "block";
 document.getElementById(img2-button).style.display = "block";
-} 
+};
 function img2(){
 if(typeof FileReader=='undifined'){result.innerHTML="<p>抱歉，你的浏览器不支持 FileReader</p>";return false;}var file=document.getElementById("imagefile").files[0];
 if(!/image\/\w+/.test(file.type))           
