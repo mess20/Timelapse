@@ -1,7 +1,7 @@
 
 
 
-<title>可视化编辑器</title>
+<title>自制可视化编辑器</title>
 <style>
 body{
 font-size:200%;
@@ -57,8 +57,9 @@ button:hover{
 color:white;
 background:rgba(102, 153, 255,75%)
 }
-
-
+#getCode{
+order:1;
+}
 #href{
 display:none;
 top:20%;
@@ -69,7 +70,12 @@ height:40%;
 #a2-button{
 display:none;
 }
-
+#a-button:hover #a2-button{
+display:block;
+}
+#a-button:hover #href{
+display:block;
+}
 
 #img2-button{
 display:none;
@@ -77,13 +83,13 @@ display:none;
 #imagefile{
 display:none;
 }
-#img1-button:hover #img2-button{
+#img-button:hover #img2-button{
 display:block;
 top:30%;
 left:80%;
 z-index:1;
 }
-#img1-button:hover #imagefile{
+#img-button:hover #imagefile{
 display:block;
 top:12%;
 left:50%;
@@ -134,6 +140,7 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 <div class="button-container">
 <div class="button">
+<button id="getCode" onclick="getCode();">HTML</button>
 
 <button id="undo-button" onclick="un()">撤销</button>
 <button id="redo-button" onclick="redo()">恢复</button>
@@ -179,22 +186,27 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 </div>
 
 <!--链接-->
-<button id="a1-button" onclick="a1()">链接</button>
+
+
+<div id="a-button">
+<button id="a1-button">链接</button>
 <button id="a2-button" onclick="a2()">添加链接</button>
 <textarea id="href" placeholder="输入链接" value=" "></textarea>
-
+</div>
 
 <button id="pre-button" onclick="pre()">代码块</button>
 
 
 <!--图片-->
-<button id="img1-button">图片
+
+<div id="img1-button">
+<button id="img-button">图片</button>
 <input type="file" id="imagefile">上传图片</input>
 <button id="img2-button" onclick="img2();">插入图片</button>
-</button>
+</div>
 
 
-<button id="iu-button" onclick="iu()">实心无序列表</button>
+<button id="iu-button" onclick="iu()">无序列表</button>
 <button id="io-button" onclick="io()">有序列表</button>
 
 
@@ -207,10 +219,18 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 
 
-<button id="jf-button" onclick="jf()">justifyFull</button>
-<button id="jc-button" onclick="jc()">justifyCenter</button>
-<button id="jl-button" onclick="jl()">justifyLeft</button>
-<button id="jr-button" onclick="jr()">justifyRight</button>
+<button id="jf-button" onclick="jf()">两端对齐</button>
+<button id="jc-button" onclick="jc()">居中</button>
+<button id="jl-button" onclick="jl()">居左</button>
+<button id="jr-button" onclick="jr()">居右</button>
+
+<button id="h1-button" onclick="h1()">一级标题</button>
+<button id="h2-button" onclick="h2()">二级标题</button>
+<button id="h3-button" onclick="h3()">三级标题</button>
+<button id="h4-button" onclick="h4()">四级标题</button>
+<button id="h5-button" onclick="h5()">五级标题</button>
+<button id="h6-button" onclick="h6()">六级标题</button>
+
 
 <button id="h1-button" onclick="h1()">h1</button>
 <button id="h2-button" onclick="h2()">h2</button>
@@ -227,7 +247,6 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 </div>
 </div>
-<button onclick="getCode();">获取代码</button>
 <textarea id="code">
 </textarea>
 
@@ -334,10 +353,6 @@ var color =document.getElementById("bc-thecolor").value;
 document.execCommand("BackColor","false",color);
 };
 //链接
-function a1(){
-document.getElementById("href").style.display = "block";
-document.getElementById("a2-button").style.display = "block";
-};
 function a2() {
 var linkURL = document.getElementById("href").value;
 document.execCommand('CreateLink', true, linkURL );
@@ -415,7 +430,7 @@ document.execCommand('justifyLeft', 'false', null );
 function jr(){
 document.execCommand('justifyRight', 'false', null );
 };
-//实心无序列排列   
+//无序列排列   
 function iu(){
 document.execCommand('InsertUnorderedList');   
 };
