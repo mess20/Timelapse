@@ -15,12 +15,11 @@ width:100%;
 }
 #textarea{
 font-size:120%;
-top:10%;
 margin:auto;
 height:40%;
 width:90%;
 border:solid 1px black;
-
+position:absolute;
 }
 #code{
 top:50%;
@@ -85,7 +84,7 @@ display:block;
 
 
 
-#img1-button{
+#img-button{
 }
 #imagefile{
 z-index:-1;
@@ -97,7 +96,7 @@ filter:alpha(opacity=100);
 #img2-button{
 display:none;
 }
-#img1-button:hover #img2-button{
+#img-button:hover #img2-button{
 display:inline-block;
 top:30%;
 left:80%;
@@ -207,12 +206,12 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 
 <!--图片-->
-
-<button id="img1-button">
-<input type="file" id="imagefile" value="图片">
-<button id="img2-button" onclick="img2();">插入图片</button>
+<div id="img-button">
+<button id="img1-button">图片
+<input type="file" id="imagefile" value="">
 </button>
-
+<button id="img2-button" onclick="img2();">插入图片</button>
+</div>
 
 <button id="iu-button" onclick="iu()">无序列表</button>
 <button id="io-button" onclick="io()">有序列表</button>
