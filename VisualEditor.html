@@ -82,13 +82,7 @@ display:block;
 display:block;
 }
 
-#img2-button{
-display:none;
-}
-#imagefile{
-display:none;
-}
-#imagefile-box{
+#img2-button,#imagefile-box,#imagefile{
 display:none;
 }
 #img-button:hover #img2-button{
@@ -102,15 +96,14 @@ z-index:1;
 z-index:1;
 display:block;
 overflow: hidden;
-background:pink;
+opacity: 0;
+filter: alpha(opacity=0);
 }
 #img-button:hover #imagefile{
 display:block;
 position: absolute;
 right: 0;
 top: 0;
-opacity: 0;
-filter: alpha(opacity=0);
 }
 #fc-thecolor,#bc-thecolor,#fc-btn,#bc-btn{
 display:none;
