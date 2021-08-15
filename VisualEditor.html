@@ -27,19 +27,25 @@ left:10%;
 height:20%;
 }
 
-.button-container{
-display:flex;
-position:absolute;
-left:0;
-bottom:0;
-height:auto;
-width:100%;
-z-index:1;
-}
+
 .button{
-width:auto;
+
+
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    position:absolute;
+left:0;
+top:20%;
+width:90%;
 height:auto;
-margin:0 auto;
+margin-left:auto;
+margin-right:auto;
+z-index:1;
+
 }
 button{
 display:inline-block;
@@ -148,7 +154,6 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 
 
-<div class="button-container">
 <div class="button">
 <button id="getCode" onclick="getCode();">HTML</button>
 
@@ -255,7 +260,7 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 
 </div>
-</div>
+
 <textarea id="code">
 </textarea>
 
