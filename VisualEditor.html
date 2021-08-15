@@ -210,9 +210,9 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 <!--图片-->
 <div id="img-button">
 <button id="img1-button">图片
-<input type="file" id="imagefile" value="">
+<input type="file" id="imagefile" value=".">
 </button>
-<button id="img2-button" onclick="img2();">插入图片</button>
+<button id="img2-button" onclick="img();">插入</button>
 </div>
 
 <button id="iu-button" onclick="iu()">无序列表</button>
@@ -367,7 +367,7 @@ var linkURL = document.getElementById("href").value;
 document.execCommand('CreateLink', true, linkURL );
 };
 //图片
-function img2(){
+function img(){
 if(typeof FileReader=='undifined'){result.innerHTML="<p>抱歉，你的浏览器不支持 FileReader</p>";return false;}var file=document.getElementById("imagefile").files[0];
 if(!/image\/\w+/.test(file.type))           
 {alert("请确保文件为图像文件");return false;}
