@@ -82,29 +82,29 @@ display:block;
 display:block;
 }
 
-#img2-button,#imagefile-box,#imagefile{
+
+
+#img1-button{
+z-index:1;
+display:block;
+overflow: hidden;
+background:transparent;
+}
+#imagefile{
+}
+
+
+#img2-button{
 display:none;
 }
-#img-button:hover #img2-button{
+#img1-button:hover #img2-button{
 display:block;
 top:30%;
 left:80%;
 z-index:1;
 }
 
-#img-button:hover #imagefile-box{
-z-index:1;
-display:block;
-overflow: hidden;
-background:transparent;
 
-}
-#img-button:hover #imagefile{
-display:block;
-position: absolute;
-right: 0;
-top: 0;
-}
 #fc-thecolor,#bc-thecolor,#fc-btn,#bc-btn{
 display:none;
 }
@@ -209,11 +209,8 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 <!--图片-->
 
-<div id="img-button">
-<button id="img1-button">图片</button>
-<div id="imagefile-box">上传图片
+<div id="img1-button">图片
 <input type="file" id="imagefile" value="上传图片">
-</div>
 <button id="img2-button" onclick="img2();">插入图片</button>
 </div>
 
