@@ -57,6 +57,11 @@ button:hover{
 color:white;
 background:rgba(102, 153, 255,75%)
 }
+
+
+
+
+
 #getCode{
 order:1;
 }
@@ -89,11 +94,24 @@ top:30%;
 left:80%;
 z-index:1;
 }
+
+#imagefile-box, #imagefile{
+display:none;
+}
+
+#img-button:hover #imagefile-box{
+display:block;
+overflow: hidden;
+position: relative;
+background:pink;
+}
 #img-button:hover #imagefile{
 display:block;
-top:12%;
-left:50%;
-z-index:1;
+position: absolute;
+right: 0;
+top: 0;
+opacity: 0;
+filter: alpha(opacity=0);
 }
 #fc-thecolor,#bc-thecolor,#fc-btn,#bc-btn{
 display:none;
@@ -201,7 +219,9 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 <div id="img1-button">
 <button id="img-button">图片</button>
-<input type="file" id="imagefile">上传图片</input>
+<div id="imagefile-box">
+<input type="file" id="imagefile" value="上传图片">
+</div>
 <button id="img2-button" onclick="img2();">插入图片</button>
 </div>
 
