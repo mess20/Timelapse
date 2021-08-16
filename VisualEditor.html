@@ -67,33 +67,27 @@ border-color: rgba(84,100,93,60%);
     flex-wrap: wrap;
     -webkit-justify-content: center;
     justify-content: center;
-    position:absolute;
-left:0;
+    position:fixed;
+left:10%;
+right:10%;
 top:10%;
-width:90%;
+width:80%;
 height:auto;
-margin-left:auto;
-margin-right:auto;
 z-index:1;
 
 }
 button{
+background:#F7F8FA;
 display:inline-block;
-height:5rem;
-width:auto;
+height:6rem;
+width:6rem;
 font-size:200%;
-color:white;
-background:#6699ff;
-border:none;
-border-radius:6px;
-padding:1rem 3rem;
--webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+border:solid;
+padding:0rem;
 }
 button:hover{
 color:white;
-background:rgba(102, 153, 255,75%)
+background:#f0f8ff;
 }
 
 
@@ -114,9 +108,11 @@ height:40%;
 display:none;
 }
 #a-button:hover #a2-button{
+position:fixed;
 display:block;
 }
 #a-button:hover #href{
+position:fixed;
 display:block;
 }
 
@@ -135,6 +131,7 @@ filter:alpha(opacity=100);
 display:none;
 }
 #img-button:hover #img2-button{
+position:fixed;
 display:inline-block;
 top:30%;
 left:80%;
@@ -145,21 +142,26 @@ left:80%;
 display:none;
 }
 #fc:hover #fc-thecolor{
+position:fixed;
 display:block;
 }
 #fc:hover #fc-btn{
+position:fixed;
 display:block;
 }
 #bc:hover #bc-thecolor{
+position:fixed;
 display:block;
 }
 #bc:hover #bc-btn{
+position:fixed;
 display:block;
 }
 .ff_nav{
 display:none;
 }
 #ff-button:hover .ff_nav{
+position:absolute;
 display:block;
 }
 
@@ -167,6 +169,7 @@ display:block;
 display:none;
 }
 #fs-button:hover .fs_nav{
+position:absolute;
 display:block;
 }
 
@@ -174,6 +177,7 @@ display:block;
 display:none;
 }
 #h-button:hover .h_nav{
+position:absolute;
 display:block;
 }
 
@@ -181,6 +185,7 @@ display:block;
 display:none;
 }
 #j-button:hover .j_nav{
+position:absolute;
 display:block;
 }
 
@@ -201,19 +206,19 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 <div class="button">
 <button id="getCode" onclick="getCode();">HTML</button>
 
-<button id="undo-button" onclick="un()">撤销</button>
-<button id="redo-button" onclick="redo()">恢复</button>
+<button id="undo-button" onclick="un()" style=""><p style ="transform: rotateX(180deg) rotateY(180deg) translateY(50px) ">乛</p></button>
+<button id="redo-button" onclick="redo()">乛</button>
 <!-- 
 <button id="open-button" onclick="open()">打开</button>
 <button id="saveas-button" onclick="saveas()">另存为</button>
 -->
-<button id="rf-button" onclick="rf()">清除格式</button>
+<button id="rf-button" onclick="rf()">×</button>
 
-<button id="copy-button" onclick="copy()">复制</button>
+<button id="copy-button" onclick="copy()">++</button>
 ----
  
 <div id="ff-button">
-<button>字体</button>
+<button>A</button>
 <div class="ff_nav">
 <button id="ff1-button" onclick="ff1()">sans-serif</button>
 <button id="ff2-button" onclick="ff2()">serif</button>
@@ -227,7 +232,7 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 
 <div id="fs-button">
-<button >字体大小</button>
+<button >S</button>
 
 <div class="fs_nav">
 <button id="fs1-button" onclick="fs1()">1</button>
@@ -241,71 +246,75 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 </div>
 
 
-<button id="b-button" onclick="b()">加粗</button>
-<button id="i-button" onclick="i()">斜体</button>
-<button id="u-button" onclick="u()">下划线</button>
-<button id="s-button" onclick="s()">删除线</button>
-<button id="super-button" onclick="superscript()">上标</button>
-<button id="sub-button" onclick="subscript()">下标</button>
+<button id="b-button" onclick="b()"><b>A</b></button>
+<button id="i-button" onclick="i()"><i>A</i></button>
+<button id="u-button" onclick="u()"><u>A</u></button>
+<button id="s-button" onclick="s()"><s>A</s></button>
+<button id="super-button" onclick="superscript()"> A<sup>a</sup></button>
+<button id="sub-button" onclick="subscript()">A<sub>a</sub></button>
 
 <div id="fc">
-<button id="fc-button">字体颜色</button>
+<button id="fc-button"><font color="cyan">A</font></button>
 <input type="color" id="fc-thecolor" value=""/>
 <button id="fc-btn" onclick="fc()">设置字体颜色</button>
 </div>
 
 <div id="bc">
-<button id="bc-button">背景颜色</button>
+<button id="bc-button"><div style="background:yellow;padding:0.5rem 1rem">A</div></button>
 <input type="color" id="bc-thecolor" value=""/>
 <button id="bc-btn" onclick="bc()">设置背景颜色</button>
 </div>
-
+<button id="t-button" onclick="creatTab()">⊞</button>
 <!--链接-->
 
 
 <div id="a-button">
-<button id="a1-button">链接</button>
+<button id="a1-button">
+  <fieldset  style="border:solid 1px black;padding:2px -50px;position:relative;top:0;left:0;">
+    <legend>↗</legend>
+  </fieldset>
+</button>
 <button id="a2-button" onclick="a2()">添加链接</button>
 <textarea id="href" placeholder="输入链接" value=" "></textarea>
 </div>
 
-<button id="pre-button" onclick="pre()">代码块</button>
+<button id="pre-button" onclick="pre()"><span style="border:solid;padding:0.5rem 1rem">A</span></button>
 
 
 <!--图片-->
 <div id="img-button">
-<button id="img1-button">图片
+<button id="img1-button"><span style="border:solid;padding:0.5rem 1rem">+</span>
 <input type="file" id="imagefile" value=".">
 </button>
 <button id="img2-button" onclick="img();">插入</button>
 </div>
 
-<button id="iu-button" onclick="iu()">无序列表</button>
-<button id="io-button" onclick="io()">有序列表</button>
+<button id="iu-button" onclick="iu()">• A</button>
+<button id="io-button" onclick="io()">1. A</button>
 
 
 
-<button id="hr-button" onclick="hr()">分割线</button>
-<button id="p-button" onclick="p()">换行</button>
+<button id="hr-button" onclick="hr()">----</button>
+<button id="p-button" onclick="p()">└</button>
 
-<button id="in-button" onclick="indent()">缩进</button>
-<button id="out-button" onclick="outdent()">减少缩进</button>
+<button id="in-button" onclick="indent()">→</button>
+<button id="out-button" onclick="outdent()">←</button>
 
 
 <div id="j-button">
-<button>对齐方式</button>
+<button>≡</button>
 <div class="j_nav">
-<button id="jf-button" onclick="jf()">两端对齐</button>
-<button id="jc-button" onclick="jc()">居中</button>
-<button id="jl-button" onclick="jl()">居左</button>
-<button id="jr-button" onclick="jr()">居右</button>
+<button id="jf-button" onclick="jf()">|≡|</button>
+<button id="jc-button" onclick="jc()">≡</button>
+<button id="jl-button" onclick="jl()">|≡</button>
+<button id="jr-button" onclick="jr()">≡|</button>
 </div>
 </div>
 
 
  
 <div id="h-button">
-<button>标题</button>
+<button>《A》</button>
 <div class="h_nav">
 <button id="h1-button" onclick="h1()">一级标题</button>
 <button id="h2-button" onclick="h2()">二级标题</button>
@@ -317,9 +326,10 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 </div>
 
 
-<!--x-->
+<!--
 <button id="aud-button" onclick="aud()">更改浏览器自动链接行为</button>
-<button id="t-button" onclick="creatTab()">表格</button>
+-->
+
 <button id="inserttext-button" onclick="insertText()">insertText</button>
 
 
