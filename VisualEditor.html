@@ -170,7 +170,19 @@ display:none;
 display:block;
 }
 
+.h_nav{
+display:none;
+}
+#h-button:hover .h_nav{
+display:block;
+}
 
+.j_nav{
+display:none;
+}
+#j-button:hover .j_nav{
+display:block;
+}
 
 
 </style>
@@ -280,19 +292,29 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 <button id="out-button" onclick="outdent()">减少缩进</button>
 
 
-
+<div id="j-button">
+<button>对齐方式</button>
+<div class="j_nav">
 <button id="jf-button" onclick="jf()">两端对齐</button>
 <button id="jc-button" onclick="jc()">居中</button>
 <button id="jl-button" onclick="jl()">居左</button>
 <button id="jr-button" onclick="jr()">居右</button>
+</div>
+</div>
 
+
+ 
+<div id="h-button">
+<button>标题</button>
+<div class="h_nav">
 <button id="h1-button" onclick="h1()">一级标题</button>
 <button id="h2-button" onclick="h2()">二级标题</button>
 <button id="h3-button" onclick="h3()">三级标题</button>
 <button id="h4-button" onclick="h4()">四级标题</button>
 <button id="h5-button" onclick="h5()">五级标题</button>
 <button id="h6-button" onclick="h6()">六级标题</button>
-
+</div>
+</div>
 
 
 <!--x-->
