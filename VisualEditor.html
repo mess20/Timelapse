@@ -156,6 +156,12 @@ display:block;
 #bc:hover #bc-btn{
 display:block;
 }
+.ff_nav{
+display:none;
+}
+#ff-button:hover .ff_nav{
+display:block;
+}
 
 .fs_nav{
 display:none;
@@ -193,7 +199,20 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 <button id="copy-button" onclick="copy()">复制</button>
 ----
-<button id="ff-button" onclick="ff()">字体</button>
+ 
+<div id="ff-button">
+<button>字体</button>
+<div class="ff_nav">
+<button id="ff1-button" onclick="ff1()">sans-serif</button>
+<button id="ff2-button" onclick="ff2()">serif</button>
+<button id="ff3-button" onclick="ff3()">cursive</button>
+<button id="ff4-button" onclick="ff4()">monospace</button>
+<button id="ff5-button" onclick="ff5()">courier</button>
+
+</div>
+</div>
+
+
 
 <div id="fs-button">
 <button >字体大小</button>
@@ -329,6 +348,26 @@ document.execCommand("Copy")
 function ff() {
 document.execCommand("FontName","false",sFontName);
 };
+
+
+
+function ff1() {
+document.execCommand("FontName","false","sans-serif");
+};
+function ff2() {
+document.execCommand("FontName","false","serif");
+};
+function ff3() {
+document.execCommand("FontName","false","cursive");
+};
+function ff4() {
+document.execCommand("FontName","false","monospace");
+};
+function ff5() {
+document.execCommand("FontName","false","courier");
+};
+
+       
 //改变选中区域的字体大小;
 function fs() {
 document.execCommand("FontSize","false","7");
