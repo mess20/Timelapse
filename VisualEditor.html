@@ -23,6 +23,43 @@ height:20%;
 }
 
 
+
+table.tftable {
+text-align:center;
+font-size:100%;
+color:#333333;
+width:100%;
+border-width: 0.5px;
+border-color: rgba(84,100,93,60%);
+border-collapse: collapse;
+}
+table.tftable th {
+font-weight:400;
+font-size:100%;
+background-color:rgb(210,236,228);
+border-width: 1px;
+padding: 15px;
+border-style: solid;
+border-color: white;
+}
+table.tftable tr {
+background-color:#ffffff;
+}
+table.tftable td {
+font-size:100%;
+border-width: 0.5px;
+padding: 15px;
+border-style: solid;
+border-color: rgba(84,100,93,60%);
+}
+
+
+
+
+
+
+
+
 .button{
     display: -webkit-flex;
     display: flex;
@@ -241,7 +278,7 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 <!--x-->
 <button id="aud-button" onclick="aud()">更改浏览器自动链接行为</button>
-<button id="t-button" onclick="t()">列表</button>
+<button id="t-button" onclick="creatTab()">表格</button>
 <button id="inserttext-button" onclick="insertText()">insertText</button>
 
 
@@ -367,7 +404,6 @@ reader.readAsDataURL(file);
 reader.onload=function(e){
 document.execCommand("insertImage",true,this.result)
 }}
-
 //显示代码
 function pre(){
 document.execCommand("FormatBlock",false,"<PRE>")
@@ -467,10 +503,69 @@ function aud() {
 document.execCommand("AutoUrlDetect",true)
 } 
 
-//列表
-function t() {
-document.execCommand("InsertSelectListbox",true,"x.x.v")
-} 
+
+<!--表格-->
+function creatTab(){
+var rows = prompt("rows"," ");
+var cols = prompt("cols"," ");
+
+
+var th = document.createElement('th');
+
+    var tab = '<table id="tfhover" class="tftable" border="1" contenteditable="true">'
+/* 表头*/
+            tab=tab+"<tr>";
+        for(var j=0;j<cols;j++){
+            tab+="<th>"+1+j+"</th>";
+        }
+        tab+="<tr/>";
+    
+
+/* */
+    for(var i=0;i<rows;i++){
+        tab=tab+"<tr>";
+        for(var j=0;j<cols;j++){
+            tab+="<td>"+i+j+"</td>";
+        }
+        tab+="<tr/>";
+    }
+    tab+='</table>';
+
+var html=tab;
+/*来源：https://blog.csdn.net/fesfsefgs/article/details/109540259?utm_medium=distribute.wap_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.wap_blog_relevant_pic&depth_1-utm_source=distribute.wap_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.wap_blog_relevant_pic*/
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+
+            // Preserve the selection
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") {     document.selection.createRange().pasteHTML(html);
+    }
+}
+
+
+
+
+
+    
+
 
 
 <!--目前暂定不用-->
