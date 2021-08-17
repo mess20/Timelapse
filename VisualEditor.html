@@ -6,7 +6,11 @@
 body{
 font-size:100%;
 }
-
+k{
+border-style:none none solid none;
+border-bottom:4px solid cornflowerblue;
+padding-bottom:2px;
+}
 #textarea{
 font-size:200%;
 top:550;
@@ -79,7 +83,8 @@ z-index:1;
 
 
 button,surbutton{
-color:#444;
+background:#f0f8ff;
+color:#555;
 background:white;
 display:inline-block;
 height:5.5rem;
@@ -88,10 +93,13 @@ font-size:4rem;
 border:none;////////
 padding:0;
 outline:none;
+display:inline-block;
 }
-button,surbutton:hover{
+button:hover{
 color:#000;
-background:#f0f8ff;
+}
+surbutton:hover{
+color:#000;
 }
 
 
@@ -250,7 +258,8 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 <button id="redo-button" onclick="redo()">
 ></button>
 
-<button onclick="replace()"> </button>
+<button onclick="replace()">≈</button>
+<button onclick="search()">Q</button>
 
 <!-- 
 <button id="open-button" onclick="open()">打开</button>
@@ -421,6 +430,19 @@ var str = document.getElementById("textarea").innerHTML;
 document.getElementById("textarea").innerHTML= str.replace(new RegExp(A , "g"), B);
 }
 }
+<!--查找-->
+function search() {
+var C = prompt("查找内容","");
+        if(C!=null&&C!=''){
+var str = document.getElementById("textarea").innerHTML;
+var D = "<k>" + C + "</k>";
+document.getElementById("textarea").innerHTML= str.replace(new RegExp(C , "g"), D);
+}
+}
+
+
+
+
 <!--字数统计 -->
 function wordCount() {
 var length = document.getElementById("textarea");
@@ -625,18 +647,6 @@ document.execCommand('RemoveFormat')
 } 
 
 
-<!--不会使用-->
-function open() {
-document.execCommand("Open")
-} ;
-function saveas() {
-document.execCommand("SaveAs",false,"hi")
-};
-//更改自动链接行为
-function aud() {
-document.execCommand("AutoUrlDetect",true)
-} 
-
 
 <!--表格-->
 function creatTab(){
@@ -699,6 +709,19 @@ var sel, range;
 
 
     
+
+
+<!--不会使用-->
+function open() {
+document.execCommand("Open")
+} ;
+function saveas() {
+document.execCommand("SaveAs",false,"hi")
+};
+//更改自动链接行为
+function aud() {
+document.execCommand("AutoUrlDetect",true)
+} 
 
 
 
