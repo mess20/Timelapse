@@ -9,12 +9,16 @@ font-size:100%;
 
 #textarea{
 font-size:200%;
-top:30%;
-right:10%;
-left:10%;
-height:40%;
+top:550;
+right:5%;
+left:5%;
+height:400;
 border:solid 1px black;
-position:absolute;
+background:#F7F8FA;
+position:fixed;
+outline:none;
+padding:2rem 3rem 6rem 3rem;
+overflow:auto;
 }
 #code{
 top:50%;
@@ -24,43 +28,8 @@ height:20%;
 
 
 
-table.tftable {
-text-align:center;
-font-size:100%;
-color:#333333;
-width:100%;
-border-width: 0.5px;
-border-color: rgba(84,100,93,60%);
-border-collapse: collapse;
-}
-table.tftable th {
-font-weight:400;
-font-size:100%;
-background-color:rgb(210,236,228);
-border-width: 1px;
-padding: 15px;
-border-style: solid;
-border-color: white;
-}
-table.tftable tr {
-background-color:#ffffff;
-}
-table.tftable td {
-font-size:100%;
-border-width: 0.5px;
-padding: 15px;
-border-style: solid;
-border-color: rgba(84,100,93,60%);
-}
-
-
-
-
-
-
-
-
-.button{
+#button1{
+border:solid;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
@@ -68,25 +37,60 @@ border-color: rgba(84,100,93,60%);
     -webkit-justify-content: center;
     justify-content: center;
     position:fixed;
-left:10%;
-right:10%;
-top:10%;
-width:80%;
+left:5%;
+right:5%;
+top:100;
 height:auto;
 z-index:1;
-
 }
-button{
-background:#F7F8FA;
-display:inline-block;
-height:6rem;
-width:6rem;
-font-size:200%;
+
+
+#button2{
 border:solid;
-padding:0rem;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    position:fixed;
+left:5%;
+right:5%;
+top:190;
+height:auto;
+z-index:1;
+}
+
+#button3{
+border:solid;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    position:fixed;
+left:5%;
+right:5%;
+top:367;
+height:auto;
+z-index:1;
+}
+
+
+button{
+color:#444;
+background:white;
+display:inline-block;
+height:5.5rem;
+width:6.5rem;
+font-size:4rem;
+border:none;////////
+padding:0;
+outline:none;
 }
 button:hover{
-color:white;
+color:#000;
 background:#f0f8ff;
 }
 
@@ -123,8 +127,8 @@ display:block;
 #imagefile{
 z-index:-1;
 visible:hidden;
-opacity:1;
-filter:alpha(opacity=100);
+opacity:0;
+filter:alpha(opacity=0);
 }
 
 #img2-button{
@@ -190,6 +194,41 @@ display:block;
 }
 
 
+
+table.tftable {
+text-align:center;
+font-size:100%;
+color:#333333;
+width:100%;
+border-width: 0.5px;
+border-color: rgba(84,100,93,60%);
+border-collapse: collapse;
+}
+table.tftable th {
+font-weight:400;
+font-size:100%;
+background-color:rgb(210,236,228);
+border-width: 1px;
+padding: 15px;
+border-style: solid;
+border-color: white;
+}
+table.tftable tr {
+background-color:#ffffff;
+}
+table.tftable td {
+font-size:100%;
+border-width: 0.5px;
+padding: 15px;
+border-style: solid;
+border-color: rgba(84,100,93,60%);
+}
+
+
+
+
+
+
 </style>
 
 <body>
@@ -203,20 +242,32 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 
 
-<div class="button">
-<button id="getCode" onclick="getCode();">HTML</button>
+<div id="button1">
+<button id="getCode" onclick="getCode();" style="font-size:280%">HTML</button>
 
-<button id="undo-button" onclick="un()" style=""><p style ="transform: rotateX(180deg) rotateY(180deg) translateY(50px) ">乛</p></button>
-<button id="redo-button" onclick="redo()">乛</button>
+<button id="undo-button" onclick="un()" style="">
+<</button>
+<button id="redo-button" onclick="redo()">
+></button>
+
+<button onclick="replace()"> = </button>
+
 <!-- 
 <button id="open-button" onclick="open()">打开</button>
 <button id="saveas-button" onclick="saveas()">另存为</button>
 -->
-<button id="rf-button" onclick="rf()">×</button>
 
 <button id="copy-button" onclick="copy()">++</button>
-----
- 
+
+ <button id="rf-button" onclick="rf()">C</button>
+</div>
+
+
+
+
+
+<div id="button2">
+
 <div id="ff-button">
 <button>A</button>
 <div class="ff_nav">
@@ -260,37 +311,56 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 </div>
 
 <div id="bc">
-<button id="bc-button"><div style="background:yellow;padding:0.5rem 1rem">A</div></button>
+<button id="bc-button"><div style="background:yellow;padding:0rem 0.5rem">A</div></button>
 <input type="color" id="bc-thecolor" value=""/>
 <button id="bc-btn" onclick="bc()">设置背景颜色</button>
 </div>
-<button id="t-button" onclick="creatTab()">⊞</button>
+<button id="t-button" onclick="creatTab()" style="font-size:400%">⊞</button>
 <!--链接-->
 
 
 <div id="a-button">
 <button id="a1-button">
-  <fieldset  style="border:solid 1px black;padding:2px -50px;position:relative;top:0;left:0;">
-    <legend>↗</legend>
-  </fieldset>
+∞
 </button>
 <button id="a2-button" onclick="a2()">添加链接</button>
 <textarea id="href" placeholder="输入链接" value=" "></textarea>
 </div>
 
-<button id="pre-button" onclick="pre()"><span style="border:solid;padding:0.5rem 1rem">A</span></button>
+<button id="pre-button" onclick="pre()" style="font-size:295%">< / > </button>
 
 
 <!--图片-->
 <div id="img-button">
-<button id="img1-button"><span style="border:solid;padding:0.5rem 1rem">+</span>
+<button id="img1-button">
+<span style="border:solid;padding:0rem 1.4rem">+</span>
 <input type="file" id="imagefile" value=".">
 </button>
 <button id="img2-button" onclick="img();">插入</button>
 </div>
+</div>
 
-<button id="iu-button" onclick="iu()">• A</button>
-<button id="io-button" onclick="io()">1. A</button>
+
+
+<div id="button3">
+
+<button id="iu-button" onclick="iu()" style="font-size:300%">• A</button>
+<button id="io-button" onclick="io()" style="font-size:300%">1. A</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -304,17 +374,17 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 <div id="j-button">
 <button>≡</button>
 <div class="j_nav">
-<button id="jf-button" onclick="jf()">|≡|</button>
-<button id="jc-button" onclick="jc()">≡</button>
-<button id="jl-button" onclick="jl()">|≡</button>
-<button id="jr-button" onclick="jr()">≡|</button>
+<button id="jf-button" onclick="jf()">l=l</button>
+<button id="jc-button" onclick="jc()">=</button>
+<button id="jl-button" onclick="jl()">l=</button>
+<button id="jr-button" onclick="jr()">=l</button>
 </div>
 </div>
 
 
  
 <div id="h-button">
-<button>《A》</button>
+<button style=";font-size:320%">«»</button>
 <div class="h_nav">
 <button id="h1-button" onclick="h1()">一级标题</button>
 <button id="h2-button" onclick="h2()">二级标题</button>
@@ -330,7 +400,8 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 <button id="aud-button" onclick="aud()">更改浏览器自动链接行为</button>
 -->
 
-<button id="inserttext-button" onclick="insertText()">insertText</button>
+<button id="inserttext-button" onclick="insertText()" style="font-size:300%">insertText</button>
+</div>
 
 
 </div>
@@ -339,8 +410,6 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 </textarea>
 
 
-<button onclick="replace()">替换</button>
-<div id="output1">替换结果</div>
 <div id="output2">字数</div>
 
 </body>
