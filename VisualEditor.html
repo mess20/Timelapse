@@ -13,27 +13,57 @@ padding-bottom:2px;
 }
 #textarea{
 font-size:200%;
-top:550;
+top:500;
 right:5%;
 left:5%;
-height:400;
-border:solid 1px black;
+height:450;
 background:white;
 position:fixed;
 outline:none;
-padding:6rem 3rem 6rem 3rem;
+padding:4rem 3rem 6rem 3rem;
 overflow:auto;
-}
-#code{
-top:50%;
-left:10%;
-height:20%;
+border-top: 1px rgba(128,128,128,1.00) solid;
+border-right: 0px rgba(0,84,138,1.00) solid;
+border-bottom: 0px rgba(0,84,138,1.00) solid;
+border-left: 0px rgba(0,84,138,1.00) solid;
+resize: vertical;
+box-shadow: 5px 5px 20px rgba(128,128,128,0.7);
 }
 
+#getCode-button:hover #code{
+display:block;
+}
+
+#code{
+display:none;
+font-size:100%;
+top:500;
+left:5%;
+width:882;
+height:612;
+border:solid 1px black;
+position:fixed;
+outline:none;
+padding:4rem 3rem 6rem 3rem;
+overflow:auto;
+z-index:1;
+}
+
+.output{
+font-size:200%;
+position:fixed;
+top:1130;
+right:50;
+}
+#output{
+display:inline-block;
+}
 
 
 #button1{
-border:solid;
+border-left:solid;
+border-right:solid;
+border-top:solid;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
@@ -43,14 +73,15 @@ border:solid;
     position:fixed;
 left:5%;
 right:5%;
-top:0;
+top:55;
 height:auto;
-z-index:1;
+z-index:;
 }
 
 
 #button2{
-border:solid;
+border-left:solid;
+border-right:solid;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
@@ -60,13 +91,15 @@ border:solid;
     position:fixed;
 left:5%;
 right:5%;
-top:100;
+top:145;
 height:auto;
-z-index:1;
+z-index:4;
 }
 
 #button3{
-border:solid;
+border-left:solid;
+border-right:solid;
+border-bottom:solid;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
@@ -76,9 +109,9 @@ border:solid;
     position:fixed;
 left:5%;
 right:5%;
-top:300;
+top:323;
 height:auto;
-z-index:1;
+z-index:2;
 }
 
 
@@ -90,9 +123,12 @@ display:flex;
 height:5.5rem;
 width:6.5rem;
 font-size:4rem;
-border:none;
-padding:0;
+border:solid;
+padding:0 auto;
 outline:none;
+text-align:center;
+align-items:center;
+line-height:5.5rem
 }
 button:hover{
 color:#000;
@@ -104,7 +140,7 @@ color:#000;
 
 
 #getCode{
-order:1;
+
 }
 #href{
 display:none;
@@ -146,11 +182,16 @@ top:30%;
 left:80%;
 }
 
-#search-button:hover #searched-button{
-display:block;
+#search-button{
 }
 #searched-button{
 display:none;
+}
+#search-button:hover #searched-button{
+display:block;
+position:fixed;
+top:1%;
+right:1%;
 }
 #fc-thecolor,#bc-thecolor,#fc-btn,#bc-btn{
 display:none;
@@ -181,16 +222,18 @@ top:0%;
 right:0%;
 left:0%;
 display:block;
-background:grey;
-padding:10rem;
-height:30rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:0.75;
+padding:5rem 10rem;
+height:400px;
 }
 #ff-nav button{
-font-size:3rem;
-display:inline-block;
-height:5rem;
+font-size:2.9rem;
+display:block;
+height:4.6rem;
 width:auto;
-background:grey;
+background:transparent;
 }
 #fs-nav{
 display:none;
@@ -198,6 +241,25 @@ display:none;
 #fs-button:hover #fs-nav{
 position:fixed;
 display:block;
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:block;
+color:black;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+opacity:0.75;
+background-size:cover;
+padding:14rem 5rem;
+height:100px;
+}
+#fs-nav button{
+font-size:4rem;
+display:inline-block;
+height:6rem;
+width:6rem;
+background:transparent;
 }
 
 #h-nav{
@@ -255,27 +317,35 @@ border-color: rgba(84,100,93,60%);
 <body>
 
 
-<div id="textarea" contenteditable="true" onkeyup="wordCount()">文本1文本2文本3文本4文本5文本6
-swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号i西四环新手机号现金转文字很危险混血儿我就我自己
-我等会i动物搞笑独孤信度想问一下我想跌<b>6171hxxhhx</b>xdxdhwdihxdih<font color="red">wdwdxw第五个训诂学额wjhw</font>邪恶u邪恶也想过点我头像东莞阳光网下一位也想问下
+<div id="textarea" contenteditable="true" onkeyup="wordCount()">
+</div>
+
+<div class="output">words:
+<div id="output"></div>
 </div>
 
 
-
-
 <div id="button1">
-<button id="getCode" onclick="getCode();" style="font-size:400%">HTML</button>
+<button id="getCode-button" onclick="getCode();" style="font-size:200%;align-items:center;line-height:5.5rem">HTML
+
+<textarea id="code">
+</textarea>
+</button>
 
 <button id="undo-button" onclick="un()" style="">
-<</button>
+<
+</button>
 <button id="redo-button" onclick="redo()">
-></button>
+>
+</button>
 
 <button onclick="replace()">≒</button>
-<surbutton id="search-button" onclick="search()">⎋
+
+<div id="search-button">
+<surbutton onclick="search()">⎋</surbutton>
 <button onclick="searched()" id="searched-button">完成
 </button>
-</surbutton>
+</div>
 
 <!-- 
 <button id="open-button" onclick="open()">打开</button>
@@ -286,6 +356,8 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 
 <button id="copy-button" onclick="copy()">⧉</button>
+
+<button id="inserttext-button" onclick="insertText()" style="font-size:300%">insertText</button>
 </div>
 
  
@@ -320,8 +392,10 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 <button id="i-button" onclick="i()"><i>A</i></button>
 <button id="u-button" onclick="u()"><u>A</u></button>
 <button id="s-button" onclick="s()"><s>A</s></button>
-<button id="super-button" onclick="superscript()"> A<sup>a</sup></button>
-<button id="sub-button" onclick="subscript()">A<sub>a</sub></button>
+
+<button id="super-button" onclick="superscript()"> A<super style="display:inline-block;position:absolute;top:-20px;right:17%;zoom:0.9;">a</super></button>
+
+<button id="sub-button" onclick="subscript()">A<sub style="display:inline;line-height:5.5rem;vertical-align:sub">a</sub></button>
 
 <div id="fc">
 <button id="fc-button"><font color="cyan">A</font></button>
@@ -334,7 +408,24 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 <input type="color" id="bc-thecolor" value=""/>
 <button id="bc-btn" onclick="bc()">设置为背景颜色</button>
 </div>
+
+
+
+
+
+<button id="iu-button" onclick="iu()" >≔</button>
+<button id="io-button" onclick="io()" style="font-family:serif">I</button>
+
+
 <button id="t-button" onclick="creatTab()" style="font-size:400%">▦</button>
+
+
+
+
+
+
+
+
 <!--链接-->
 
 
@@ -351,27 +442,28 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 <!--图片-->
 <div id="img-button">
-<button id="img1-button">
+<button id="img1-button" /*style="padding:0rem 0rem 0 1.1rem"*/>    
 ￼
 <input type="file" id="imagefile" value=".">
 </button>
 <button id="img2-button" onclick="img();">插入</button>
 </div>
+
+
+
+
 </div>
 
 
 
 <div id="button3">
 
-<button id="iu-button" onclick="iu()" >≔</button>
-<button id="io-button" onclick="io()" style="font-family:serif">I</button>
+<button id="mark-button" onclick="mark()">mark</button>
 
+<button id="in-button" onclick="indent()">⇥</button>
+<button id="out-button" onclick="outdent()">⇤</button>
 
-
-
-
-
-
+<button id="p-button" onclick="p()">↩</button>
 
 
 
@@ -407,27 +499,19 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 </div>
 </surbutton>
 
-<button id="p-button" onclick="p()">↩</button>
-
-<button id="in-button" onclick="indent()">⇥</button>
-<button id="out-button" onclick="outdent()">⇤</button>
-
 
 <!--
 <button id="aud-button" onclick="aud()">更改浏览器自动链接行为</button>
 -->
 
-<button id="inserttext-button" onclick="insertText()" style="font-size:300%">insertText</button>
-</div>
-
 
 </div>
 
-<textarea id="code">
-</textarea>
+
+</div>
 
 
-<div id="output2">字数</div>
+
 
 </body>
 
@@ -435,6 +519,12 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 
 <script>
+
+<!--锚点 -->
+function mark() {
+document.execCommand('CreateBookmark',true,'abcdef');
+};
+
 <!--替换-->
 function replace() {
 var A = prompt("替换内容","");
@@ -451,9 +541,9 @@ var C = prompt("查找内容","");
 var str = document.getElementById("textarea").innerHTML;
 var D = "<k>" + C + "</k>";
 document.getElementById("textarea").innerHTML= str.replace(new RegExp(C , "g"), D);
-function searched() {
-document.getElementById("textarea").innerHTML= str.replace(new RegExp(D , "g"), C);
-}
+
+document.getElementById("searched-button").addEventListener('click',function searched() {
+document.getElementById("textarea").innerHTML= str.replace(new RegExp(D , "g"), C);})
 
 }
 }
@@ -464,11 +554,11 @@ document.getElementById("textarea").innerHTML= str.replace(new RegExp(D , "g"), 
 <!--字数统计 -->
 function wordCount() {
 var length = document.getElementById("textarea");
-document.getElementById("output2").innerHTML= length.innerHTML.length;
+document.getElementById("output").innerHTML= length.innerHTML.length;
 }
 
 
-
+<!-- 获取html代码-->
 function getCode() {
 var code = document.getElementById("textarea").innerHTML;
 document.getElementById("code").innerText = code;
