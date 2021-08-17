@@ -146,7 +146,12 @@ top:30%;
 left:80%;
 }
 
-
+#search-button:hover #searched-button{
+display:block;
+}
+#searched-button{
+display:none;
+}
 #fc-thecolor,#bc-thecolor,#fc-btn,#bc-btn{
 display:none;
 }
@@ -267,7 +272,10 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 ></button>
 
 <button onclick="replace()">≒</button>
-<button onclick="search()">⎋</button>
+<surbutton id="search-button" onclick="search()">⎋
+<button onclick="searched()" id="searched-button">完成
+</button>
+</surbutton>
 
 <!-- 
 <button id="open-button" onclick="open()">打开</button>
@@ -275,10 +283,10 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 -->
 
 <button id="rf-button" onclick="rf()">₡ </button>
-</div>
 
 
 <button id="copy-button" onclick="copy()">⧉</button>
+</div>
 
  
 
@@ -443,6 +451,10 @@ var C = prompt("查找内容","");
 var str = document.getElementById("textarea").innerHTML;
 var D = "<k>" + C + "</k>";
 document.getElementById("textarea").innerHTML= str.replace(new RegExp(C , "g"), D);
+function searched() {
+document.getElementById("textarea").innerHTML= str.replace(new RegExp(D , "g"), C);
+}
+
 }
 }
 
