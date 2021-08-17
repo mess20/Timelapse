@@ -78,7 +78,7 @@ z-index:1;
 }
 
 
-button{
+button,surbutton{
 color:#444;
 background:white;
 display:inline-block;
@@ -89,7 +89,7 @@ border:none;////////
 padding:0;
 outline:none;
 }
-button:hover{
+button,surbutton:hover{
 color:#000;
 background:#f0f8ff;
 }
@@ -161,34 +161,34 @@ display:block;
 position:fixed;
 display:block;
 }
-.ff_nav{
+#ff_nav{
 display:none;
 }
-#ff-button:hover .ff_nav{
+#ff-button:hover #ff-nav{
 position:absolute;
 display:block;
 }
 
-.fs_nav{
+#fs-nav{
 display:none;
 }
-#fs-button:hover .fs_nav{
+#fs-button:hover .fs-nav{
 position:absolute;
 display:block;
 }
 
-.h_nav{
+#h-nav{
 display:none;
 }
-#h-button:hover .h_nav{
+#h-button:hover #h-nav{
 position:absolute;
 display:block;
 }
 
-.j_nav{
+#j-nav{
 display:none;
 }
-#j-button:hover .j_nav{
+#j-button:hover #j-nav{
 position:absolute;
 display:block;
 }
@@ -268,24 +268,21 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 <div id="button2">
 
-<div id="ff-button">
-<button>A</button>
-<div class="ff_nav">
+<surbutton id="ff-button">A
+<div id="ff-nav">
 <button id="ff1-button" onclick="ff1()">sans-serif</button>
 <button id="ff2-button" onclick="ff2()">serif</button>
 <button id="ff3-button" onclick="ff3()">cursive</button>
 <button id="ff4-button" onclick="ff4()">monospace</button>
 <button id="ff5-button" onclick="ff5()">courier</button>
-
-</div>
-</div>
+</div></surbutton>
 
 
 
-<div id="fs-button">
-<button >S</button>
 
-<div class="fs_nav">
+<surbutton id="fs-button">S
+
+<div id="fs-nav">
 <button id="fs1-button" onclick="fs1()">1</button>
 <button id="fs2-button" onclick="fs2()">2</button>
 <button id="fs3-button" onclick="fs3()">3</button>
@@ -294,7 +291,7 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 <button id="fs6-button" onclick="fs6()">6</button>
 <button id="fs7-button" onclick="fs7()">7</button>
 </div>
-</div>
+</surbutton>
 
 
 <button id="b-button" onclick="b()"><b>A</b></button>
@@ -373,7 +370,7 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
 
 <div id="j-button">
 <button>≡</button>
-<div class="j_nav">
+<div id="j-nav">
 <button id="jf-button" onclick="jf()">l=l</button>
 <button id="jc-button" onclick="jc()">=</button>
 <button id="jl-button" onclick="jl()">l=</button>
@@ -385,7 +382,7 @@ swswhbwbyxyurhuedjAAAAAAAAAAAAAA一梦江湖风云录，孙武湖和自信色号
  
 <div id="h-button">
 <button style=";font-size:320%">«»</button>
-<div class="h_nav">
+<div id="h-nav">
 <button id="h1-button" onclick="h1()">一级标题</button>
 <button id="h2-button" onclick="h2()">二级标题</button>
 <button id="h3-button" onclick="h3()">三级标题</button>
