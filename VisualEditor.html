@@ -369,7 +369,7 @@ border-color: rgba(84,100,93,60%);
 
 
 
-<ol id="ul">
+<ol id="ol">
 <li style="display:none;"> <a>click</a></li>
 <li><a> ygeyseygseesuzeyfuhweuhzwuuhuhezuhe zuhuhuhhuhuuuuuuhuhuhuhu</a></li>
 </ol>
@@ -586,8 +586,9 @@ border-color: rgba(84,100,93,60%);
 <script>
 
 function bookmark() {
-var n = prompt("锚点","");
-        if(n!=null&&n!=''){
+var n = prompt("锚点名","");
+var c = prompt("参考文献","");
+        if(n!=null&&n!='&&c!=null&&c!='){
 var content = window.getSelection().toString();
 var html='<element id="'+ n + '">' + content + '</element>';
 var sel, range;
@@ -615,9 +616,9 @@ var sel, range;
     };
 
 var node=document.createElement("a");
-var textnode=document.createTextNode(n);
+var textnode=document.createTextNode(c);
 node.appendChild(textnode);
-document.getElementById("ul").appendChild(node);
+document.getElementById("ol").appendChild(node);
 node.href = "#"+n;
 
 var nodeList = document.getElementsByTagName('a');
