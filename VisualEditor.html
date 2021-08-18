@@ -609,9 +609,9 @@ border-color: rgba(84,100,93,60%);
 </surbutton>
 
 
-<!--
-<button id="aud-button" onclick="aud()">更改浏览器自动链接行为</button>
--->
+
+<button id="aud-button" onclick="aud()">更改自动链接行为</button>
+
 
 
 </div>
@@ -1017,10 +1017,12 @@ var sel, range;
     }
 }
 
-
-
-
-
+//更改自动链接行为（伪）
+function aud() {
+document.getElementsByTagName("a").style.color="black";
+document.getElementsByTagName("a").style.text-decoration="none";
+document.getElementsByTagName("a").style.border-bottom="none";
+} 
     
 
 
