@@ -11,6 +11,54 @@ border-style:none none solid none;
 border-bottom:4px solid cornflowerblue;
 padding-bottom:2px;
 }
+
+u{
+padding:0.1rem 0rem;
+text-decoration:none;
+border-bottom:solid 1px #555;
+}
+u:hover{
+border-bottom:solid 1px #6483B0;
+}
+ol{
+margin:0 1.5rem 0 0;
+width:85%;
+padding:0 0 0 2rem;
+display:flex;
+flex-direction:column;
+}
+ol a{
+font-size:0.9rem;
+display:block;
+text-align:justify; 
+text-justify:inter-ideograph;
+padding:0rem 0;
+margin:0.3rem 0;
+color:black;
+text-decoration:none;
+outline:none;
+user-select: none;
+}
+ol a:hover,a:active,a:visited,a:link,a:focus{
+-webkit-tap-highlight-color:rgba(0,0,255,0);
+tap-highlight-color:rgba(0,0,255,0);
+}
+ol a:link{
+}
+ol li:hover{
+color:#6483B0;
+}
+ol a:hover{
+color:#6483B0;
+}
+ol a:active{
+}
+ol a:visited{
+}
+
+
+
+
 #textarea{
 font-size:200%;
 top:500;
@@ -318,6 +366,14 @@ border-color: rgba(84,100,93,60%);
 
 
 <div id="textarea" contenteditable="true" onkeyup="wordCount()">
+
+
+
+<ol id="ul">
+<li style="display:none;"> <a>click</a></li>
+<li><a> ygeyseygseesuzeyfuhweuhzwuuhuhezuhe zuhuhuhhuhuuuuuuhuhuhuhu</a></li>
+</ol>
+
 </div>
 
 <div class="output">words:
@@ -460,6 +516,11 @@ border-color: rgba(84,100,93,60%);
 
 <button id="mark-button" onclick="mark()">mark</button>
 
+
+
+
+
+
 <button id="in-button" onclick="indent()">⇥</button>
 <button id="out-button" onclick="outdent()">⇤</button>
 
@@ -518,12 +579,62 @@ border-color: rgba(84,100,93,60%);
 
 
 
+
+
+
+<!--添加参考文献 -->
 <script>
 
-<!--锚点 -->
-function mark() {
-document.execCommand('CreateBookmark',true,'abcdef');
-};
+function bookmark() {
+var n = prompt("锚点","");
+        if(n!=null&&n!=''){
+var content = window.getSelection().toString();
+var html='<element id="'+ n + '">' + content + '</element>';
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") {     document.selection.createRange().pasteHTML(html);
+    };
+
+var node=document.createElement("a");
+var textnode=document.createTextNode(n);
+node.appendChild(textnode);
+document.getElementById("ul").appendChild(node);
+node.href = "#"+n;
+
+var nodeList = document.getElementsByTagName('a');
+var arrNodes = Array.prototype.slice.call(nodeList);  
+var order=arrNodes.indexOf(node);
+
+var e = node.outerHTML;
+node.outerHTML= "<li>" + e +"</li>";
+
+var e = document.getElementById(n).innerHTML;
+document.getElementById(n).innerHTML= e + "<span style='color:#6483B0;vertical-align:super;margin:0 0.2rem 0 0rem;zoom:0.5'>" + order + "</span>";
+}}
+</script>
+
+<script>
+
+<!-- -->
 
 <!--替换-->
 function replace() {
