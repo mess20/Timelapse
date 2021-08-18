@@ -447,8 +447,9 @@ border-color: rgba(84,100,93,60%);
 
 <!-- 
 <button id="open-button" onclick="open()">打开</button>
-<button id="saveas-button" onclick="saveas()">另存为</button>
 -->
+<button id="saveas-button" onclick="saveas()">另存为</button>
+
 
 <button id="rf-button" onclick="rf()">₡ </button>
 
@@ -1037,7 +1038,7 @@ function open() {
 document.execCommand("Open")
 } ;
 function saveas() {
-document.execCommand("SaveAs",false,"hi")
+document.execCommand("SaveAs","hi.txt")
 };
 //更改自动链接行为
 //function aud() {
