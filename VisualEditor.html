@@ -327,7 +327,40 @@ display:block;
 }
 
 
-
+.finish-tip{
+position:fixed;
+right:0;
+left:0;
+bottom:10%;
+width:10rem;
+margin:0 auto;
+padding: 16px 32px;
+text-align:center;
+font-size:100%;
+ background-color:#F7F8FA;
+ color: black;
+ border-radius: 50px;
+z-index:5
+}
+.do-tip{
+position:fixed;
+top:10%;
+width:auto;
+margin:0 auto;
+padding: 16px 32px;
+text-align:center;
+font-size:100%;
+ background-color:#FA8072;
+ color: #F0F8FF;
+ border-radius: 50px;
+z-index:5
+}
+.sky-container{
+display:flex;
+justify-content: center;
+width:100%;
+left:0;
+}
 table.tftable {
 text-align:center;
 font-size:100%;
@@ -357,7 +390,12 @@ border-style: solid;
 border-color: rgba(84,100,93,60%);
 }
 
-
+#mark2-button{
+display:none;
+}
+#mark-tip{
+display:none;
+}
 
 
 </style>
@@ -514,9 +552,18 @@ border-color: rgba(84,100,93,60%);
 
 <div id="button3">
 
+<button id="r-button" onclick="reference()">reference</button>
+
 <button id="mark-button" onclick="bookmark()">mark</button>
+<button id="mark2-button">添加链接</button>
 
 
+<div class="sky-container">
+<div class="finish-tip">已完成</div>
+
+<div id="mark-tip" class="do-tip">请选择合适文本位置添加对应链接</div>
+
+</div>
 
 
 
@@ -585,10 +632,10 @@ border-color: rgba(84,100,93,60%);
 <!--添加参考文献 -->
 <script>
 
-function bookmark() {
+function reference() {
 var n = prompt("锚点名","");
 var c = prompt("参考文献","");
-        if(n!=null&&n!='&&c!=null&&c!='){
+        if(n!=null&&c!=null){
 var content = window.getSelection().toString();
 var html='<element id="'+ n + '">' + content + '</element>';
 var sel, range;
@@ -635,7 +682,52 @@ document.getElementById(n).innerHTML= e + "<span style='color:#6483B0;vertical-a
 
 <script>
 
-<!-- -->
+<!-- 书签（锚点链接）-->
+
+function bookmark() {
+var n = prompt("填写锚点名称","");
+        if(n!=null&&n!=''){
+var content = window.getSelection().toString();
+var html='<element id="'+ n + '">' + content + '</element>';
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") {     
+document.selection.createRange().pasteHTML(html);
+    };
+document.getElementById("mark2-button").style.display="block";
+document.getElementById("mark-tip").style.display="block";
+document.getElementById("mark2-button").addEventListener("click", function(){
+document.getElementById("mark-tip").style.display="none";
+document.execCommand('CreateLink', true, "#"+n);
+document.getElementById("mark2-button").style.display="none";
+});
+
+
+
+}}
+
+
+
+
 
 <!--替换-->
 function replace() {
@@ -885,7 +977,7 @@ var th = document.createElement('th');
         tab+="<tr/>";
     
 
-/* */
+/*主体*/
     for(var i=0;i<rows;i++){
         tab=tab+"<tr>";
         for(var j=0;j<cols;j++){
