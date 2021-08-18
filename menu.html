@@ -3,25 +3,25 @@
 
 /*弹出式菜单*/
 a.menuLink_1{
-width: 120px; 
-height: 120px; 
+width: 150px; 
+height: 150px; 
 border-radius: 50%;
 position: fixed;
-right:5rem;
-bottom:20rem;
+right:6.6rem;
+bottom:24rem;
 -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 color: black;
-font-size:5rem;
+font-size:4.5rem;
+font-weight:900;
 display:block;
-align-items: center;
-line-height:120px;
 text-align:center;
 font-weight:400;
 text-decoration:none;
 background:white;
 z-index:4;
+zoom:0.8
 }
 .menuLink_2 {
 width: 120px; 
@@ -45,27 +45,27 @@ z-index:4;
 }
 
 
-ul{
-list-style-type: none;
-left: 0px;
-margin: 0;
-padding: 4rem 0rem 1.5rem 0rem;
-transition: all 2s;
-}
-#menu{
-padding:0 2rem;
+#menu,#menu{
+font-size:2.7rem;
+padding:0 0rem;
 overflow: auto; 
 background-color: rgba(255,255,255,100%);
-right:60%;
+width:50%;
 display: none;
 top:0px;
 height:100%;
-width: 40%;
 position: fixed;
 z-index: 3;
 -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
 -moz-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
 box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+}
+ul{
+list-style-type: none;
+margin: 0;
+padding: 2.5rem 0rem 0rem 0rem;
+transition: all 2s;
+left: 0px;
 }
 li{
 list-style-type: none;
@@ -83,7 +83,7 @@ text-decoration:none;
 }
 li a {
   display: block;
-  padding: 1.8rem 4.5rem;
+  padding:0.8rem 7rem;
 }
 li a:link {
 }
@@ -94,22 +94,34 @@ background:rgba(1,102,255,30%);
 }
 li a:active {
 }
+ul summary{
+padding:1.2rem 3.4rem;
+outline:none;
+}
 
+ul summary:hover{
+background:rgba(1,102,255,30%);
+}
 </style>
 
 
 
-<a href="#" class="menuLink_1" style="transform: rotate(-90deg);">» </a>     
+<a href="#" class="menuLink_1">︽ </a>     
 
 <a href="menu.html" class="menuLink_2">+</a>
 
 
 <ul id="menu" >
-<ul> hddwzvgv
+<ul> 
+<details>
+<summary>
+hddwzvg
+</summary>
 <li><a href="#DOORS" >DOORS3</a></li>
 <li><a href="#header" >header3</a></li>
 <li><a href="#jaja" ><marquee hspace=0 behavior=slide scrollamount=8 scrolldelay=0>
 hder3</marquee></a></li>
+</details>
 </ul>
 
 <ul>
@@ -117,8 +129,6 @@ hder3</marquee></a></li>
 <summary>
 wuzwyyzgt
 </summary>
-
-
 <li><a href="#jaja" >ahbhs</a></li>
 <li><a href="#jaja" >ahbhs</a></li>
 <li><a href="#jaja" >ahbhs</a></li>
