@@ -231,7 +231,7 @@ left:5%;
 right:5%;
 top:323;
 height:auto;
-z-index:6;
+z-index:2;
 }
 
 
@@ -263,6 +263,9 @@ color:#000;
 /*工具栏*/
 #tool-nav{
 display:none;
+}
+#tool-button{
+z-index:10;
 }
 #tool-button:hover #tool-nav{
 position:fixed;
@@ -524,9 +527,10 @@ height:200px;
 #self-nav button{
 z-index:10;
 font-size:2rem;
-position: absolute;
-             top: 20px;
-             left: 100px;
+position: absolute;           
+top: 20px;            
+left: 100px;
+width:auto;
 display:inline-block;
 background:transparent;
 }
@@ -556,6 +560,7 @@ font-size:100%;
  color: black;
  border-radius: 50px;
 z-index:1000;
+zoom:1.8;
 }
 .do-tip{
 display:none;
@@ -570,6 +575,22 @@ font-size:100%;
  color: #F0F8FF;
  border-radius: 50px;
 z-index:100;
+zoom:1.8;
+}
+.notice-tip{
+display:none;
+position:fixed;
+top:10%;
+width:auto;
+margin:0 auto;
+padding: 16px 32px;
+text-align:center;
+font-size:100%;
+ background-color:#FA8072;
+ color: #F0F8FF;
+ border-radius: 50px;
+z-index:100;
+zoom:1.8;
 }
 table.tftable {
 text-align:center;
@@ -604,9 +625,14 @@ border-color: rgba(84,100,93,60%);
 
 </style>
 </head>
+
+
+
+
+
+
+
 <body>
-
-
 <div id="textarea" contenteditable="true" onkeyup="wordCount()">
 <p>   
 <br>
@@ -616,7 +642,6 @@ border-color: rgba(84,100,93,60%);
 <ol id="ol">
 <li style="display:none;"> <a></a></li>
 </ol>
-
 </div>
 
 <div class="output">words:
@@ -624,24 +649,7 @@ border-color: rgba(84,100,93,60%);
 </div>
 
 
-<div id="button1">
-
-
-
-
- 
-
-
 <div id="button2">
-
-
-
-
-<button id="getCode-button" onclick="getCode();" style="font-size:200%;align-items:center;line-height:5.5rem">HTML
-<textarea id="code">
-</textarea>
-</button>
-
 
 
 <surbutton id="tool-button">功能键
@@ -672,7 +680,14 @@ border-color: rgba(84,100,93,60%);
 
 
 <button id="inserttext-button" onclick="insertText()" style="font-size:300%">insertText</button>
-</div>
+
+
+
+<button id="getCode-button" onclick="getCode();" style="font-size:200%;align-items:center;line-height:5.5rem">HTML
+<textarea id="code">
+</textarea>
+</button>
+
 
 
 
@@ -736,23 +751,15 @@ border-color: rgba(84,100,93,60%);
 
 
 
-
-<button id="iu-button" onclick="iu()" >≔</button>
-<button id="io-button" onclick="io()" style="font-family:serif">I</button>
-
 <!--插入-->
 <button id="t-button" onclick="creatTab()" style="font-size:400%">▦</button>
 
 <!--链接-->
 
+<button id="a-button" onclick="a()">∽</button>
 
-<div id="a-button">
-<button id="a1-button">
-∽
-</button>
-<button id="a2-button" onclick="a2()">添加链接</button>
-<textarea id="href" placeholder="输入链接" value=" "></textarea>
-</div>
+
+
 
 <button id="pre-button" onclick="pre()">&lt;/&gt;</button>
 
@@ -766,6 +773,25 @@ border-color: rgba(84,100,93,60%);
 <button id="img2-button" onclick="img();">插入</button>
 </div>
 
+//注释
+//参考文献
+<button id="r-button" onclick="reference()">[1]</button>
+<!--锚点-->
+<button id="mark-button" onclick="bookmark()">
+<svg t="1629391119689" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="50" height="50"><path d="M977.322163 465.530193a46.539151 46.539151 0 0 0-46.539151 46.53915 418.852355 418.852355 0 0 1-372.313205 416.199624V366.355263a186.156602 186.156602 0 1 0-93.078301 0v561.913704A418.852355 418.852355 0 0 1 93.078301 512.069343a46.539151 46.539151 0 0 0-93.078301 0 511.930657 511.930657 0 0 0 1023.861313 0 46.539151 46.539151 0 0 0-46.53915-46.53915zM418.852355 186.295289a93.078301 93.078301 0 1 1 93.078302 93.078301 93.078301 93.078301 0 0 1-93.078302-93.078301z" p-id="2027" fill="#555555"></path></svg>
+</button>
+<button id="mark2-button">添加链接</button>
+
+
+<div class="sky-container">
+<div class="finish-tip">已完成</div>
+
+<div id="mark-tip" class="do-tip">请选择合适文本位置添加对应链接</div>
+<div id="aud-tip" class="notice-tip">请注意，取消“取消自动链接行为”时，链接样式将不会保存。</div>
+
+</div>
+
+
 
 
 
@@ -775,22 +801,12 @@ border-color: rgba(84,100,93,60%);
 
 <div id="button3">
 
-<button id="r-button" onclick="reference()">reference</button>
-<!--锚点-->
-<button id="mark-button" onclick="bookmark()">mark</button>
-<button id="mark2-button">添加链接</button>
 
+<!--排版-->
 
-<div class="sky-container">
-<div class="finish-tip">已完成</div>
-
-<div id="mark-tip" class="do-tip">请选择合适文本位置添加对应链接</div>
-
-</div>
-
-
-
-
+<button id="iu-button" onclick="iu()" >≔</button>
+<button id="io-button" onclick="io()" style="font-family:serif">I</button>
+<!--段落-->
 <button id="in-button" onclick="indent()">⇥</button>
 <button id="out-button" onclick="outdent()">⇤</button>
 
@@ -807,8 +823,6 @@ border-color: rgba(84,100,93,60%);
 </div>
 </surbutton>
 
-
-
 <surbutton id="h-button">«»
 <div id="h-nav">
 <button id="h1-button" onclick="h1()">一级标题</button>
@@ -820,25 +834,21 @@ border-color: rgba(84,100,93,60%);
 </div>
 </surbutton>
 
-
-
 <surbutton id="self-button">自定义
-<div id="self-nav">
-<button id="aud-button" onclick="aud()">更改自动链接行为</button>
 
+<div id="self-nav">
+<button id="aud-button">更改自动链接行为</button>
 <div class="kaiguan" id="self-kaiguan">
 <div class="bai" id="self-anniu"></div>
 </div>
-
-
 </div>
+
 </surbutton>
 
 
 </div>
 
 
-</div>
 
 
 
@@ -938,12 +948,14 @@ var sel, range;
     } else if (document.selection && document.selection.type != "Control") {     
 document.selection.createRange().pasteHTML(html);
     };
+document.getElementById("button2").style.zIndex="0";
 document.getElementById("mark2-button").style.display="block";
 document.getElementById("mark-tip").style.display="block";
 document.getElementById("mark2-button").addEventListener("click", function(){
 document.getElementById("mark-tip").style.display="none";
 document.execCommand('CreateLink', true, "#"+n);
 document.getElementById("mark2-button").style.display="none";
+document.getElementById("button2").style.zIndex="4"
 });
 
 
@@ -998,7 +1010,7 @@ document.getElementById("code").innerText = code;
 function copy() {
 document.execCommand("Copy")
 };
-//改变选中区域的字体;
+//字体;
 function ff() {
 document.execCommand("FontName","false",sFontName);
 };
@@ -1022,7 +1034,7 @@ document.execCommand("FontName","false","courier");
 };
 
        
-//改变选中区域的字体大小;
+//字体大小;
 function fs() {
 document.execCommand("FontSize","false","7");
 };
@@ -1083,10 +1095,12 @@ var color =document.getElementById("bc-thecolor").value;
 document.execCommand("BackColor","false",color);
 };
 //链接
-function a2() {
-var linkURL = document.getElementById("href").value;
-document.execCommand('CreateLink', true, linkURL );
+function a() {
+var a = prompt("输入链接内容","");
+        if(a!=null&&a!=''){
+document.execCommand('CreateLink', true, a);
 };
+}
 //图片
 function img(){
 if(typeof FileReader=='undifined'){result.innerHTML="<p>抱歉，你的浏览器不支持 FileReader</p>";return false;}var file=document.getElementById("imagefile").files[0];
@@ -1121,8 +1135,6 @@ function h6(){
 document.execCommand("FormatBlock","false","<h6>")
 };
 
-
-
 //缩进
 function indent(){
 document.execCommand('Indent');  
@@ -1131,10 +1143,7 @@ document.execCommand('Indent');  
 function outdent(){
 document.execCommand('outdent', 'false', null );
 };
-
-
 //分割线
-
 function hr() {
 document.execCommand("InsertHorizontalRule")
 } ;
@@ -1142,7 +1151,6 @@ document.execCommand("InsertHorizontalRule")
 function p() {
 document.execCommand("InsertParagraph")
 } 
-
 //文本对齐
 function jf() {
 document.execCommand('justifyFull', 'false', null );
@@ -1182,10 +1190,7 @@ document.execCommand('redo', 'false', null );
 function rf() {
 document.execCommand('RemoveFormat')
 } 
-
-
-
-<!--表格-->
+//表格
 function creatTab(){
 var rows = prompt("rows"," ");
 var cols = prompt("cols"," ");
@@ -1245,13 +1250,16 @@ var sel, range;
 var anniu =document.getElementById('self-anniu');
 var kaiguan = document.getElementById('self-kaiguan');
 var as = document.getElementsByTagName("a");
+var tip = document.getElementsByTagName("aud-tip");
+
 var temp = 1;
 anniu.addEventListener('click',function(){
 if(temp==1){
 this.className = 'hei';              
 temp=0;                
-kaiguan.style. border= '2px solid  rgb(11, 243, 81)';               
-
+kaiguan.style.border= '2px solid  rgb(11, 243, 81)';               
+tip.style.display="block";
+setTimeout(tip.style.display="none",12000);
 for(var i=0;i<as.length;i++){      
 var a=as[i];      
 a.style.color="black";
