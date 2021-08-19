@@ -454,6 +454,29 @@ display:none;
 position:fixed;
 display:block;
 }
+
+
+
+#insert-nav{
+display:none;
+}
+#insert-button{
+z-index:10;
+}
+#insert-button:hover #insert-nav{
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+padding:20rem 10rem 0 10rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:0.75;
+height:200px;
+}
 /*插入*/
 #href{
 display:none;
@@ -650,11 +673,6 @@ border-color: rgba(84,100,93,60%);
 
 
 <div id="button2">
-
-
-<surbutton id="tool-button">功能键
-<div id="tool-nav">
-
 <button id="undo-button" onclick="un()" style="">
 <
 </button>
@@ -662,6 +680,9 @@ border-color: rgba(84,100,93,60%);
 >
 </button>
 
+
+<surbutton id="tool-button">功能键
+<div id="tool-nav">
 <button onclick="replace()">≒</button>
 
 <div id="search-button">
@@ -773,14 +794,21 @@ border-color: rgba(84,100,93,60%);
 <button id="img2-button" onclick="img();">插入</button>
 </div>
 
-//注释
-//参考文献
+
+
+<surbutton id="insert-button">插入
+<div id="insert-nav">
+/*注释*/
+
+/*参考文献*/
 <button id="r-button" onclick="reference()">[1]</button>
 <!--锚点-->
 <button id="mark-button" onclick="bookmark()">
 <svg t="1629391119689" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="50" height="50"><path d="M977.322163 465.530193a46.539151 46.539151 0 0 0-46.539151 46.53915 418.852355 418.852355 0 0 1-372.313205 416.199624V366.355263a186.156602 186.156602 0 1 0-93.078301 0v561.913704A418.852355 418.852355 0 0 1 93.078301 512.069343a46.539151 46.539151 0 0 0-93.078301 0 511.930657 511.930657 0 0 0 1023.861313 0 46.539151 46.539151 0 0 0-46.53915-46.53915zM418.852355 186.295289a93.078301 93.078301 0 1 1 93.078302 93.078301 93.078301 93.078301 0 0 1-93.078302-93.078301z" p-id="2027" fill="#555555"></path></svg>
 </button>
 <button id="mark2-button">添加链接</button>
+</div>
+</surbutton>
 
 
 <div class="sky-container">
@@ -1250,7 +1278,7 @@ var sel, range;
 var anniu =document.getElementById('self-anniu');
 var kaiguan = document.getElementById('self-kaiguan');
 var as = document.getElementsByTagName("a");
-var tip = document.getElementsByTagName("aud-tip");
+var tip = document.getElementsById("aud-tip");
 
 var temp = 1;
 anniu.addEventListener('click',function(){
