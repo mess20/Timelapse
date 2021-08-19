@@ -10,7 +10,7 @@ display:none;
 
 
 /*弹出式菜单*/
-a.menuLink_1{
+.menuLink_1{
 width: 150px; 
 height: 150px; 
 border-radius: 50%;
@@ -53,7 +53,7 @@ z-index:4;
 }
 
 
-#menu{
+#menu-ul{
 font-size:2.7rem;
 padding:0 0rem;
 overflow: auto; 
@@ -133,7 +133,7 @@ background:rgba(1,102,255,30%);
 <button id="chooseH-button" onclick="chooseH()">设置完成</button>
 
 
-<ul id="menu-ul" contenteditable="true"  style="background:lightgrey;display:block;">
+<ul id="menu-ul" contenteditable="true">
 </ul>
 
 
@@ -277,18 +277,16 @@ var str = document.querySelectorAll('#menu-ul h1,#menu-ul h2,#menu-ul h3,#menu-u
 var e1 = str[i].innerText;
 str[i].innerHTML= "<li><a href='# " + e1 + " '>" + e1 +"</a></li>";
 }
-//（innerHTML自动闭合标签，失效）
-<!--
-//实现一级标题展开
+/*实现一级标题展开（由于innerHTML自动闭合标签，失效）
 var strr = document.querySelectorAll('#menu-ul h1');
     var i;
     for (i = 0; i < strr.length; i++) {
 var e2 = strr[i].outerHTML;
-strr[i].outerHTML= "</tails><details><summary>"+e2+"</summary>"
+strr[i].outerHTML= "</details><details><summary>"+e2+"</summary>"
 }
 var result=document.getElementById("menu-ul").innerHTML;
 document.getElementById("menu-ul").innerHTML='<details><summary></summary>'+result+'</details>';
--->
+*/
 //显示
 document.getElementById("menu-ul").style.display="block";
 }
@@ -312,10 +310,10 @@ document.getElementById("menu-ul").style.display="block";
 
 <a href="#" class="menuLink_1">︽ </a>     
 
-<a href="menu.html" class="menuLink_2">+</a>
+<a id="menu-link" class="menuLink_2">+</a>
 
 
-<ul id="menu" >
+<ul id="menu-ul">
 <ul> 
 <details>
 <summary>
@@ -345,27 +343,27 @@ wuzwyyzgt
 
 <script type="text/javascript">  
 	window.onload = function() {
-		var allLinks = document.getElementsByTagName("a");
-		for (var i=0; i<allLinks.length; i++) {
-			if (allLinks[i].className.indexOf("menuLink") > -1) {
-				allLinks[i].onclick = toggleMenu;
-			}
-		}
-	}
-	function toggleMenu() {
-		var startMenu = this.href.lastIndexOf("/")+1;
-		var stopMenu = this.href.lastIndexOf(".");
-		var thisMenuName = this.href.substring(startMenu,stopMenu);
-		var thisMenu = document.getElementById(thisMenuName).style;
-		if (thisMenu.display == "block") {
-			thisMenu.display = "none";
-		}
-		else {
-			thisMenu.display = "block";
+
+
+        var anniu =document.getElementById('menu-link');
+        var menu = document.getElementById('menu-ul');
+        
+        var temp = 1;
+        anniu.addEventListener('click',function(){
+            if(temp==1){
+                temp=0;
+                menu.style.display="block"
+            }else{
+                temp=1;
+                menu.style.display="none"
+            }
+
+        })
+
+
 
 		}
-		return false;
-	}
+
     </script>
 
 
