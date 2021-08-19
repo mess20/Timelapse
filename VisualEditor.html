@@ -6,6 +6,74 @@
 body{
 font-size:100%;
 }
+fixed-blue-button{
+font-size:100%;
+color:white;
+background:#6699ff;
+border:none;
+border-radius:6px;
+padding:1rem 3rem;
+-webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+z-index:100;
+}
+fixed-blue-button:hover{
+color:white;
+background:rgba(102, 153, 255,75%)
+}
+blue-button{
+display:inline-block;
+font-size:1rem;
+color:white;
+background:#6699ff;
+border:none;
+border-radius:6px;
+padding:1rem 2rem;
+margin:0rem 0 0 8rem;
+height:3.4rem;
+width:auto;
+-webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+z-index:100;
+}
+blue-button:hover{
+color:white;
+background:rgba(102, 153, 255,75%)
+}
+blue-button button{
+color:white;
+border:none;
+position:relative;
+width:100%;
+height:100%;
+top:0%;
+left:0%;
+padding:auto;
+}
+#fc-nav div,#bc-nav div{
+background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') no-repeat center center;
+-webkit-background-clip: text;
+background-clip: text;
+color:transparent;
+}
+
+input{
+display:none;
+padding:1rem 1rem;
+width:2rem;
+height:2rem;
+background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') no-repeat center center;
+background-size:cover;
+border-radius:50px;
+border:none;
+outline: 0;
+}
+blue-button button:hover{
+color:white;
+background:transparent;
+}
 k{
 border-style:none none solid none;
 border-bottom:4px solid cornflowerblue;
@@ -77,6 +145,15 @@ border-left: 0px rgba(0,84,138,1.00) solid;
 resize: vertical;
 box-shadow: 5px 5px 20px rgba(128,128,128,0.7);
 }
+.output{
+font-size:200%;
+position:fixed;
+top:1130;
+right:50;
+}
+#output{
+display:inline-block;
+}
 
 #getCode-button:hover #code{
 display:block;
@@ -84,7 +161,7 @@ display:block;
 
 #code{
 display:none;
-font-size:100%;
+font-size:60%;
 top:500;
 left:5%;
 width:882;
@@ -96,15 +173,8 @@ padding:4rem 3rem 6rem 3rem;
 overflow:auto;
 z-index:1;
 }
+#getCode{
 
-.output{
-font-size:200%;
-position:fixed;
-top:1130;
-right:50;
-}
-#output{
-display:inline-block;
 }
 
 
@@ -126,7 +196,7 @@ height:auto;
 z-index:100;
 }
 #button1 button{
-z-index:4;
+z-index:2;
 }
 
 #button2{
@@ -161,8 +231,9 @@ left:5%;
 right:5%;
 top:323;
 height:auto;
-z-index:2;
+z-index:10;
 }
+
 
 
 button,surbutton{
@@ -189,47 +260,28 @@ color:#000;
 
 
 
-#getCode{
-
-}
-#href{
-display:none;
-top:20%;
-left:20%;
-width:80%;
-height:40%;
-}
-#a2-button{
+/*工具栏*/
+#tool-nav{
 display:none;
 }
-#a-button:hover #a2-button{
+#tool-button:hover #tool-nav{
 position:fixed;
-display:block;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+padding:20rem 10rem 0 10rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:0.75;
+height:200px;
 }
-#a-button:hover #href{
-position:fixed;
-display:block;
-}
-
-
-
-#img-button{
-}
-#imagefile{
-z-index:-1;
-visible:hidden;
-opacity:0;
-filter:alpha(opacity=0);
-}
-
-#img2-button{
-display:none;
-}
-#img-button:hover #img2-button{
-position:fixed;
+#tool-nav button{
+z-index:10;
 display:inline-block;
-top:30%;
-left:80%;
+background:transparent;
 }
 
 #search-button{
@@ -237,31 +289,103 @@ left:80%;
 #searched-button{
 display:none;
 }
+#tool-button:hover #searched-button{
+display:none;
+}
 #search-button:hover #searched-button{
 display:block;
 position:fixed;
 top:1%;
 right:1%;
+z-index:100;
 }
-#fc-thecolor,#bc-thecolor,#fc-btn,#bc-btn{
+
+
+
+/*字体*/
+#fc-nav,#bc-nav{
 display:none;
 }
-#fc:hover #fc-thecolor{
-position:fixed;
+#fc-thecolor,#bc-thecolor{
+font-size:2rem;
+line-height:3rem;
+}
+#fc-btn,#bc-btn{
+font-size:2rem;
+line-height:3rem;
+}
+#fc-button,#bc-button{
 display:block;
 }
-#fc:hover #fc-btn{
+#fc-button:hover #fc-nav{
 position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+font-size:1rem;
+padding:10rem 10rem 10rem 10rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:0.98;
+height:200px;
+}
+#fc-button:hover #fc-thecolor{
 display:block;
 }
-#bc:hover #bc-thecolor{
+
+#bc-button:hover #bc-nav{
 position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+font-size:1rem;
+padding:10rem 10rem 10rem 10rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:0.98;
+height:200px;
+}
+#bc-button:hover #bc-thecolor{
 display:block;
 }
-#bc:hover #bc-btn{
-position:fixed;
-display:block;
+
+
+
+
+
+#f-nav{
+display:none;
 }
+#f-button:hover #f-nav{
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+padding:10rem 10rem 10rem 10rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:1.0;
+height:200px;
+}
+#f-nav button{
+z-index:10;
+display:inline-block;
+background:transparent;
+}
+
+
+
+
+
 #ff-nav{
 display:none;
 }
@@ -327,6 +451,49 @@ display:none;
 position:fixed;
 display:block;
 }
+/*插入*/
+#href{
+display:none;
+top:20%;
+left:20%;
+width:80%;
+height:40%;
+}
+#a2-button{
+display:none;
+}
+#a-button:hover #a2-button{
+position:fixed;
+display:block;
+}
+#a-button:hover #href{
+position:fixed;
+display:block;
+}
+
+
+
+#img-button{
+}
+#imagefile{
+z-index:-1;
+visible:hidden;
+opacity:0;
+filter:alpha(opacity=0);
+}
+
+#img2-button{
+display:none;
+}
+#img-button:hover #img2-button{
+position:fixed;
+display:inline-block;
+top:30%;
+left:80%;
+}
+
+
+
 
 #mark2-button{
 display:none;
@@ -334,6 +501,42 @@ display:none;
 #mark-tip{
 }
 
+
+
+
+#self-nav{
+display:none;
+}
+#self-button:hover #self-nav{
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+padding:10rem 10rem 10rem 10rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:1.0;
+height:200px;
+}
+#self-nav button{
+z-index:10;
+display:inline-block;
+background:transparent;
+}
+
+
+
+/*提示语*/
+.sky-container{
+display:flex;
+justify-content: center;
+width:100%;
+left:0;
+z-index:1000;
+}
 .finish-tip{
 display:none;
 position:fixed;
@@ -348,8 +551,7 @@ font-size:100%;
  background-color:#F7F8FA;
  color: black;
  border-radius: 50px;
-z-index:100;
-
+z-index:1000;
 }
 .do-tip{
 display:none;
@@ -364,12 +566,6 @@ font-size:100%;
  color: #F0F8FF;
  border-radius: 50px;
 z-index:100;
-}
-.sky-container{
-display:flex;
-justify-content: center;
-width:100%;
-left:0;
 }
 table.tftable {
 text-align:center;
@@ -408,8 +604,9 @@ border-color: rgba(84,100,93,60%);
 
 
 <div id="textarea" contenteditable="true" onkeyup="wordCount()">
-
-
+<p>   
+<br>
+</p>
 <hr>
 <b>参考</b>
 <ol id="ol">
@@ -424,11 +621,27 @@ border-color: rgba(84,100,93,60%);
 
 
 <div id="button1">
-<button id="getCode-button" onclick="getCode();" style="font-size:200%;align-items:center;line-height:5.5rem">HTML
 
+
+
+
+ 
+
+
+<div id="button2">
+
+
+
+
+<button id="getCode-button" onclick="getCode();" style="font-size:200%;align-items:center;line-height:5.5rem">HTML
 <textarea id="code">
 </textarea>
 </button>
+
+
+
+<surbutton id="tool-button">功能键
+<div id="tool-nav">
 
 <button id="undo-button" onclick="un()" style="">
 <
@@ -445,24 +658,23 @@ border-color: rgba(84,100,93,60%);
 </button>
 </div>
 
-<!-- 
-<button id="open-button" onclick="open()">打开</button>
--->
-<button id="saveas-button" onclick="saveas()">另存为</button>
-
-
 <button id="rf-button" onclick="rf()">₡ </button>
 
-
 <button id="copy-button" onclick="copy()">⧉</button>
+</div>
+</surbutton>
+
+
+
 
 <button id="inserttext-button" onclick="insertText()" style="font-size:300%">insertText</button>
 </div>
 
- 
 
 
-<div id="button2">
+
+<surbutton id="f-button">字体
+<div id="f-nav">
 <surbutton id="ff-button">A
 <div id="ff-nav">
 <button id="ff1-button" onclick="ff1()">sans-serif</button>
@@ -496,18 +708,27 @@ border-color: rgba(84,100,93,60%);
 
 <button id="sub-button" onclick="subscript()">A<sub style="display:inline;line-height:5.5rem;vertical-align:sub">a</sub></button>
 
-<div id="fc">
-<button id="fc-button"><font color="cyan">A</font></button>
-<input type="color" id="fc-thecolor" value=""/>
-<button id="fc-btn" onclick="fc()">设置为字体颜色</button>
+<surbutton id="fc-button">
+<font color="cyan">A</font>
+<div id="fc-nav">
+<input type="color" id="fc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选择</div>
+<blue-button style="background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') center;background-size:cover"><button id="fc-btn" onclick="fc()">设置</button></blue-button>
 </div>
+</surbutton>
 
-<div id="bc">
+
+<surbutton id="bc-button">
 <button id="bc-button"><div style="background:yellow;padding:0rem 1.5rem">A</div></button>
-<input type="color" id="bc-thecolor" value=""/>
-<button id="bc-btn" onclick="bc()">设置为背景颜色</button>
+<div id="bc-nav">
+<input type="color" id="bc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选择</div>
+<blue-button style="background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') center;background-size:cover"><button id="bc-btn" onclick="bc()">设置</button></blue-button>
 </div>
+</surbutton>
 
+
+
+
+</div></surbutton>
 
 
 
@@ -515,15 +736,8 @@ border-color: rgba(84,100,93,60%);
 <button id="iu-button" onclick="iu()" >≔</button>
 <button id="io-button" onclick="io()" style="font-family:serif">I</button>
 
-
+<!--插入-->
 <button id="t-button" onclick="creatTab()" style="font-size:400%">▦</button>
-
-
-
-
-
-
-
 
 <!--链接-->
 
@@ -543,7 +757,7 @@ border-color: rgba(84,100,93,60%);
 <div id="img-button">
 <button id="img1-button" /*style="padding:0rem 0rem 0 1.1rem"*/>    
 ￼
-<input type="file" id="imagefile" value=".">
+<input type="file" id="imagefile" value=" ">
 </button>
 <button id="img2-button" onclick="img();">插入</button>
 </div>
@@ -558,7 +772,7 @@ border-color: rgba(84,100,93,60%);
 <div id="button3">
 
 <button id="r-button" onclick="reference()">reference</button>
-
+<!--锚点-->
 <button id="mark-button" onclick="bookmark()">mark</button>
 <button id="mark2-button">添加链接</button>
 
@@ -577,16 +791,6 @@ border-color: rgba(84,100,93,60%);
 <button id="out-button" onclick="outdent()">⇤</button>
 
 <button id="p-button" onclick="p()">↩</button>
-
-
-
-
-
-
-
-
-
-
 
 <button id="hr-button" onclick="hr()">---</button>
 
@@ -614,8 +818,11 @@ border-color: rgba(84,100,93,60%);
 
 
 
+<surbutton id="self-button">自定义
+<div id="self-nav">
 <button id="aud-button" onclick="aud()">更改自动链接行为</button>
-
+</div>
+</surbutton>
 
 
 </div>
@@ -629,7 +836,10 @@ border-color: rgba(84,100,93,60%);
 </body>
 
 
-
+<!-- 
+<button id="open-button" onclick="open()">打开</button>
+<button id="saveas-button" onclick="saveas()">另存为</button>
+-->
 
 
 
@@ -1022,6 +1232,33 @@ var sel, range;
 }
 
 //更改自动链接行为（伪）
+var anniu =document.getElementById('self-anniu');
+var kaiguan = document.getElementById('self-kaiguan');
+var as = document.getElementsByTagName("a");
+var temp = 1;
+anniu.addEventListener('click',function(){
+if(temp==1){
+this.className = 'hei';              
+temp=0;                
+kaiguan.style. border= '2px solid  rgb(11, 243, 81)';               
+
+for(var i=0;i<as.length;i++){      
+var a=as[i];      
+a.style.color="black";
+a.style.textDecoration="none";
+a.style.borderBottom="none";
+    }
+            
+}else{                
+this.className = 'bai';               
+temp=1;               
+kaiguan.style. border= '2px solid black';               
+
+
+
+}})
+
+
 function aud() {
 var as = document.getElementsByTagName("a");
 for(var i=0;i<as.length;i++){
@@ -1029,7 +1266,8 @@ for(var i=0;i<as.length;i++){
         a.style.color="black";
 a.style.textDecoration="none";
 a.style.borderBottom="none";
-    }} 
+    }
+} 
     
 
 
