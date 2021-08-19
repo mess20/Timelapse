@@ -523,6 +523,10 @@ height:200px;
 }
 #self-nav button{
 z-index:10;
+font-size:2rem;
+position: absolute;
+             top: 20px;
+             left: 100px;
 display:inline-block;
 background:transparent;
 }
@@ -1260,11 +1264,16 @@ this.className = 'bai';
 temp=1;               
 kaiguan.style. border= '2px solid black';               
 
-
+for(var i=0;i<as.length;i++){      
+var a=as[i];      
+a.style.color="black";
+a.style.borderBottom="4px solid #6483B0";
+    }
 
 }})
 
-
+//废用
+<!--
 function aud() {
 var as = document.getElementsByTagName("a");
 for(var i=0;i<as.length;i++){
@@ -1273,8 +1282,8 @@ for(var i=0;i<as.length;i++){
 a.style.textDecoration="none";
 a.style.borderBottom="none";
     }
-} 
-    
+}     
+-->
 
 
 <!--不会使用-->
