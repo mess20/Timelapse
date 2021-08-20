@@ -3,6 +3,43 @@
 <link rel="stylesheet" href="all.css" type="text/css"> 
 <title>自制可视化编辑器</title>
 <style>
+      .kaiguan{
+             position: absolute;
+             top: 20px;
+             right: 50px;
+             width: 40px;
+             height: 20px;
+             border: 2px solid black;
+             border-radius: 20px;
+             cursor: pointer;
+             transition: all 3s;
+zoom:2.3;
+}
+
+        
+         .bai{ 
+             position: absolute;
+             top: 1.5px;
+             left: 2px;
+             height: 13px;
+             width: 13px;
+             background-color: rgb(0, 0, 0);
+             border-radius: 50%;
+             transition: all 1s;
+         }
+        .hei{
+           
+             position: absolute;
+             top: 1.5px;
+             right: 2px;
+             height: 13px;
+             width: 13px;
+             background-color: rgb(11, 243, 81);
+             border-radius: 50%;
+             transition: all 1s;
+         }
+        
+
 body{
 font-size:100%;
 }
@@ -215,6 +252,9 @@ top:145;
 height:auto;
 z-index:4;
 }
+#button1 button{
+z-index:2;
+}
 
 #button3{
 border-left:solid;
@@ -229,9 +269,10 @@ border-bottom:solid;
     position:fixed;
 left:5%;
 right:5%;
-top:323;
+top:320;
 height:auto;
 z-index:2;
+background:transparent
 }
 
 
@@ -457,26 +498,30 @@ display:block;
 
 
 
-#insert-nav{
-display:none;
-}
+
 #insert-button{
 z-index:10;
 }
-#insert-button:hover #insert-nav{
+#insert-nav{
+display:none;
 position:fixed;
 z-index:10;
 top:0%;
 right:0%;
 left:0%;
-display:flex;
 flex-wrap:wrap;
-padding:20rem 10rem 0 10rem;
+padding:10rem 10rem 10rem 10rem;
 background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
 background-size:cover;
-opacity:0.75;
+opacity:1.0;
 height:200px;
 }
+#insert-nav button{
+display:none;
+}
+
+
+
 /*插入*/
 #href{
 display:none;
@@ -527,6 +572,31 @@ display:none;
 #mark-tip{
 }
 
+
+#ts-nav{
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:none;
+flex-wrap:wrap;
+padding:10rem 10rem 10rem 10rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:1.0;
+height:200px;
+}
+#ts-nav button{
+z-index:10;
+font-size:2rem;
+position: absolute;           
+top: 20px;            
+left: 100px;
+width:auto;
+display:inline-block;
+background:transparent;
+}
 
 
 
@@ -694,13 +764,7 @@ border-color: rgba(84,100,93,60%);
 <button id="rf-button" onclick="rf()">₡ </button>
 
 <button id="copy-button" onclick="copy()">⧉</button>
-</div>
-</surbutton>
 
-
-
-
-<button id="inserttext-button" onclick="insertText()" style="font-size:300%">insertText</button>
 
 
 
@@ -708,6 +772,11 @@ border-color: rgba(84,100,93,60%);
 <textarea id="code">
 </textarea>
 </button>
+
+
+
+</div>
+</surbutton>
 
 
 
@@ -781,10 +850,6 @@ border-color: rgba(84,100,93,60%);
 
 
 
-
-<button id="pre-button" onclick="pre()">&lt;/&gt;</button>
-
-
 <!--图片-->
 <div id="img-button">
 <button id="img1-button" /*style="padding:0rem 0rem 0 1.1rem"*/>    
@@ -792,15 +857,20 @@ border-color: rgba(84,100,93,60%);
 <input type="file" id="imagefile" value=" ">
 </button>
 <button id="img2-button" onclick="img();">插入</button>
-</div>
 
 
 
 <surbutton id="insert-button">插入
-<div id="insert-nav">
-/*注释*/
 
-/*参考文献*/
+
+<div id="insert-nav">
+
+<button id="pre-button" onclick="pre()">&lt;/&gt;</button>
+
+
+<!--注释-->
+
+<!--参考文献-->
 <button id="r-button" onclick="reference()">[1]</button>
 <!--锚点-->
 <button id="mark-button" onclick="bookmark()">
@@ -810,12 +880,14 @@ border-color: rgba(84,100,93,60%);
 </div>
 </surbutton>
 
+</div>
+
 
 <div class="sky-container">
 <div class="finish-tip">已完成</div>
 
 <div id="mark-tip" class="do-tip">请选择合适文本位置添加对应链接</div>
-<div id="aud-tip" class="notice-tip">请注意，取消“取消自动链接行为”时，链接样式将不会保存。</div>
+<div id="aud-tip" class="notice-tip">若恢复自动链接行为，修改后链接样式将不会保存。</div>
 
 </div>
 
@@ -824,13 +896,12 @@ border-color: rgba(84,100,93,60%);
 
 
 </div>
+
 
 
 
 <div id="button3">
 
-
-<!--排版-->
 
 <button id="iu-button" onclick="iu()" >≔</button>
 <button id="io-button" onclick="io()" style="font-family:serif">I</button>
@@ -842,6 +913,15 @@ border-color: rgba(84,100,93,60%);
 
 <button id="hr-button" onclick="hr()">---</button>
 
+
+<!--排版-->
+<surbutton id="ts-button" onclick="ts1()">排版
+
+
+
+
+<div id="ts-nav">
+<button onmouseover="ts2()">×</button>
 <surbutton id="j-button">≡
 <div id="j-nav">
 <button id="jf-button" onclick="jf()">|=|</button>
@@ -862,9 +942,26 @@ border-color: rgba(84,100,93,60%);
 </div>
 </surbutton>
 
+</div>
+</surbutton>
+
+<script>
+function ts1(){
+document.getElementById("button2").style.zIndex="1";
+document.getElementById("ts-nav").style.display="flex";
+};
+function ts2(){
+document.getElementById("ts-nav").style.display="none";
+document.getElementById("button2").style.zIndex="4";
+}
+</script>
+
+
+
+
 <surbutton id="self-button">自定义
 
-<div id="self-nav" onclick="aud()">
+<div id="self-nav">
 <button id="aud-button">更改自动链接行为</button>
 <div class="kaiguan" id="self-kaiguan">
 <div class="bai" id="self-anniu"></div>
@@ -887,44 +984,13 @@ border-color: rgba(84,100,93,60%);
 <!-- 
 <button id="open-button" onclick="open()">打开</button>
 <button id="saveas-button" onclick="saveas()">另存为</button>
+
+
+<button id="inserttext-button" onclick="insertText()" style="font-size:300%">insertText</button>
 -->
 
 
-//更改自动链接行为（伪）
-function aud() {
-var anniu =document.getElementById('self-anniu');
-var kaiguan = document.getElementById('self-kaiguan');
-var as = document.getElementsByTagName("a");
-var tip = document.getElementsById("aud-tip");
 
-var temp = 1;
-anniu.addEventListener('click',function(){
-if(temp==1){
-this.className = 'hei';              
-temp=0;                
-kaiguan.style.border= '2px solid  rgb(11, 243, 81)';               
-tip.style.display="block";
-setTimeout(function(){
-tip.style.display="none"},12000);
-for(var i=0;i<as.length;i++){      
-var a=as[i];      
-a.style.color="black";
-a.style.textDecoration="none";
-a.style.borderBottom="none";
-    }
-            
-}else{                
-this.className = 'bai';               
-temp=1;               
-kaiguan.style.border= '2px solid black';               
-
-for(var i=0;i<as.length;i++){      
-var a=as[i];      
-a.style.color="black";
-a.style.borderBottom="4px solid #6483B0";}
-}
-})
-}
 
 
 <!--添加参考文献 -->
@@ -980,6 +1046,49 @@ document.getElementById(n).innerHTML= e + "<span style='color:#6483B0;vertical-a
 
 <script>
 
+
+
+
+//更改自动链接行为（伪）
+//function aud() {
+var anniu =document.getElementById('self-anniu');
+var kaiguan = document.getElementById('self-kaiguan');
+var tip = document.getElementById('aud-tip');      
+var as = document.getElementsByTagName("a");
+           
+
+var temp = 1;
+anniu.addEventListener('click',function(){
+if(temp==1){
+this.className = 'hei';              
+temp=0;                
+kaiguan.style.border= '2px solid  rgb(11, 243, 81)';    
+tip.style.display="block";
+setTimeout("myFunction()",5000);
+
+for(var i=0;i<as.length;i++){      
+var a=as[i];      
+a.style.color="black";
+a.style.textDecoration="none";
+a.style.borderBottom="none";
+    }
+            
+}else{                
+this.className = 'bai';               
+temp=1;               
+kaiguan.style.border= '2px solid black';               
+for(var i=0;i<as.length;i++){      
+var a=as[i];      
+a.style.color="black";
+a.style.textDecoration="none";
+a.style.borderBottom="4px solid #6483B0";
+}
+}
+})
+//}
+function myFunction(){
+tip.style.display="none"
+}
 <!-- 书签（锚点链接）-->
 
 function bookmark() {
