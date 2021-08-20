@@ -864,7 +864,7 @@ border-color: rgba(84,100,93,60%);
 
 <surbutton id="self-button">自定义
 
-<div id="self-nav">
+<div id="self-nav" onclick="aud()">
 <button id="aud-button">更改自动链接行为</button>
 <div class="kaiguan" id="self-kaiguan">
 <div class="bai" id="self-anniu"></div>
@@ -890,6 +890,41 @@ border-color: rgba(84,100,93,60%);
 -->
 
 
+//更改自动链接行为（伪）
+function aud() {
+var anniu =document.getElementById('self-anniu');
+var kaiguan = document.getElementById('self-kaiguan');
+var as = document.getElementsByTagName("a");
+var tip = document.getElementsById("aud-tip");
+
+var temp = 1;
+anniu.addEventListener('click',function(){
+if(temp==1){
+this.className = 'hei';              
+temp=0;                
+kaiguan.style.border= '2px solid  rgb(11, 243, 81)';               
+tip.style.display="block";
+setTimeout(function(){
+tip.style.display="none"},12000);
+for(var i=0;i<as.length;i++){      
+var a=as[i];      
+a.style.color="black";
+a.style.textDecoration="none";
+a.style.borderBottom="none";
+    }
+            
+}else{                
+this.className = 'bai';               
+temp=1;               
+kaiguan.style.border= '2px solid black';               
+
+for(var i=0;i<as.length;i++){      
+var a=as[i];      
+a.style.color="black";
+a.style.borderBottom="4px solid #6483B0";}
+}
+})
+}
 
 
 <!--添加参考文献 -->
@@ -1274,40 +1309,6 @@ var sel, range;
     }
 }
 
-//更改自动链接行为（伪）
-var anniu =document.getElementById('self-anniu');
-var kaiguan = document.getElementById('self-kaiguan');
-var as = document.getElementsByTagName("a");
-var tip = document.getElementsById("aud-tip");
-
-var temp = 1;
-anniu.addEventListener('click',function(){
-if(temp==1){
-this.className = 'hei';              
-temp=0;                
-kaiguan.style.border= '2px solid  rgb(11, 243, 81)';               
-tip.style.display="block";
-setTimeout(function(){
-tip.style.display="none"},12000);
-for(var i=0;i<as.length;i++){      
-var a=as[i];      
-a.style.color="black";
-a.style.textDecoration="none";
-a.style.borderBottom="none";
-    }
-            
-}else{                
-this.className = 'bai';               
-temp=1;               
-kaiguan.style.border= '2px solid black';               
-
-for(var i=0;i<as.length;i++){      
-var a=as[i];      
-a.style.color="black";
-a.style.borderBottom="4px solid #6483B0";
-    }
-
-}})
 
 //废用
 <!--
