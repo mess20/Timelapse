@@ -1287,7 +1287,8 @@ this.className = 'hei';
 temp=0;                
 kaiguan.style.border= '2px solid  rgb(11, 243, 81)';               
 tip.style.display="block";
-setTimeout(tip.style.display="none",12000);
+setTimeout(function(){
+tip.style.display="none"},12000);
 for(var i=0;i<as.length;i++){      
 var a=as[i];      
 a.style.color="black";
@@ -1298,7 +1299,7 @@ a.style.borderBottom="none";
 }else{                
 this.className = 'bai';               
 temp=1;               
-kaiguan.style. border= '2px solid black';               
+kaiguan.style.border= '2px solid black';               
 
 for(var i=0;i<as.length;i++){      
 var a=as[i];      
