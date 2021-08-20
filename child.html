@@ -1,11 +1,14 @@
 
 
-
+<html>
 <style>
+html{
+font-size:43px;
+}
 body{
 color:#4c4948;
-font-size:2.7rem;
-line-height:5rem;
+font-size:1rem;
+line-height:2rem;
 background:rgb(246,246,246);
 width:100%;
 left:0;
@@ -29,8 +32,8 @@ zoom:1;
 .appear2{
 position:relative;
 background:white;
-margin:2.4rem auto;
-padding:2.4rem;
+margin:1rem auto;
+padding:1.5rem;
 border-radius: 25px;
 -webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.3);
 -moz-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.3);
@@ -54,7 +57,6 @@ position:relative;
 }
 
 
-
 article-intro{
 display:block;
 height:10%;
@@ -62,10 +64,10 @@ width:100%;
 background:rgba(255,255,255,0.5)
 color:#404040;
 line-height:6rem;
-font-size:80%;
+font-size:0.8rem;
 margin-top:3rem;
 margin-bottom:4rem;
-position:relative
+position:relative;
 }
 author{
 position:absolute;
@@ -101,21 +103,52 @@ justify-content: space-around;
 }
 
 
-svg{
-display:inline-block;
-line-height:6rem;
-align-items: center;
-border:none;
-width: 3rem;
-height: 3rem;
-border-radius: 50%;
-margin:auto 0 auto 0;
-overflow: visible;
-}
 article{
 text-align:justify; 
 text-justify:inter-ideograph;
+font-size:0.7rem;
 }
+info{
+display:block;
+margin: 0;
+padding: 1rem;
+background:rgb(231,240,250);
+}
+info a{
+color:#f8f8ff;
+border-bottom:4px solid f8f8ff;
+}
+/*预览or呼出式解释补充*/
+abbr{
+}
+note{display:none;}
+abbr:hover note{
+position:absolute;
+display:block;
+background:white;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+padding:1.4rem;
+z-index:3;
+}
+dfn{
+font-style:normal;
+color:rgba(52,160,238,100%) 
+}
+dfn:hover note{
+position:absolute;
+display:block;
+background:white;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+padding:1.4rem;
+z-index:3;
+}
+
+
+
 </style>
 
 
@@ -128,8 +161,12 @@ text-justify:inter-ideograph;
 
 <article>
 <h2>万物选购指南：层次分析法治好了我的选择困难</h2>
-<info><info1>版权声明：本文采用 <dfn> CC BY 许可协议<note>Attribution 署名<br>
-只要保留原作者姓名，就可以基于商业目的传播、改编或者二次创作。</note> </dfn> 授权。</info1></info>
+<info>
+Author: z<br>
+Link: <br>
+Copyright Notice: All articles here are licensed under CC BY unless stating additionally.<br>
+版权声明：本文采用 <dfn> CC BY 许可协议<note>Attribution 署名<br>
+只要保留原作者姓名，就可以基于商业目的传播、改编或者二次创作。</note> </dfn> 授权。</info>
 
 
 <article-intro>
@@ -166,5 +203,5 @@ document.getElementById('appear2').className="show';
 },5000)
 </script>
 
-
+</html>
 
