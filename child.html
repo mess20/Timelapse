@@ -9,8 +9,11 @@ line-height:5rem;
 background:rgb(246,246,246);
 width:100%;
 left:0;
-top:0
+top:0;
+position: relative;
+transition: all 1s;
 }
+
 .appear1{
 position:relative;
 border:none;
@@ -49,14 +52,98 @@ position:relative;
   0%   { left:0px;bottom:-60%;}
   100% { left:0px; bottom:0%}
 }
+
+
+
+article-intro{
+display:block;
+height:10%;
+width:100%;
+background:rgba(255,255,255,0.5)
+color:#404040;
+line-height:6rem;
+font-size:80%;
+margin-top:3rem;
+margin-bottom:4rem;
+position:relative
+}
+author{
+position:absolute;
+display:inline-block;
+line-height:6rem;
+align-items: center;
+}
+author img{
+position:absolute;
+margin-left:2.9rem;
+}
+.avatar{
+  width: 7rem;
+  height: 7rem;
+  display: inline-block;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+position:absolute;
+right:rem;
+top:0;
+bottom:0;
+margin:;
+}
+author name{
+margin-left:12.5rem;
+}
+time{
+display: flex;
+flex-direction: row; 
+justify-content: space-around;
+}
+
+
+svg{
+display:inline-block;
+line-height:6rem;
+align-items: center;
+border:none;
+width: 3rem;
+height: 3rem;
+border-radius: 50%;
+margin:auto 0 auto 0;
+overflow: visible;
+}
+
 </style>
+
+
+
 <body>
+
+
 <div id="down" class="appear1">gsgsggs</div>
-<div id="up" class="appear2">gs的兄弟g<br>
+<div id="up" class="appear2">
+
+<article-intro>
+
+<author>
+<img src="https://z3.ax1x.com/2021/07/22/WDced1.jpg" class="avatar"  alt="">
+<name>author   |   梦悟 </name>
+</author>
+
+<br>
+<time><div>Created 2020-08-10</div> <div>|</div><div>Updated 2020-11-12</div></time>
+</time>
+</article-intro>
+
+gs的兄弟g<br>
 sggs比我还v只是v还是喜欢v周三周四
 wzw是谷歌zezhezez<br>
 ezezzejz</div>
-</body>
+
+
+
+
+
 
 <script>
 setTimeout(function(){
