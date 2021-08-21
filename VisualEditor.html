@@ -1,26 +1,102 @@
 
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
 <link rel="stylesheet" href="all.css" type="text/css"> 
 <title>自制可视化编辑器</title>
+<script>
+document.addEventListener('keydown', function (event) {
+        if ((event.ctrlKey === true || event.metaKey === true)
+            && (event.which === 61 || event.which === 107
+                || event.which === 173 || event.which === 109
+                || event.which === 187 || event.which === 189)) {
+            event.preventDefault();
+        }
+    }, false);
+    // Chrome IE 360
+    window.addEventListener('mousewheel', function (event) {
+        if (event.ctrlKey === true || event.metaKey) {
+            event.preventDefault();
+        }
+    }, { passive: false });
+
+    //firefox
+    window.addEventListener('DOMMouseScroll', function (event) {
+        if (event.ctrlKey === true || event.metaKey) {
+            event.preventDefault();
+        }
+    }, { passive: false });
+
+
+
+//这里是监听页面缩放百分比并提醒用户将页面缩放调整至100%的（有需要的可以添加）
+
+        function pageZoom() {
+            var ratio = 0,
+                screen = window.screen,
+                ua = navigator.userAgent.toLowerCase();
+
+            if (window.devicePixelRatio !== undefined) {
+                ratio = window.devicePixelRatio;
+            }
+            else if (~ua.indexOf('msie')) {
+                if (screen.deviceXDPI && screen.logicalXDPI) {
+                    ratio = screen.deviceXDPI / screen.logicalXDPI;
+                }
+            }
+            else if (window.outerWidth !== undefined && window.innerWidth !== undefined) {
+                ratio = window.outerWidth / window.innerWidth;
+            }
+
+            if (ratio) {
+                ratio = Math.round(ratio * 100);
+            }
+
+            return ratio;
+        };
+        var ratio = pageZoom()
+
+        // 打印当前缩放值
+        console.log(ratio)
+
+        // 判断是否缩放
+
+        if (ratio > 100) {
+            alert('为了更好地展示页面内容，请您将页面比例调整至100%')
+        } else if (ratio < 100) {
+           alert('为了更好地展示页面内容，请您将页面比例调整至100%')
+        } else {
+            console.log("100%")
+        }
+</script>
 <style>
+body{
+position:fixed !important;
+left:0 !important;
+top:0 !important;
+width:100% !important;
+height:100% !important;
+font-size:100%;
+background:rgba(190, 160, 190,10%);
+}
       .kaiguan{
              position: absolute;
-             top: 20px;
-             right: 50px;
+             top: 50px;
+             right: 100px;
              width: 40px;
              height: 20px;
              border: 2px solid black;
              border-radius: 20px;
              cursor: pointer;
-             transition: all 3s;
+             transition: all 1s;
 zoom:2.3;
 }
 
         
          .bai{ 
              position: absolute;
-             top: 1.5px;
-             left: 2px;
+             top: 2.5px;
+             left: 4px;
              height: 13px;
              width: 13px;
              background-color: rgb(0, 0, 0);
@@ -30,20 +106,42 @@ zoom:2.3;
         .hei{
            
              position: absolute;
-             top: 1.5px;
-             right: 2px;
+             top: 2.5px;
+             right: 4px;
              height: 13px;
              width: 13px;
-             background-color: rgb(11, 243, 81);
+             background-color:#be002f;
              border-radius: 50%;
              transition: all 1s;
          }
         
-
-body{
-font-size:100%;
-background:rgba(190, 160, 190,10%);
+#fullView-button{
+display:block;
+position:fixed;
+bottom:2%;
+right:5%;
+font-size:2rem;
+width:10rem;
+height:5rem;
+line-height:5rem;
+align-items:center;
+color:white;
+border:none;
+border-radius:6px;
+padding:0rem 2.5rem;
+margin:0;
+-webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+z-index:6;
 }
+.fullView-button1{
+background:#be002f;
+}
+.fullView-button2{
+background:rgba(240, 160, 200,100%)
+}
+
 fixed-blue-button,fbb,.fixed-blue-button,.fbb{
 display:block;
 position:fixed;
@@ -153,10 +251,27 @@ ol a:active{
 ol a:visited{
 }
 
+.t1{
+font-size:200%;
+top:170;
+right:0%;
+left:0%;
+height:100%;
+background:white;
+position:fixed;
+outline:none;
+padding:4rem 3rem 6rem 3rem;
+overflow:auto;
+border-top: 0px rgba(128,128,128,1.00) solid;
+border-right: 0px rgba(0,84,138,1.00) solid;
+border-bottom: 0px rgba(0,84,138,1.00) solid;
+border-left: 0px rgba(0,84,138,1.00) solid;
+resize: vertical;
+box-shadow: 5px 5px 20px rgba(128,128,128,0.7);
+}
 
 
-
-#textarea{
+.t2{
 font-size:200%;
 top:350;
 right:5%;
@@ -174,25 +289,24 @@ border-left: 0px rgba(0,84,138,1.00) solid;
 resize: vertical;
 box-shadow: 5px 5px 20px rgba(128,128,128,0.7);
 }
-.output{
+.output1{
+font-size:200%;
+position:fixed;
+top:200;
+left:50;
+}
+.output3{
+display:inline-block;
+}
+
+.output2{
 font-size:200%;
 position:fixed;
 top:1130;
 right:50;
 }
-#output{
-display:inline-block;
-}
 
-/*
-#getCode{
-}
-*/
-
-
-
-
-#button2{
+.b2{
 border-left:;
 border-right:;
 border-top:;
@@ -211,11 +325,11 @@ top:145;
 height:auto;
 z-index:4;
 }
-#button1 button{
+.b2 button{
 z-index:2;
 }
 
-#button3{
+.b4{
 border-left:;
 border-right:;
 border-bottom:;
@@ -229,6 +343,49 @@ border-bottom:;
 left:5%;
 right:5%;
 top:230;
+height:auto;
+z-index:2;
+background:hsla(205,82%,99%,100%);
+box-shadow: 3px 3px 5px rgba(128,128,128,0.7);
+}
+
+.b1{
+border-left:;
+border-right:;
+border-top:;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    position:fixed;
+background:hsla(210,82%,98%,100%);
+box-shadow: 4px 4px 5px rgba(128,128,128,0.7);
+left:0%;
+right:0%;
+top:0;
+height:auto;
+z-index:4;
+}
+.b1 button{
+z-index:2;
+}
+
+.b3{
+border-left:;
+border-right:;
+border-bottom:;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    position:fixed;
+left:0%;
+right:0%;
+top:85;
 height:auto;
 z-index:2;
 background:hsla(205,82%,99%,100%);
@@ -276,14 +433,18 @@ right:0%;
 left:0%;
 display:flex;
 flex-wrap:wrap;
-padding:5rem 5rem 5rem 5rem;
+padding:10rem 5rem 14rem 5rem;
 margin:0;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
-opacity:0.75;
-height:200px;
+background:url('https://s3.bmp.ovh/imgs/2021/08/b53eafa1ea05aac6.jpg') no-repeat;
+background-size:100% 100%;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 10px 3000px rgba(0, 0, 0, 0.5);
+opacity:0.85;
+height:auto;
 }
 #tool-nav button{
+color:rgba(150, 60, 76,100%) !important;
 z-index:10;
 display:inline-block;
 background:transparent;
@@ -328,22 +489,17 @@ z-index:1;
 }
 
 /*字体*/
-
-
 #f-nav{
-display:none;
-}
-#f-button:hover #f-nav{
 position:fixed;
 z-index:10;
 bottom:0%;
 right:0%;
 left:0%;
-display:flex;
+display:none;
 flex-wrap:wrap;
 padding:6rem 10rem 10rem 10rem;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
+background:rgba(255,245,238,72%);
+box-shadow: 5px 5px 20px rgba(128,128,128,0.7);
 opacity:1.0;
 height:100px;
 }
@@ -367,8 +523,11 @@ flex-direction: column;
 flex-wrap: nowrap;
 overflow:auto;
 background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
-opacity:0.75;
+background-size:100% 100%;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+opacity:0.8;
 padding:5rem 10rem;
 height:200px;
 }
@@ -393,8 +552,11 @@ left:0%;
 display:block;
 color:black;
 background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-opacity:0.75;
-background-size:cover;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+opacity:0.8;
+background-size:100% 100%;
 padding:8rem 5rem;
 height:100px;
 }
@@ -430,7 +592,10 @@ flex-wrap:wrap;
 font-size:1rem;
 padding:10rem 10rem 0rem 10rem;
 background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
+background-size:100% 100%;
+-webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
 opacity:0.98;
 height:200px;
 }
@@ -449,7 +614,10 @@ flex-wrap:wrap;
 font-size:1rem;
 padding:10rem 10rem 0rem 10rem;
 background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
+background-size:100% 100%;
+-webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
 opacity:0.98;
 height:200px;
 }
@@ -459,7 +627,7 @@ display:block;
 
 
 #fc-nav div,#bc-nav div{
-background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') no-repeat center center;
+background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') no-repeat center center;
 -webkit-background-clip: text;
 background-clip: text;
 color:transparent;
@@ -470,8 +638,8 @@ display:none;
 padding:1rem 1rem;
 width:2rem;
 height:2rem;
-background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') no-repeat center center;
-background-size:cover;
+background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') no-repeat center center;
+background-size:100% 100%;
 border-radius:50px;
 border:none;
 outline: 0;
@@ -490,8 +658,11 @@ display:flex;
 flex-wrap:wrap;
 font-size:1rem;
 padding:10rem 10rem 0rem 10rem;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
+background:url('https://s3.bmp.ovh/imgs/2021/08/538f4bdbad5d9748.jpg');
+background-size:100% 150%;
+-webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
 opacity:0.98;
 height:200px;
 }
@@ -514,8 +685,11 @@ display:flex;
 flex-wrap:wrap;
 font-size:1rem;
 padding:10rem 10rem 0rem 10rem;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
+background:url('https://s3.bmp.ovh/imgs/2021/08/3ad725eaf06428a7.jpg') top;
+background-size:100% 100%;
+-webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
 opacity:0.98;
 height:200px;
 }
@@ -541,15 +715,15 @@ top:0%;
 right:0%;
 left:0%;
 flex-wrap:wrap;
-padding:10rem 10rem 10rem 10rem;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
+padding:9rem 15rem 7rem 15rem;
+background:hsla(210,82%,98%,100%);
+box-shadow: 4px 4px 10px rgba(128,128,128,0.7);
 opacity:1.0;
-height:200px;
+height:auto;
 }
-
-
-
+#insert-nav button{
+margin:0 1rem;
+}
 
 
 /*插入*/
@@ -615,11 +789,14 @@ right:0%;
 left:0%;
 display:none;
 flex-wrap:wrap;
-padding:10rem 10rem 10rem 10rem;
+padding:8rem 12rem 8rem 12rem;
 background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
+background-size:100% 100%;
+-webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
 opacity:1.0;
-height:200px;
+height:auto;
 }
 #ts-nav button{
 }
@@ -633,17 +810,19 @@ right:0%;
 left:0%;
 display:none;
 flex-wrap:wrap;
-padding:10rem 10rem 10rem 10rem;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
-opacity:1.0;
+padding:3rem 10rem 6rem 10rem;
+background:rgba(254, 251, 253,85%);
+box-shadow: 4px 4px 5px rgba(128,128,128,0.7);
+opacity:0.98;
 height:200px;
 }
 #self-nav button{
+color:black !important;
+font-size:2.4rem !important;
 z-index:10;
 font-size:2rem;
 position: absolute;           
-top: 20px;            
+top: 100px;            
 left: 100px;
 width:auto;
 display:inline-block;
@@ -735,7 +914,6 @@ padding: 15px;
 border-style: solid;
 border-color: rgba(84,100,93,60%);
 }
-
 cbutton{
 display:block;
 position:fixed;
@@ -757,10 +935,15 @@ color:lightgrey;
 
 
 
-
-
 <body>
-<div id="textarea" contenteditable="true" onkeyup="wordCount()">
+
+<button class="fullView-button1" id="fullView-button">全屏
+</button>
+
+
+
+
+<div id="textarea" class="t2" contenteditable="true" onkeyup="wordCount()">
 <p>   
 <br>
 </p>
@@ -771,12 +954,12 @@ color:lightgrey;
 </ol>
 </div>
 
-<div class="output">words:
-<div id="output"></div>
+<div id="wordcourt" class="output2">words:
+<div id="output" class="output3"></div>
 </div>
 
 
-<div id="button2">
+<div id="button2" class="b2">
 <button id="undo-button" onclick="un()" style="">
 <
 </button>
@@ -790,7 +973,7 @@ color:lightgrey;
 <button onclick="replace()">≒</button>
 
 <div id="search-button">
-<surbutton onclick="search()" style="padding:0 0 0 1.8rem;margin:0 -1.5rem 0 0">⎋</surbutton>
+<surbutton onclick="search()" style="padding:0 0 0 1.8rem;margin:0 -1.5rem 0 0;color:rgba(150, 60, 76,100%) ">⎋</surbutton>
 <fixed-blue-button onclick="searched()" id="searched-button" style="height:5rem;padding:0rem 3rem">完成
 </fixed-blue-button>
 </div>
@@ -815,9 +998,9 @@ color:lightgrey;
 
 
 
-
-<surbutton id="f-button"><button>A</button>
+<surbutton id="f-button" onclick="open8()"><button>A</button>
 <div id="f-nav">
+<cbutton style="zoom:0.95;position:fixed;margin:1430 -18;bottom:0;right:0;" onmouseover="close8()">◥</cbutton>
 <surbutton id="ff-button">A
 <div id="ff-nav">
 <button id="ff1-button" onclick="ff1()">sans-serif</button>
@@ -854,19 +1037,19 @@ color:lightgrey;
 <button id="sub-button" onclick="subscript()" style="margin:0 -0.5rem 0 0rem">A<sub style="display:inline;line-height:5.5rem;vertical-align:sub;zoom:0.7;">a</sub></button>
 
 <surbutton id="fc-button">
-<font color="lightgreen">A</font>
+<font color="rgba(252, 180,180,50%)">A</font>
 <div id="fc-nav">
 <input type="color" id="fc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选取</div>
-<blue-button style="background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') center;background-size:cover"><button id="fc-btn" onclick="fc()">设置</button></blue-button>
+<blue-button style="background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') center;background-size:100% 100%"><button id="fc-btn" onclick="fc()">设置</button></blue-button>
 </div>
 </surbutton>
 
 
 <surbutton id="bc-button">
-<button id="bc-button"><div style="background:lightgreen;padding:0rem 1.5rem">A</div></button>
+<button id="bc-button"><div style="background:rgba(250, 174, 190,0.8);padding:0rem 1.5rem">A</div></button>
 <div id="bc-nav">
 <input type="color" id="bc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选取</div>
-<blue-button style="background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') center;background-size:cover"><button id="bc-btn" onclick="bc()">设置</button></blue-button>
+<blue-button style="background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') center;background-size:100% 100%"><button id="bc-btn" onclick="bc()">设置</button></blue-button>
 </div>
 </surbutton>
 
@@ -875,6 +1058,15 @@ color:lightgrey;
 
 </div></surbutton>
 
+
+<script>
+function open8(){
+document.getElementById("f-nav").style.display="flex";
+};
+function close8(){
+document.getElementById("f-nav").style.display="none";
+}
+</script>
 
 
 <!--插入-->
@@ -907,10 +1099,10 @@ color:lightgrey;
 <!--注释-->
 
 <!--参考文献-->
-<button id="r-button" onclick="reference()">[1]</button>
+<button id="r-button" onclick="reference()" style="font-size:3rem;padding:0.5rem 0 0 2rem">[1]</button>
 <!--锚点-->
 <button id="mark-button" onclick="bookmark()">
-<svg t="1629391119689" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="50" height="50"><path d="M977.322163 465.530193a46.539151 46.539151 0 0 0-46.539151 46.53915 418.852355 418.852355 0 0 1-372.313205 416.199624V366.355263a186.156602 186.156602 0 1 0-93.078301 0v561.913704A418.852355 418.852355 0 0 1 93.078301 512.069343a46.539151 46.539151 0 0 0-93.078301 0 511.930657 511.930657 0 0 0 1023.861313 0 46.539151 46.539151 0 0 0-46.53915-46.53915zM418.852355 186.295289a93.078301 93.078301 0 1 1 93.078302 93.078301 93.078301 93.078301 0 0 1-93.078302-93.078301z" p-id="2027" fill="#555555"></path></svg>
+⚓
 </button>
 
 </div>
@@ -942,7 +1134,7 @@ color:lightgrey;
 
 
 
-<div id="button3">
+<div id="button3" class="b4">
 
 
 <button id="iu-button" onclick="iu()" >≔</button>
@@ -1001,7 +1193,7 @@ document.getElementById("button2").style.zIndex="4";
 <surbutton id="self-button" onclick="open1()">⊸
 
 <div id="self-nav">
-<cbutton style="" id="self-cbutton" onmouseover="close1()">◥</cbutton>
+<cbutton style="zoom:0.95;top:0;" id="self-cbutton" onmouseover="close1()">◥</cbutton>
 <button id="aud-button">更改自动链接行为</button>
 <div class="kaiguan" id="self-kaiguan">
 <div class="bai" id="self-anniu"></div>
@@ -1038,7 +1230,38 @@ document.getElementById("self-nav").style.display="none";
 -->
 
 
-
+<script>
+var t
+= document.getElementById("textarea");
+var button2
+= document.getElementById("button2");
+var button3
+= document.getElementById("button3");
+var output
+= document.getElementById("wordcourt");
+var fsbutton
+= document.getElementById("fullView-button");
+var temp = 1;
+document.getElementById("fullView-button").addEventListener('click',function(){
+if(temp==1){
+temp=0;
+t.className="t1";
+button2.className="b1";
+button3.className="b3";
+output.className="output1";
+fsbutton.className="fullView-button2";
+fsbutton.innerHTML="半屏"
+}else{
+temp=1;
+t.className="t2";
+button2.className="b2";
+button3.className="b4";
+output.className="output2";
+fsbutton.className="fullView-button1";
+fsbutton.innerHTML="全屏"
+}
+})
+</script>
 
 
 <!--添加参考文献 -->
@@ -1110,7 +1333,7 @@ anniu.addEventListener('click',function(){
 if(temp==1){
 this.className = 'hei';              
 temp=0;                
-kaiguan.style.border= '2px solid  rgb(11, 243, 81)';    
+kaiguan.style.border= '2px solid  #be002f';    
 tip.style.display="block";
 setTimeout("myFunction()",5000);
 
@@ -1501,6 +1724,7 @@ document.execCommand('insertText', 'false', "<hi>");
 };
 
 </script>
+
 
 
 
