@@ -42,20 +42,29 @@ zoom:2.3;
 
 body{
 font-size:100%;
+background:rgba(190, 160, 190,10%);
 }
-fixed-blue-button{
-font-size:100%;
+fixed-blue-button,fbb,.fixed-blue-button,.fbb{
+display:block;
+position:fixed;
+top:2%;
+right:5%;
+font-size:2rem;
+height:5rem;
+line-height:5rem;
+align-items:center;
 color:white;
 background:#6699ff;
 border:none;
 border-radius:6px;
-padding:1rem 3rem;
+padding:0rem 2.5rem;
+margin:0;
 -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
 -moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
 box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
-z-index:100;
+z-index:11;
 }
-fixed-blue-button:hover{
+fixed-blue-button:hover,fbb:hover,.fixed-blue-button:hover,.fbb:hover{
 color:white;
 background:rgba(102, 153, 255,75%)
 }
@@ -89,24 +98,7 @@ top:0%;
 left:0%;
 padding:auto;
 }
-#fc-nav div,#bc-nav div{
-background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') no-repeat center center;
--webkit-background-clip: text;
-background-clip: text;
-color:transparent;
-}
 
-input{
-display:none;
-padding:1rem 1rem;
-width:2rem;
-height:2rem;
-background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') no-repeat center center;
-background-size:cover;
-border-radius:50px;
-border:none;
-outline: 0;
-}
 blue-button button:hover{
 color:white;
 background:transparent;
@@ -166,16 +158,16 @@ ol a:visited{
 
 #textarea{
 font-size:200%;
-top:500;
+top:350;
 right:5%;
 left:5%;
-height:450;
+height:600;
 background:white;
 position:fixed;
 outline:none;
 padding:4rem 3rem 6rem 3rem;
 overflow:auto;
-border-top: 1px rgba(128,128,128,1.00) solid;
+border-top: 0px rgba(128,128,128,1.00) solid;
 border-right: 0px rgba(0,84,138,1.00) solid;
 border-bottom: 0px rgba(0,84,138,1.00) solid;
 border-left: 0px rgba(0,84,138,1.00) solid;
@@ -192,53 +184,18 @@ right:50;
 display:inline-block;
 }
 
-#getCode-button:hover #code{
-display:block;
-}
-
-#code{
-display:none;
-font-size:60%;
-top:500;
-left:5%;
-width:882;
-height:612;
-border:solid 1px black;
-position:fixed;
-outline:none;
-padding:4rem 3rem 6rem 3rem;
-overflow:auto;
-z-index:1;
-}
+/*
 #getCode{
-
 }
+*/
 
 
-#button1{
-border-left:solid;
-border-right:solid;
-border-top:solid;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: center;
-    justify-content: center;
-    position:fixed;
-left:5%;
-right:5%;
-top:55;
-height:auto;
-z-index:2;
-}
-#button1 button{
-z-index:2;
-}
+
 
 #button2{
-border-left:solid;
-border-right:solid;
+border-left:;
+border-right:;
+border-top:;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
@@ -246,6 +203,8 @@ border-right:solid;
     -webkit-justify-content: center;
     justify-content: center;
     position:fixed;
+background:hsla(210,82%,98%,100%);
+box-shadow: 4px 4px 5px rgba(128,128,128,0.7);
 left:5%;
 right:5%;
 top:145;
@@ -257,9 +216,9 @@ z-index:2;
 }
 
 #button3{
-border-left:solid;
-border-right:solid;
-border-bottom:solid;
+border-left:;
+border-right:;
+border-bottom:;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
@@ -269,10 +228,11 @@ border-bottom:solid;
     position:fixed;
 left:5%;
 right:5%;
-top:320;
+top:230;
 height:auto;
 z-index:2;
-background:transparent
+background:hsla(205,82%,99%,100%);
+box-shadow: 3px 3px 5px rgba(128,128,128,0.7);
 }
 
 
@@ -280,12 +240,12 @@ background:transparent
 button,surbutton{
 background:#f0f8ff;
 color:#555;
-background:white;
+background:transparent;
 display:flex;
 height:5.5rem;
 width:6.5rem;
 font-size:4rem;
-border:solid;
+border:none;
 padding:0 auto;
 outline:none;
 text-align:center;
@@ -311,12 +271,13 @@ z-index:10;
 #tool-button:hover #tool-nav{
 position:fixed;
 z-index:10;
-top:0%;
+bottom:0%;
 right:0%;
 left:0%;
 display:flex;
 flex-wrap:wrap;
-padding:20rem 10rem 0 10rem;
+padding:5rem 5rem 5rem 5rem;
+margin:0;
 background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
 background-size:cover;
 opacity:0.75;
@@ -344,63 +305,29 @@ right:1%;
 z-index:100;
 }
 
+#getCode-button{
+font-size:2rem;
+}
+#getCode-button:hover #code{
+display:block;
+}
 
+#code{
+display:none;
+font-size:1rem;
+top:500;
+left:5%;
+width:882;
+height:612;
+border:solid 1px black;
+position:fixed;
+outline:none;
+padding:4rem 3rem 6rem 3rem;
+overflow:auto;
+z-index:1;
+}
 
 /*字体*/
-#fc-nav,#bc-nav{
-display:none;
-}
-#fc-thecolor,#bc-thecolor{
-font-size:2rem;
-line-height:3rem;
-}
-#fc-btn,#bc-btn{
-font-size:2rem;
-line-height:3rem;
-}
-#fc-button,#bc-button{
-display:block;
-}
-#fc-button:hover #fc-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:flex;
-flex-wrap:wrap;
-font-size:1rem;
-padding:10rem 10rem 10rem 10rem;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
-opacity:0.98;
-height:200px;
-}
-#fc-button:hover #fc-thecolor{
-display:block;
-}
-
-#bc-button:hover #bc-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:flex;
-flex-wrap:wrap;
-font-size:1rem;
-padding:10rem 10rem 10rem 10rem;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:cover;
-opacity:0.98;
-height:200px;
-}
-#bc-button:hover #bc-thecolor{
-display:block;
-}
-
-
-
 
 
 #f-nav{
@@ -409,26 +336,22 @@ display:none;
 #f-button:hover #f-nav{
 position:fixed;
 z-index:10;
-top:0%;
+bottom:0%;
 right:0%;
 left:0%;
 display:flex;
 flex-wrap:wrap;
-padding:10rem 10rem 10rem 10rem;
+padding:6rem 10rem 10rem 10rem;
 background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
 background-size:cover;
 opacity:1.0;
-height:200px;
+height:100px;
 }
 #f-nav button{
 z-index:10;
 display:inline-block;
 background:transparent;
 }
-
-
-
-
 
 #ff-nav{
 display:none;
@@ -439,12 +362,15 @@ z-index:10;
 top:0%;
 right:0%;
 left:0%;
-display:block;
+display:flex;
+flex-direction: column;
+flex-wrap: nowrap;
+overflow:auto;
 background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
 background-size:cover;
 opacity:0.75;
 padding:5rem 10rem;
-height:400px;
+height:200px;
 }
 #ff-nav button{
 font-size:2.9rem;
@@ -469,7 +395,7 @@ color:black;
 background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
 opacity:0.75;
 background-size:cover;
-padding:14rem 5rem;
+padding:8rem 5rem;
 height:100px;
 }
 #fs-nav button{
@@ -479,13 +405,100 @@ height:6rem;
 width:6rem;
 background:transparent;
 }
+#fc-nav,#bc-nav{
+display:none;
+}
+#fc-thecolor,#bc-thecolor{
+font-size:2rem;
+line-height:3rem;
+}
+#fc-btn,#bc-btn{
+font-size:2rem;
+line-height:3rem;
+}
+#fc-button,#bc-button{
+display:block;
+}
+#fc-button:hover #fc-nav{
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+font-size:1rem;
+padding:10rem 10rem 0rem 10rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:0.98;
+height:200px;
+}
+#fc-button:hover #fc-thecolor{
+display:block;
+}
+
+#bc-button:hover #bc-nav{
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+font-size:1rem;
+padding:10rem 10rem 0rem 10rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:0.98;
+height:200px;
+}
+#bc-button:hover #bc-thecolor{
+display:block;
+}
+
+
+#fc-nav div,#bc-nav div{
+background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') no-repeat center center;
+-webkit-background-clip: text;
+background-clip: text;
+color:transparent;
+}
+
+#fc-nav input,#bc-nav input{ 
+display:none;
+padding:1rem 1rem;
+width:2rem;
+height:2rem;
+background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') no-repeat center center;
+background-size:cover;
+border-radius:50px;
+border:none;
+outline: 0;
+}
 
 #h-nav{
 display:none;
 }
 #h-button:hover #h-nav{
 position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+font-size:1rem;
+padding:10rem 10rem 0rem 10rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:0.98;
+height:200px;
+}
+#h-nav button{
 display:block;
+font-size:2.9rem;
+height:4.6rem;
 }
 
 #j-nav{
@@ -493,14 +506,32 @@ display:none;
 }
 #j-button:hover #j-nav{
 position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+font-size:1rem;
+padding:10rem 10rem 0rem 10rem;
+background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
+background-size:cover;
+opacity:0.98;
+height:200px;
+}
+
+#j-nav button{
 display:block;
+font-size:2.9rem;
+height:4.6rem;
 }
 
 
 
 
-#insert-button{
-z-index:10;
+#insert-button:hover #insert-nav{
+display:flex;
+z-index:;
 }
 #insert-nav{
 display:none;
@@ -516,9 +547,8 @@ background-size:cover;
 opacity:1.0;
 height:200px;
 }
-#insert-nav button{
-display:none;
-}
+
+
 
 
 
@@ -547,20 +577,24 @@ display:block;
 #img-button{
 }
 #imagefile{
-z-index:-1;
-visible:hidden;
+position:fixed;
+right:10rem;
+top:10rem;
+z-index:2;
 opacity:0;
 filter:alpha(opacity=0);
+width:6.5rem;
+height:5rem;
+margin:-1rem 1rem;
+background:pink;
+outline:none;
 }
 
 #img2-button{
 display:none;
 }
 #img-button:hover #img2-button{
-position:fixed;
-display:inline-block;
-top:30%;
-left:80%;
+display:block;
 }
 
 
@@ -588,28 +622,16 @@ opacity:1.0;
 height:200px;
 }
 #ts-nav button{
-z-index:10;
-font-size:2rem;
-position: absolute;           
-top: 20px;            
-left: 100px;
-width:auto;
-display:inline-block;
-background:transparent;
 }
-
 
 
 #self-nav{
-display:none;
-}
-#self-button:hover #self-nav{
 position:fixed;
 z-index:10;
 top:0%;
 right:0%;
 left:0%;
-display:flex;
+display:none;
 flex-wrap:wrap;
 padding:10rem 10rem 10rem 10rem;
 background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
@@ -714,8 +736,20 @@ border-style: solid;
 border-color: rgba(84,100,93,60%);
 }
 
-
-
+cbutton{
+display:block;
+position:fixed;
+top:1rem;
+right:-0.1rem;
+margin:-1rem;
+width:100;
+height:100;
+color:black;
+zoom:2;
+}
+cbutton:hover{
+color:lightgrey;
+}
 </style>
 </head>
 
@@ -751,14 +785,14 @@ border-color: rgba(84,100,93,60%);
 </button>
 
 
-<surbutton id="tool-button">功能键
+<surbutton id="tool-button">⌘
 <div id="tool-nav">
 <button onclick="replace()">≒</button>
 
 <div id="search-button">
-<surbutton onclick="search()">⎋</surbutton>
-<button onclick="searched()" id="searched-button">完成
-</button>
+<surbutton onclick="search()" style="padding:0 0 0 1.8rem;margin:0 -1.5rem 0 0">⎋</surbutton>
+<fixed-blue-button onclick="searched()" id="searched-button" style="height:5rem;padding:0rem 3rem">完成
+</fixed-blue-button>
 </div>
 
 <button id="rf-button" onclick="rf()">₡ </button>
@@ -768,7 +802,7 @@ border-color: rgba(84,100,93,60%);
 
 
 
-<button id="getCode-button" onclick="getCode();" style="font-size:200%;align-items:center;line-height:5.5rem">HTML
+<button id="getCode-button" onclick="getCode();" style="align-items:center;line-height:5.5rem">HTML
 <textarea id="code">
 </textarea>
 </button>
@@ -782,7 +816,7 @@ border-color: rgba(84,100,93,60%);
 
 
 
-<surbutton id="f-button">字体
+<surbutton id="f-button"><button>A</button>
 <div id="f-nav">
 <surbutton id="ff-button">A
 <div id="ff-nav">
@@ -796,7 +830,7 @@ border-color: rgba(84,100,93,60%);
 
 
 
-<surbutton id="fs-button">S
+<surbutton id="fs-button" style="margin:0 -1.8rem 0 0">S
 <div id="fs-nav">
 <button id="fs1-button" onclick="fs1()">1</button>
 <button id="fs2-button" onclick="fs2()">2</button>
@@ -813,23 +847,25 @@ border-color: rgba(84,100,93,60%);
 <button id="u-button" onclick="u()"><u>A</u></button>
 <button id="s-button" onclick="s()"><s>A</s></button>
 
-<button id="super-button" onclick="superscript()"> A<super style="display:inline-block;position:absolute;top:-20px;right:17%;zoom:0.9;">a</super></button>
+<button id="super-button" onclick="superscript()" style="margin:0 0.5rem 0 -2rem">A
+<super style="display:inline-block;position:fixed;bottom:10rem;left:21%;zoom:0.6;">a</super>
+</button>
 
-<button id="sub-button" onclick="subscript()">A<sub style="display:inline;line-height:5.5rem;vertical-align:sub">a</sub></button>
+<button id="sub-button" onclick="subscript()" style="margin:0 -0.5rem 0 0rem">A<sub style="display:inline;line-height:5.5rem;vertical-align:sub;zoom:0.7;">a</sub></button>
 
 <surbutton id="fc-button">
-<font color="cyan">A</font>
+<font color="lightgreen">A</font>
 <div id="fc-nav">
-<input type="color" id="fc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选择</div>
+<input type="color" id="fc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选取</div>
 <blue-button style="background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') center;background-size:cover"><button id="fc-btn" onclick="fc()">设置</button></blue-button>
 </div>
 </surbutton>
 
 
 <surbutton id="bc-button">
-<button id="bc-button"><div style="background:yellow;padding:0rem 1.5rem">A</div></button>
+<button id="bc-button"><div style="background:lightgreen;padding:0rem 1.5rem">A</div></button>
 <div id="bc-nav">
-<input type="color" id="bc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选择</div>
+<input type="color" id="bc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选取</div>
 <blue-button style="background:url('https://z3.ax1x.com/2021/08/17/f5Evm4.jpg') center;background-size:cover"><button id="bc-btn" onclick="bc()">设置</button></blue-button>
 </div>
 </surbutton>
@@ -851,18 +887,18 @@ border-color: rgba(84,100,93,60%);
 
 
 <!--图片-->
-<div id="img-button">
-<button id="img1-button" /*style="padding:0rem 0rem 0 1.1rem"*/>    
-￼
-<input type="file" id="imagefile" value=" ">
+<surbutton id="img-button">
+<button style="z-index:1;">￼</button>
+<input type="file" id="imagefile" value="">
+
+<fbb id="img2-button" onclick="img();" style="margin:0;padding:0 3rem">插入
+<button style="z-index:10;position:fixed;top:2%;right:5%;width:10rem">
 </button>
-<button id="img2-button" onclick="img();">插入</button>
+</fbb>
+</surbutton>
 
 
-
-<surbutton id="insert-button">插入
-
-
+<surbutton id="insert-button">⊕
 <div id="insert-nav">
 
 <button id="pre-button" onclick="pre()">&lt;/&gt;</button>
@@ -876,11 +912,20 @@ border-color: rgba(84,100,93,60%);
 <button id="mark-button" onclick="bookmark()">
 <svg t="1629391119689" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="50" height="50"><path d="M977.322163 465.530193a46.539151 46.539151 0 0 0-46.539151 46.53915 418.852355 418.852355 0 0 1-372.313205 416.199624V366.355263a186.156602 186.156602 0 1 0-93.078301 0v561.913704A418.852355 418.852355 0 0 1 93.078301 512.069343a46.539151 46.539151 0 0 0-93.078301 0 511.930657 511.930657 0 0 0 1023.861313 0 46.539151 46.539151 0 0 0-46.53915-46.53915zM418.852355 186.295289a93.078301 93.078301 0 1 1 93.078302 93.078301 93.078301 93.078301 0 0 1-93.078302-93.078301z" p-id="2027" fill="#555555"></path></svg>
 </button>
-<button id="mark2-button">添加链接</button>
+
 </div>
 </surbutton>
 
+
+<button style="width:auto;" class="fbb" id="mark2-button">添加链接
+</button>
+
 </div>
+
+
+
+
+
 
 
 <div class="sky-container">
@@ -893,9 +938,6 @@ border-color: rgba(84,100,93,60%);
 
 
 
-
-
-</div>
 
 
 
@@ -915,14 +957,11 @@ border-color: rgba(84,100,93,60%);
 
 
 <!--排版-->
-<surbutton id="ts-button" onclick="ts1()">排版
-
-
-
+<surbutton id="ts-button" onclick="ts1()">≡
 
 <div id="ts-nav">
-<button onmouseover="ts2()">×</button>
-<surbutton id="j-button">≡
+<cbutton style="" id="ts-cbutton" onmouseover="ts2()">◥</cbutton>
+<surbutton id="j-button"> =
 <div id="j-nav">
 <button id="jf-button" onclick="jf()">|=|</button>
 <button id="jc-button" onclick="jc()"> =</button>
@@ -933,12 +972,12 @@ border-color: rgba(84,100,93,60%);
 
 <surbutton id="h-button">«»
 <div id="h-nav">
-<button id="h1-button" onclick="h1()">一级标题</button>
-<button id="h2-button" onclick="h2()">二级标题</button>
-<button id="h3-button" onclick="h3()">三级标题</button>
-<button id="h4-button" onclick="h4()">四级标题</button>
-<button id="h5-button" onclick="h5()">五级标题</button>
-<button id="h6-button" onclick="h6()">六级标题</button>
+<button id="h1-button" onclick="h1()">h1</button>
+<button id="h2-button" onclick="h2()">h2</button>
+<button id="h3-button" onclick="h3()">h3</button>
+<button id="h4-button" onclick="h4()">h4</button>
+<button id="h5-button" onclick="h5()">h5</button>
+<button id="h6-button" onclick="h6()">h6</button>
 </div>
 </surbutton>
 
@@ -957,18 +996,31 @@ document.getElementById("button2").style.zIndex="4";
 </script>
 
 
+<!--自定义 -->
 
-
-<surbutton id="self-button">自定义
+<surbutton id="self-button" onclick="open1()">⊸
 
 <div id="self-nav">
+<cbutton style="" id="self-cbutton" onmouseover="close1()">◥</cbutton>
 <button id="aud-button">更改自动链接行为</button>
 <div class="kaiguan" id="self-kaiguan">
 <div class="bai" id="self-anniu"></div>
 </div>
 </div>
-
 </surbutton>
+
+
+
+<script>
+function open1(){
+document.getElementById("button2").style.zIndex="1";
+document.getElementById("self-nav").style.display="flex";
+};
+function close1(){
+document.getElementById("button2").style.zIndex="4";
+document.getElementById("self-nav").style.display="none";
+}
+</script>
 
 
 </div>
@@ -982,10 +1034,6 @@ document.getElementById("button2").style.zIndex="4";
 
 
 <!-- 
-<button id="open-button" onclick="open()">打开</button>
-<button id="saveas-button" onclick="saveas()">另存为</button>
-
-
 <button id="inserttext-button" onclick="insertText()" style="font-size:300%">insertText</button>
 -->
 
