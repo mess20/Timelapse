@@ -3,6 +3,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
 <link rel="stylesheet" href="all.css" type="text/css"> 
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
 <title>自制可视化编辑器</title>
 <script>
 document.addEventListener('keydown', function (event) {
@@ -12,62 +15,16 @@ document.addEventListener('keydown', function (event) {
                 || event.which === 187 || event.which === 189)) {
             event.preventDefault();
         }
-    }, false);
-    // Chrome IE 360
-    window.addEventListener('mousewheel', function (event) {
+    }, false);   window.addEventListener('mousewheel', function (event) {
         if (event.ctrlKey === true || event.metaKey) {
             event.preventDefault();
         }
     }, { passive: false });
-
-    //firefox
-    window.addEventListener('DOMMouseScroll', function (event) {
+window.addEventListener('DOMMouseScroll', function (event) {
         if (event.ctrlKey === true || event.metaKey) {
             event.preventDefault();
         }
     }, { passive: false });
-
-
-
-//这里是监听页面缩放百分比并提醒用户将页面缩放调整至100%的（有需要的可以添加）
-
-        function pageZoom() {
-            var ratio = 0,
-                screen = window.screen,
-                ua = navigator.userAgent.toLowerCase();
-
-            if (window.devicePixelRatio !== undefined) {
-                ratio = window.devicePixelRatio;
-            }
-            else if (~ua.indexOf('msie')) {
-                if (screen.deviceXDPI && screen.logicalXDPI) {
-                    ratio = screen.deviceXDPI / screen.logicalXDPI;
-                }
-            }
-            else if (window.outerWidth !== undefined && window.innerWidth !== undefined) {
-                ratio = window.outerWidth / window.innerWidth;
-            }
-
-            if (ratio) {
-                ratio = Math.round(ratio * 100);
-            }
-
-            return ratio;
-        };
-        var ratio = pageZoom()
-
-        // 打印当前缩放值
-        console.log(ratio)
-
-        // 判断是否缩放
-
-        if (ratio > 100) {
-            alert('为了更好地展示页面内容，请您将页面比例调整至100%')
-        } else if (ratio < 100) {
-           alert('为了更好地展示页面内容，请您将页面比例调整至100%')
-        } else {
-            console.log("100%")
-        }
 </script>
 <style>
 body{
@@ -114,6 +71,38 @@ zoom:2.3;
              border-radius: 50%;
              transition: all 1s;
          }
+/*预览or呼出式解释补充*/
+abbr{
+}
+note{display:none;}
+abbr:hover note{
+position:absolute;
+display:block;
+color:black;
+background:white;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+padding:1.4rem;
+z-index:3;
+}
+dfn{
+font-style:normal;
+color:rgba(52,160,238,100%) 
+}
+dfn:hover note{
+position:absolute;
+display:block;
+color:black;
+background:white;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+padding:1.4rem;
+z-index:3;
+}
+
+
 
 
 #codeout-button{
@@ -319,7 +308,7 @@ box-shadow: 5px 5px 20px rgba(128,128,128,0.7);
 .output1{
 font-size:200%;
 position:fixed;
-top:200;
+bottom:60;
 left:50;
 }
 .output3{
@@ -742,7 +731,7 @@ top:0%;
 right:0%;
 left:0%;
 flex-wrap:wrap;
-padding:9rem 15rem 7rem 15rem;
+padding:9rem 5rem 7rem 5rem;
 background:hsla(210,82%,98%,100%);
 box-shadow: 4px 4px 10px rgba(128,128,128,0.7);
 opacity:1.0;
@@ -751,6 +740,33 @@ height:auto;
 #insert-nav button{
 margin:0 1rem;
 }
+
+
+
+#note-button:hover #note-nav{
+display:flex;
+z-index:;
+}
+#note-nav{
+display:none;
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+flex-wrap:wrap;
+padding:9rem 15rem 7rem 15rem;
+background:hsla(210,82%,98%,100%);
+box-shadow: 4px 4px 10px rgba(128,128,128,0.7);
+opacity:1.0;
+height:auto;
+}
+#note-nav button{
+margin:0 1rem;
+}
+
+
+
 
 
 /*插入*/
@@ -990,7 +1006,7 @@ color:lightgrey;
 function codeOut(){
 var code = document.getElementById("c");
 var e = document.getElementById("textarea").innerHTML;
-code.innerText = e;
+code.innerText = e.replace(new RegExp('contenteditable="true"', "g"), '');
 code.select();
 document.execCommand("Copy");
 } 
@@ -1004,15 +1020,8 @@ document.execCommand("Copy");
 </div>
 
 
+
 <div id="button2" class="b2">
-<button id="undo-button" onclick="un()" style="">
-<
-</button>
-<button id="redo-button" onclick="redo()">
->
-</button>
-
-
 <surbutton id="tool-button">⌘
 <div id="tool-nav">
 <button onclick="replace()">≒</button>
@@ -1023,8 +1032,8 @@ document.execCommand("Copy");
 </fixed-blue-button>
 </div>
 
-<button id="rf-button" onclick="rf()">₡ </button>
-
+<button id="rf-button" onclick="rf()">
+<i class="fa fa-eraser" aria-hidden="true"></i>
 <button id="copy-button" onclick="copy()">⧉</button>
 
 
@@ -1135,33 +1144,69 @@ document.getElementById("f-nav").style.display="none";
 </surbutton>
 
 
+
+
+
 <surbutton id="insert-button">⊕
 <div id="insert-nav">
 
 <button id="pre-button" onclick="pre()">&lt;/&gt;</button>
 
 
-<!--注释-->
-
 <!--参考文献-->
 <button id="r-button" onclick="reference()" style="font-size:3rem;padding:0.5rem 0 0 2rem">[1]</button>
+
+<surbutton id="note-button" style="font-size:3rem;padding:0rem 0 0rem 2rem">( )
+<div id="note-nav" >
+<!--术语-->
+<button id="dfn-button" onclick="dfn()" style="font-size:2.7rem !important;">dfn
+</button>
+<!--注释/缩写-->
+<button id="abbr-button" onclick="abbr()" style="color:#555;font-size:2.7rem !important;">abbr
+</button>
+<!--注音-->
+<button id="ruby-button" onclick="ruby()" style="font-size:2.7rem !important;">
+<ruby>A<rp>(</rp><rt>a</rt><rp>)</rp></ruby>
+</button>
+
+
+
+</div>
+</surbutton>
+
 <!--锚点-->
 <button id="mark-button" onclick="bookmark()">
 ⚓
 </button>
 
+
+
 </div>
 </surbutton>
+
+
+
+
 
 
 <button style="width:auto;" class="fbb" id="mark2-button">添加链接
 </button>
 
+
+
+
+<button id="undo-button" onclick="un()" style="">
+<
+</button>
+<button id="redo-button" onclick="redo()">
+>
+</button>
+
+
+
+
+
 </div>
-
-
-
-
 
 
 
@@ -1170,6 +1215,11 @@ document.getElementById("f-nav").style.display="none";
 
 <div id="mark-tip" class="do-tip">请选择合适文本位置添加对应链接</div>
 <div id="aud-tip" class="notice-tip">若恢复自动链接行为，修改后链接样式将不会保存。</div>
+
+
+
+
+
 
 </div>
 
@@ -1415,6 +1465,126 @@ a.style.borderBottom="4px solid #6483B0";
 function myFunction(){
 tip.style.display="none"
 }
+
+
+
+
+
+
+<!--注音-->
+function ruby() {
+var n = prompt("填写注音","");
+        if(n!=null&&n!=''){
+var content = window.getSelection().toString();
+var html='<ruby>'+ content + '<rp>(</rp><rt>'+n+'</rt><rp>)</rp></ruby>';
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") {     
+document.selection.createRange().pasteHTML(html);
+    }
+}}
+
+<!--注释-->
+function abbr() {
+var n = prompt("填写注释","");
+        if(n!=null&&n!=''){
+var content = window.getSelection().toString();
+var html='<abbr title>'+ content +'<note>'+n+'</note></abbr>';
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") {     
+document.selection.createRange().pasteHTML(html);
+    }
+}}
+<!--术语-->
+function dfn() {
+var n = prompt("填写术语","");
+        if(n!=null&&n!=''){
+var content = window.getSelection().toString();
+var html='<dfn>'+ content +'<note>'+n+'</note></dfn>';
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") {     
+document.selection.createRange().pasteHTML(html);
+    }
+}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- 书签（锚点链接）-->
 
 function bookmark() {
@@ -1736,18 +1906,7 @@ var sel, range;
 }
 
 
-//废用
-<!--
-function aud() {
-var as = document.getElementsByTagName("a");
-for(var i=0;i<as.length;i++){
-        var a=as[i];
-        a.style.color="black";
-a.style.textDecoration="none";
-a.style.borderBottom="none";
-    }
-}     
--->
+
 
 
 <!--不会使用-->
@@ -1768,6 +1927,9 @@ document.execCommand("SaveAs","hi.txt")
 function insertText(){
 document.execCommand('insertText', 'false', "<hi>");
 };
+
+
+
 
 </script>
 
