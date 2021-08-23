@@ -26,6 +26,25 @@ window.addEventListener('DOMMouseScroll', function (event) {
         }
     }, { passive: false });
 </script>
+
+
+<script>
+<!--外链后缀-->
+window.onload=function(){
+var a = document.querySelectorAll('a[href^="http"]');
+var i;
+for (i = 0; i < a.length; i++){
+var content = a[i].outerHTML;
+a[i].outerHTML= content + ' <i class="fa fa-mail-forward" aria-hidden="true" style="color:#1d65b1;"></i>';
+}
+}
+</script>
+
+
+
+
+
+
 <style>
 body{
 position:fixed !important;
@@ -36,6 +55,7 @@ height:100% !important;
 font-size:100%;
 background:rgba(190, 160, 190,10%);
 }
+a
       .kaiguan{
              position: absolute;
              top: 50px;
@@ -86,10 +106,14 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 padding:1.4rem;
 z-index:3;
 }
+/*术语注解*/
+
 dfn{
 font-style:normal;
 color:rgba(52,160,238,100%) 
 }
+
+
 dfn:hover note{
 position:absolute;
 display:block;
@@ -102,6 +126,44 @@ padding:1.4rem;
 z-index:3;
 }
 
+/*强调*/
+
+blockquote{
+display:block;
+width: 90%;
+left:0;
+margin: 0.25em 0;
+padding:1rem;
+border-left:1rem solid rgb(235,236,240);
+}
+blockquote a{
+color:#f8f8ff;
+border-bottom:4px solid #f8f8ff;
+}
+
+/*注意*/
+em{
+
+}
+
+
+
+/*链接*/
+a{
+text-decoration:none;
+}
+/*内链*/
+a[href]{
+color:#1d65b1;
+text-decoration:none;
+border-bottom:2px solid #1d65b1;
+}
+/*外链*/
+a[href^="http"]{
+color:#1d65b1;
+text-decoration:none;
+border-bottom:none;
+}
 
 
 
@@ -1055,13 +1117,13 @@ document.execCommand("Copy");
 <surbutton id="f-button" onclick="open8()"><button>A</button>
 <div id="f-nav">
 <cbutton style="zoom:0.95;position:fixed;margin:1430 -18;bottom:0;right:0;" onmouseover="close8()">◥</cbutton>
-<surbutton id="ff-button">A
+<surbutton id="ff-button"><span style='font-family:serif'>A</span>
 <div id="ff-nav">
-<button id="ff1-button" onclick="ff1()">sans-serif</button>
-<button id="ff2-button" onclick="ff2()">serif</button>
-<button id="ff3-button" onclick="ff3()">cursive</button>
-<button id="ff4-button" onclick="ff4()">monospace</button>
-<button id="ff5-button" onclick="ff5()">courier</button>
+<button id="ff1-button" onclick="ff1()"><span style='font-family:sans-serif'>sans-serif</span></button>
+<button id="ff2-button" onclick="ff2()"><span style='font-family:serif'>serif</span></button>
+<button id="ff3-button" onclick="ff3()"><span style='font-family:cursive'>cursive</span></button>
+<button id="ff4-button" onclick="ff4()"><span style='font-family:monospace'>monospace</span></button>
+<button id="ff5-button" onclick="ff5()"><span style='font-family:courier'>courier</span></button>
 </div></surbutton>
 
 
@@ -1150,7 +1212,11 @@ document.getElementById("f-nav").style.display="none";
 <surbutton id="insert-button">⊕
 <div id="insert-nav">
 
-<button id="pre-button" onclick="pre()">&lt;/&gt;</button>
+<button id="pre-button" onclick="pre()"><i class="fa fa-code"></i></button>
+
+
+<button id="quote-button" onclick="quote()">「」
+</button>
 
 
 <!--参考文献-->
@@ -1168,16 +1234,35 @@ document.getElementById("f-nav").style.display="none";
 <button id="ruby-button" onclick="ruby()" style="font-size:2.7rem !important;">
 <ruby>A<rp>(</rp><rt>a</rt><rp>)</rp></ruby>
 </button>
-
-
-
 </div>
 </surbutton>
 
+
+
+
+<surbutton id="info-button" style="">
+<div id="info-nav">
+<i class="fa fa-info-circle"></i>
+</div>
+</surbutton>
+
+
+
+
+
+
 <!--锚点-->
 <button id="mark-button" onclick="bookmark()">
-⚓
+<i class="fa fa-anchor"></i>
 </button>
+
+<button id="book-button" onclick="book()" style="font-size:3rem;padding:0rem 0 0rem 2rem">
+【 】
+</button>
+
+
+
+
 
 
 
@@ -1265,6 +1350,7 @@ document.getElementById("f-nav").style.display="none";
 <button id="h4-button" onclick="h4()">h4</button>
 <button id="h5-button" onclick="h5()">h5</button>
 <button id="h6-button" onclick="h6()">h6</button>
+<button id="hh-button" onclick="hh()">«»</button>
 </div>
 </surbutton>
 
@@ -1569,8 +1655,11 @@ document.selection.createRange().pasteHTML(html);
 
 
 
+<!--标识书名-->
 
-
+function book(){
+document.execCommand('insertText', 'false', "【】");
+};
 
 
 
@@ -1793,7 +1882,9 @@ document.execCommand("FormatBlock","false","<h5>")
 function h6(){
 document.execCommand("FormatBlock","false","<h6>")
 };
-
+function hh(){
+document.execCommand('insertText', 'false', "«»");
+}
 //缩进
 function indent(){
 document.execCommand('Indent');  
@@ -1922,11 +2013,6 @@ document.execCommand("SaveAs","hi.txt")
 //} 
 
 
-
-<!--目前暂定不用-->
-function insertText(){
-document.execCommand('insertText', 'false', "<hi>");
-};
 
 
 
