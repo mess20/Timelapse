@@ -9,6 +9,7 @@ font-size:48px
 t2{
 display:block;
 width:auto;
+text-align:center;
 padding:0.2rem 2rem;
 box-shadow:0px -100px hsla(218,88%,76%,40%) inset;
 border-radius:20px
