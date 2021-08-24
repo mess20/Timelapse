@@ -808,12 +808,37 @@ opacity:0.98;
 height:200px;
 }
 
-#info-nav button{
+#em-nav button{
 display:block;
 font-size:2.9rem;
 height:4.6rem;
 }
-
+#em-nav{
+display:none;
+}
+#em-button:hover #em-nav{
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+font-size:1rem;
+padding:6rem 10rem 0rem 10rem;
+background:url('https://s3.bmp.ovh/imgs/2021/08/3ad725eaf06428a7.jpg') top;
+background-size:100% 100%;
+-webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+opacity:0.98;
+height:160px;
+}
+#em-nav button{
+display:block;
+font-size:2.9rem;
+height:4.6rem;
+}
 #spcl-mark-nav{
 display:none;
 }
@@ -1367,8 +1392,23 @@ document.getElementById("f-nav").style.display="none";
 <surbutton id="info-button" style="">
 <i class="fa fa-info-circle"></i>
 <div id="info-nav">
-<button id="em-button" onclick="em()">！
-</button>
+
+<surbutton id="em-button" onclick="em()">！
+<div id="em-nav">
+
+<button id="em1-button" onclick="em1()">1</button>
+<button id="em2-button" onclick="em2()">2</button>
+
+</div>
+</surbutton>
+
+
+
+
+
+
+
+
 <button id="strong-button" onclick="strong()">★  
 </button>
 </div>
