@@ -845,10 +845,7 @@ height:4.6rem;
 
 
 
-#insert-button:hover #insert-nav{
-display:flex;
-z-index:;
-}
+
 #insert-nav{
 display:none;
 position:fixed;
@@ -1329,8 +1326,9 @@ document.getElementById("f-nav").style.display="none";
 <button id="in-button" onclick="indent()">⇥</button>
 <button id="out-button" onclick="outdent()">⇤</button>
 
-<surbutton id="insert-button">⊕
+<surbutton id="insert-button" onclick="insert1()">⊕
 <div id="insert-nav">
+<cbutton style="" id="insert-cbutton" onmouseover="insert2()">◥</cbutton>
 
 <button id="pre-button" onclick="pre()"><i class="fa fa-code"></i></button>
 
@@ -1400,6 +1398,21 @@ document.getElementById("f-nav").style.display="none";
 
 <button style="width:auto;" class="fbb" id="mark2-button">添加链接
 </button>
+
+
+
+<script>
+function insert1(){
+document.getElementById("button2").style.zIndex="1";
+document.getElementById("insert-nav").style.display="flex";
+};
+function insert2(){
+document.getElementById("insert-nav").style.display="none";
+document.getElementById("button2").style.zIndex="4";
+}
+</script>
+
+
 
 
 <button id="hr-button" onclick="hr()">---</button>
@@ -1482,9 +1495,6 @@ document.getElementById("self-nav").style.display="none";
 </body>
 
 
-<!-- 
-<button id="inserttext-button" onclick="insertText()" style="font-size:300%">insertText</button>
--->
 
 
 <script>
