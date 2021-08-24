@@ -1,3 +1,37 @@
+/*笔记*/
+/*大标题*/
+t1{
+display:block;
+color:#B8BBDE;
+font-size:48px
+}
+/*小标题*/
+t2{
+display:block;
+box-shadow:0px -100px hsla(218,88%,76%,40%) inset;
+border-radius:10px
+}
+/*强调*/
+t3{
+color:#FA8072
+}
+
+
+
+/*重点*/
+l1{
+box-shadow:0px -100px #FCECA3 inset;
+border-radius:10px
+}
+n1{
+color:#D7B29E
+}
+/*补充*/
+n2{
+color:#C3BED4
+}
+
+/*开关*/
       .kaiguan{
              position: absolute;
              top: 20px;
@@ -34,6 +68,7 @@ zoom:2.3;
              transition: all 1s;
          }
         
+/*关键词*/
 k {
 border-style:none none solid none;
 border-bottom:2px solid cornflowerblue;
