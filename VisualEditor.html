@@ -122,9 +122,9 @@ margin: 0.25em 0rem;
 padding:1.5rem;
 border-left:1rem solid rgb(235,236,240);
 }
-blockstrong a{
-color:#a83654 !important;
-border-bottom:4px solid #a83654 !important;
+blockstrong spcl{
+color:cornflowerblue !important;
+border-bottom:4px solid cornflowerblue !important;
 }
 
 /*注意*/
@@ -825,6 +825,33 @@ display:block;
 font-size:2.9rem;
 height:4.6rem;
 }
+
+#strong-nav{
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:none;
+flex-wrap:wrap;
+font-size:1rem;
+padding:8rem 7rem 0rem 7rem;
+background-image:url('http://test-imgurl.minio.xiaoz.org:9000/imgs/2021/08/ab550ebaa8c8b018.jpg');
+background-size:100% 100%;
+-webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+opacity:0.98;
+height:160px
+}
+#strong-nav button{
+display:block;
+height:4.2rem !important;
+width:7rem !important;
+margin:0 3rem !important;
+border-radius:28px !important;
+}
+
 #spcl-mark-nav{
 display:none;
 }
@@ -838,8 +865,8 @@ display:flex;
 flex-wrap:wrap;
 font-size:1rem;
 padding:10rem 10rem 0rem 10rem;
-background:url('https://s3.bmp.ovh/imgs/2021/08/3ad725eaf06428a7.jpg') top;
-background-size:100% 100%;
+background:url('http://test-imgurl.minio.xiaoz.org:9000/imgs/2021/08/f5b57865768e382f.jpg') center;
+background-size:100% 125%;
 -webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
 -moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
 box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
@@ -849,13 +876,21 @@ height:200px;
 
 #spcl-mark-nav button{
 display:block;
-font-size:2.9rem;
-height:4.6rem;
+margin:0 1rem;
 }
 
 
+.strongSpclFont1{
+color:cornflowerblue !important;
+}
+.strongSpclFont2{
+color:#a83654 !important;
+}
 
-
+.strongSpclFont3{
+color:#868c8d !important;
+border-bottom:4px solid #868c8d !important
+}
 
 
 
@@ -1397,11 +1432,22 @@ document.getElementById("f-nav").style.display="none";
 
 
 
-<button id="strong-button" onclick="strong()">★  
+<button id="strong-button" onclick="strong1()">★  
 </button>
+
+
+
+
 </div>
 </surbutton>
 
+
+<div id="strong-nav">
+<cbutton id="strong-cbutton" onmouseover="strong2()" style="zoom:4;margin:-1.1rem -2.5rem !important;">◥</cbutton>
+<button id="strongSpclFont1-button" onclick="strongSpclFont1()" style="background:cornflowerblue;"></button>
+<button id="strongSpclFont2-button" onclick="strongSpclFont2()" style="background:#a83654;"></button>
+<button id="strongSpclFont3-button" onclick="strongSpclFont3()" style="background:#868c8d;"></button>
+</div>
 
 
 
@@ -1831,7 +1877,9 @@ var sel, range;
 document.selection.createRange().pasteHTML(html);
     };
 };
-function strong(){
+function strong1(){
+document.getElementById("strong-nav").style.display="flex";
+
 var content = window.getSelection().toString();
 var html='<blockstrong>' + content + '</blockstrong>';
 var sel, range;
@@ -1860,6 +1908,43 @@ document.selection.createRange().pasteHTML(html);
     };
 };
 
+function strong2(){
+document.getElementById("strong-nav").style.display="none";
+}
+function strongSpclFont1(){
+document.execCommand("ForeColor","false",'cornflowerblue');
+};
+function strongSpclFont2(){
+document.execCommand("ForeColor","false",'#a83654');
+};
+function strongSpclFont3(){
+var content = window.getSelection().toString();
+var html='<span class="strongSpclFont3">' + content + '</span>';
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") {     
+document.selection.createRange().pasteHTML(html);
+    };
+};
 
 
 
