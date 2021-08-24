@@ -126,9 +126,9 @@ padding:1.4rem;
 z-index:3;
 }
 
-/*强调*/
+/*强调块*/
 
-blockquote{
+blockstrong{
 display:block;
 width: 90%;
 left:0;
@@ -136,16 +136,22 @@ margin: 0.25em 0;
 padding:1rem;
 border-left:1rem solid rgb(235,236,240);
 }
-blockquote a{
+blockstrong a{
 color:#f8f8ff;
 border-bottom:4px solid #f8f8ff;
 }
 
 /*注意*/
-em{
-
+em2{
+display:block;
+background:#fa947d;
+margin:0 5%;
+padding:0rem 2rem;
+line-height:50px;
+align-items:center;
+border-radius:5px;
+color:#f3f2f2;
 }
-
 
 
 /*链接*/
@@ -1758,7 +1764,7 @@ document.execCommand("ForeColor","false",'#fa947d');
 };
 function em2(){
 var content = window.getSelection().toString();
-var html='<em2>' + content + '</em2>';
+var html='<em2><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#f3f2f2;"></i>  ' + content + '</em2>';
 var sel, range;
     if (window.getSelection) {
         sel = window.getSelection();
