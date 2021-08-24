@@ -1206,8 +1206,62 @@ document.getElementById("f-nav").style.display="none";
 </surbutton>
 
 
+<!--特殊符号-->
+<surbutton id="spcl-mark-button">
+<div id="spcl-mark-nav">
 
 
+
+</div>
+</surbutton>
+
+
+
+
+
+
+<button id="undo-button" onclick="un()" style="">
+↩
+</button>
+<button id="redo-button" onclick="redo()">
+↪
+</button>
+
+
+
+
+
+</div>
+
+
+
+<div class="sky-container">
+<div class="finish-tip">已完成</div>
+
+<div id="mark-tip" class="do-tip">请选择合适文本位置添加对应链接</div>
+<div id="aud-tip" class="notice-tip">若恢复自动链接行为，修改后链接样式将不会保存。</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="button3" class="b4">
+
+
+<button id="iu-button" onclick="iu()" >≔</button>
+<button id="io-button" onclick="io()" style="font-family:serif">I</button>
+<!--段落-->
+<button id="in-button" onclick="indent()">⇥</button>
+<button id="out-button" onclick="outdent()">⇤</button>
 
 <surbutton id="insert-button">⊕
 <div id="insert-nav">
@@ -1278,53 +1332,6 @@ document.getElementById("f-nav").style.display="none";
 </button>
 
 
-
-
-<button id="undo-button" onclick="un()" style="">
-<
-</button>
-<button id="redo-button" onclick="redo()">
->
-</button>
-
-
-
-
-
-</div>
-
-
-
-<div class="sky-container">
-<div class="finish-tip">已完成</div>
-
-<div id="mark-tip" class="do-tip">请选择合适文本位置添加对应链接</div>
-<div id="aud-tip" class="notice-tip">若恢复自动链接行为，修改后链接样式将不会保存。</div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<div id="button3" class="b4">
-
-
-<button id="iu-button" onclick="iu()" >≔</button>
-<button id="io-button" onclick="io()" style="font-family:serif">I</button>
-<!--段落-->
-<button id="in-button" onclick="indent()">⇥</button>
-<button id="out-button" onclick="outdent()">⇤</button>
-
-<button id="p-button" onclick="p()">↩</button>
-
 <button id="hr-button" onclick="hr()">---</button>
 
 
@@ -1350,7 +1357,6 @@ document.getElementById("f-nav").style.display="none";
 <button id="h4-button" onclick="h4()">h4</button>
 <button id="h5-button" onclick="h5()">h5</button>
 <button id="h6-button" onclick="h6()">h6</button>
-<button id="hh-button" onclick="hh()">«»</button>
 </div>
 </surbutton>
 
