@@ -780,6 +780,70 @@ height:4.6rem;
 
 
 
+#info-nav{
+display:none;
+}
+#info-button:hover #info-nav{
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+font-size:1rem;
+padding:10rem 10rem 0rem 10rem;
+background:url('https://s3.bmp.ovh/imgs/2021/08/3ad725eaf06428a7.jpg') top;
+background-size:100% 100%;
+-webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+opacity:0.98;
+height:200px;
+}
+
+#info-nav button{
+display:block;
+font-size:2.9rem;
+height:4.6rem;
+}
+
+#spcl-mark-nav{
+display:none;
+}
+#spcl-mark-button:hover #spcl-mark-nav{
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:flex;
+flex-wrap:wrap;
+font-size:1rem;
+padding:10rem 10rem 0rem 10rem;
+background:url('https://s3.bmp.ovh/imgs/2021/08/3ad725eaf06428a7.jpg') top;
+background-size:100% 100%;
+-webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+opacity:0.98;
+height:200px;
+}
+
+#spcl-mark-nav button{
+display:block;
+font-size:2.9rem;
+height:4.6rem;
+}
+
+
+
+
+
+
+
+
+
 
 #insert-button:hover #insert-nav{
 display:flex;
@@ -1211,6 +1275,8 @@ document.getElementById("f-nav").style.display="none";
 <div id="spcl-mark-nav">
 
 
+<button id="hh-button" onclick="hh()">«»</button>
+
 
 </div>
 </surbutton>
@@ -1295,8 +1361,12 @@ document.getElementById("f-nav").style.display="none";
 
 
 <surbutton id="info-button" style="">
-<div id="info-nav">
 <i class="fa fa-info-circle"></i>
+<div id="info-nav">
+<button id="em-button" onclick="em()">！
+</button>
+<button id="strong-button" onclick="strong()">★  
+</button>
 </div>
 </surbutton>
 
