@@ -28,21 +28,6 @@ window.addEventListener('DOMMouseScroll', function (event) {
 </script>
 
 
-<script>
-<!--外链后缀-->
-window.onload=function(){
-var a = document.querySelectorAll('a[href^="http"]');
-var i;
-for (i = 0; i < a.length; i++){
-var content = a[i].outerHTML;
-a[i].outerHTML= content + ' <i class="fa fa-mail-forward" aria-hidden="true" style="color:#1d65b1;"></i>';
-}
-}
-</script>
-
-
-
-
 
 
 <style>
@@ -138,8 +123,8 @@ padding:1.5rem;
 border-left:1rem solid rgb(235,236,240);
 }
 blockstrong a{
-color:#f8f8ff;
-border-bottom:4px solid #f8f8ff;
+color:#a83654 !important;
+border-bottom:4px solid #a83654 !important;
 }
 
 /*注意*/
@@ -1390,6 +1375,8 @@ document.getElementById("f-nav").style.display="none";
 
 
 
+
+
 <surbutton id="info-button" style="">
 <i class="fa fa-info-circle"></i>
 <div id="info-nav">
@@ -1541,6 +1528,19 @@ document.getElementById("self-nav").style.display="none";
 
 </body>
 
+
+
+<script>
+<!--外链后缀-->
+window.onload=function(){
+var a = document.querySelectorAll('a[href^="http"]');
+var i;
+for (i = 0; i < a.length; i++){
+var content = a[i].outerHTML;
+a[i].outerHTML= content + ' <i class="fa fa-mail-forward" aria-hidden="true" style="color:#1d65b1;"></i>';
+}
+}
+</script>
 
 
 
