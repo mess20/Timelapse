@@ -1692,7 +1692,44 @@ document.execCommand("Copy")
 };
 
 
-
+//链接
+<!--(废)
+function a() {
+var a = prompt("输入链接内容","");
+        if(a!=null&&a!=''){
+document.execCommand('CreateLink', true, a);
+};
+}
+-->
+function a() {
+var a = prompt("输入链接内容","");
+        if(a!=null&&a!=''){
+var html='<a id="'+ a + '">' + content + '<i class="fa fa-mail-forward" aria-hidden="true" style="color:#1d65b1;display:none"></i> </a>';
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") {     document.selection.createRange().pasteHTML(html);
+    };
+};
+}
 //更改自动链接行为（伪）
 //function aud() {
 var anniu =document.getElementById('self-anniu');
@@ -2119,13 +2156,7 @@ function bc(){
 var color =document.getElementById("bc-thecolor").value;
 document.execCommand("BackColor","false",color);
 };
-//链接
-function a() {
-var a = prompt("输入链接内容","");
-        if(a!=null&&a!=''){
-document.execCommand('CreateLink', true, a);
-};
-}
+
 //图片
 function img(){
 if(typeof FileReader=='undifined'){result.innerHTML="<p>抱歉，你的浏览器不支持 FileReader</p>";return false;}var file=document.getElementById("imagefile").files[0];
