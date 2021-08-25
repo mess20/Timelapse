@@ -1581,6 +1581,7 @@ document.getElementById("self-nav").style.display="none";
 function a() {
 var a = prompt("输入链接内容","");
         if(a!=null&&a!=''){
+var content = window.getSelection().toString();
 var html='<a href="'+ a + '">' + content + '<i class="fa fa-mail-forward" aria-hidden="true" style="color:#1d65b1;display:none"></i> </a>';
 var sel, range;
     if (window.getSelection) {
