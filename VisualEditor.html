@@ -1581,25 +1581,14 @@ document.getElementById("self-nav").style.display="none";
 
 <script>
 <!--外链后缀-->
-var a1 = document.querySelectorAll('a');
-var i;
-for (i = 0; i < a1.length; i++){
-a1[i].className = 'false';
-}
-var a3 = document.querySelectorAll('a[href^="http"]');
-var i;
-for (i = 0; i < a3.length; i++){
-a3[i].className = 'true';
-}
 window.setInterval('aa()', 1000);
 function aa(){
-var a2 = document.querySelectorAll('a.false[href^="http"]');
+var a = document.querySelectorAll('a[href^="http"] i');
 var i;
-for (i = 0; i < a2.length; i++){
-a2[i].className = 'true';
-var content = a2[i].outerHTML;
-a2[i].outerHTML= content + ' <i class="fa fa-mail-forward" aria-hidden="true" style="color:#1d65b1;"></i>';
-}}
+for (i = 0; i < a.length; i++){
+a[i].style.display="inline";
+};
+}
 </script>
 
 
