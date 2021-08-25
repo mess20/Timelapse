@@ -1576,6 +1576,81 @@ document.getElementById("self-nav").style.display="none";
 
 
 <script>
+//链接
+<!--(废)
+function a() {
+var a = prompt("输入链接内容","");
+        if(a!=null&&a!=''){
+document.execCommand('CreateLink', true, a);
+};
+}
+-->
+function a() {
+var a = prompt("输入链接内容","");
+        if(a!=null&&a!=''){
+var html='<a href="'+ a + '">' + content + '<i class="fa fa-mail-forward" aria-hidden="true" style="color:#1d65b1;display:none"></i> </a>';
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") {     document.selection.createRange().pasteHTML(html);
+    };
+};
+}
+//更改自动链接行为（伪）
+//function aud() {
+var anniu =document.getElementById('self-anniu');
+var kaiguan = document.getElementById('self-kaiguan');
+var tip = document.getElementById('aud-tip');      
+var as = document.getElementsByTagName("a");
+           
+
+var temp = 1;
+anniu.addEventListener('click',function(){
+if(temp==1){
+this.className = 'hei';              
+temp=0;                
+kaiguan.style.border= '2px solid  #be002f';    
+tip.style.display="block";
+setTimeout("myFunction()",5000);
+
+for(var i=0;i<as.length;i++){      
+var a=as[i];      
+a.style.color="black";
+a.style.textDecoration="none";
+a.style.borderBottom="none";
+    }
+            
+}else{                
+this.className = 'bai';               
+temp=1;               
+kaiguan.style.border= '2px solid black';               
+for(var i=0;i<as.length;i++){      
+var a=as[i];      
+a.style.color="black";
+a.style.textDecoration="none";
+a.style.borderBottom="4px solid #6483B0";
+}
+}
+})
+//}
 <!--外链后缀-->
 window.setInterval('aa()', 1000);
 function aa(){
@@ -1688,81 +1763,7 @@ document.execCommand("Copy")
 };
 
 
-//链接
-<!--(废)
-function a() {
-var a = prompt("输入链接内容","");
-        if(a!=null&&a!=''){
-document.execCommand('CreateLink', true, a);
-};
-}
--->
-function a() {
-var a = prompt("输入链接内容","");
-        if(a!=null&&a!=''){
-var html='<a href="'+ a + '">' + content + '<i class="fa fa-mail-forward" aria-hidden="true" style="color:#1d65b1;display:none"></i> </a>';
-var sel, range;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            var el = document.createElement("div");
-            el.innerHTML = html;
-            var frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-            if (lastNode) {
-                range = range.cloneRange();
-                range.setStartAfter(lastNode);
-                range.collapse(true);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-    } else if (document.selection && document.selection.type != "Control") {     document.selection.createRange().pasteHTML(html);
-    };
-};
-}
-//更改自动链接行为（伪）
-//function aud() {
-var anniu =document.getElementById('self-anniu');
-var kaiguan = document.getElementById('self-kaiguan');
-var tip = document.getElementById('aud-tip');      
-var as = document.getElementsByTagName("a");
-           
 
-var temp = 1;
-anniu.addEventListener('click',function(){
-if(temp==1){
-this.className = 'hei';              
-temp=0;                
-kaiguan.style.border= '2px solid  #be002f';    
-tip.style.display="block";
-setTimeout("myFunction()",5000);
-
-for(var i=0;i<as.length;i++){      
-var a=as[i];      
-a.style.color="black";
-a.style.textDecoration="none";
-a.style.borderBottom="none";
-    }
-            
-}else{                
-this.className = 'bai';               
-temp=1;               
-kaiguan.style.border= '2px solid black';               
-for(var i=0;i<as.length;i++){      
-var a=as[i];      
-a.style.color="black";
-a.style.textDecoration="none";
-a.style.borderBottom="4px solid #6483B0";
-}
-}
-})
-//}
 function myFunction(){
 tip.style.display="none"
 }
