@@ -9,9 +9,11 @@
   <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
   <script src="https://www.suyuanli.ink/example/mobile_drag/js/index.js"></script>
   <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
+
+
 <script>
   // 初始化
-  var vConsole = new VConsole();
+  //var vConsole = new VConsole();
 </script>
 
   <script type="text/javascript">
@@ -87,7 +89,7 @@
     })
     // 修改背景色
     $('.bgColor').click(function () {
-      var color = '#' + parseInt(Math.random() * 10) + parseInt(Math.random() * 10) + parseInt(Math.random() * 10)
+      var color = 'rgba(255,255,255,0%)' ;
       canvas.changeBg({
         photo: 'none',
         color: color
@@ -103,23 +105,6 @@
           console.log('成功添加本地图片')
         }
       })
-    })
-
-    // Cascade模式<
-    $('.CascadeModel').click(function () {
-      canvas.changeParams({
-        model: 'Cascade'
-      })
-      $('.nowModel').text('Cascade模式')
-      console.log('成功切换到Cascade模式')
-    })
-    // autoHierarchy模式
-    $('.autoHierarchyModel').click(function () {
-      canvas.changeParams({
-        model: 'autoHierarchy'
-      })
-      $('.nowModel').text('autoHierarchy模式')
-      console.log('成功切换autoHierarchy模式')
     })
 
     // 获取当前图片信息
@@ -182,22 +167,6 @@
         })
       }
     })
-    // 更换url
-    $('.changeUrl').click(function () {
-      var nowPhoto = canvas.getNowPhoto();
-      if (!nowPhoto) {
-        alert('未选中任何图片');
-        return;
-      } else {
-        var nowPhotoInfo = nowPhoto.getPhotoInfo();
-        nowPhoto.changeInfo({
-          img: './img/pic7.jpg',
-          callback: function () {
-            console.log('成功更换url')
-          }
-        })
-      }
-    })
 
     // 重置
     $('.autoScale').click(function () {
@@ -228,9 +197,11 @@
 
     // 更改画布宽高
     $('.changeWH1').click(function () {
+var w = prompt("输入宽度值","");
+var h = prompt("输入高度值","");
       canvas.changeParams({
-        width: 500,
-        height: 400
+        width: w,
+        height: h
       })
     })
     // 复原
@@ -256,7 +227,7 @@
         type: 'image/png',
         callback: function (url) {
           $('.outputPic').attr('src', url);
-          console.log('成功输出1倍png图')
+          console.log('成功输出png图')
         }
       })
     })
@@ -311,13 +282,15 @@
 </head>
 <body>
   <div id="picBox">
-    <!-- <img src="./img/pic1.jpg" alt="" crossOrigin="anonymous"> -->
+
   </div>
+
+
+
   <section>
     <span>拖拽可缩放旋转；图片支持手势缩放旋转</span>
 
     <div class="set">
-      <h3>更改背景：</h3>
       <button class="changeBg">添加/移除背景</button>
       <button class="bgColor">更改背景色</button>
     </div>
@@ -330,39 +303,69 @@
     </div>
 
     <div class="set">
-      <h3>更改编辑模式：(<span class="nowModel">Cascade模式</span>)</h3>
-      <button class="CascadeModel">Cascade模式</button>
-      <button class="autoHierarchyModel">autoHierarchy模式</button>
-    </div>
-    <div class="set">
       <h3>更改画布宽高：</h3>
-      <button class="changeWH1">500*400</button>
+      <button class="changeWH1">定量</button>
       <button class="changeWH2">复原</button>
     </div>
     <div class="set">
-      <h3>清空画布：</h3>
-      <button class="clearCanvas">清空</button>
+<button class="clearCanvas">清空画布</button>
     </div>
     <div class="set">
       <h3>更改选中图片属性：</h3>
       <button class="getPhotoInfo">获取当前选中图片的位置信息</button>
       <p><input type="text" class="photoInfo"></p>
-      <button class="rotate">旋转选中图片</button>
-      <button class="enlarge">放大选中图片</button>
-      <button class="narrow">缩小选中图片</button>
-      <button class="changeUrl">更改选中图片的url</button>
-      <button class="autoScale">重置选中图片</button>
-      <button class="deletePic">删除选中图片</button>
+
+
+（先选中）
+      <button class="rotate">旋转</button>
+      <button class="enlarge">放大</button>
+      <button class="narrow">缩小</button>
+      <button class="autoScale">重置</button>
+      <button class="deletePic">删除</button>
     </div>
     <div class="set">
-      <h3>输出：</h3>
       <button class="outputmodel">输出图片</button>
 
     </div>
-    <img src="" alt="" class="outputPic">
+    <img src="" alt="" class="outputPic" id="outputPic">
   </section>
 
+<div id="textarea" class="t2" contenteditable="true" style="background:grey;width:800px;height:400px;">hhhhhhi
+</div>
 
+
+<button onclick="a()">添加图片</button>
+
+<script type="text/javascript">
+function a() {
+var html=document.getElementById('outputPic').outerHTML;
+//document.getElementById('textarea').innerHTML=html;
+var content = window.getSelection().toString();
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") {     document.selection.createRange().pasteHTML(html);
+    };
+}
+</script>
 
 
 
