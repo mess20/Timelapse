@@ -29,12 +29,14 @@
           document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
       }
   </script>
+
+
   <script type="text/javascript">
   window.onload = function () {
     var canvasBox = document.querySelector('#picBox');
     var canvas = new _Canvas({
       box: canvasBox,                  // 容器
-      bgColor: '#000',                // 背景色
+      bgColor: 'rgba(255,255,255,100%)',                // 背景色
       bgPhoto: 'none',                // 背景图
       photoModel: 'adaption',        // 载入图片模式(设置后添加图片时默认为当前设置模式)
       model: 'Cascade'                // 编辑模式
@@ -87,9 +89,9 @@
       }
       changeBgFlag = !changeBgFlag;
     })
-    // 修改背景色
-    $('.bgColor').click(function () {
-      var color = 'rgba(255,255,255,0%)' ;
+    // 修改背景色(!)
+    $('.file').click(function () {
+      var color = 'rgba(255,255,255,100%)' ;
       canvas.changeBg({
         photo: 'none',
         color: color
@@ -246,14 +248,19 @@ var h = prompt("输入高度值","");
     }
   }
   </script>
-  <title>dray</title>
   <style media="screen">
+#textarea{
+position:absolute;
+top:0;
+z-index:1;
+}
     * {margin: 0; padding: 0}
     #picBox {
       width: 100%;
       height: 600px;
-      position: fixed;
+      position: absolute;
       top: 0;
+z-index:2;
     }
     section {
       padding-top: 600px;
@@ -281,14 +288,9 @@ var h = prompt("输入高度值","");
   </style>
 </head>
 <body>
-  <div id="picBox">
-
-  </div>
-
-
 
   <section>
-    <span>拖拽可缩放旋转；图片支持手势缩放旋转</span>
+    <span>支持手势拖拽缩放旋转</span>
 
     <div class="set">
       <button class="changeBg">添加/移除背景</button>
@@ -311,12 +313,11 @@ var h = prompt("输入高度值","");
 <button class="clearCanvas">清空画布</button>
     </div>
     <div class="set">
-      <h3>更改选中图片属性：</h3>
-      <button class="getPhotoInfo">获取当前选中图片的位置信息</button>
+  <button class="getPhotoInfo">获取当前选中图片的位置信息</button>
       <p><input type="text" class="photoInfo"></p>
 
 
-（先选中）
+
       <button class="rotate">旋转</button>
       <button class="enlarge">放大</button>
       <button class="narrow">缩小</button>
@@ -330,7 +331,18 @@ var h = prompt("输入高度值","");
     <img src="" alt="" class="outputPic" id="outputPic">
   </section>
 
-<div id="textarea" class="t2" contenteditable="true" style="background:grey;width:800px;height:400px;">hhhhhhi
+
+  <div id="picBox" style="">
+
+<div id="textarea" class="t2" contenteditable="true" style="background:rgba(255,255,255,0%);width:800px;height:auto;">hhhhhhik5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
+不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  S5a6fUvuG4ovfDsA
+wo养了很多漂亮的鱼，想k莱看看吗？所有风景也不过只为衬托侬τON5K9GnOZGvwGτ所有风景也不过只为衬托侬τON5K9GnOZGvwGτS5a6fUvuG4ovfDsA
+wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
+我养了很多漂亮的鱼，想K来看看吗？BrG2h7QvwZAWyu8y
+和WO一起l来养鱼吧，100%兔费领商品！k5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
+不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  所有风景也不过只为衬托侬τON5K9GnOZGvwGτBznUVNdvGvvd48a0
+我养了很多漂亮的鱼，想K来看看吗？
+</div>
 </div>
 
 
