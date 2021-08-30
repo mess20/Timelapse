@@ -11,11 +11,12 @@
   <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
 
 
+<!--
 <script>
   // 初始化
   //var vConsole = new VConsole();
 </script>
-
+-->
   <script type="text/javascript">
       if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
           var version = parseFloat(RegExp.$1);
@@ -36,7 +37,9 @@
     var canvasBox = document.querySelector('#picBox');
     var canvas = new _Canvas({
       box: canvasBox,                  // 容器
-      bgColor: 'rgba(255,255,255,100%)',                // 背景色
+      bgColor: 'rgba(255,255,255,100%)',   
+<!--
+             // 背景色
       bgPhoto: 'none',                // 背景图
       photoModel: 'adaption',        // 载入图片模式(设置后添加图片时默认为当前设置模式)
       model: 'Cascade'                // 编辑模式
@@ -89,6 +92,7 @@
       }
       changeBgFlag = !changeBgFlag;
     })
+-->
     // 修改背景色(!)
     $('.file').click(function () {
       var color = 'rgba(255,255,255,100%)' ;
@@ -108,7 +112,7 @@
         }
       })
     })
-
+<!--
     // 获取当前图片信息
     $('.getPhotoInfo').click(function () {
       var nowPhoto = canvas.getNowPhoto();
@@ -120,7 +124,7 @@
         $('.photoInfo').val(JSON.stringify(nowPhotoInfo))
       }
     })
-
+-->
     // 旋转
     $('.rotate').click(function () {
       var nowPhoto = canvas.getNowPhoto();
@@ -219,6 +223,7 @@ var h = prompt("输入高度值","");
       canvas.clearCanvas();
     })
 
+      
 
 
     // 输出png图
@@ -248,6 +253,8 @@ var h = prompt("输入高度值","");
     }
   }
   </script>
+
+
   <style media="screen">
 #textarea{
 position:absolute;
@@ -260,7 +267,7 @@ z-index:1;
       height: 600px;
       position: absolute;
       top: 0;
-z-index:2;
+z-index:5;
     }
     section {
       padding-top: 600px;
@@ -313,14 +320,12 @@ z-index:2;
 <button class="clearCanvas">清空画布</button>
     </div>
     <div class="set">
-  <button class="getPhotoInfo">获取当前选中图片的位置信息</button>
-      <p><input type="text" class="photoInfo"></p>
-
-
 
       <button class="rotate">旋转</button>
+<!--
       <button class="enlarge">放大</button>
       <button class="narrow">缩小</button>
+-->
       <button class="autoScale">重置</button>
       <button class="deletePic">删除</button>
     </div>
@@ -332,7 +337,7 @@ z-index:2;
   </section>
 
 
-  <div id="picBox" style="">
+  <div id="picBox" class="picBox" style="">
 
 <div id="textarea" class="t2" contenteditable="true" style="background:rgba(255,255,255,0%);width:800px;height:auto;">hhhhhhik5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
 不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  S5a6fUvuG4ovfDsA
@@ -347,6 +352,13 @@ wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
 
 
 <button onclick="a()">添加图片</button>
+
+
+<script type="text/javascript">
+    
+</script>
+
+
 
 <script type="text/javascript">
 function a() {
