@@ -35,10 +35,9 @@
 
 
   <script type="text/javascript">
-
-function addCanvas(obj) {
-alert('success!');
-    var n = this.index($('-button'));
+window.onload=function(){
+$("sbutton").click(function(){       
+var n = $("sbutton").index(this);
 document.getElementById('textarea').innerText= n;
     var canvasBox = document.getElementsByClassName("picBox")[n];
 canvasBox.style.background="black";
@@ -258,9 +257,9 @@ var h = prompt("输入高度值","");
       }
       return url
     }
-  }
+  })
 
-
+}
 
   </script>
 
@@ -370,11 +369,11 @@ wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
 
 
 <div class="box">
-<button class="picBox-button" onclick="number();addCanvas()">启动1</button>
-<button class="picBox-button" onclick="number();addCanvas()">启动2</button>
-<button class="picBox-button" onclick="number();addCanvas()">启动3</button>
-<button class="picBox-button" onclick="number();addCanvas()">启动4</button>
-<button class="picBox-button" onclick="number();addCanvas()">启动5</button>
+<sbutton class="picBoxBtn" onclick="number()">启动1</sbutton>
+<sbutton class="picBoxBtn" onclick="number()">启动2</sbutton>
+<sbutton class="picBoxBtn" onclick="number()">启动3</sbutton>
+<sbutton class="picBoxBtn" onclick="number()">启动4</sbutton>
+<sbutton class="picBoxBtn" onclick="number()">启动5</sbutton>
 </div>
 
 <script type="text/javascript">
