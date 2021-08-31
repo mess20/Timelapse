@@ -37,13 +37,11 @@
   <script type="text/javascript">
 
 function addCanvas(obj) {
-
 alert('success!');
-    var n = this.id;
+    var n = this.index($('-button'));
 document.getElementById('textarea').innerText= n;
     var canvasBox = document.getElementsByClassName("picBox")[n];
 canvasBox.style.background="black";
-
     var canvas = new _Canvas({
       box: canvasBox,                  // 容器
       bgColor: 'rgba(255,255,255,100%)',   
@@ -368,53 +366,30 @@ wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
 </div>
 
 
+<button onclick="a()">添加图片</button>
+
+
 <div class="box">
-<button id="1" class="picBox-button" onclick="num();addCanvas()">启动1</button>
-<button id="2" class="picBox-button" onclick="num();addCanvas()">启动2</button>
+<button class="picBox-button" onclick="number();addCanvas()">启动1</button>
+<button class="picBox-button" onclick="number();addCanvas()">启动2</button>
+<button class="picBox-button" onclick="number();addCanvas()">启动3</button>
+<button class="picBox-button" onclick="number();addCanvas()">启动4</button>
+<button class="picBox-button" onclick="number();addCanvas()">启动5</button>
 </div>
 
-
-<div class="t2" contenteditable="true">
-在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  S5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？所有风景也不过只为衬托侬τON5K9GnOZGvwGτ所有风景也不过只为衬托侬τON5K9GnOZGvwGτS5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
-我养了很多漂亮的鱼，想K来看看吗？BrG2h7QvwZAWyu8y
-和WO一起l来养鱼吧，100%兔费领商品！k5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  所有风景也不过只为衬托侬在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  S5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？所有风景也不过只为衬托侬τON5K9GnOZGvwGτ所有风景也不过只为衬托侬τON5K9GnOZGvwGτS5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
-我养了很多漂亮的鱼，想K来看看吗？BrG2h7QvwZAWyu8y
-和WO一起l来养鱼吧，100%兔费领商品！k5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  所有风景也不过只为衬托侬在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  S5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？所有风景也不过只为衬托侬τON5K9GnOZGvwGτ所有风景也不过只为衬托侬τON5K9GnOZGvwGτS5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
-我养了很多漂亮的鱼，想K来看看吗？BrG2h7QvwZAWyu8y
-和WO一起l来养鱼吧，100%兔费领商品！k5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  所有风景也不过只为衬托侬在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  S5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？所有风景也不过只为衬托侬τON5K9GnOZGvwGτ所有风景也不过只为衬托侬τON5K9GnOZGvwGτS5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
-我养了很多漂亮的鱼，想K来看看吗？BrG2h7QvwZAWyu8y
-和WO一起l来养鱼吧，100%兔费领商品！k5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  所有风景也不过只为衬托侬
-</div>
-
-
-
-
-<!--
 <script type="text/javascript">
-function num() {
+function number(){
 var a = document.querySelectorAll('.picBox-button');
 var i = a.length; 
-var number = i+1;
-document.getElementById('textarea').innerHTML=number;
-var html='
-<button id=" ' + number + ' " class="picBox-button" onclick="number();addCanvas()">启动5</button>
-<div class="picBox"><div class="t2" contenteditable="true" style="background:rgba(255,255,255,0%);width:800px;height:auto;">hhhhhhik5AgS8vx5r1ZEIYo 以前该省钱的时候</div></div>';
+//document.getElementById('textarea').innerText= i;
+}
+</script>
+
+
+
+<script type="text/javascript">
+function a() {
+var html=document.getElementById('outputPic').outerHTML;
 //document.getElementById('textarea').innerHTML=html;
 var content = window.getSelection().toString();
 var sel, range;
@@ -442,7 +417,7 @@ var sel, range;
     };
 }
 </script>
--->
+
 
 
 
