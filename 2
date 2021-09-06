@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script type="text/javascript" src="https://cdn.staticfile.org/touchjs/0.2.14/touch.min.js"></script>
   <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
@@ -25,294 +25,25 @@
   </script>
 
 
-  <script type="text/javascript">
-window.onload=function(){
-$(".picBoxBtn").click(function(){       
-var n = $(".picBoxBtn").index(this);
-document.getElementById('textarea').innerText= n;
-    var canvasBox = $(".picBox")[n];
-canvasBox.style.background="black";
-    var canvas = new _Canvas({
-      box: canvasBox,                  // 容器
-      bgColor: 'rgba(255,255,255,100%)',   
-<!--
-             // 背景色
-      bgPhoto: 'none',                // 背景图
-      photoModel: 'adaption',        // 载入图片模式(设置后添加图片时默认为当前设置模式)
-      model: 'Cascade'                // 编辑模式
-    })
-    var timer;
-    canvas.init({
-      dragEvent: function (e1, e2) {
-        clearTimeout(timer);
-        $('.event').text('当前操作事件：正在拖拽');
-        timer = setTimeout(function () {
-          $('.event').text('当前操作事件：无操作');
-        }, 10)
-      },
-      zoomEvent: function (e1, e2) {
-        clearTimeout(timer);
-        $('.event').text('当前操作事件：正在缩放');
-        timer = setTimeout(function () {
-          $('.event').text('当前操作事件：无操作');
-        }, 10)
-      },
-      rotateEvent: function (e1, e2) {
-        clearTimeout(timer);
-        $('.event').text('当前操作事件：正在旋转');
-        timer = setTimeout(function () {
-          $('.event').text('当前操作事件：无操作');
-        }, 10)
-      },
-      callback: function () {
-        console.log('图片初始化完成...')
-        canvas.addPhoto({
-          url: './img/pic1.jpg',
-          model: 'adaption',
-          callback: function () {
-            console.log('成功添加一张自适应的图片')
-          }
-        })
-      }
-    });
-    // 添加或移除背景图
-    var changeBgFlag = false;
-    $('.changeBg').click(function () {
-      if (!changeBgFlag) {
-        canvas.changeBg({
-          photo: './img/pic2.jpg'
-        })
-      } else {
-        canvas.changeBg({
-          photo: 'none'
-        })
-      }
-      changeBgFlag = !changeBgFlag;
-    })
--->
-    // 修改背景色(!)
-    $('.file').click(function () {
-      var color = 'rgba(255,255,255,100%)' ;
-      canvas.changeBg({
-        photo: 'none',
-        color: color
-      })
-    })
-
-    // 添加本地图片
-    $('.file').change(function () {
-      canvas.addPhoto({
-        url: getUrl(this.files[0]),
-        model: 200,
-        callback: function () {
-          console.log('成功添加本地图片')
-        }
-      })
-    })
-<!--
-    // 获取当前图片信息
-    $('.getPhotoInfo').click(function () {
-      var nowPhoto = canvas.getNowPhoto();
-      if (!nowPhoto) {
-        alert('未选中任何图片');
-        return;
-      } else {
-        var nowPhotoInfo = nowPhoto.getPhotoInfo();
-        $('.photoInfo').val(JSON.stringify(nowPhotoInfo))
-      }
-    })
--->
-    // 旋转
-    $('.rotate').click(function () {
-      var nowPhoto = canvas.getNowPhoto();
-      if (!nowPhoto) {
-        alert('未选中任何图片');
-        return;
-      } else {
-        var nowPhotoInfo = nowPhoto.getPhotoInfo();
-        nowPhoto.changeInfo({
-          rotate: nowPhotoInfo.rotate + 90,
-          callback: function () {
-            console.log('成功旋转')
-          }
-        })
-      }
-    })
-    // 放大
-    $('.enlarge').click(function () {
-      var nowPhoto = canvas.getNowPhoto();
-      if (!nowPhoto) {
-        alert('未选中任何图片');
-        return;
-      } else {
-        var nowPhotoInfo = nowPhoto.getPhotoInfo();
-        nowPhoto.changeInfo({
-          scale: nowPhotoInfo.scale * 1.1,
-          callback: function () {
-            console.log('成功放大')
-          }
-        })
-      }
-    })
-    // 缩小
-    $('.narrow').click(function () {
-      var nowPhoto = canvas.getNowPhoto();
-      if (!nowPhoto) {
-        alert('未选中任何图片');
-        return;
-      } else {
-        var nowPhotoInfo = nowPhoto.getPhotoInfo();
-        nowPhoto.changeInfo({
-          scale: nowPhotoInfo.scale / 1.1,
-          callback: function () {
-            console.log('成功缩小')
-          }
-        })
-      }
-    })
-
-    // 重置
-    $('.autoScale').click(function () {
-      var nowPhoto = canvas.getNowPhoto();
-      if (!nowPhoto) {
-        alert('未选中任何图片');
-        return;
-      } else {
-        var nowPhotoInfo = nowPhoto.getPhotoInfo();
-        nowPhoto.init(function () {
-          console.log('成功重置')
-        })
-      }
-    })
-    // 删除图片
-    $('.deletePic').click(function () {
-      var nowPhoto = canvas.getNowPhoto();
-      if (!nowPhoto) {
-        alert('未选中任何图片');
-        return;
-      } else {
-        var nowPhotoInfo = nowPhoto.getPhotoInfo();
-        nowPhoto._delete();
-        console.log('成功重置')
-      }
-    })
-
-
-    // 更改画布宽高
-    $('.changeWH1').click(function () {
-var w = prompt("输入宽度值","");
-var h = prompt("输入高度值","");
-      canvas.changeParams({
-        width: w,
-        height: h
-      })
-    })
-    // 复原
-    $('.changeWH2').click(function () {
-      canvas.changeParams({
-        width: 750,
-        height: 600
-      })
-    })
-
-    // 清空画布
-    $('.clearCanvas').click(function () {
-      canvas.clearCanvas();
-    })
-
-      
-/*
-    // 输出png图
-    $('.outputmodel').click(function () {
-
-      canvas.toDataURL({
-        width: 750,
-        height: 600,
-        type: 'image/png',
-        callback: function (url) {
-          $('#outputPic').attr('src', url);
-          console.log('成功输出png图');
-
-
-        }
-      });
-
-
-
-    })
-*/
-
-    function getUrl (file) {
-      var url = null;
-      if (window.createObjectURL !== undefined) {
-        url = window.createObjectURL(file);
-      } else if (window.URL !== undefined) {
-        url = window.URL.createObjectURL(file);
-      } else if (window.webkitURL !== undefined) {
-        url = window.webkitURL.createObjectURL(file);
-      }
-      return url
-    }
-  });
-
-
-
-
-$(".picBoxBtnEnd").click(function(){       
-var n = $(".picBoxBtnEnd").index(this);
-var canvas = $(".picBox")[n];
-canvas.style.background="yellow";
-//canvas.style.display="none";
-//canvas.style.opacity="0";
-//$('#outputPic').style.opacity="1";
-
-//var html=canvas.innerHTML;  
-//canvas.outerHTML="<div>"+html+"</div>";
-
-
-})
-
-
-
-$(".picBoxBtnEnd2").click(function(){       
-var n = $(".picBoxBtnEnd2").index(this);
-var canvas = $(".picBox")[n];
-canvas.style.background="pink";
-
-var html=canvas.innerHTML;  
-canvas.innerHTML='<div class="picBox" >'+html+"</div>";
-})
-
-
-
-
-
-
-
-}
-
-  </script>
-
-
   <style media="screen">
 #textarea,.textarea{
-position:absolute;
-top:0;
 z-index:1;
-font-size:30px;
 }
-    * {margin: 0; padding: 0}
     .picBox {
       width: 100%;
       height: 600px;
-background:rgba(255,255,255,60%);
+background:rgba(255,255,255,0%);
       position: absolute;
-      z-index:5;
-margin:-0 0;
+      z-index:-2;
     }
+
+.outputPic{
+z-index:-1;
+display:block;
+position: absolute;
+}
     section {
-      padding-top: 600px;
-    }
+        }
     .set {
       font: 36px/50px "";
       margin-top: 20px;
@@ -327,7 +58,7 @@ z-index:10;
       font: 24px/50px "";
     }
     .outputPic {
-      display: block;
+z-index:-1;
     }
     .event {
       font: 20px/40px "";
@@ -341,13 +72,13 @@ z-index:10;
 
 
 
-  <section style="margin:600px 0;background:green;">
+  <section style="background:green;">
 
 
 <button class="picBoxBtnStart" onclick="number()">启动</button>
 
 
-    <span>支持手势拖拽缩放旋转</span>
+    <span>支持手势拖拽、缩放、旋转</span>
 
     <div class="set">
       <button class="changeBg">添加/移除背景</button>
@@ -372,15 +103,11 @@ z-index:10;
     <div class="set">
 
       <button class="rotate">旋转</button>
-<!--
-      <button class="enlarge">放大</button>
-      <button class="narrow">缩小</button>
--->
+
       <button class="autoScale">重置</button>
       <button class="deletePic">删除</button>
     </div>
     <div class="set">
-<!--      <button class="outputmodel">输出图片</button>-->
 
     </div>
 
@@ -388,61 +115,11 @@ z-index:10;
 
 
 
-
-
-
-
-  <div id="picBox" class="picBox" style="top:0px;">
-
-<div id="textarea" class="t2" contenteditable="true" style="background:rgba(255,255,255,0%);width:800px;height:auto;">hhhhhhik5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  S5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？所有风景也不过只为衬托侬τON5K9GnOZGvwGτ所有风景也不过只为衬托侬τON5K9GnOZGvwGτS5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
-我养了很多漂亮的鱼，想K来看看吗？BrG2h7QvwZAWyu8y
-和WO一起l来养鱼吧，100%兔费领商品！k5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  所有风景也不过只为衬托侬τON5K9GnOZGvwGτBznUVNdvGvvd48a0
-我养了很多漂亮的鱼，想K来看看吗？
-</div>
+<div id="textarea" class="t2" contenteditable="true" style="background:rgba(255,255,255,0%);width:800px;">沙盒
 </div>
 
-<div class="box">
-<button class="picBoxBtn">启动1</button>
-<button class="picBoxBtnEnd">终止1</button>
-<button class="picBoxBtnEnd2">回复1</button>
 
-      
-<button class="outputmodel">输出图片</button>
-
-</div>
-<img src="" alt="" class="outputPic"  style="">
-
-------2
-
-
-  <div id="picBox2" class="picBox" style="top:500px;">
-
-<div id="textarea2" class="textarea" class="t2" contenteditable="true" style="background:rgba(255,255,255,0%);width:800px;height:auto;"">hhhhhhik5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  S5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？所有风景也不过只为衬托侬τON5K9GnOZGvwGτ所有风景也不过只为衬托侬τON5K9GnOZGvwGτS5a6fUvuG4ovfDsA
-wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
-我养了很多漂亮的鱼，想K来看看吗？BrG2h7QvwZAWyu8y
-和WO一起l来养鱼吧，100%兔费领商品！k5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
-不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  所有风景也不过只为衬托侬τON5K9GnOZGvwGτBznUVNdvGvvd48a0
-我养了很多漂亮的鱼，想K来看看吗？
-</div>
-</div>
-
-<div class="box">
-<button class="picBoxBtn">启动2</button>
-<button class="picBoxBtnEnd">终止2</button>
-<button class="picBoxBtnEnd2">恢复1</button>
-      
-<button class="outputmodel">输出图片</button>
-
-</div>
-<img src="" alt="" class="outputPic" style="">
-
-<div class="" contenteditable="true" style="background:rgba(255,0,255,50%);width:900px;height:auto;">hhhhhhik5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
+<div class="" contenteditable="true" style="background:rgba(255,255,255,0%);width:900px;height:auto;z-index:1;">hhhhhhik5AgS8vx5r1ZEIYo 以前该省钱的时候WO一分没省下l莱，现在省下l莱了钱又不值钱了 S3HwxBwMaM3g9zOv 
 不管未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  S5a6fUvuG4ovfDsA
 wo养了很多漂亮的鱼，想k莱看看吗？所有风景也不过只为衬托侬τON5K9GnOZGvwGτ所有风景也不过只为衬托侬τON5K9GnOZGvwGτSq未[勾引]莱有多长久，请珍惜相聚的每一刻；不管多少个春夏秋冬，窝们是永远的朋友  S5a6fUvuG4ovfDsA
 wo养了很多漂亮的鱼，想k莱看看吗？所有风景也不过只为衬托侬τON5K9GnOZGvwGτ所有风景也不过只为衬托侬τON5K9GnOZGvwGτS5a6fUvuG4ovfDsA
@@ -531,19 +208,9 @@ wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
 
 
 
-<!--
-<script type="text/javascript">
-function number(){
-var a = document.querySelectorAll('.picBox-button');
-var i = a.length; 
-//document.getElementById('textarea').innerText= i;
-}
-</script>
--->
-
 <script type="text/javascript">
 function number() {
-var html='<main id="main"><button class="picBoxBtn" style="background:pink">启动</button><button class="picBoxBtnEnd" style="background:pink">终止</button><button class="picBoxBtnEnd2" style="background:pink">恢复</button><button class="outputmodel">输出图片</button><div class="picBox" style=""><div class="t2" contenteditable="true" style="background:rgba(255,255,255,0%);width:800px;height:auto;">*************y**ghffhfgfggfgfgfgfgfygyfyfyfyfgfyfyygg***********</div></div><img src="" alt="" class="outputPic" id="outputPic" style=""></main>';
+var html='<main id="main"><button class="picBoxBtn" style="">启动</button><button class="picBoxBtnEnd" style="">终止</button><button class="picBoxBtnEnd2" style="">恢复</button><button class="outputmodel">输出图片</button><div class="picBox" style=""></div><img src="" alt="" class="outputPic" id="outputPic" style=""></main>';
 
 
 
@@ -588,7 +255,7 @@ canvasBox.style.background="black";
 
     var canvas = new _Canvas({
       box: canvasBox,                  // 容器
-      bgColor: 'rgba(255,255,255,100%)',   
+      bgColor: 'rgba(255,255,255,0%)',   
 <!--
              // 背景色
       bgPhoto: 'none',                // 背景图
@@ -629,6 +296,7 @@ canvasBox.style.background="black";
         })
       }
     });
+<!--
     // 添加或移除背景图
     var changeBgFlag = false;
     $('.changeBg').click(function () {
@@ -643,7 +311,7 @@ canvasBox.style.background="black";
       }
       changeBgFlag = !changeBgFlag;
     })
--->
+
     // 修改背景色(!)
     $('.file').click(function () {
       var color = 'rgba(255,255,255,100%)' ;
@@ -652,7 +320,7 @@ canvasBox.style.background="black";
         color: color
       })
     })
-
+-->
     // 添加本地图片
     $('.file').change(function () {
       canvas.addPhoto({
@@ -819,12 +487,8 @@ var c = "#outputPic"+n;
 $(".picBoxBtnEnd").click(function(){       
 var n = $(".picBoxBtnEnd").index(this);
 var canvas = $(".picBox")[n];
-//canvas.style.background="yellow";
-
 var html=canvas.innerHTML;  
-//document.getElementById('textarea').innerText='<div id="editedcanvas'+n+'">'+html+'</div>';
-
-canvas.outerHTML='<div id="editedcanvas'+n+'">'+html+'</div>';
+canvas.outerHTML='<div style="display:none;" id="editedcanvas'+n+'">'+html+'</div>';
 
 })
 
@@ -832,14 +496,10 @@ canvas.outerHTML='<div id="editedcanvas'+n+'">'+html+'</div>';
 $(".picBoxBtnEnd2").click(function(){       
 var n = $(".picBoxBtnEnd2").index(this);
 var c = "editedcanvas"+n;
-//var b = "outputPic"+n;
 var c = document.getElementById(c);
-//var b = document.getElementById(b);
-//c.style.background="pink";
 var html=c.innerHTML;  
 c.outerHTML='<div class="picBox" >'+html+"</div>";
-//b.style.display="none"
-
+//$("main")[n].style.display="none";
 })
 
 
