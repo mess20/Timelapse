@@ -57,9 +57,6 @@ z-index:10;
       width: 100%;
       font: 24px/50px "";
     }
-    .outputPic {
-z-index:-1;
-    }
     .event {
       font: 20px/40px "";
       color: #f00;
@@ -210,7 +207,7 @@ wo养了很多漂亮的鱼，想k莱看看吗？BznUVNdvGvvd48a0
 
 <script type="text/javascript">
 function number() {
-var html='<main id="main"><button class="picBoxBtn" style="">启动</button><button class="picBoxBtnEnd" style="">终止</button><button class="picBoxBtnEnd2" style="">恢复</button><button class="outputmodel">输出图片</button><div class="picBox" style=""></div><img src="" alt="" class="outputPic" id="outputPic" style=""></main>';
+var html='<main id="main"><button class="picBoxBtn" style="">启动</button><button class="picBoxBtnEnd" style="">终止</button><button class="outputmodel">输出图片</button>叠放次序<button class="zIndexBtn">浮于文字上方</button><button class="zIndexBtn1" style="display:none">衬于文字下方</button><div class="picBox" style=""></div><img src="" alt="" class="outputPic" id="outputPic" style=""></main>';
 
 
 
@@ -247,18 +244,17 @@ $(".picBoxBtn").click(function(){
 var n = $(".picBoxBtn").index(this);
 document.getElementById('textarea').innerText=n;
 var canvasBox = $(".picBox")[n];
+//待删
 canvasBox.style.background="black";
-
-
-
 
 
     var canvas = new _Canvas({
       box: canvasBox,                  // 容器
-      bgColor: 'rgba(255,255,255,0%)',   
-<!--
+      bgColor: 'rgba(255,255,255,100%)',   
+
              // 背景色
-      bgPhoto: 'none',                // 背景图
+      bgPhoto: 'none',  
+              // 背景图
       photoModel: 'adaption',        // 载入图片模式(设置后添加图片时默认为当前设置模式)
       model: 'Cascade'                // 编辑模式
     })
@@ -296,31 +292,8 @@ canvasBox.style.background="black";
         })
       }
     });
-<!--
-    // 添加或移除背景图
-    var changeBgFlag = false;
-    $('.changeBg').click(function () {
-      if (!changeBgFlag) {
-        canvas.changeBg({
-          photo: './img/pic2.jpg'
-        })
-      } else {
-        canvas.changeBg({
-          photo: 'none'
-        })
-      }
-      changeBgFlag = !changeBgFlag;
-    })
 
-    // 修改背景色(!)
-    $('.file').click(function () {
-      var color = 'rgba(255,255,255,100%)' ;
-      canvas.changeBg({
-        photo: 'none',
-        color: color
-      })
-    })
--->
+
     // 添加本地图片
     $('.file').change(function () {
       canvas.addPhoto({
@@ -331,19 +304,6 @@ canvasBox.style.background="black";
         }
       })
     })
-<!--
-    // 获取当前图片信息
-    $('.getPhotoInfo').click(function () {
-      var nowPhoto = canvas.getNowPhoto();
-      if (!nowPhoto) {
-        alert('未选中任何图片');
-        return;
-      } else {
-        var nowPhotoInfo = nowPhoto.getPhotoInfo();
-        $('.photoInfo').val(JSON.stringify(nowPhotoInfo))
-      }
-    })
--->
     // 旋转
     $('.rotate').click(function () {
       var nowPhoto = canvas.getNowPhoto();
@@ -445,13 +405,16 @@ var h = prompt("输入高度值","");
       
 
 
+
+
+
+
     // 输出png图
     $('.outputmodel').click(function () {
 var n = $(".outputmodel").index(this);
 document.getElementById('outputPic').id='outputPic'+n;
 var c = "#outputPic"+n;
-//var w=document.getElementById('main').innerHTML;
-//document.getElementById('textarea').innerText=w;
+
 
 
 
@@ -463,12 +426,41 @@ var c = "#outputPic"+n;
           $(c).attr('src', url);
           console.log('成功输出png图')
         }
-      })
-
-
-
+      });
+setTimeout(function(){       
+var canvas = $(".picBox")[n];
+var html=canvas.innerHTML;  
+canvas.outerHTML='<div style="display:none;" id="editedcanvas'+n+'">'+html+'</div>';
+var c = "editedcanvas"+n;
+var c = document.getElementById(c);
+var html=c.innerHTML;  
+c.outerHTML='<div class="picBox" >'+html+"</div>";
+},100)
 
     })
+
+
+
+    $('.zIndexBtn').click(function(){
+var n = $(".zIndexBtn").index(this);
+var canvasBox = $(".picBox")[n];
+var c = $(".outputPic")[n];           
+canvasBox.style.zIndex="2";
+c.style.zIndex="2";    
+$(".zIndexBtn")[n].style.display="none";
+$(".zIndexBtn1")[n].style.display="block";                  
+})
+
+
+    $('.zIndexBtn1').click(function(){
+var n = $(".zIndexBtn1").index(this);
+var canvasBox = $(".picBox")[n];
+var c = $(".outputPic")[n];
+canvasBox.style.zIndex="-2";
+c.style.zIndex="-1";    
+this.style.display="none";
+$(".zIndexBtn")[n].style.display="block";   
+})
 
 
     function getUrl (file) {
@@ -483,26 +475,6 @@ var c = "#outputPic"+n;
       return url
     }
   })
-
-$(".picBoxBtnEnd").click(function(){       
-var n = $(".picBoxBtnEnd").index(this);
-var canvas = $(".picBox")[n];
-var html=canvas.innerHTML;  
-canvas.outerHTML='<div style="display:none;" id="editedcanvas'+n+'">'+html+'</div>';
-
-})
-
-
-$(".picBoxBtnEnd2").click(function(){       
-var n = $(".picBoxBtnEnd2").index(this);
-var c = "editedcanvas"+n;
-var c = document.getElementById(c);
-var html=c.innerHTML;  
-c.outerHTML='<div class="picBox" >'+html+"</div>";
-//$("main")[n].style.display="none";
-})
-
-
 
 
 
