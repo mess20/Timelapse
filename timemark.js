@@ -1,6 +1,5 @@
-function timemark(){
-var t = document.getElementById("body").innerHTML;
-document.getElementById("body").innerHTML=t
+var t = document.getElementById("article").innerHTML;
+document.getElementById("article").innerHTML=t
 //大标题
 .replace(new RegExp('‹' , "g"), '<h3>')
 .replace(new RegExp('›' , "g"), '</h3>')
@@ -27,4 +26,3 @@ document.getElementById("body").innerHTML=t
 .replace(new RegExp('」' , "g"), '<note>')
 .replace(new RegExp('（' , "g"), '')
 .replace(new RegExp('）' , "g"), '</note></dfn>')
-}
