@@ -1,4 +1,4 @@
-window.onload=function timemark(){
+
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=t
 //大标题
@@ -27,4 +27,3 @@ document.getElementById("article").innerHTML=t
 .replace(new RegExp('」' , "g"), '<note>')
 .replace(new RegExp('（' , "g"), '')
 .replace(new RegExp('）' , "g"), '</note></dfn>')
-}
