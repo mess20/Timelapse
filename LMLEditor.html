@@ -6,16 +6,32 @@
 <link href="https://restrechinamynd.github.io/timemark.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>    
 <title>Timemark Editor</title>
-
+<style>
+*{
+overflow:auto
+}
+*{
+outline-color:#A6FFFF;
+}
+#content{
+outline:none;
+}
+#content:hover{	
+box-shadow: 0 0 18px 0 rgba(166, 255, 255, 1);
+}
+botton:hover{
+background:#888;
+}
+</style>
 </head>
 <body>
 
 
 
-  <div id="output" contenteditable="false" style="font-size:2.4rem;background:white;position:fixed;right:0;width:50%;height:100%">
+  <div id="output" contenteditable="false" style="padding:2rem;left:50%;font-size:2.4rem;background:#F7F8FA;position:fixed;right:0;height:100%">
 </div>
 
-  <div id="content" contenteditable="true" onkeyup="timemark()" style="background:black;color:white;position:fixed;left:0;width:50%;height:100%">
+  <div id="content" contenteditable="true" onkeyup="timemark()" style="padding:2rem;background:#444;color:#F4F4F4;position:fixed;left:0;right:50%;height:100%">
 <h1>示例</h1>
 <br>
 『分割线』<br>
@@ -79,7 +95,7 @@ document.getElementById("output").innerHTML=t
 
 
 
-<button style="position:fixed;top:1%;z-index:1" onclick="getCode()">导出</button>
+<button style="position:fixed;left:35%;right:35%;width:30%;height:80px;z-index:1;border:none;background:white;border-radius:0 0 20px 20px;	-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);font-size :2.4rem;color:#333;font-family:serif;" onclick="getCode()">code</button>
 <textarea id="code" style="opacity:0;position:fixed;top:100%;z-index:1"></textarea>
 
 <script>
