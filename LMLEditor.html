@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/ >
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://restrechinamynd.github.io/timemark.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>    
+<title>Timemark Editor</title>
+
+</head>
+<body>
+
+
+
+  <div id="output" contenteditable="false" style="font-size:2.4rem;background:white;position:fixed;right:0;width:50%;height:100%">
+</div>
+
+  <div id="content" contenteditable="true" onkeyup="timemark()" style="background:black;color:white;position:fixed;left:0;width:50%;height:100%">
+<h1>示例</h1>
+<br>
+『分割线』<br>
+---<br><br>
+『标题』<br>
+‹大标题›<br>
+«小标题»<br><br>
+『重点』<br>
+【重点】<br><br>
+『特殊』<br>
+『文本』<br>
+「文本」(插入内容(选填)。）<br><br>
+『注释』<br>
+「（1）」（这是一个注释。↓）<br><br>
+『链接』<br>
+https://cdn.jsdelivr.net/npm/marked/marked.min.js「a（netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css）a」
+</div>
+
+
+
+
+
+
+
+
+  
+
+<script>
+function timemark(){
+var t = document.getElementById("content").innerHTML;
+document.getElementById("output").innerHTML=t
+//大标题
+.replace(new RegExp('‹' , "g"), '<h3>')
+.replace(new RegExp('›' , "g"), '</h3>')
+//小标题
+.replace(new RegExp('«' , "g"), '<h4>')
+.replace(new RegExp('»' , "g"), '</h4><br>')
+//分割线*
+.replace(new RegExp('---' , "g"), '<hr>')
+//强调*
+.replace(new RegExp('【' , "g"), '<l>')
+.replace(new RegExp('】' , "g"), '</l>')
+//注释
+.replace(new RegExp('「（' , "g"), '<dfn class="reference-index"><span>')
+.replace(new RegExp('）」' , "g"), '</span><note class="reference">')
+.replace(new RegExp('↓）' , "g"), '</note></dfn>')
+//链接
+.replace(new RegExp('「a（' , "g"), '<a href="')
+.replace(new RegExp('）a」' , "g"), '"><i class="fa fa-paperclip" aria-hidden="true"></i></a>')
+//特殊*
+.replace(new RegExp('『' , "g"), '<n>')
+.replace(new RegExp('』' , "g"), '</n>')
+//dfn*
+.replace(new RegExp('「' , "g"), '<dfn>')
+.replace(new RegExp('」' , "g"), '<note>')
+.replace(new RegExp('（' , "g"), '')
+.replace(new RegExp('）' , "g"), '</note></dfn>')
+}
+
+</script>
+
+
+
+<button style="position:fixed;top:1%;z-index:1" onclick="getCode()">导出</button>
+<textarea id="code" style="opacity:0;position:fixed;top:100%;z-index:1"></textarea>
+
+<script>
+function getCode(){
+var code = document.getElementById("code");
+var e = document.getElementById("output").innerHTML;
+code.innerText = e.replace(new RegExp('contenteditable="true"', "g"), '');
+code.select();
+document.execCommand("Copy");
+} 
+</script>
+
+
+
+	
+
+
+
+
+
+
+</body>
+</html>
