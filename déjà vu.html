@@ -1,0 +1,294 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/ >
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+.note-card-button{
+}
+.note-card{
+display:none;
+
+}
+.note-card-button:hover .note-card{
+display:block;
+left:0;
+top:0;
+margin: auto;
+width:100%;
+height:1100;
+position:fixed;
+}
+
+#mycanvas{
+right:0;
+left:0;
+top:0;
+bottom:0;
+position:fixed;
+margin: auto;
+display:block;
+letter-spacing:0.1rem;
+word-spacing:0rem;
+border-radius: 5%;
+z-index:-1;
+}
+
+#mycanvas-pre{
+right:0;
+left:0;
+top:0;
+bottom:0;
+position:fixed;
+padding:1rem;
+margin: auto;
+display:block;
+box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, 0.3);
+border-radius: 5%;
+background:rgba(255,255,245,100%);
+}
+
+#card-picture-nav{
+right:0;
+left:0;
+bottom:10%;
+width:100%;
+position:fixed;
+margin:0 auto;
+z-index:1;
+}
+
+
+#btn{
+position:fixed;
+display:inline-block;
+top:5%;
+left:5%;
+text-align:center;
+font-size:1.8rem;
+width:13rem;
+ -webkit-transition-duration:0.4s;
+ transition-duration:0.4s;
+ padding: 20px 32px;
+ text-align:center;
+ background-color: white;
+ color:black;
+ border:3px solid #4CAF50;
+ border-radius: 45px;
+}
+#btn:hover{
+ background-color:#4CAF50;
+ color: white;
+}
+#download{
+position:fixed;
+display:inline-block;
+top:5%;
+left:75%;
+text-align:center;
+font-size:1.8rem;
+width:8rem;
+ -webkit-transition-duration:0.4s;
+ transition-duration:0.4s;
+ padding: 20px 32px;
+ text-align:center;
+ background-color: white;
+ color:black;
+text-decoration:none;
+ border:3px solid #4CAF50;
+ border-radius: 45px;
+}
+#download:hover{
+ background-color:#4CAF50;
+ color: white;
+}
+.color1,.color2{
+position:fixed;
+display:inline-block;
+top:5%;
+text-align:center;
+font-size:1.8rem;
+width:8rem;
+ -webkit-transition-duration:0.4s;
+ transition-duration:0.4s;
+ padding: 20px 32px;
+ text-align:center;
+ background-color: white;
+ color:black;
+text-decoration:none;
+ border:3px solid #4CAF50;
+ border-radius: 45px;
+}
+.color1:hover,.color2:hover{
+ background-color:#4CAF50;
+ color: white;
+}
+.color1{
+left:28%;
+
+}
+.color2{
+left:50%;
+
+}
+#card-title{
+right:5%;
+left:5%;
+top:30%;
+position:fixed;
+text-align:center;
+width:90%;
+display:block;
+color:#333;
+font-size:3rem;
+font-family: "Arial";
+letter-spacing:0.1rem;
+word-spacing:0rem;
+border:none;
+background:transparent;
+z-index:1;
+}
+#card-content{
+top:40%;
+left:10%;
+right:10%;
+width:80%;
+position:fixed;
+padding:0 1rem;
+height:40%;
+display:block;
+color:#333;
+font-size: 2.7rem;
+font-family: "Arial";
+line-height:6rem;
+letter-spacing:0.1rem;
+word-spacing:0rem;
+text-align:center;
+border:none;
+background:transparent;
+z-index:1;
+}
+
+
+</style>
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+<div class="note-card-button">
+
+anwo
+
+
+<div class="note-card">
+<!--假-->
+
+<textarea type="text"  id="card-title" value="" maxlength="24" rows="1" placeholder="title"></textarea>
+
+<textarea type="text"  id="card-content" value="" maxlength="81" placeholder="content"></textarea>
+
+<canvas id="mycanvas-pre" width="900" height="1100"></canvas>
+
+<!--真-->
+
+<canvas id="mycanvas" width="900" height="1100">
+</canvas>
+
+<div class="color1"><input type="color" id="color1" style="zoom:1.5;opacity:0;margin-right:-3rem;" value="" />底色</div>
+<div class="color2"><input type="color" id="color2" style="zoom:1.5;opacity:0;margin-right:-3rem;" value="" />文字</div>
+<input id="btn" type="button" value="定制卡片" />
+<a id="download"  href=" " download=" ">收入囊中</a>
+
+
+
+</div>
+</div>
+
+<script type="text/javascript">
+var title = document.getElementById("card-title");
+var content = document.getElementById("card-content");
+var btn = document.getElementById("btn");
+var file = document.getElementById("download");
+
+
+document.getElementById("color1").onchange = function changPreColor1(){
+var color1 =document.getElementById("color1").value;
+document.getElementById("mycanvas-pre").style.backgroundColor=color1;
+};
+document.getElementById("color2").onchange = function changPreColor2(){
+var color2 =document.getElementById("color2").value;
+document.getElementById("card-content").style.color=color2;}
+
+btn.onclick = function(){
+if(content.value.length != 0){
+
+var color1 =document.getElementById("color1").value;
+var color2 =document.getElementById("color2").value;
+
+var cvs = document.getElementById('mycanvas'),
+ctx = cvs.getContext('2d');
+
+
+ctx.fillStyle = color1;
+ctx.fillRect(50, 0, 800, 1100);
+ctx.fillStyle = color1;
+ctx.fillRect(0,50, 900, 1000);
+
+ctx.arc(50,50,50,0*Math.PI/180,360*Math.PI/180);
+ctx.arc(850,50,50,0*Math.PI/180,360*Math.PI/180);
+ctx.arc(50,1050,50,0*Math.PI/180,360*Math.PI/180);
+ctx.arc(850,1050,50,0*Math.PI/180,360*Math.PI/180);ctx.fill();
+
+ctx.font= '2.6rem KaiTi_GB2312,Cursive'; 
+ctx.fillStyle = color2; 
+var vl = title.value.length;
+var pl = ( 900 - (vl*49.6 - 1.6 ) ) / 2;
+ctx.fillText(title.value, pl,220); 
+
+
+ctx.lineWidth=500; 
+var str = content.value;
+var lineWidth = 0;
+var canvasWidth = "470";
+var initWidth=78;
+var initHeight=400;
+var lastSubStrIndex= 0; 
+for(let i=0;i<str.length;i++){ 
+    lineWidth+=ctx.measureText(str[i]).width; 
+    if(lineWidth>canvasWidth){ ctx.fillText(str.substring(lastSubStrIndex,i),initWidth,initHeight);
+        initHeight+=90;
+        lineWidth=0;
+        lastSubStrIndex=i;
+    } 
+    if(i==str.length-1){
+ctx.fillText(str.substring(lastSubStrIndex,i+1),initWidth,initHeight);
+    }
+};
+var imgDataSrc = cvs.toDataURL('image/png');
+file.download = imgDataSrc;
+file.href = imgDataSrc;
+}
+}
+
+
+</script>
+
+</body>
+ 
+</html>
+
+
+
+
