@@ -6,6 +6,8 @@ width:100% !important;
 height:100% !important;
 font-size:100%;
 background:rgba(190, 160, 190,10%);
+padding:0;
+margin:0;
 }
       .kaiguan{
              position: absolute;
