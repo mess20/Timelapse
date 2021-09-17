@@ -1,5 +1,5 @@
 /**
-*作者:xiaosu
+*原作者:xiaosu（略有改动）
 *Canvas为画布对象传入参数：{box:'容器', model:'模式', photoModel: '图片的模式', bgColor:'背景颜色'};
 *  model：为图片层级的关系，模式Cascade为添加的图片层级右添加顺序决定，autoHierarchy为层级由选中的图片为最高级
 *  photoModel： 载入图片的模式，默认为铺满，为数字时为固定宽度，adaption为自适应
@@ -124,6 +124,8 @@
   // 画直线
   function drawDashLine (context, x1, y1, x2, y2, dashLen) {     // 画虚线
     context.beginPath();
+    context.setStrokeStyle( '#1d65b1' )
+        
     dashLen = dashLen === undefined ? 5 : dashLen;
     // 得到斜边的总长度
     var beveling = getBeveling(x2 - x1, y2 - y1);
