@@ -1,8 +1,15 @@
-
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <script type="text/javascript" src="https://cdn.staticfile.org/touchjs/0.2.14/touch.min.js"></script>
+  <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+<script src="https://restrechinamynd.github.io/pic.js"></script>
+    <script src="https://restrechinamynd.github.io/VisualEditor.js"></script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
-<link rel="stylesheet" href="all.css" type="text/css"> 
+
+<link href="https://Restrechinamynd.github.io/VE.css" rel="stylesheet">
+<link rel="stylesheet" href="https://restrechinamynd.github.io/VisualEditor.css" type="text/css"> 
+<link rel="stylesheet" href="https://Restrechinamynd.github.io/all.css" type="text/css"> 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 
@@ -15,7 +22,7 @@ document.addEventListener('keydown', function (event) {
                 || event.which === 187 || event.which === 189)) {
             event.preventDefault();
         }
-    }, false);   window.addEventListener('mousewheel', function (event) {
+    }, false); window.addEventListener('mousewheel', function (event) {
         if (event.ctrlKey === true || event.metaKey) {
             event.preventDefault();
         }
@@ -30,1122 +37,128 @@ window.addEventListener('DOMMouseScroll', function (event) {
 
 
 
-<style>
-body{
-position:fixed !important;
-left:0 !important;
-top:0 !important;
-width:100% !important;
-height:100% !important;
-font-size:100%;
-background:rgba(190, 160, 190,10%);
-}
-      .kaiguan{
-             position: absolute;
-             top: 50px;
-             right: 100px;
-             width: 40px;
-             height: 20px;
-             border: 2px solid black;
-             border-radius: 20px;
-             cursor: pointer;
-             transition: all 1s;
-zoom:2.3;
-}
 
-        
-         .bai{ 
-             position: absolute;
-             top: 2.5px;
-             left: 4px;
-             height: 13px;
-             width: 13px;
-             background-color: rgb(0, 0, 0);
-             border-radius: 50%;
-             transition: all 1s;
-         }
-        .hei{
-           
-             position: absolute;
-             top: 2.5px;
-             right: 4px;
-             height: 13px;
-             width: 13px;
-             background-color:#be002f;
-             border-radius: 50%;
-             transition: all 1s;
-         }
-/*预览or呼出式解释补充*/
-abbr{
-}
-note{display:none;}
-abbr:hover note{
-position:absolute;
-display:block;
+
+
+<style media="screen">
+#menu-ul a{
 color:black;
-background:white;
--webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-padding:1.4rem;
-z-index:3;
-}
-/*术语注解*/
-
-dfn{
-font-style:normal;
-color:rgba(52,160,238,100%) 
-}
-
-
-dfn:hover note{
-position:absolute;
-display:block;
-color:black;
-background:white;
--webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-padding:1.4rem;
-z-index:3;
-}
-
-/*强调块*/
-
-blockstrong{
-font-size:100%;
-display:block;
-width: 90%;
-left:0;
-margin: 0.25em 0rem;
-padding:1.5rem;
-border-left:1rem solid rgb(235,236,240);
-}
-blockstrong spcl{
-color:cornflowerblue !important;
-border-bottom:4px solid cornflowerblue !important;
-}
-
-/*注意*/
-em2{
-display:block;
-background:#fa947d;
-margin:0 0;
-padding:1rem 2rem;
-line-height:50px;
-align-items:center;
-border-radius:5px;
-color:#f3f2f2;
-}
-
-
-/*链接*/
-a{
-text-decoration:none;
-}
-/*内链*/
-a[href]{
-color:#1d65b1;
-text-decoration:none;
-border-bottom:2px solid #1d65b1;
-}
-/*外链*/
-a[href^="http"]{
-color:#1d65b1;
-text-decoration:none;
-border-bottom:none;
-}
-
-
-
-#codeout-button{
-display:block;
-position:fixed;
-bottom:10%;
-right:5%;
-font-size:2rem;
-height:5rem;
-width:10rem;
-line-height:5rem;
-align-items:center;
-color:white;
 border:none;
-border-radius:6px;
-padding:0rem 2.5rem;
-margin:0;
--webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
-z-index:6;
-background:#be002f;
 }
-#codeout-button:hover{
-background:rgba(240, 160, 200,100%)
-}
-
-        
-#fullView-button{
-display:block;
-position:fixed;
-bottom:2%;
-right:5%;
-font-size:2rem;
-width:10rem;
-height:5rem;
-line-height:5rem;
-align-items:center;
-color:white;
-border:none;
-border-radius:6px;
-padding:0rem 2.5rem;
-margin:0;
--webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
-z-index:6;
-}
-.fullView-button1{
-background:#be002f;
-}
-.fullView-button2{
-background:rgba(240, 160, 200,100%)
-}
-
-fixed-blue-button,fbb,.fixed-blue-button,.fbb{
-display:block;
-position:fixed;
-top:2%;
-right:5%;
-font-size:2rem;
-height:5rem;
-line-height:5rem;
-align-items:center;
-color:white;
-background:#6699ff;
-border:none;
-border-radius:6px;
-padding:0rem 2.5rem;
-margin:0;
--webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
-z-index:11;
-}
-fixed-blue-button:hover,fbb:hover,.fixed-blue-button:hover,.fbb:hover{
-color:white;
-background:rgba(102, 153, 255,75%)
-}
-blue-button{
-display:inline-block;
-font-size:1rem;
-color:white;
-background:#6699ff;
-border:none;
-border-radius:6px;
-padding:1rem 2rem;
-margin:0rem 0 0 8rem;
-height:3.4rem;
-width:auto;
--webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
-z-index:100;
-}
-blue-button:hover{
-color:white;
-background:rgba(102, 153, 255,75%)
-}
-blue-button button{
-color:white;
-border:none;
-position:relative;
-width:100%;
-height:100%;
-top:0%;
-left:0%;
-padding:auto;
-}
-
-blue-button button:hover{
-color:white;
-background:transparent;
-}
-k{
-border-style:none none solid none;
-border-bottom:4px solid cornflowerblue;
-padding-bottom:2px;
-}
-
-u{
-padding:0.1rem 0rem;
-text-decoration:none;
-border-bottom:solid 1px #555;
-}
-u:hover{
-border-bottom:solid 1px #6483B0;
-}
-ol{
-margin:0 1.5rem 0 0;
-width:85%;
-padding:0 0 0 2rem;
-display:flex;
-flex-direction:column;
-}
-ol a{
-font-size:0.9rem;
-display:block;
-text-align:justify; 
-text-justify:inter-ideograph;
-padding:0rem 0;
-margin:0.3rem 0;
-color:black;
-text-decoration:none;
-outline:none;
-user-select: none;
-}
-ol a:hover,a:active,a:visited,a:link,a:focus{
--webkit-tap-highlight-color:rgba(0,0,255,0);
-tap-highlight-color:rgba(0,0,255,0);
-}
-ol a:link{
-}
-ol li:hover{
-color:#6483B0;
-}
-ol a:hover{
-color:#6483B0;
-}
-ol a:active{
-}
-ol a:visited{
-}
-
-.t1{
-font-size:200%;
-top:170;
-right:0%;
-left:0%;
-height:100%;
-background:white;
-position:fixed;
-outline:none;
-padding:4rem 3rem 6rem 3rem;
-overflow:auto;
-border-top: 0px rgba(128,128,128,1.00) solid;
-border-right: 0px rgba(0,84,138,1.00) solid;
-border-bottom: 0px rgba(0,84,138,1.00) solid;
-border-left: 0px rgba(0,84,138,1.00) solid;
-resize: vertical;
-box-shadow: 5px 5px 20px rgba(128,128,128,0.7);
-}
-
-
-.t2{
-font-size:200%;
-top:350;
-right:5%;
-left:5%;
-height:600;
-background:white;
-position:fixed;
-outline:none;
-padding:4rem 3rem 6rem 3rem;
-overflow:auto;
-border-top: 0px rgba(128,128,128,1.00) solid;
-border-right: 0px rgba(0,84,138,1.00) solid;
-border-bottom: 0px rgba(0,84,138,1.00) solid;
-border-left: 0px rgba(0,84,138,1.00) solid;
-resize: vertical;
-box-shadow: 5px 5px 20px rgba(128,128,128,0.7);
-}
-.output1{
-font-size:200%;
-position:fixed;
-bottom:60;
-left:50;
-}
-.output3{
-display:inline-block;
-}
-
-.output2{
-font-size:200%;
-position:fixed;
-top:1130;
-right:50;
-}
-
-.b2{
-border-left:;
-border-right:;
-border-top:;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: center;
-    justify-content: center;
-    position:fixed;
-background:hsla(210,82%,98%,100%);
-box-shadow: 4px 4px 5px rgba(128,128,128,0.7);
-left:5%;
-right:5%;
-top:145;
-height:auto;
-z-index:4;
-}
-.b2 button{
-z-index:2;
-}
-
-.b4{
-border-left:;
-border-right:;
-border-bottom:;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: center;
-    justify-content: center;
-    position:fixed;
-left:5%;
-right:5%;
-top:230;
-height:auto;
-z-index:2;
-background:hsla(205,82%,99%,100%);
-box-shadow: 3px 3px 5px rgba(128,128,128,0.7);
-}
-
-.b1{
-border-left:;
-border-right:;
-border-top:;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: center;
-    justify-content: center;
-    position:fixed;
-background:hsla(210,82%,98%,100%);
-box-shadow: 4px 4px 5px rgba(128,128,128,0.7);
-left:0%;
-right:0%;
-top:0;
-height:auto;
-z-index:4;
-}
-.b1 button{
-z-index:2;
-}
-
-.b3{
-border-left:;
-border-right:;
-border-bottom:;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: center;
-    justify-content: center;
-    position:fixed;
-left:0%;
-right:0%;
-top:85;
-height:auto;
-z-index:2;
-background:hsla(205,82%,99%,100%);
-box-shadow: 3px 3px 5px rgba(128,128,128,0.7);
-}
-
-
-
-button,surbutton{
-background:#f0f8ff;
-color:#555;
-background:transparent;
-display:flex;
-height:5.5rem;
-width:6.5rem;
-font-size:4rem;
-border:none;
-padding:0 auto;
-outline:none;
-text-align:center;
-align-items:center;
-line-height:5.5rem
-}
-button:hover{
-color:#000;
-}
-surbutton:hover{
-color:#000;
-}
-
-
-
-/*工具栏*/
-#tool-nav{
-display:none;
-}
-#tool-button{
-z-index:10;
-}
-#tool-button:hover #tool-nav{
-position:fixed;
-z-index:10;
-bottom:0%;
-right:0%;
-left:0%;
-display:flex;
-flex-wrap:wrap;
-padding:10rem 5rem 14rem 5rem;
-margin:0;
-background:url('https://s3.bmp.ovh/imgs/2021/08/b53eafa1ea05aac6.jpg') no-repeat;
-background-size:100% 100%;
--webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 10px 3000px rgba(0, 0, 0, 0.5);
-opacity:0.85;
-height:auto;
-}
-#tool-nav button{
-color:rgba(150, 60, 76,100%) !important;
-z-index:10;
-display:inline-block;
-background:transparent;
-}
-
-#search-button{
-}
-#searched-button{
-display:none;
-}
-#tool-button:hover #searched-button{
-display:none;
-}
-#search-button:hover #searched-button{
-display:block;
-position:fixed;
-top:1%;
-right:1%;
-z-index:100;
-}
-
-#getCode-button{
-font-size:2rem;
-}
-#getCode-button:hover #code{
-display:block;
-}
-
-#code{
-display:none;
-font-size:1rem;
-top:500;
-left:5%;
-width:882;
-height:612;
-border:solid 1px black;
-position:fixed;
-outline:none;
-padding:4rem 3rem 6rem 3rem;
-overflow:auto;
-z-index:1;
-}
-
-/*字体*/
-#f-nav{
-position:fixed;
-z-index:10;
-bottom:0%;
-right:0%;
-left:0%;
-display:none;
-flex-wrap:wrap;
-padding:6rem 10rem 10rem 10rem;
-background:rgba(255,245,238,72%);
-box-shadow: 5px 5px 20px rgba(128,128,128,0.7);
-opacity:1.0;
-height:100px;
-}
-#f-nav button{
-z-index:10;
-display:inline-block;
-background:transparent;
-}
-
-#ff-nav{
-display:none;
-}
-#ff-button:hover #ff-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:flex;
-flex-direction: column;
-flex-wrap: nowrap;
-overflow:auto;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:100% 100%;
--webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-opacity:0.8;
-padding:5rem 10rem;
-height:200px;
-}
-#ff-nav button{
-font-size:2.9rem;
-display:block;
-height:4.6rem;
-width:auto;
-background:transparent;
-}
-#fs-nav{
-display:none;
-}
-#fs-button:hover #fs-nav{
-position:fixed;
-display:block;
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:block;
-color:black;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
--webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-opacity:0.8;
-background-size:100% 100%;
-padding:8rem 5rem;
-height:100px;
-}
-#fs-nav button{
-font-size:4rem;
-display:inline-block;
-height:6rem;
-width:6rem;
-background:transparent;
-}
-#fc-nav,#bc-nav{
-display:none;
-}
-#fc-thecolor,#bc-thecolor{
-font-size:2rem;
-line-height:3rem;
-}
-#fc-btn,#bc-btn{
-font-size:2rem;
-line-height:3rem;
-}
-#fc-button,#bc-button{
-display:block;
-}
-#fc-button:hover #fc-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:flex;
-flex-wrap:wrap;
-font-size:1rem;
-padding:10rem 10rem 0rem 10rem;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:100% 100%;
--webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-opacity:0.98;
-height:200px;
-}
-#fc-button:hover #fc-thecolor{
-display:block;
-}
-
-#bc-button:hover #bc-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:flex;
-flex-wrap:wrap;
-font-size:1rem;
-padding:10rem 10rem 0rem 10rem;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:100% 100%;
--webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-opacity:0.98;
-height:200px;
-}
-#bc-button:hover #bc-thecolor{
-display:block;
-}
-
-
-#fc-nav div,#bc-nav div{
-background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') no-repeat center center;
--webkit-background-clip: text;
-background-clip: text;
-color:transparent;
-}
-
-#fc-nav input,#bc-nav input{ 
-display:none;
-padding:1rem 1rem;
-width:2rem;
-height:2rem;
-background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') no-repeat center center;
-background-size:100% 100%;
-border-radius:50px;
-border:none;
-outline: 0;
-}
-
-#h-nav{
-display:none;
-}
-#h-button:hover #h-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:flex;
-flex-wrap:wrap;
-font-size:1rem;
-padding:10rem 10rem 0rem 10rem;
-background:url('https://s3.bmp.ovh/imgs/2021/08/538f4bdbad5d9748.jpg');
-background-size:100% 150%;
--webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-opacity:0.98;
-height:200px;
-}
-#h-nav button{
-display:block;
-font-size:2.9rem;
-height:4.6rem;
-}
-
-#j-nav{
-display:none;
-}
-#j-button:hover #j-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:flex;
-flex-wrap:wrap;
-font-size:1rem;
-padding:10rem 10rem 0rem 10rem;
-background:url('https://s3.bmp.ovh/imgs/2021/08/3ad725eaf06428a7.jpg') top;
-background-size:100% 100%;
--webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-opacity:0.98;
-height:200px;
-}
-
-#j-nav button{
-display:block;
-font-size:2.9rem;
-height:4.6rem;
-}
-
-
-
-#info-nav{
-display:none;
-}
-#info-button:hover #info-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:flex;
-flex-wrap:wrap;
-font-size:1rem;
-padding:10rem 10rem 0rem 10rem;
-background:url('https://s3.bmp.ovh/imgs/2021/08/3ad725eaf06428a7.jpg') top;
-background-size:100% 100%;
--webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-opacity:0.98;
-height:200px;
-}
-
-#em-nav button{
-display:block;
-font-size:2.9rem;
-height:4.6rem;
-}
-#em-nav{
-display:none;
-}
-#em-button:hover #em-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:flex;
-flex-wrap:wrap;
-font-size:1rem;
-padding:6rem 10rem 0rem 10rem;
-background:url('https://s3.bmp.ovh/imgs/2021/08/3ad725eaf06428a7.jpg') top;
-background-size:100% 100%;
--webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-opacity:0.98;
-height:180px;
-}
-#em-nav button{
-display:block;
-font-size:2.9rem;
-height:4.6rem;
-}
-
-#strong-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:none;
-flex-wrap:wrap;
-font-size:1rem;
-padding:8rem 7rem 0rem 7rem;
-background-image:url('http://test-imgurl.minio.xiaoz.org:9000/imgs/2021/08/ab550ebaa8c8b018.jpg');
-background-size:100% 100%;
--webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-opacity:0.98;
-height:160px
-}
-#strong-nav button{
-display:block;
-height:4.2rem !important;
-width:7rem !important;
-margin:0 3rem !important;
-border-radius:28px !important;
-}
-
-#spcl-mark-nav{
-display:none;
-}
-#spcl-mark-button:hover #spcl-mark-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:flex;
-flex-wrap:wrap;
-font-size:1rem;
-padding:10rem 10rem 0rem 10rem;
-background:url('http://test-imgurl.minio.xiaoz.org:9000/imgs/2021/08/f5b57865768e382f.jpg') center;
-background-size:100% 125%;
--webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-opacity:0.98;
-height:200px;
-}
-
-#spcl-mark-nav button{
-display:block;
-margin:0 1rem;
-}
-
-
-.strongSpclFont1{
-color:cornflowerblue !important;
-}
-.strongSpclFont2{
-color:#a83654 !important;
-}
-
-.strongSpclFont3{
-color:#868c8d !important;
-border-bottom:4px solid #868c8d !important
-}
-
-
 
-
-
-
-
-#insert-nav{
-display:none;
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-flex-wrap:wrap;
-padding:9rem 5rem 7rem 5rem;
-background:hsla(210,82%,98%,100%);
-box-shadow: 4px 4px 10px rgba(128,128,128,0.7);
-opacity:1.0;
-height:auto;
-}
-#insert-nav button{
-margin:0 1rem;
-}
-
-
-
-#note-button:hover #note-nav{
-display:flex;
-z-index:;
-}
-#note-nav{
-display:none;
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-flex-wrap:wrap;
-padding:9rem 15rem 7rem 15rem;
-background:hsla(210,82%,98%,100%);
-box-shadow: 4px 4px 10px rgba(128,128,128,0.7);
-opacity:1.0;
-height:auto;
-}
-#note-nav button{
-margin:0 1rem;
-}
-
-
-
-
-
-/*插入*/
-#href{
-display:none;
-top:20%;
-left:20%;
-width:80%;
-height:40%;
-}
-#a2-button{
-display:none;
-}
-#a-button:hover #a2-button{
-position:fixed;
-display:block;
-}
-#a-button:hover #href{
-position:fixed;
-display:block;
-}
-
-
-
-#img-button{
-}
-#imagefile{
-position:fixed;
-right:10rem;
-top:10rem;
-z-index:2;
-opacity:0;
-filter:alpha(opacity=0);
-width:6.5rem;
-height:5rem;
-margin:-1rem 1rem;
-background:pink;
-outline:none;
-}
-
-#img2-button{
-display:none;
-}
-#img-button:hover #img2-button{
-display:block;
-}
-
-
-
-
-#mark2-button{
-display:none;
-}
-#mark-tip{
-}
-
-
-#ts-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:none;
-flex-wrap:wrap;
-padding:8rem 12rem 8rem 12rem;
-background-image:url('https://z3.ax1x.com/2021/08/17/f51Tzj.jpg');
-background-size:100% 100%;
--webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
-opacity:1.0;
-height:auto;
-}
-#ts-nav button{
-}
-
-
-#self-nav{
-position:fixed;
-z-index:10;
-top:0%;
-right:0%;
-left:0%;
-display:none;
-flex-wrap:wrap;
-padding:3rem 10rem 6rem 10rem;
-background:rgba(254, 251, 253,85%);
-box-shadow: 4px 4px 5px rgba(128,128,128,0.7);
-opacity:0.98;
-height:200px;
-}
-#self-nav button{
+#menu-nav{
 color:black !important;
-font-size:2.4rem !important;
+display:none;
+position:fixed;
 z-index:10;
-font-size:2rem;
-position: absolute;           
-top: 100px;            
-left: 100px;
+top:0%;
+right:0%;
+left:0%;
+display:none;
+flex-wrap:wrap;
+padding:2rem 2rem 2rem 2rem;
+background:rgba(250,250,255,100%);
+box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+opacity:0.98;
+height:100px;
+}
+#menu-nav button{
+font-size:2.7rem;
+display:block;
+height:4.6rem;
 width:auto;
-display:inline-block;
 background:transparent;
 }
 
 
 
-/*提示语*/
-.sky-container{
-display:flex;
-justify-content: center;
-width:100%;
-left:0;
-z-index:1000;
-}
-.finish-tip{
-display:none;
+    
+#img-nav {
 position:fixed;
-right:0;
-left:0;
-bottom:10%;
 width:10rem;
-margin:0 auto;
-padding: 16px 32px;
-text-align:center;
-font-size:100%;
- background-color:#F7F8FA;
- color: black;
- border-radius: 50px;
-z-index:1000;
-zoom:1.8;
-}
-.do-tip{
+height:auto;
+flex-direction:column;
+right:0;
+top:0;
+bottom:0;
+z-index:10;
+padding:8rem 0.6rem 6rem 1rem;
+background:rgba(250, 255, 253,95%);
 display:none;
-position:fixed;
-top:10%;
+-webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.4);
+        }
+#img-nav button{
+font-size:2.5rem;
+color:transparent;
 width:auto;
-margin:0 auto;
-padding: 16px 32px;
-text-align:center;
-font-size:100%;
- background-color:#FA8072;
- color: #F0F8FF;
- border-radius: 50px;
-z-index:100;
-zoom:1.8;
+z-index:10;
+padding:4rem 5rem 3rem 3rem;
+white-space: nowrap;
 }
-.notice-tip{
-display:none;
-position:fixed;
-top:10%;
-width:auto;
-margin:0 auto;
-padding: 16px 32px;
-text-align:center;
-font-size:100%;
- background-color:#FA8072;
- color: #F0F8FF;
- border-radius: 50px;
-z-index:100;
-zoom:1.8;
-}
-table.tftable {
-text-align:center;
-font-size:100%;
-color:#333333;
-width:100%;
-border-width: 0.5px;
-border-color: rgba(84,100,93,60%);
-border-collapse: collapse;
-}
-table.tftable th {
-font-weight:400;
-font-size:100%;
-background-color:rgb(210,236,228);
-border-width: 1px;
-padding: 15px;
-border-style: solid;
-border-color: white;
-}
-table.tftable tr {
-background-color:#ffffff;
-}
-table.tftable td {
-font-size:100%;
-border-width: 0.5px;
-padding: 15px;
-border-style: solid;
-border-color: rgba(84,100,93,60%);
-}
-cbutton{
+    .picBox {
+      width: 100%;
+      height: 600px;
+background:rgba(255,255,255,0%);
+      position: absolute;
+      z-index:-2;
+    }
+
+.outputPic{
+z-index:-1;
 display:block;
+position: absolute;
+}
+#img-nav i,#textarea i{
+font-size:3.6rem !important;
+padding-right:2rem;
+color:#555;
+}
+.outputmodel{
+display:none
+}
+#textarea button{
+font-size:2rem;
+width:auto;
+z-index:10;
+}    
+.set {
+        margin-top: 80px;
+    }   
+.btn {
+z-index:10;
+}
+
+
+#sizing-nav{
+display:none;
 position:fixed;
-top:1rem;
-right:-0.1rem;
-margin:-1rem;
-width:100;
-height:100;
-color:black;
-zoom:2;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:none;
+flex-wrap:wrap;
+padding:6rem 30rem 2rem 6rem;
+background:rgba(254,255,252,100%);
+box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+opacity:0.98;
+height:200px;
 }
-cbutton:hover{
-color:lightgrey;
+.changeWH3,.changeWH4{
+color:black !important;
+z-index:10;
+font-size:2.5rem;
+display:block;
+background:transparent;
+margin-bottom:0;
+padding:0;
 }
-</style>
+  </style>
+
+
+
 </head>
 
 
@@ -1154,37 +167,415 @@ color:lightgrey;
 
 <body>
 
+  <div id="img-nav">
+
+<cbutton style="display:block;font-size:2rem;position:absolute;margin:0;padding:0;width:auto;height:auto;top:-10;left:0;" id="img-cbutton" onmouseover="close10()">◤</cbutton>
+
+
+
+
+    <div style="font-size:2.5rem;
+color:#f9f9f9;background:#444;position:fixed;bottom:0;left:0;width:100%;padding:2rem 10rem">支持手势拖拽、缩放、旋转。</div>
+
+    <div class="set">
+      <button class="changeBg" style="display:none">添加/移除背景</button>
+      <button class="bgColor" style="display:none">更改背景色</button>
+    </div>
+
+
+<button id="sizing-button" onclick="sizing1()"><i class="fa fa-expand" aria-hidden="true"></i> 大小</button>
+
+<div id="sizing-nav">
+<cbutton style="zoom:4;top:10;left:16" id="sizing-cbutton" onmouseover="sizing2()">◤</cbutton>
+
+      <button class="changeWH3">
+设置容器大小<span class="changeWH1" style="background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') no-repeat center center;
+-webkit-background-clip: text;
+background-clip: text;
+color:transparent;padding-left:10rem">设置»</span></button>
+      <button class="changeWH4">恢复容器默认大小<span class="changeWH2" style="background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') no-repeat center center;
+-webkit-background-clip: text;
+background-clip: text;
+color:transparent;padding-left:5rem">恢复»</span></button>
+</div>
+
+<script>
+function sizing1(){
+document.getElementById("sizing-nav").style.display="block";
+}
+function sizing2(){
+document.getElementById("sizing-nav").style.display="none";
+}
+</script>
+
+
+    <div class="set" style="margin-top:0">
+<button class="clearCanvas"><i class="fa fa-remove" aria-hidden="true"></i> 清空容器</button>
+    </div>
+
+
+
+
+
+
+    <div class="set">
+<button>
+      <label style="border:none"><i class="fa fa-folder-open" aria-hidden="true"></i> 
+        <input type="file" class="file" style="display: none;">
+        添加图片
+      </label>
+</button>
+      <button class="rotate"><i class="fa fa-rotate-right" aria-hidden="true"></i>旋转</button>
+      <button class="autoScale"><i class="fa fa-reply-all" aria-hidden="true"></i>重置</button>
+      <button class="deletePic"><i class="fa fa-remove" aria-hidden="true"></i>删除</button>
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+<script>
+function open10(){
+document.getElementById("img-nav").style.display="flex";
+};
+function close10(){
+document.getElementById("img-nav").style.display="none";
+}
+</script>
+
+
+
+
+<script type="text/javascript">
+function number() {
+var html='<main id="main"><!--初始化--><button class="btn picBoxBtn" style="display:inline-block"><i class="fa fa-lock" aria-hidden="true"></i> </button><button class="outputmodel" style=""><i class="fa fa-unlock" aria-hidden="true"></i> </button><!--叠放次序--><button class="btn zIndexBtn" style="background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;display:inline-block">浮于文字上方</button><button class="btn zIndexBtn1" style="display:none;background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;">衬于文字下方</button><div class="picBox" style=""></div><img src="" alt="" class="outputPic" id="outputPic" style=""></main>';
+
+var content = window.getSelection().toString();
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") { document.selection.createRange().pasteHTML(html);
+    };
+
+
+    $('.picBoxBtn').click(function(){
+var n = $(".picBoxBtn").index(this);
+c.style.zIndex="2";    
+this.style.display="none";
+$(".outputmodel")[n].style.display="inline-block";                  
+})
+
+
+    $('.outputmodel').click(function(){
+var n = $(".outputmodel").index(this);
+this.style.display="none";
+$(".picBoxBtn")[n].style.display="inline-block";   
+})
+
+
+$(".picBoxBtn").click(function(){       
+var n = $(".picBoxBtn").index(this);
+//document.getElementById('textarea').innerText=n;
+var canvasBox = $(".picBox")[n];
+    var canvas = new _Canvas({
+      box: canvasBox, // 容器
+      bgColor: 'rgba(255,255,255,100%)',   
+
+             // 背景色
+      bgPhoto: 'none',  
+              // 背景图
+      photoModel: 'adaption', // 载入图片模式(设置后添加图片时默认为当前设置模式)
+      model: 'Cascade' // 编辑模式
+    })
+    var timer;
+    canvas.init({
+      dragEvent: function (e1, e2) {
+        clearTimeout(timer);
+        $('.event').text('当前操作事件：正在拖拽');
+        timer = setTimeout(function () {
+          $('.event').text('当前操作事件：无操作');
+        }, 10)
+      },
+      zoomEvent: function (e1, e2) {
+        clearTimeout(timer);
+        $('.event').text('当前操作事件：正在缩放');
+        timer = setTimeout(function () {
+          $('.event').text('当前操作事件：无操作');
+        }, 10)
+      },
+      rotateEvent: function (e1, e2) {
+        clearTimeout(timer);
+        $('.event').text('当前操作事件：正在旋转');
+        timer = setTimeout(function () {
+          $('.event').text('当前操作事件：无操作');
+        }, 10)
+      },
+      callback: function () {
+        console.log('图片初始化完成...')
+        canvas.addPhoto({
+          url: './img/pic1.jpg',
+          model: 'adaption',
+          callback: function () {
+            console.log('成功添加一张自适应的图片')
+          }
+        })
+      }
+    });
+
+
+    // 添加本地图片
+    $('.file').change(function () {
+      canvas.addPhoto({
+        url: getUrl(this.files[0]),
+        model: 200,
+        callback: function () {
+          console.log('成功添加本地图片')
+        }
+      })
+    })
+    // 旋转
+    $('.rotate').click(function () {
+      var nowPhoto = canvas.getNowPhoto();
+      if (!nowPhoto) {
+        alert('未选中任何图片');
+        return;
+      } else {
+        var nowPhotoInfo = nowPhoto.getPhotoInfo();
+        nowPhoto.changeInfo({
+          rotate: nowPhotoInfo.rotate + 90,
+          callback: function () {
+            console.log('成功旋转')
+          }
+        })
+      }
+    })
+    // 放大
+    $('.enlarge').click(function () {
+      var nowPhoto = canvas.getNowPhoto();
+      if (!nowPhoto) {
+        alert('未选中任何图片');
+        return;
+      } else {
+        var nowPhotoInfo = nowPhoto.getPhotoInfo();
+        nowPhoto.changeInfo({
+          scale: nowPhotoInfo.scale * 1.1,
+          callback: function () {
+            console.log('成功放大')
+          }
+        })
+      }
+    })
+    // 缩小
+    $('.narrow').click(function () {
+      var nowPhoto = canvas.getNowPhoto();
+      if (!nowPhoto) {
+        alert('未选中任何图片');
+        return;
+      } else {
+        var nowPhotoInfo = nowPhoto.getPhotoInfo();
+        nowPhoto.changeInfo({
+          scale: nowPhotoInfo.scale / 1.1,
+          callback: function () {
+            console.log('成功缩小')
+          }
+        })
+      }
+    })
+
+    // 重置
+    $('.autoScale').click(function () {
+      var nowPhoto = canvas.getNowPhoto();
+      if (!nowPhoto) {
+        alert('未选中任何图片');
+        return;
+      } else {
+        var nowPhotoInfo = nowPhoto.getPhotoInfo();
+        nowPhoto.init(function () {
+          console.log('成功重置')
+        })
+      }
+    })
+    // 删除图片
+    $('.deletePic').click(function () {
+      var nowPhoto = canvas.getNowPhoto();
+      if (!nowPhoto) {
+        alert('未选中任何图片');
+        return;
+      } else {
+        var nowPhotoInfo = nowPhoto.getPhotoInfo();
+        nowPhoto._delete();
+        console.log('成功重置')
+      }
+    })
+
+
+    // 更改画布宽高
+    $('.changeWH1').click(function () {
+var w = prompt("输入宽度值","");
+var h = prompt("输入高度值","");
+      canvas.changeParams({
+        width: w,
+        height: h
+      })
+    })
+    // 复原
+    $('.changeWH2').click(function () {
+      canvas.changeParams({
+        width: 750,
+        height: 600
+      })
+    })
+
+    // 清空画布
+    $('.clearCanvas').click(function () {
+      canvas.clearCanvas();
+    })
+
+     
+
+    // 输出png图
+    $('.outputmodel').click(function () {
+var n = $(".outputmodel").index(this);
+document.getElementById('outputPic').id='outputPic'+n;
+var c = "#outputPic"+n;
+
+
+
+
+      canvas.toDataURL({
+        width: 750,
+        height: 600,
+        type: 'image/png',
+        callback: function (url) {
+          $(c).attr('src', url);
+          console.log('成功输出png图')
+        }
+      });
+setTimeout(function(){       
+var canvas = $(".picBox")[n];
+var html=canvas.innerHTML;  
+canvas.outerHTML='<div style="display:none;" id="editedcanvas'+n+'">'+html+'</div>';
+var c = "editedcanvas"+n;
+var c = document.getElementById(c);
+var html=c.innerHTML;  
+c.outerHTML='<div class="picBox" >'+html+"</div>";
+},100)
+
+    })
+
+
+
+    $('.zIndexBtn').click(function(){
+var n = $(".zIndexBtn").index(this);
+var canvasBox = $(".picBox")[n];
+var c = $(".outputPic")[n];           
+canvasBox.style.zIndex="2";
+c.style.zIndex="2";    
+$(".zIndexBtn")[n].style.display="none";
+$(".zIndexBtn1")[n].style.display="inline-block";                  
+})
+
+
+    $('.zIndexBtn1').click(function(){
+var n = $(".zIndexBtn1").index(this);
+var canvasBox = $(".picBox")[n];
+var c = $(".outputPic")[n];
+canvasBox.style.zIndex="-2";
+c.style.zIndex="-1";    
+this.style.display="none";
+$(".zIndexBtn")[n].style.display="inline-block";   
+})
+
+
+
+
+
+
+
+
+    function getUrl (file) {
+      var url = null;
+      if (window.createObjectURL !== undefined) {
+        url = window.createObjectURL(file);
+      } else if (window.URL !== undefined) {
+        url = window.URL.createObjectURL(file);
+      } else if (window.webkitURL !== undefined) {
+        url = window.webkitURL.createObjectURL(file);
+      }
+      return url
+    }
+  })
+
+
+
+}
+</script>
+
+
+
+
+
+
+
 <button class="fullView-button1" id="fullView-button">全屏
 </button>
+
+
 
 
 <button id="codeout-button" onclick="codeOut()">导出</button>
 
 
+
 <div id="textarea" class="t2" contenteditable="true" onkeyup="wordCount()">
+<content id="content">
 <p>   
 <br>
 </p>
+
+
 <hr>
 <b>参考</b>
 <ol id="ol">
 <li style="display:none;"> <a></a></li>
 </ol>
+</content>
 </div>
+
 
 <textarea id="c" style="opacity:0;position:fixed;top:100%"></textarea>
 
 
-<script>
-<!-- 获取html代码-->
-function codeOut(){
-var code = document.getElementById("c");
-var e = document.getElementById("textarea").innerHTML;
-code.innerText = e.replace(new RegExp('contenteditable="true"', "g"), '');
-code.select();
-document.execCommand("Copy");
-} 
-</script>
+
+
 
 
 
@@ -1243,13 +634,13 @@ document.execCommand("Copy");
 
 <surbutton id="fs-button" style="margin:0 -1.8rem 0 0">S
 <div id="fs-nav">
-<button id="fs1-button" onclick="fs1()">1</button>
-<button id="fs2-button" onclick="fs2()">2</button>
-<button id="fs3-button" onclick="fs3()">3</button>
-<button id="fs4-button" onclick="fs4()">4</button>
-<button id="fs5-button" onclick="fs5()">5</button>
-<button id="fs6-button" onclick="fs6()">6</button>
-<button id="fs7-button" onclick="fs7()">7</button>
+<button id="fs1-button" onclick="fs1()" style="font-size:30">1</button>
+<button id="fs2-button" onclick="fs2()" style="font-size:40">2</button>
+<button id="fs3-button" onclick="fs3()" style="font-size:50">3</button>
+<button id="fs4-button" onclick="fs4()" style="font-size:60">4</button>
+<button id="fs5-button" onclick="fs5()" style="font-size:70">5</button>
+<button id="fs6-button" onclick="fs6()" style="font-size:80">6</button>
+<button id="fs7-button" onclick="fs7()" style="font-size:90">7</button>
 </div></surbutton>
 
 
@@ -1287,14 +678,9 @@ document.execCommand("Copy");
 </div></surbutton>
 
 
-<script>
-function open8(){
-document.getElementById("f-nav").style.display="flex";
-};
-function close8(){
-document.getElementById("f-nav").style.display="none";
-}
-</script>
+
+
+
 
 
 <!--插入-->
@@ -1306,16 +692,21 @@ document.getElementById("f-nav").style.display="none";
 
 
 
-<!--图片-->
-<surbutton id="img-button">
-<button style="z-index:1;">￼</button>
-<input type="file" id="imagefile" value="">
+<!--插入图片容器-->
+<surbutton id="img-button" onclick="open10()">
+<button class="picBoxBtnStart" onclick="number()" style="z-index:1;">￼</button>
 
-<fbb id="img2-button" onclick="img();" style="margin:0;padding:0 3rem">插入
-<button style="z-index:10;position:fixed;top:2%;right:5%;width:10rem">
-</button>
-</fbb>
+
 </surbutton>
+
+
+
+
+
+
+
+
+
 
 
 <!--特殊符号-->
@@ -1351,7 +742,7 @@ document.getElementById("f-nav").style.display="none";
 
 <div class="sky-container">
 <div class="finish-tip">已完成</div>
-
+<div id="menu-tip" class="do-tip">选择最低收录级别。</div>
 <div id="mark-tip" class="do-tip">请选择合适文本位置添加对应链接</div>
 <div id="aud-tip" class="notice-tip">若恢复自动链接行为，修改后链接样式将不会保存。</div>
 
@@ -1384,14 +775,14 @@ document.getElementById("f-nav").style.display="none";
 <button id="pre-button" onclick="pre()"><i class="fa fa-code"></i></button>
 
 
-<button id="quote-button" onclick="quote()">「」
+<button id="quote-button" onclick="quote()" style="font-size:3.2rem;margin:0 0 0 -0.2rem">「」
 </button>
 
 
 <!--参考文献-->
 <button id="r-button" onclick="reference()" style="font-size:3rem;padding:0.5rem 0 0 2rem">[1]</button>
 
-<surbutton id="note-button" style="font-size:3rem;padding:0rem 0 0rem 2rem">( )
+<surbutton id="note-button" style="font-size:3rem;padding:0rem 0 0rem 2rem">( )
 <div id="note-nav" >
 <!--术语-->
 <button id="dfn-button" onclick="dfn()" style="font-size:2.7rem !important;">dfn
@@ -1407,10 +798,6 @@ document.getElementById("f-nav").style.display="none";
 </surbutton>
 
 
-
-
-
-
 <surbutton id="info-button" style="">
 <i class="fa fa-info-circle"></i>
 <div id="info-nav">
@@ -1423,10 +810,6 @@ document.getElementById("f-nav").style.display="none";
 
 </div>
 </surbutton>
-
-
-
-
 
 
 
@@ -1457,9 +840,133 @@ document.getElementById("f-nav").style.display="none";
 <i class="fa fa-anchor"></i>
 </button>
 
-<button id="book-button" onclick="book()" style="font-size:3rem;padding:0rem 0 0rem 2rem">
-【 】
+<button id="book-button" onclick="book()" style="font-size:2.7rem;margin:0rem;width:auto;">
+【 】
 </button>
+
+
+
+<surbutton id="tex-button" onclick="tex1()">
+<span style="font-family:times;font-size:2.9rem;margin:0 2.7rem">Tex</span>
+<div id="tex-nav">
+<cbutton id="tex-cbutton" onmouseover="tex2()" style="margin:0rem -1.1rem !important;z-index:5 !important;font-size:4rem">◥</cbutton>
+<iframe src="https://latexlive.com" width="100%" height="100%" frameborder="0" style="position:fixed;left:0%;top:0%;right:0%;bottom:0%"></iframe>
+</div>
+</surbutton>
+
+<script>
+function tex1(){
+document.getElementById('tex-nav').style.display='block';
+}
+function tex2(){
+document.getElementById('tex-nav').style.display='none';
+}
+</script>
+
+
+
+
+
+<surbutton id="menu-button" onclick="priMenu()">
+<span style="font-size:4.2rem;margin:0 4.1rem">≡</span>
+</surbutton>
+<div id="menu-nav">
+<cbutton id="menu-cbutton" onmouseover="closemenunav()" style="zoom:4;margin:-1.1rem -2.5rem !important">◥</cbutton>
+<select id="menu-select" style="background:rgba(119,179,212,50%);;display:inline-block;font-size:2.5rem;border-radius:30px;border:none;height:auto;width:4.5rem;padding:0 0.6rem">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+</select>
+<button style="display:inline-block;color:black" id="chooseH-button" onclick="chooseH()">确定</button>
+</div>
+
+
+
+	
+
+
+<script>
+function closemenunav(){
+document.getElementById('menu-nav').style.display='none';
+}
+function priMenu(){
+document.getElementById("menu-tip").style.display="block";
+document.getElementById("menu-nav").style.display="block";
+//初始化
+var content = document.getElementById("content").innerHTML;
+document.getElementById("menu-ul").innerHTML = content;
+document.getElementById("menu-ul").style.display="none";
+//删除正文
+    var section = document.querySelectorAll("#menu-ul >section");
+    var i;
+    for (i = 0; i < section.length; i++) {
+section[i].parentNode.removeChild(section[i]);}
+}
+//删除未选标题
+function chooseH(){
+var str1 = document.getElementById("menu-select");
+var str2 = str1.options[str1.selectedIndex].text;
+var str3 = parseInt(str2) + 1;
+var str4 = '#menu-ul ' + "h" +str3;
+var str5 = document.querySelectorAll(str4);
+    var i;
+    for (i = 0; i < str5.length; i++) {
+str5[i].parentNode.removeChild(str5[i]);
+}
+var str6 = parseInt(str2) + 2;
+var str7 = '#menu-ul ' + "h" +str6;
+var str8 = document.querySelectorAll(str7);
+    var i;
+    for (i = 0; i < str8.length; i++) {
+str8[i].parentNode.removeChild(str8[i]);
+}
+var str6 = parseInt(str2) + 2;
+var str7 = '#menu-ul ' + "h" +str6;
+var str8 = document.querySelectorAll(str7);
+    var i;
+    for (i = 0; i < str8.length; i++) {
+str8[i].parentNode.removeChild(str8[i]);
+}
+var str9 = parseInt(str2) + 3;
+var str10 = '#menu-ul ' + "h" +str9;
+var str11 = document.querySelectorAll(str10);
+    var i;
+    for (i = 0; i < str11.length; i++) {
+str11[i].parentNode.removeChild(str11[i]);
+}
+var str12 = parseInt(str2) + 4;
+var str13 = '#menu-ul ' + "h" +str12;
+var str14 = document.querySelectorAll(str13);
+    var i;
+    for (i = 0; i < str14.length; i++) {
+str14[i].parentNode.removeChild(str14[i]);
+}
+var str15 = parseInt(str2) + 5;
+var str16 = '#menu-ul ' + "h" +str15;
+var str17 = document.querySelectorAll(str16);
+    var i;
+    for (i = 0; i < str17.length; i++) {
+str17[i].parentNode.removeChild(str17[i]);
+}
+//添加锚点
+var str = document.querySelectorAll('#menu-ul h1,#menu-ul h2,#menu-ul h3,#menu-ul h4,#menu-ul h5,#menu-ul h6');
+    var i;
+    for (i = 0; i < str.length; i++) {
+var e1 = str[i].innerText;
+str[i].innerHTML= "<li><a href='# " + e1 + " '>" + e1 +"</a></li>";
+}
+//显示
+document.getElementById("menu-ul").style.display="block";
+document.getElementById("menu-tip").style.display="none";
+}
+</script>
+
+
+
+
 
 
 
@@ -1494,6 +1001,14 @@ document.getElementById("button2").style.zIndex="4";
 
 
 
+<button style="width:auto;" class="fbb" id="mark2-button">添加链接
+</button>
+
+
+
+
+
+
 <button id="hr-button" onclick="hr()">---</button>
 
 
@@ -1505,7 +1020,7 @@ document.getElementById("button2").style.zIndex="4";
 <surbutton id="j-button"> =
 <div id="j-nav">
 <button id="jf-button" onclick="jf()">|=|</button>
-<button id="jc-button" onclick="jc()"> =</button>
+<button id="jc-button" onclick="jc()"> =</button>
 <button id="jl-button" onclick="jl()">|=</button>
 <button id="jr-button" onclick="jr()">=|</button>
 </div>
@@ -1525,16 +1040,8 @@ document.getElementById("button2").style.zIndex="4";
 </div>
 </surbutton>
 
-<script>
-function ts1(){
-document.getElementById("button2").style.zIndex="1";
-document.getElementById("ts-nav").style.display="flex";
-};
-function ts2(){
-document.getElementById("ts-nav").style.display="none";
-document.getElementById("button2").style.zIndex="4";
-}
-</script>
+
+
 
 
 <!--自定义 -->
@@ -1552,37 +1059,41 @@ document.getElementById("button2").style.zIndex="4";
 
 
 
-<script>
-function open1(){
-document.getElementById("button2").style.zIndex="1";
-document.getElementById("self-nav").style.display="flex";
-};
-function close1(){
-document.getElementById("button2").style.zIndex="4";
-document.getElementById("self-nav").style.display="none";
-}
-</script>
-
-
 </div>
 
 
 
+<a href="#" class="menuLink_1">︽ </a>     
+<a id="menu-link" class="menuLink_2">+</a>
+<ul id="menu-ul" contenteditable="true">
+</ul>
+
+<script type="text/javascript">  	
+window.onload = function(){   
+var anniu =document.getElementById('menu-link');      
+var menu = document.getElementById('menu-ul');              
+var temp = 1;        anniu.addEventListener('click',function(){            
+if(temp==1){                
+temp=0;              menu.style.display="block"     
+}else{                
+temp=1;               menu.style.display="none"           
+}       
+})		
+}
+</script>
 
 
 
 </body>
 
 
-
 <script>
 //链接
-
 function a() {
 var a = prompt("输入链接内容","");
         if(a!=null&&a!=''){
 var content = window.getSelection().toString();
-var html='<a href="'+ a + '">' + content + '<i class="fa fa-mail-forward" aria-hidden="true" style="color:#1d65b1;display:none"></i> </a>';
+var html='<a href="'+ a + '">' + content + ' <i class="fa fa-mail-forward" aria-hidden="true" style="color:#1d65b1;display:none"></i> </a>';
 var sel, range;
     if (window.getSelection) {
         sel = window.getSelection();
@@ -1604,7 +1115,7 @@ var sel, range;
                 sel.addRange(range);
             }
         }
-    } else if (document.selection && document.selection.type != "Control") {     document.selection.createRange().pasteHTML(html);
+    } else if (document.selection && document.selection.type != "Control") { document.selection.createRange().pasteHTML(html);
     };
 };
 }
@@ -1613,15 +1124,13 @@ var sel, range;
 var anniu =document.getElementById('self-anniu');
 var kaiguan = document.getElementById('self-kaiguan');
 var tip = document.getElementById('aud-tip');      
-var as = document.getElementsByTagName("a");
-           
-
+var as = document.getElementsByTagName("a");           
 var temp = 1;
 anniu.addEventListener('click',function(){
 if(temp==1){
 this.className = 'hei';              
 temp=0;                
-kaiguan.style.border= '2px solid  #be002f';    
+kaiguan.style.border= '2px solid #be002f';    
 tip.style.display="block";
 setTimeout("myFunction()",5000);
 
@@ -1690,637 +1199,6 @@ fsbutton.innerHTML="全屏"
 }
 })
 </script>
-
-
-<!--添加参考文献 -->
-<script>
-
-function reference() {
-var n = prompt("锚点名","");
-var c = prompt("参考文献","");
-        if(n!=null&&c!=null){
-var content = window.getSelection().toString();
-var html='<element id="'+ n + '">' + content + '</element>';
-var sel, range;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            var el = document.createElement("div");
-            el.innerHTML = html;
-            var frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-            if (lastNode) {
-                range = range.cloneRange();
-                range.setStartAfter(lastNode);
-                range.collapse(true);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-    } else if (document.selection && document.selection.type != "Control") {     document.selection.createRange().pasteHTML(html);
-    };
-
-var node=document.createElement("a");
-var textnode=document.createTextNode(c);
-node.appendChild(textnode);
-document.getElementById("ol").appendChild(node);
-node.href = "#"+n;
-
-var nodeList = document.getElementsByTagName('a');
-var arrNodes = Array.prototype.slice.call(nodeList);  
-var order=arrNodes.indexOf(node);
-
-var e = node.outerHTML;
-node.outerHTML= "<li>" + e +"</li>";
-
-var e = document.getElementById(n).innerHTML;
-document.getElementById(n).innerHTML= e + "<span style='color:#6483B0;vertical-align:super;margin:0 0.2rem 0 0rem;zoom:0.5'>" + order + "</span>";
-}}
-</script>
-
-<script>
-<!-- 查看html代码-->
-
-function getCode() {
-var code = document.getElementById("textarea").innerHTML;
-document.getElementById("code").innerText = code;
-} 
-
-
-function copy() {
-document.execCommand("Copy")
-};
-
-
-
-function myFunction(){
-tip.style.display="none"
-}
-
-
-
-
-
-
-<!--注音-->
-function ruby() {
-var n = prompt("填写注音","");
-        if(n!=null&&n!=''){
-var content = window.getSelection().toString();
-var html='<ruby>'+ content + '<rp>(</rp><rt>'+n+'</rt><rp>)</rp></ruby>';
-var sel, range;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            var el = document.createElement("div");
-            el.innerHTML = html;
-            var frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-            if (lastNode) {
-                range = range.cloneRange();
-                range.setStartAfter(lastNode);
-                range.collapse(true);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-    } else if (document.selection && document.selection.type != "Control") {     
-document.selection.createRange().pasteHTML(html);
-    }
-}}
-
-<!--注释-->
-function abbr() {
-var n = prompt("填写注释","");
-        if(n!=null&&n!=''){
-var content = window.getSelection().toString();
-var html='<abbr title>'+ content +'<note>'+n+'</note></abbr>';
-var sel, range;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            var el = document.createElement("div");
-            el.innerHTML = html;
-            var frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-            if (lastNode) {
-                range = range.cloneRange();
-                range.setStartAfter(lastNode);
-                range.collapse(true);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-    } else if (document.selection && document.selection.type != "Control") {     
-document.selection.createRange().pasteHTML(html);
-    }
-}}
-<!--术语-->
-function dfn() {
-var n = prompt("填写术语","");
-        if(n!=null&&n!=''){
-var content = window.getSelection().toString();
-var html='<dfn>'+ content +'<note>'+n+'</note></dfn>';
-var sel, range;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            var el = document.createElement("div");
-            el.innerHTML = html;
-            var frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-            if (lastNode) {
-                range = range.cloneRange();
-                range.setStartAfter(lastNode);
-                range.collapse(true);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-    } else if (document.selection && document.selection.type != "Control") {     
-document.selection.createRange().pasteHTML(html);
-    }
-}}
-
-
-
-
-<!--标识书名-->
-
-function book(){
-document.execCommand('insertText', 'false', "【】");
-};
-
-function quote(){
-document.execCommand('insertText', 'false', "「」");
-};
-
-
-
-function em1(){
-document.execCommand("ForeColor","false",'#fa947d');
-};
-function em2(){
-var content = window.getSelection().toString();
-var html='<em2><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#f3f2f2;"></i>  ' + content + '</em2>';
-var sel, range;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            var el = document.createElement("div");
-            el.innerHTML = html;
-            var frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-            if (lastNode) {
-                range = range.cloneRange();
-                range.setStartAfter(lastNode);
-                range.collapse(true);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-    } else if (document.selection && document.selection.type != "Control") {     
-document.selection.createRange().pasteHTML(html);
-    };
-};
-function strong1(){
-document.getElementById("strong-nav").style.display="flex";
-
-var content = window.getSelection().toString();
-var html='<blockstrong>' + content + '</blockstrong>';
-var sel, range;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            var el = document.createElement("div");
-            el.innerHTML = html;
-            var frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-            if (lastNode) {
-                range = range.cloneRange();
-                range.setStartAfter(lastNode);
-                range.collapse(true);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-    } else if (document.selection && document.selection.type != "Control") {     
-document.selection.createRange().pasteHTML(html);
-    };
-};
-
-function strong2(){
-document.getElementById("strong-nav").style.display="none";
-}
-function strongSpclFont1(){
-document.execCommand("ForeColor","false",'cornflowerblue');
-};
-function strongSpclFont2(){
-document.execCommand("ForeColor","false",'#a83654');
-};
-function strongSpclFont3(){
-var content = window.getSelection().toString();
-var html='<span class="strongSpclFont3">' + content + '</span>';
-var sel, range;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            var el = document.createElement("div");
-            el.innerHTML = html;
-            var frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-            if (lastNode) {
-                range = range.cloneRange();
-                range.setStartAfter(lastNode);
-                range.collapse(true);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-    } else if (document.selection && document.selection.type != "Control") {     
-document.selection.createRange().pasteHTML(html);
-    };
-};
-
-
-
-<!-- 书签（锚点链接）-->
-
-function bookmark() {
-var n = prompt("填写锚点名称","");
-        if(n!=null&&n!=''){
-var content = window.getSelection().toString();
-var html='<element id="'+ n + '">' + content + '</element>';
-var sel, range;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            var el = document.createElement("div");
-            el.innerHTML = html;
-            var frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-            if (lastNode) {
-                range = range.cloneRange();
-                range.setStartAfter(lastNode);
-                range.collapse(true);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-    } else if (document.selection && document.selection.type != "Control") {     
-document.selection.createRange().pasteHTML(html);
-    };
-document.getElementById("button2").style.zIndex="0";
-document.getElementById("mark2-button").style.display="block";
-document.getElementById("mark-tip").style.display="block";
-document.getElementById("mark2-button").addEventListener("click", function(){
-document.getElementById("mark-tip").style.display="none";
-document.execCommand('CreateLink', true, "#"+n);
-document.getElementById("mark2-button").style.display="none";
-document.getElementById("button2").style.zIndex="4"
-});
-
-
-
-}}
-
-
-
-
-
-<!--替换-->
-function replace() {
-var A = prompt("替换内容","");
-var B = prompt("替换为","");
-        if(A!=null&&A!=''&&B!=null&&B!=''){
-var str = document.getElementById("textarea").innerHTML;
-document.getElementById("textarea").innerHTML= str.replace(new RegExp(A , "g"), B);
-}
-}
-<!--查找-->
-function search() {
-var C = prompt("查找内容","");
-        if(C!=null&&C!=''){
-var str = document.getElementById("textarea").innerHTML;
-var D = "<k>" + C + "</k>";
-document.getElementById("textarea").innerHTML= str.replace(new RegExp(C , "g"), D);
-
-document.getElementById("searched-button").addEventListener('click',function searched() {
-document.getElementById("textarea").innerHTML= str.replace(new RegExp(D , "g"), C);})
-
-}
-}
-
-
-
-
-<!--字数统计 -->
-function wordCount() {
-var length = document.getElementById("textarea");
-document.getElementById("output").innerHTML= length.innerHTML.length;
-}
-
-
-
-
-//字体;
-function ff() {
-document.execCommand("FontName","false",sFontName);
-};
-
-
-
-function ff1() {
-document.execCommand("FontName","false","sans-serif");
-};
-function ff2() {
-document.execCommand("FontName","false","serif");
-};
-function ff3() {
-document.execCommand("FontName","false","cursive");
-};
-function ff4() {
-document.execCommand("FontName","false","monospace");
-};
-function ff5() {
-document.execCommand("FontName","false","courier");
-};
-
-       
-//字体大小;
-function fs() {
-document.execCommand("FontSize","false","7");
-};
-function fs1() {
-document.execCommand("FontSize","false","1");
-};
-function fs2() {
-document.execCommand("FontSize","false","2");
-};
-function fs3() {
-document.execCommand("FontSize","false","3");
-};
-function fs4() {
-document.execCommand("FontSize","false","4");
-};
-function fs5() {
-document.execCommand("FontSize","false","5");
-};
-function fs6() {
-document.execCommand("FontSize","false","6");
-};
-function fs7() {
-document.execCommand("FontSize","false","7");
-};
-
-//加粗;
-function b() {
-document.execCommand("Bold","false",null);
-}; 
-//斜体   
-function i(){
-document.execCommand('Italic');   
-};
-//下划线
-function u() {
-document.execCommand("Underline")
-} ;
-//删除线
-function s() {
-document.execCommand("StrikeThrough")
-} ;
-//上标
-function superscript(){
-document.execCommand("SuperScript")
-} ;
-//下标
-function subscript(){
-document.execCommand('subscript', 'false', null);
-};
-//设置文字颜色;
-function fc(){
-var color =document.getElementById("fc-thecolor").value;
-document.execCommand("ForeColor","false",color);
-};
-//设置背景颜色;
-function bc(){
-var color =document.getElementById("bc-thecolor").value;
-document.execCommand("BackColor","false",color);
-};
-
-//图片
-function img(){
-if(typeof FileReader=='undifined'){result.innerHTML="<p>抱歉，你的浏览器不支持 FileReader</p>";return false;}var file=document.getElementById("imagefile").files[0];
-if(!/image\/\w+/.test(file.type))           
-{alert("请确保文件为图像文件");return false;}
-var reader=new FileReader();
-reader.readAsDataURL(file);
-reader.onload=function(e){
-document.execCommand("insertImage",true,this.result)
-}}
-//显示代码
-function pre(){
-document.execCommand("FormatBlock",false,"<PRE>")
-};
-//标题
-function h1(){
-document.execCommand("FormatBlock","false","<h1>")
-};
-function h2(){
-document.execCommand("FormatBlock","false","<h2>")
-};
-function h3(){
-document.execCommand("FormatBlock","false","<h3>")
-};
-function h4(){
-document.execCommand("FormatBlock","false","<h4>")
-};
-function h5(){
-document.execCommand("FormatBlock","false","<h5>")
-};
-function h6(){
-document.execCommand("FormatBlock","false","<h6>")
-};
-function hh(){
-document.execCommand('insertText', 'false', "«»");
-}
-//缩进
-function indent(){
-document.execCommand('Indent');  
-};
-//减少缩进
-function outdent(){
-document.execCommand('outdent', 'false', null );
-};
-//分割线
-function hr() {
-document.execCommand("InsertHorizontalRule")
-} ;
-//换行
-function p() {
-document.execCommand("InsertParagraph")
-} 
-//文本对齐
-function jf() {
-document.execCommand('justifyFull', 'false', null );
-};
-//文本居中
-function jc(){
-document.execCommand('justifyCenter', 'false', null );
-};
-//文本左对齐
-function jl(){
-document.execCommand('justifyLeft', 'false', null );
-};
-//文本右对齐
-function jr(){
-document.execCommand('justifyRight', 'false', null );
-};
-//无序列排列   
-function iu(){
-document.execCommand('InsertUnorderedList');   
-};
-
-//有序列排列   
-function io(){
-document.execCommand('InsertOrderedList');   
-};
-
-
-//撤销
-function un() {
-document.execCommand('undo', 'false', null );
-} ;
-//恢复
-function redo() {
-document.execCommand('redo', 'false', null );
-} ;
-//清除格式
-function rf() {
-document.execCommand('RemoveFormat')
-} 
-//表格
-function creatTab(){
-var rows = prompt("rows"," ");
-var cols = prompt("cols"," ");
-
-
-var th = document.createElement('th');
-
-    var tab = '<table id="tfhover" class="tftable" border="1" contenteditable="true">'
-/* 表头*/
-            tab=tab+"<tr>";
-        for(var j=0;j<cols;j++){
-            tab+="<th>"+1+j+"</th>";
-        }
-        tab+="<tr/>";
-    
-
-/*主体*/
-    for(var i=0;i<rows;i++){
-        tab=tab+"<tr>";
-        for(var j=0;j<cols;j++){
-            tab+="<td>"+i+j+"</td>";
-        }
-        tab+="<tr/>";
-    }
-    tab+='</table>';
-
-var html=tab;
-/*来源：https://blog.csdn.net/fesfsefgs/article/details/109540259?utm_medium=distribute.wap_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.wap_blog_relevant_pic&depth_1-utm_source=distribute.wap_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.wap_blog_relevant_pic*/
-var sel, range;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            var el = document.createElement("div");
-            el.innerHTML = html;
-            var frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-
-            // Preserve the selection
-            if (lastNode) {
-                range = range.cloneRange();
-                range.setStartAfter(lastNode);
-                range.collapse(true);
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-    } else if (document.selection && document.selection.type != "Control") {     document.selection.createRange().pasteHTML(html);
-    }
-}
-
-
-
-
-
-<!--不会使用-->
-function open() {
-document.execCommand("Open")
-} ;
-function saveas() {
-document.execCommand("SaveAs","hi.txt")
-};
-//更改自动链接行为
-//function aud() {
-//document.execCommand("AutoUrlDetect",true)
-//} 
-
-
-
-
-
-
-</script>
-
-
-
-
 
 
 
