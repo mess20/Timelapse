@@ -1,0 +1,1396 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <script type="text/javascript" src="https://cdn.staticfile.org/touchjs/0.2.14/touch.min.js"></script>
+  <script type="text/javascript" src="https://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+<script src="https://restrechinamynd.github.io/pic.js"></script>
+    <script src="https://restrechinamynd.github.io/VisualEditor.js"></script>
+
+
+<link href="https://Restrechinamynd.github.io/VE.css" rel="stylesheet">
+<link rel="stylesheet" href="https://restrechinamynd.github.io/VisualEditor.css" type="text/css"> 
+<link rel="stylesheet" href="https://Restrechinamynd.github.io/all.css" type="text/css"> 
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>自制可视化编辑器</title>
+<script>
+document.addEventListener('keydown', function (event) {
+        if ((event.ctrlKey === true || event.metaKey === true)
+            && (event.which === 61 || event.which === 107
+                || event.which === 173 || event.which === 109
+                || event.which === 187 || event.which === 189)) {
+            event.preventDefault();
+        }
+    }, false); window.addEventListener('mousewheel', function (event) {
+        if (event.ctrlKey === true || event.metaKey) {
+            event.preventDefault();
+        }
+    }, { passive: false });
+window.addEventListener('DOMMouseScroll', function (event) {
+        if (event.ctrlKey === true || event.metaKey) {
+            event.preventDefault();
+        }
+    }, { passive: false });
+</script>
+
+<style media="screen">
+img{
+position:absolute;
+left:7;
+margin-top:-1020px;
+z-index:999;
+}
+img.outputPic{
+margin-top:0;
+position:absolute;
+left:2.2rem;
+zoom:1.3
+}
+.t1{
+}
+.t5{
+display:none;
+padding:0;	
+top:170;
+right:0%;
+left:0%;
+height:100%;
+background:white !important;
+position:fixed;
+outline:none;
+z-index:1;
+}
+#pic-nav{
+flex-wrap:nowrap;
+flex-direction:row;
+position:fixed;
+top:0%;
+right:0%;
+left:0%;
+display:none;
+flex-wrap:nowrap;
+padding:2rem 2rem 2rem 2rem;
+background:rgba(250,250,255,100%);
+box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+opacity:0.98;
+height:100px;
+z-index:1001;
+}
+#pic-nav button,#pic-nav div{ 
+display:block;
+width:auto;
+font-size:2.5rem !important;
+}
+#canvas{
+top:180px;
+right:0;
+left:0;
+position:absolute;
+margin:0;
+border:solid;
+display:block;
+border:5px solid;
+z-index:1000;
+display:none;
+}
+
+input.draw{
+position:fixed;
+right:30%;
+bottom:40%;
+z-index:6;
+}
+a.draw{
+position:fixed;
+right:10%;
+bottom:80%;
+z-index:76;
+}
+#menu-ul a{
+color:black;
+border:none;
+}
+
+#menu-nav{
+color:black !important;
+display:none;
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:none;
+flex-wrap:wrap;
+padding:2rem 2rem 2rem 2rem;
+background:rgba(250,250,255,100%);
+box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+opacity:0.98;
+height:100px;
+}
+#menu-nav button{
+font-size:2.7rem;
+display:block;
+height:4.6rem;
+width:auto;
+background:transparent;
+}
+
+
+
+    
+#img-nav {
+position:fixed;
+width:10rem;
+height:auto;
+flex-direction:column;
+right:0;
+top:0;
+bottom:0;
+z-index:10;
+padding:8rem 0.6rem 6rem 1rem;
+background:rgba(250, 255, 253,95%);
+display:none;
+-webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.4);
+        }
+#img-nav button{
+font-size:2.5rem;
+color:transparent;
+width:auto;
+z-index:10;
+padding:4rem 5rem 3rem 3rem;
+white-space: nowrap;
+}
+    
+.picBox {
+      width: 100%;
+      height: 600px;
+background:rgba(255,255,255,0%);
+      position: absolute;
+      z-index:-2;
+    }
+
+.outputPic{
+z-index:-1;
+display:block;
+position: absolute;
+}
+#img-nav i,#textarea i{
+font-size:3.6rem !important;
+padding-right:2rem;
+color:#555;
+}
+.outputmodel{
+display:none
+}
+#textarea button{
+font-size:2rem;
+width:auto;
+z-index:10;
+}    
+.set {        
+margin-top: 80px;    
+}   
+.btn {
+z-index:10;
+}
+
+
+#sizing-nav{
+display:none;
+position:fixed;
+z-index:10;
+top:0%;
+right:0%;
+left:0%;
+display:none;
+flex-wrap:wrap;
+padding:6rem 30rem 2rem 6rem;
+background:rgba(254,255,252,100%);
+box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+opacity:0.98;
+height:200px;
+}
+.changeWH3,.changeWH4{
+color:black !important;
+z-index:10;
+font-size:2.5rem;
+display:block;
+background:transparent;
+margin-bottom:0;
+padding:0;
+}
+  </style>
+
+
+
+</head>
+<body>
+
+  <div id="img-nav">
+
+<cbutton style="display:block;font-size:2rem;position:absolute;margin:0;padding:0;width:auto;height:auto;top:-10;left:0;" id="img-cbutton" onmouseover="close10()">◤</cbutton>
+
+
+
+
+    <div style="font-size:2.5rem;
+color:#f9f9f9;background:#444;position:fixed;bottom:0;left:0;width:100%;padding:2rem 10rem">支持手势拖拽、缩放、旋转。</div>
+
+    <div class="set">
+      <button class="changeBg" style="display:none">添加/移除背景</button>
+      <button class="bgColor" style="display:none">更改背景色</button>
+    </div>
+
+
+<button id="sizing-button" onclick="sizing1()"><i class="fa fa-expand" aria-hidden="true"></i> 大小</button>
+
+<div id="sizing-nav">
+<cbutton style="zoom:4;top:10;left:16" id="sizing-cbutton" onmouseover="sizing2()">◤</cbutton>
+
+      <button class="changeWH3">
+设置容器大小<span class="changeWH1" style="background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') no-repeat center center;
+-webkit-background-clip: text;
+background-clip: text;
+color:transparent;padding-left:10rem">设置»</span></button>
+      <button class="changeWH4">恢复容器默认大小<span class="changeWH2" style="background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') no-repeat center center;
+-webkit-background-clip: text;
+background-clip: text;
+color:transparent;padding-left:5rem">恢复»</span></button>
+</div>
+
+<script>
+function sizing1(){
+document.getElementById("sizing-nav").style.display="block";
+}
+function sizing2(){
+document.getElementById("sizing-nav").style.display="none";
+}
+</script>
+
+
+    <div class="set" style="margin-top:0">
+<button class="clearCanvas"><i class="fa fa-remove" aria-hidden="true"></i> 清空容器</button>
+    </div>
+
+
+
+
+
+
+    <div class="set">
+<button>
+      <label style="border:none"><i class="fa fa-folder-open" aria-hidden="true"></i> 
+        <input type="file" class="file" style="display: none;">
+        添加图片
+      </label>
+</button>
+      <button class="rotate"><i class="fa fa-rotate-right" aria-hidden="true"></i>旋转</button>
+      <button class="autoScale"><i class="fa fa-reply-all" aria-hidden="true"></i>重置</button>
+      <button class="deletePic"><i class="fa fa-remove" aria-hidden="true"></i>删除</button>
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+<script>
+function open10(){
+document.getElementById("img-nav").style.display="flex";
+};
+function close10(){
+document.getElementById("img-nav").style.display="none";
+}
+</script>
+
+
+
+
+<script type="text/javascript">
+function number() {
+var html='<main id="main" style="background:transparent"><button class="btn picBoxBtn" style="display:inline-block"><i class="fa fa-lock" aria-hidden="true"></i> </button><button class="outputmodel" style=""><i class="fa fa-unlock" aria-hidden="true"></i> </button><!--叠放次序--><button class="btn zIndexBtn" style="background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;display:none">浮于文字上方</button><button class="btn zIndexBtn1" style="display:inline-block;background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;">衬于文字下方</button><div class="picBox" style=""></div><img src="" alt="" class="outputPic" id="outputPic" style=""></main>';
+
+var content = window.getSelection().toString();
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") { document.selection.createRange().pasteHTML(html);
+    };
+
+
+    $('.picBoxBtn').click(function(){
+var n = $(".picBoxBtn").index(this);
+c.style.zIndex="2";    
+this.style.display="none";
+$(".outputmodel")[n].style.display="inline-block";                  
+})
+
+
+    $('.outputmodel').click(function(){
+var n = $(".outputmodel").index(this);
+this.style.display="none";
+$(".picBoxBtn")[n].style.display="inline-block";   
+})
+
+
+$(".picBoxBtn").click(function(){       
+var n = $(".picBoxBtn").index(this);
+var canvasBox = $(".picBox")[n];
+    var canvas = new _Canvas({
+      box: canvasBox, // 容器
+      bgColor: 'rgba(255,255,255,10%)',   
+      bgPhoto: 'none',  
+      photoModel: 'adaption', // 载入图片模式(设置后添加图片时默认为当前设置模式)
+      model: 'Cascade' 
+    })
+
+    var timer;
+    canvas.init({
+      dragEvent: function (e1, e2) {
+        clearTimeout(timer);
+        $('.event').text('当前操作事件：正在拖拽');
+        timer = setTimeout(function () {
+          $('.event').text('当前操作事件：无操作');
+        }, 10)
+      },
+      zoomEvent: function (e1, e2) {
+        clearTimeout(timer);
+        $('.event').text('当前操作事件：正在缩放');
+        timer = setTimeout(function () {
+          $('.event').text('当前操作事件：无操作');
+        }, 10)
+      },
+      rotateEvent: function (e1, e2) {
+        clearTimeout(timer);
+        $('.event').text('当前操作事件：正在旋转');
+        timer = setTimeout(function () {
+          $('.event').text('当前操作事件：无操作');
+        }, 10)
+      },
+      callback: function () {
+        console.log('图片初始化完成...')
+        canvas.addPhoto({
+          url: './img/pic1.jpg',
+          model: 'adaption',
+          callback: function () {
+            console.log('成功添加一张自适应的图片')
+          }
+        })
+      }
+    });
+
+
+    // 添加本地图片
+    $('.file').change(function () {
+      canvas.addPhoto({
+        url: getUrl(this.files[0]),
+        model: 540,
+        callback: function () {
+          console.log('成功添加本地图片')
+        }
+      })
+    })
+    // 旋转
+    $('.rotate').click(function () {
+      var nowPhoto = canvas.getNowPhoto();
+      if (!nowPhoto) {
+        alert('未选中任何图片');
+        return;
+      } else {
+        var nowPhotoInfo = nowPhoto.getPhotoInfo();
+        nowPhoto.changeInfo({
+          rotate: nowPhotoInfo.rotate + 90,
+          callback: function () {
+            console.log('成功旋转')
+          }
+        })
+      }
+    })
+    // 放大
+    $('.enlarge').click(function () {
+      var nowPhoto = canvas.getNowPhoto();
+      if (!nowPhoto) {
+        alert('未选中任何图片');
+        return;
+      } else {
+        var nowPhotoInfo = nowPhoto.getPhotoInfo();
+        nowPhoto.changeInfo({
+          scale: nowPhotoInfo.scale * 1.1,
+          callback: function () {
+            console.log('成功放大')
+          }
+        })
+      }
+    })
+    // 缩小
+    $('.narrow').click(function () {
+      var nowPhoto = canvas.getNowPhoto();
+      if (!nowPhoto) {
+        alert('未选中任何图片');
+        return;
+      } else {
+        var nowPhotoInfo = nowPhoto.getPhotoInfo();
+        nowPhoto.changeInfo({
+          scale: nowPhotoInfo.scale / 1.1,
+          callback: function () {
+            console.log('成功缩小')
+          }
+        })
+      }
+    })
+
+    // 重置
+    $('.autoScale').click(function () {
+      var nowPhoto = canvas.getNowPhoto();
+      if (!nowPhoto) {
+        alert('未选中任何图片');
+        return;
+      } else {
+        var nowPhotoInfo = nowPhoto.getPhotoInfo();
+        nowPhoto.init(function () {
+          console.log('成功重置')
+        })
+      }
+    })
+    // 删除图片
+    $('.deletePic').click(function () {
+      var nowPhoto = canvas.getNowPhoto();
+      if (!nowPhoto) {
+        alert('未选中任何图片');
+        return;
+      } else {
+        var nowPhotoInfo = nowPhoto.getPhotoInfo();
+        nowPhoto._delete();
+        console.log('成功重置')
+      }
+    })
+
+
+    // 更改画布宽高
+    $('.changeWH1').click(function () {
+var w = prompt("输入宽度值","");
+var h = prompt("输入高度值","");
+      canvas.changeParams({
+        width: w,
+        height: h
+      })
+    })
+    // 复原
+    $('.changeWH2').click(function () {
+      canvas.changeParams({
+        width: 750,
+        height: 600
+      })
+    })
+
+    // 清空画布
+    $('.clearCanvas').click(function () {
+      canvas.clearCanvas();
+    })
+
+     
+
+    // 输出png图
+    $('.outputmodel').click(function () {
+var n = $(".outputmodel").index(this);
+document.getElementById('outputPic').id='outputPic'+n;
+var c = "#outputPic"+n;
+      canvas.toDataURL({
+        width: 750,
+        height: 600,
+        type: 'image/png',
+        callback: function (url) {
+          $(c).attr('src', url);
+          console.log('成功输出png图')
+        }
+      });
+setTimeout(function(){       
+var canvas = $(".picBox")[n];
+var html=canvas.innerHTML;  
+canvas.outerHTML='<div style="display:none;" id="editedcanvas'+n+'">'+html+'</div>';
+var c = "editedcanvas"+n;
+var c = document.getElementById(c);
+var html=c.innerHTML;  
+c.outerHTML='<div class="picBox" >'+html+"</div>";
+},100)
+    })
+
+
+    $('.zIndexBtn1').click(function(){
+var n = $(".zIndexBtn1").index(this);
+var canvasBox = $(".picBox")[n];
+var c = $(".outputPic")[n];
+canvasBox.style.zIndex="-2";
+c.style.zIndex="-1";    
+canvas.style.backgroundcolor='rgba(255,255,255,0%)';
+this.style.display="none";
+$(".zIndexBtn")[n].style.display="inline-block";   
+})
+
+
+
+    $('.zIndexBtn').click(function(){
+var n = $(".zIndexBtn").index(this);
+var canvasBox = $(".picBox")[n];
+var c = $(".outputPic")[n];           
+canvasBox.style.zIndex="2";
+c.style.zIndex="2";    
+$(".zIndexBtn")[n].style.display="none";
+$(".zIndexBtn1")[n].style.display="inline-block";    
+              
+})
+
+
+
+
+    function getUrl (file) {
+      var url = null;
+      if (window.createObjectURL !== undefined) {
+        url = window.createObjectURL(file);
+      } else if (window.URL !== undefined) {
+        url = window.URL.createObjectURL(file);
+      } else if (window.webkitURL !== undefined) {
+        url = window.webkitURL.createObjectURL(file);
+      }
+      return url
+    }
+  })
+
+
+
+}
+</script>
+
+
+<button class="fullView-button1" id="fullView-button">全屏
+</button>
+
+
+
+
+<button id="codeout-button" onclick="codeOut()">导出</button>
+
+
+<content id="content">
+<div id="textarea" class="t2" onkeyup="wordCount()" contenteditable="true">
+<p>   
+<br>
+</p>
+
+
+<hr>
+<b>参考</b>
+<ol id="ol">
+<li style="display:none;"> <a></a></li>
+</ol>
+</div>
+</content>
+
+<textarea id="c" style="opacity:0;position:fixed;top:100%"></textarea>
+
+
+<div id="textarea1" class="t5"></div>
+
+
+
+
+<canvas id="canvas" width="1080" height="" style="touch-action: none;"></canvas>'
+
+
+
+<div id="wordcourt" class="output2">words:
+<div id="output" class="output3"></div>
+</div>
+
+
+
+<div id="button2" class="b2">
+<surbutton id="tool-button">⌘
+<div id="tool-nav">
+<button onclick="replace()">≒</button>
+
+<div id="search-button">
+<surbutton onclick="search()" style="padding:0 0 0 1.8rem;margin:0 -1.5rem 0 0;color:rgba(150, 60, 76,100%) ">⎋</surbutton>
+<fixed-blue-button onclick="searched()" id="searched-button" style="height:5rem;padding:0rem 3rem">完成
+</fixed-blue-button>
+</div>
+
+<button id="rf-button" onclick="rf()">
+<i class="fa fa-eraser" aria-hidden="true"></i>
+<button id="copy-button" onclick="copy()">⧉</button>
+
+
+
+
+<button id="getCode-button" onclick="getCode();" style="align-items:center;line-height:5.5rem">HTML
+<textarea id="code">
+</textarea>
+</button>
+
+
+
+</div>
+</surbutton>
+
+
+
+
+<surbutton id="f-button" onclick="open8()"><button>A</button>
+<div id="f-nav">
+<cbutton style="zoom:0.95;position:fixed;margin:1430 -18;bottom:0;right:0;" onmouseover="close8()">◥</cbutton>
+<surbutton id="ff-button"><span style='font-family:serif'>A</span>
+<div id="ff-nav">
+<button id="ff1-button" onclick="ff1()"><span style='font-family:sans-serif'>sans-serif</span></button>
+<button id="ff2-button" onclick="ff2()"><span style='font-family:serif'>serif</span></button>
+<button id="ff3-button" onclick="ff3()"><span style='font-family:cursive'>cursive</span></button>
+<button id="ff4-button" onclick="ff4()"><span style='font-family:monospace'>monospace</span></button>
+<button id="ff5-button" onclick="ff5()"><span style='font-family:courier'>courier</span></button>
+</div></surbutton>
+
+
+
+
+<surbutton id="fs-button" style="margin:0 -1.8rem 0 0">S
+<div id="fs-nav">
+<button id="fs1-button" onclick="fs1()" style="font-size:30">1</button>
+<button id="fs2-button" onclick="fs2()" style="font-size:40">2</button>
+<button id="fs3-button" onclick="fs3()" style="font-size:50">3</button>
+<button id="fs4-button" onclick="fs4()" style="font-size:60">4</button>
+<button id="fs5-button" onclick="fs5()" style="font-size:70">5</button>
+<button id="fs6-button" onclick="fs6()" style="font-size:80">6</button>
+<button id="fs7-button" onclick="fs7()" style="font-size:90">7</button>
+</div></surbutton>
+
+
+<button id="b-button" onclick="b()"><b>A</b></button>
+<button id="i-button" onclick="i()"><i>A</i></button>
+<button id="u-button" onclick="u()"><u>A</u></button>
+<button id="s-button" onclick="s()"><s>A</s></button>
+
+<button id="super-button" onclick="superscript()" style="margin:0 0.5rem 0 -2rem">A
+<super style="display:inline-block;position:fixed;bottom:10rem;left:21%;zoom:0.6;">a</super>
+</button>
+
+<button id="sub-button" onclick="subscript()" style="margin:0 -0.5rem 0 0rem">A<sub style="display:inline;line-height:5.5rem;vertical-align:sub;zoom:0.7;">a</sub></button>
+
+<surbutton id="fc-button">
+<font color="rgba(252, 180,180,50%)">A</font>
+<div id="fc-nav">
+<input type="color" id="fc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选取</div>
+<blue-button style="background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') center;background-size:100% 100%"><button id="fc-btn" onclick="fc()">设置</button></blue-button>
+</div>
+</surbutton>
+
+
+<surbutton id="bc-button">
+<button id="bc-button"><div style="background:rgba(250, 174, 190,0.8);padding:0rem 1.5rem">A</div></button>
+<div id="bc-nav">
+<input type="color" id="bc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选取</div>
+<blue-button style="background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') center;background-size:100% 100%"><button id="bc-btn" onclick="bc()">设置</button></blue-button>
+</div>
+</surbutton>
+
+
+
+
+</div></surbutton>
+
+
+
+
+
+
+
+<!--插入-->
+<button id="t-button" onclick="creatTab()" style="font-size:400%">▦</button>
+
+<!--链接-->
+
+<button id="a-button" onclick="a()">∽</button>
+
+
+
+<!--插入图片容器-->
+<surbutton id="img-button" onclick="open10()">
+<button class="picBoxBtnStart" onclick="number()" style="z-index:1;">￼</button>
+
+
+</surbutton>
+
+
+
+
+
+
+
+
+
+
+
+<!--特殊符号-->
+<surbutton id="spcl-mark-button">:-)
+<div id="spcl-mark-nav">
+
+
+<button id="hh-button" onclick="hh()">«»</button>
+
+
+</div>
+</surbutton>
+
+
+
+
+
+
+<button id="undo-button" onclick="un()" style="">
+↩
+</button>
+<button id="redo-button" onclick="redo()">
+↪
+</button>
+
+
+
+
+
+</div>
+
+
+
+<div class="sky-container">
+<div class="finish-tip">已完成</div>
+<div id="menu-tip" class="do-tip">选择最低收录级别。</div>
+<div id="mark-tip" class="do-tip">请选择合适文本位置添加对应链接</div>
+<div id="aud-tip" class="notice-tip">若恢复自动链接行为，修改后链接样式将不会保存。</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="button3" class="b4">
+
+
+<button id="iu-button" onclick="iu()" >≔</button>
+<button id="io-button" onclick="io()" style="font-family:serif">I</button>
+<!--段落-->
+<button id="in-button" onclick="indent()">⇥</button>
+<button id="out-button" onclick="outdent()">⇤</button>
+
+<surbutton id="insert-button" onclick="insert1()">⊕
+<div id="insert-nav">
+<cbutton style="" id="insert-cbutton" onmouseover="insert2()">◥</cbutton>
+
+<button id="pre-button" onclick="pre()"><i class="fa fa-code"></i></button>
+
+
+<button id="quote-button" onclick="quote()" style="font-size:3.2rem;margin:0 0 0 -0.2rem">「」
+</button>
+
+
+<!--参考文献-->
+<button id="r-button" onclick="reference()" style="font-size:3rem;padding:0.5rem 0 0 2rem">[1]</button>
+
+<surbutton id="note-button" style="font-size:3rem;padding:0rem 0 0rem 2rem">( )
+<div id="note-nav" >
+<!--术语-->
+<button id="dfn-button" onclick="dfn()" style="font-size:2.7rem !important;">dfn
+</button>
+<!--注释/缩写-->
+<button id="abbr-button" onclick="abbr()" style="color:#555;font-size:2.7rem !important;">abbr
+</button>
+<!--注音-->
+<button id="ruby-button" onclick="ruby()" style="font-size:2.7rem !important;">
+<ruby>A<rp>(</rp><rt>a</rt><rp>)</rp></ruby>
+</button>
+</div>
+</surbutton>
+
+
+<surbutton id="info-button" style="">
+<i class="fa fa-info-circle"></i>
+<div id="info-nav">
+
+<surbutton id="em-button" onclick="em()">！
+<div id="em-nav">
+
+<button id="em1-button" onclick="em1()">1</button>
+<button id="em2-button" onclick="em2()">2</button>
+
+</div>
+</surbutton>
+
+
+
+
+<button id="strong-button" onclick="strong1()">★  
+</button>
+
+
+
+
+</div>
+</surbutton>
+
+
+<div id="strong-nav">
+<cbutton id="strong-cbutton" onmouseover="strong2()" style="zoom:4;margin:-1.1rem -2.5rem !important;">◥</cbutton>
+<button id="strongSpclFont1-button" onclick="strongSpclFont1()" style="background:cornflowerblue;"></button>
+<button id="strongSpclFont2-button" onclick="strongSpclFont2()" style="background:#a83654;"></button>
+<button id="strongSpclFont3-button" onclick="strongSpclFont3()" style="background:#868c8d;"></button>
+</div>
+
+
+
+
+
+<!--锚点-->
+<button id="mark-button" onclick="bookmark()">
+<i class="fa fa-anchor"></i>
+</button>
+
+<button id="book-button" onclick="book()" style="font-size:2.7rem;margin:0rem;width:auto;">
+【 】
+</button>
+
+
+
+<surbutton id="tex-button" onclick="tex1()">
+<span style="font-family:times;font-size:2.9rem;margin:0 2.7rem">Tex</span>
+<div id="tex-nav">
+<cbutton id="tex-cbutton" onmouseover="tex2()" style="margin:0rem -1.1rem !important;z-index:5 !important;font-size:4rem">◥</cbutton>
+<iframe src="https://latexlive.com" width="100%" height="100%" frameborder="0" style="position:fixed;left:0%;top:0%;right:0%;bottom:0%"></iframe>
+</div>
+</surbutton>
+
+<script>
+function tex1(){
+document.getElementById('tex-nav').style.display='block';
+}
+function tex2(){
+document.getElementById('tex-nav').style.display='none';
+}
+</script>
+
+
+
+
+
+<surbutton id="menu-button" onclick="priMenu()">
+<span style="font-size:4.2rem;margin:0 4.1rem">≡</span>
+</surbutton>
+<div id="menu-nav">
+<cbutton id="menu-cbutton" onmouseover="closemenunav()" style="zoom:4;margin:-1.1rem -2.5rem !important">◥</cbutton>
+<select id="menu-select" style="background:rgba(119,179,212,50%);;display:inline-block;font-size:2.5rem;border-radius:30px;border:none;height:auto;width:4.5rem;padding:0 0.6rem">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+</select>
+<button style="display:inline-block;color:black" id="chooseH-button" onclick="chooseH()">确定</button>
+</div>
+
+
+
+	
+
+
+<script>
+function closemenunav(){
+document.getElementById('menu-nav').style.display='none';
+}
+function priMenu(){
+document.getElementById("menu-tip").style.display="block";
+document.getElementById("menu-nav").style.display="block";
+//初始化
+var content = document.getElementById("content").innerHTML;
+document.getElementById("menu-ul").innerHTML = content;
+document.getElementById("menu-ul").style.display="none";
+//删除正文
+    var section = document.querySelectorAll("#menu-ul >section");
+    var i;
+    for (i = 0; i < section.length; i++) {
+section[i].parentNode.removeChild(section[i]);}
+}
+//删除未选标题
+function chooseH(){
+var str1 = document.getElementById("menu-select");
+var str2 = str1.options[str1.selectedIndex].text;
+var str3 = parseInt(str2) + 1;
+var str4 = '#menu-ul ' + "h" +str3;
+var str5 = document.querySelectorAll(str4);
+    var i;
+    for (i = 0; i < str5.length; i++) {
+str5[i].parentNode.removeChild(str5[i]);
+}
+var str6 = parseInt(str2) + 2;
+var str7 = '#menu-ul ' + "h" +str6;
+var str8 = document.querySelectorAll(str7);
+    var i;
+    for (i = 0; i < str8.length; i++) {
+str8[i].parentNode.removeChild(str8[i]);
+}
+var str6 = parseInt(str2) + 2;
+var str7 = '#menu-ul ' + "h" +str6;
+var str8 = document.querySelectorAll(str7);
+    var i;
+    for (i = 0; i < str8.length; i++) {
+str8[i].parentNode.removeChild(str8[i]);
+}
+var str9 = parseInt(str2) + 3;
+var str10 = '#menu-ul ' + "h" +str9;
+var str11 = document.querySelectorAll(str10);
+    var i;
+    for (i = 0; i < str11.length; i++) {
+str11[i].parentNode.removeChild(str11[i]);
+}
+var str12 = parseInt(str2) + 4;
+var str13 = '#menu-ul ' + "h" +str12;
+var str14 = document.querySelectorAll(str13);
+    var i;
+    for (i = 0; i < str14.length; i++) {
+str14[i].parentNode.removeChild(str14[i]);
+}
+var str15 = parseInt(str2) + 5;
+var str16 = '#menu-ul ' + "h" +str15;
+var str17 = document.querySelectorAll(str16);
+    var i;
+    for (i = 0; i < str17.length; i++) {
+str17[i].parentNode.removeChild(str17[i]);
+}
+//添加锚点
+var str = document.querySelectorAll('#menu-ul h1,#menu-ul h2,#menu-ul h3,#menu-ul h4,#menu-ul h5,#menu-ul h6');
+    var i;
+    for (i = 0; i < str.length; i++) {
+var e1 = str[i].innerText;
+str[i].innerHTML= "<li><a href='# " + e1 + " '>" + e1 +"</a></li>";
+}
+//显示
+document.getElementById("menu-ul").style.display="block";
+document.getElementById("menu-tip").style.display="none";
+}
+</script>
+
+
+
+
+<input id="pic-button" type="button" class="draw" onclick="addCanvas()" value="pic">
+        
+
+
+
+
+</div>
+</surbutton>
+
+
+
+
+
+
+<button style="width:auto;" class="fbb" id="mark2-button">添加链接
+</button>
+
+
+
+<script>
+function insert1(){
+document.getElementById("button2").style.zIndex="1";
+document.getElementById("insert-nav").style.display="flex";
+};
+function insert2(){
+document.getElementById("insert-nav").style.display="none";
+document.getElementById("button2").style.zIndex="4";
+}
+</script>
+
+
+
+
+<button style="width:auto;" class="fbb" id="mark2-button">添加链接
+</button>
+
+
+
+
+
+
+<button id="hr-button" onclick="hr()">---</button>
+
+
+<!--排版-->
+<surbutton id="ts-button" onclick="ts1()">≡
+
+<div id="ts-nav">
+<cbutton style="" id="ts-cbutton" onmouseover="ts2()">◥</cbutton>
+<surbutton id="j-button"> =
+<div id="j-nav">
+<button id="jf-button" onclick="jf()">|=|</button>
+<button id="jc-button" onclick="jc()"> =</button>
+<button id="jl-button" onclick="jl()">|=</button>
+<button id="jr-button" onclick="jr()">=|</button>
+</div>
+</surbutton>
+
+<surbutton id="h-button">«»
+<div id="h-nav">
+<button id="h1-button" onclick="h1()">h1</button>
+<button id="h2-button" onclick="h2()">h2</button>
+<button id="h3-button" onclick="h3()">h3</button>
+<button id="h4-button" onclick="h4()">h4</button>
+<button id="h5-button" onclick="h5()">h5</button>
+<button id="h6-button" onclick="h6()">h6</button>
+</div>
+</surbutton>
+
+</div>
+</surbutton>
+
+
+
+
+
+<!--自定义 -->
+
+<surbutton id="self-button" onclick="open1()">⊸
+
+<div id="self-nav">
+<cbutton style="zoom:0.95;top:0;" id="self-cbutton" onmouseover="close1()">◥</cbutton>
+<button id="aud-button">更改自动链接行为</button>
+<div class="kaiguan" id="self-kaiguan">
+<div class="bai" id="self-anniu"></div>
+</div>
+</div>
+</surbutton>
+
+
+
+</div>
+
+
+
+<a href="#" class="menuLink_1">︽ </a>     
+<a id="menu-link" class="menuLink_2">+</a>
+<ul id="menu-ul" contenteditable="true">
+</ul>
+
+<script type="text/javascript">  	
+window.onload = function(){   
+var anniu =document.getElementById('menu-link');      
+var menu = document.getElementById('menu-ul');              
+var temp = 1;        anniu.addEventListener('click',function(){            
+if(temp==1){                
+temp=0;              menu.style.display="block"     
+}else{                
+temp=1;               menu.style.display="none"           
+}       
+})		
+}
+</script>
+
+
+
+</body>
+
+
+<script>
+//链接
+function a() {
+var a = prompt("输入链接内容","");
+        if(a!=null&&a!=''){
+var content = window.getSelection().toString();
+var html='<a href="'+ a + '">' + content + ' <i class="fa fa-mail-forward" aria-hidden="true" style="color:#1d65b1;display:none"></i> </a>';
+var sel, range;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+        }
+    } else if (document.selection && document.selection.type != "Control") { document.selection.createRange().pasteHTML(html);
+    };
+};
+}
+//更改自动链接行为（伪）
+//function aud() {
+var anniu =document.getElementById('self-anniu');
+var kaiguan = document.getElementById('self-kaiguan');
+var tip = document.getElementById('aud-tip');      
+var as = document.getElementsByTagName("a");           
+var temp = 1;
+anniu.addEventListener('click',function(){
+if(temp==1){
+this.className = 'hei';              
+temp=0;                
+kaiguan.style.border= '2px solid #be002f';    
+tip.style.display="block";
+setTimeout("myFunction()",5000);
+
+for(var i=0;i<as.length;i++){      
+var a=as[i];      
+a.style.color="black";
+a.style.textDecoration="none";
+a.style.borderBottom="none";
+    }
+            
+}else{                
+this.className = 'bai';               
+temp=1;               
+kaiguan.style.border= '2px solid black';               
+for(var i=0;i<as.length;i++){      
+var a=as[i];      
+a.style.color="black";
+a.style.textDecoration="none";
+a.style.borderBottom="4px solid #6483B0";
+}
+}
+})
+//}
+<!--外链后缀-->
+window.setInterval('aa()', 1000);
+function aa(){
+var a = document.querySelectorAll('a[href^="http"] i');
+var i;
+for (i = 0; i < a.length; i++){
+a[i].style.display="inline";
+};
+}
+</script>
+
+
+
+<script>
+var t
+= document.getElementById("textarea");
+var button2
+= document.getElementById("button2");
+var button3
+= document.getElementById("button3");
+var output
+= document.getElementById("wordcourt");
+var fsbutton
+= document.getElementById("fullView-button");
+var temp = 1;
+document.getElementById("fullView-button").addEventListener('click',function(){
+if(temp==1){
+temp=0;
+t.className="t1";
+button2.className="b1";
+button3.className="b3";
+output.className="output1";
+fsbutton.className="fullView-button2";
+fsbutton.innerHTML="半屏";
+document.getElementById('content').className="content";
+}else{
+temp=1;
+t.className="t2";
+button2.className="b2";
+button3.className="b4";
+output.className="output2";
+fsbutton.className="fullView-button1";
+fsbutton.innerHTML="全屏";
+}
+})
+</script>
+
+<script>
+
+function addCanvas(){
+ <!--添加画布-->
+document.getElementById('pic-nav').style.display="flex";
+document.getElementById('canvas').style.display="block";
+      
+<!--确保置地-->
+var h= document.body.scrollHeight;
+document.getElementById('canvas').height = h;
+
+///////////////画布      
+var el = document.getElementById('canvas');
+        var ctx = el.getContext('2d');
+        ctx.strokeStyle = 'CornflowerBlue';
+        ctx.lineWidth = 10;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        var isDrawing;//标记是否要绘制
+        //存储坐标点
+        let points = [];
+        el.onpointerdown = function (e) {
+            console.log('pointerdown');
+            isDrawing = true;
+            points.push({ x: e.pageX, y: e.pageY });
+        };
+        el.onpointermove = function (e) {
+            console.log('pointermove');
+            if (isDrawing) {
+                draw(e.pageX, e.pageY);
+            }
+
+        };
+        el.onpointerup = function (e) {
+            if (isDrawing) {
+                draw(e.pageX, e.pageY);
+            }
+            points = [];
+            isDrawing = false;
+        };
+
+        function draw(mousex, mousey) {
+            points.push({ x: mousex, y: mousey });
+            ctx.beginPath();
+            let x = (points[points.length - 2].x + points[points.length - 1].x) / 2,
+                y = (points[points.length - 2].y + points[points.length - 1].y) / 2;
+            if (points.length == 2) {
+                ctx.moveTo(points[points.length - 2].x, points[points.length - 2].y);
+                ctx.lineTo(x, y);
+            } else {
+                let lastX = (points[points.length - 3].x + points[points.length - 2].x) / 2,
+                    lastY = (points[points.length - 3].y + points[points.length - 2].y) / 2;
+                ctx.moveTo(lastX, lastY);
+                ctx.quadraticCurveTo(points[points.length - 2].x, points[points.length - 2].y, x, y);
+            }
+            ctx.stroke();
+            points.slice(0, 1);
+
+        }
+}
+
+
+<!--转图-->
+function DownloadFile(){
+var file = document.getElementById("download");
+var canvas = document.getElementById("canvas");
+var imgDataSrc = canvas.toDataURL('image/png');
+file.download = imgDataSrc;
+file.href = imgDataSrc;
+canvas.id = canvas.name;
+};
+
+</script>
+
+<div id="pic-nav">
+<cbutton style="font-size:4rem;margin:-3.1rem -2.5rem !important" onmouseover="closePicNav()">◥</cbutton>
+
+
+<button id="pic-zIndex-button" class="draw">完成</button>
+
+<button id="addPic-button" class="draw" onclick="addPic()">添加</button>
+
+<a id="download" class="draw" href=" " download=" " onclick="DownloadFile()" >下载</a>
+</div>
+
+        
+<script>
+function addPic(){
+var canvas = document.getElementById("canvas");
+var imgDataSrc = canvas.toDataURL('image/png');
+document.execCommand("insertImage",true,imgDataSrc)
+}
+
+
+var anniu = document.getElementById("pic-zIndex-button");
+anniu.addEventListener('click',function(){
+var t
+= document.getElementById("textarea");
+var c
+= document.getElementById("canvas")        
+if(temp==1){                
+temp=0;             
+anniu.innerHTML="绘画";  
+//c.style.zIndex="4";
+document.getElementById("canvas").style.display="none";
+t.style.zIndex="5";
+t.style.backgroundColor="transparent";
+document.getElementById('textarea1').style.display="block";      
+}else{                       
+temp=1;
+anniu.innerHTML="完成";    
+c.style.zIndex="1000";
+document.getElementById("canvas").style.display="block";
+}        
+})
+
+function closePicNav(){
+document.getElementById("canvas").style.display="none";
+document.getElementById("pic-nav").style.display="none";
+
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
