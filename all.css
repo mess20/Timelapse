@@ -1,3 +1,12 @@
+*{
+-moz-user-select: none; 
+-webkit-user-select: none;  
+-ms-user-select: none;      
+-khtml-user-select: none;  
+user-select: none;   
+-webkit-tap-highlight-color:transparent;
+outline:none;
+}
 /*笔记*/
 /*大标题*/
 t1{
