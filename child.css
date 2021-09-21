@@ -74,7 +74,7 @@ text-align:justify;
 text-justify:inter-ideograph;
 padding:0rem 0;
 margin:0.3rem 0;
-color:black;
+color:black !important;
 text-decoration:none;
 outline:none;
 user-select: none;
