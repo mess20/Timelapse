@@ -25,11 +25,8 @@ border-radius:40px
 }
 /*强调*/
 t3{
-color:#FA8072
+color:rgba(199,77,70,100%);
 }
-
-
-
 /*重点*/
 l1{
 box-shadow:0px -100px #FCECA3 inset;
