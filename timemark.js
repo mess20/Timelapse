@@ -1,12 +1,9 @@
 window.onload=function(){
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=t
-//大标题
-.replace(new RegExp('‹' , "g"), '<h3>')
-.replace(new RegExp('›' , "g"), '</h3>')
 //小标题
-.replace(new RegExp('«' , "g"), '<h4>')
-.replace(new RegExp('»' , "g"), '</h4><br>')
+.replace(new RegExp('«' , "g"), '<h3>')
+.replace(new RegExp('»' , "g"), '</h3><br>')
 //分割线*
 .replace(new RegExp('---' , "g"), '<hr>')
 //强调*
