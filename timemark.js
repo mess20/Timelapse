@@ -1,6 +1,7 @@
 window.onload=function(){
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=t
+.replace(new RegExp('〉' , "g"), '   ')
 //大标题
 .replace(new RegExp('‹' , "g"), '<h2>')
 .replace(new RegExp('›' , "g"), '</h2>')
