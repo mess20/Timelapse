@@ -37,6 +37,20 @@ window.addEventListener('DOMMouseScroll', function (event) {
 
 
 <style media="screen">
+#fc-nav input,#bc-nav input{ 
+opacity:0;
+position:absolute;
+top:1600;
+left:1500;
+}
+#fc,#bc{
+zoom:0.1;
+background-clip:padding-box !important;
+border-radius:500px !important;
+width:50rem;
+height:50rem;
+}
+
 #insert-nav{
 justify-content:space-around;
 padding:5rem 5rem;
@@ -142,9 +156,10 @@ height:auto;
 flex-direction:column;
 right:0;
 top:0;
-bottom:0;
+height:auto;
+border-radius:0 0 0 120px;
 z-index:10;
-padding:8rem 0.6rem 6rem 1rem;
+padding:8rem 0.6rem 5rem 1rem;
 background:rgba(250, 255, 253,95%);
 display:none;
 -webkit-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
@@ -326,7 +341,7 @@ document.getElementById("img-nav").style.display="none";
 
 <script type="text/javascript">
 function number() {
-var html='<main id="main" style="background:transparent"><button class="btn picBoxBtn" style="display:inline-block"><i class="fa fa-lock" aria-hidden="true"></i> </button><button class="outputmodel" style="background:transparent"><i class="fa fa-unlock" aria-hidden="true"></i> </button><!--叠放次序--><button class="btn zIndexBtn" style="background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;display:none">浮于文字上方</button><button class="btn zIndexBtn1" style="display:inline-block;background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;">衬于文字下方</button><div class="picBox" style="background:transparent"></div><img src="" alt="" class="outputPic" id="outputPic" style=""></main>';
+var html='<main id="main" style="background:transparent"><button class="btn picBoxBtn" style="display:inline-block"><i class="fa fa-lock" aria-hidden="true"></i> </button><button class="outputmodel" style="background:transparent"><i class="fa fa-unlock" aria-hidden="true"></i> </button><!--叠放次序--><button class="btn zIndexBtn1" style="z-index:;display:inline-block;background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;" contenteditable="false" >衬于文字下方</button><button class="btn zIndexBtn" style="z-index:;background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;display:none" contenteditable="false">浮于文字上方</button><div class="picBox" style="background:transparent"></div><img src="" alt="" class="outputPic" id="outputPic" style=""></main>';
 
 var content = window.getSelection().toString();
 var sel, range;
@@ -552,16 +567,6 @@ c.outerHTML='<div class="picBox" >'+html+"</div>";
     })
 
 
-    $('.zIndexBtn1').click(function(){
-var n = $(".zIndexBtn1").index(this);
-var canvasBox = $(".picBox")[n];
-var c = $(".outputPic")[n];
-canvasBox.style.zIndex="-2";
-c.style.zIndex="-1";    
-canvas.style.backgroundcolor='rgba(255,255,255,0%)';
-this.style.display="none";
-$(".zIndexBtn")[n].style.display="inline-block";   
-})
 
 
 
@@ -572,11 +577,19 @@ var c = $(".outputPic")[n];
 canvasBox.style.zIndex="2";
 c.style.zIndex="2";    
 $(".zIndexBtn")[n].style.display="none";
-$(".zIndexBtn1")[n].style.display="inline-block";    
-              
+$(".zIndexBtn1")[n].style.display="inline-block";               
+});
+
+
+    $('.zIndexBtn1').click(function(){
+var n = $(".zIndexBtn1").index(this);
+var canvasBox = $(".picBox")[n];
+var c = $(".outputPic")[n];
+canvasBox.style.zIndex="-2";
+c.style.zIndex="-1";    
+this.style.display="none";
+$(".zIndexBtn")[n].style.display="inline-block";   
 })
-
-
 
 
     function getUrl (file) {
@@ -625,11 +638,15 @@ $(".zIndexBtn1")[n].style.display="inline-block";
 <li style="display:none;"> <a></a></li>
 </ol>
 </div>
-<a contenteditable="false" href="#" class="menuLink_1">︽ </a>     
-<a contenteditable="false" id="menu-link" class="menuLink_2">+</a>
+
 <ul id="menu-ul">
 </ul>
+
+
 </content>
+<a contenteditable="false" href="#" class="menuLink_1">︽ </a>     
+<a contenteditable="false" id="menu-link" class="menuLink_2">+</a>
+
 
 <textarea id="c" style="opacity:0;position:fixed;top:100%"></textarea>
 
@@ -682,7 +699,7 @@ $(".zIndexBtn1")[n].style.display="inline-block";
 
 <surbutton id="f-button" onclick="open8()"><button>A</button>
 <div id="f-nav">
-<cbutton style="zoom:0.95;position:fixed;margin:1430 -18;bottom:0;right:0;" onmouseover="close8()">◥</cbutton>
+<cbutton style="zoom:0.95;position:absolute;top:3;right:-3;" onmouseover="close8()">◥</cbutton>
 <surbutton id="ff-button"><span style='font-family:serif'>A</span>
 <div id="ff-nav">
 <button id="ff1-button" onclick="ff1()"><span style='font-family:sans-serif'>sans-serif</span></button>
@@ -721,7 +738,7 @@ $(".zIndexBtn1")[n].style.display="inline-block";
 <surbutton id="fc-button">
 <font color="rgba(252, 180,180,50%)">A</font>
 <div id="fc-nav">
-<input type="color" id="fc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选取</div>
+<div id="fc" style="font-size:2.4rem" ><input type="color" id="fc-thecolor" value="" style="padding:0 !important;width:50rem !important;height:50rem !important;"/></div><div style="margin:0 2rem;font-size:2.4rem">« 选取</div>
 <blue-button style="background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') center;background-size:100% 100%"><button id="fc-btn" onclick="fc()">设置</button></blue-button>
 </div>
 </surbutton>
@@ -730,7 +747,7 @@ $(".zIndexBtn1")[n].style.display="inline-block";
 <surbutton id="bc-button">
 <button id="bc-button"><div style="background:rgba(250, 174, 190,0.8);padding:0rem 1.5rem">A</div></button>
 <div id="bc-nav">
-<input type="color" id="bc-thecolor" style="zoom:3" value="" /><div style="margin:0 2rem;font-size:2.4rem">« 选取</div>
+<div id="bc" style="font-size:2.4rem" ><input type="color" id="bc-thecolor" value="" style="padding:0 !important;width:50rem !important;height:50rem !important;"/></div><div style="margin:0 2rem;font-size:2.4rem">« 选取</div>
 <blue-button style="background:url('https://s3.bmp.ovh/imgs/2021/08/7e86af5c2d3af56e.jpg') center;background-size:100% 100%"><button id="bc-btn" onclick="bc()">设置</button></blue-button>
 </div>
 </surbutton>
@@ -742,9 +759,16 @@ $(".zIndexBtn1")[n].style.display="inline-block";
 
 
 
-
-
-
+<script>
+document.getElementById("fc-thecolor").onchange=function(){
+var color =document.getElementById("fc-thecolor").value;
+document.getElementById("fc").style.background=color;
+}
+document.getElementById("bc-thecolor").onchange=function(){
+var color =document.getElementById("bc-thecolor").value;
+document.getElementById("bc").style.background=color;
+}
+</script>
 
 <!--插入-->
 <button id="t-button" onclick="creatTab()" style="font-size:400%">▦</button>
@@ -967,19 +991,15 @@ function priMenu(){
 document.getElementById("menu-tip").style.display="block";
 document.getElementById("menu-nav").style.display="block";
 //初始化
-
 var content = document.getElementById("content").innerHTML;
 document.getElementById("menu-ul").innerHTML = content;
 document.getElementById("menu-ul").style.display="none";
 //删除正文
-
-    var section = document.querySelectorAll("#menu-ul >section");
+    var section = document.querySelectorAll("#menu-ul section,#menu-ul p,#menu-ul img,#menu-ul div,#menu-ul ul,#menu-ul canvas");
     var i;
     for (i = 0; i < section.length; i++) {
 section[i].parentNode.removeChild(section[i]);}
 }
-
-
 //删除未选标题
 function chooseH(){
 var str1 = document.getElementById("menu-select");
