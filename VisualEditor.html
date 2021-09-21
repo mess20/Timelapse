@@ -1,3 +1,4 @@
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -35,17 +36,71 @@ window.addEventListener('DOMMouseScroll', function (event) {
 </script>
 
 
-
-
-
-
-
 <style media="screen">
-#menu-ul a{
-color:black;
-border:none;
+#insert-nav{
+justify-content:space-around;
+padding:5rem 5rem;
+height:auto
 }
-
+#insert-nav button,#insert-nav surbutton,#insert-nav i{ 
+width:8rem !important;
+text-align:center;
+}
+img{
+position:absolute;
+left:7;
+margin-top:-1020px;
+z-index:999;
+}
+img.outputPic{
+margin-top:0;
+left:3rem;
+position:absolute;
+}
+.t5{
+display:none;
+padding:0;	
+top:170;
+right:0%;
+left:0%;
+height:100%;
+background:white !important;
+position:fixed;
+outline:none;
+z-index:1;
+}
+#pic-nav{
+flex-wrap:nowrap;
+flex-direction:row;
+justify-content:space-around;
+position:fixed;
+top:0%;
+right:0%;
+left:0%;
+display:none;
+flex-wrap:nowrap;
+padding:2rem 12rem;
+background:rgba(250,250,255,100%);
+box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+opacity:0.98;
+height:100px;
+z-index:1001;
+}
+#pic-nav button,#pic-nav div{ 
+width:auto;
+margin:auto;
+font-size:2.5rem !important;
+}
+#canvas{
+right:0;
+left:0;
+position:absolute;
+margin:0;
+border:none;
+display:block;
+z-index:1000;
+display:none;
+}
 #menu-nav{
 color:black !important;
 display:none;
@@ -70,9 +125,16 @@ width:auto;
 background:transparent;
 }
 
-
-
-    
+#menu-ul{
+z-index:2000
+}
+#menu-ul a{
+color:black;
+border:none;
+}
+.menuLink_1,.menuLink_2{
+z-index:2000
+} 
 #img-nav {
 position:fixed;
 width:10rem;
@@ -97,14 +159,20 @@ z-index:10;
 padding:4rem 5rem 3rem 3rem;
 white-space: nowrap;
 }
-    .picBox {
+    
+.picBox {
       width: 100%;
-      height: 600px;
-background:rgba(255,255,255,0%);
+      height: 560;
+padding-bottom:100%;
+overflow:visible;
+      background:rgba(255,255,255,0%);
       position: absolute;
       z-index:-2;
     }
-
+main{
+overflow:visible;
+height:auto
+}
 .outputPic{
 z-index:-1;
 display:block;
@@ -123,9 +191,9 @@ font-size:2rem;
 width:auto;
 z-index:10;
 }    
-.set {
-        margin-top: 80px;
-    }   
+.set {        
+margin-top: 80px;    
+}   
 .btn {
 z-index:10;
 }
@@ -258,7 +326,7 @@ document.getElementById("img-nav").style.display="none";
 
 <script type="text/javascript">
 function number() {
-var html='<main id="main"><!--初始化--><button class="btn picBoxBtn" style="display:inline-block"><i class="fa fa-lock" aria-hidden="true"></i> </button><button class="outputmodel" style=""><i class="fa fa-unlock" aria-hidden="true"></i> </button><!--叠放次序--><button class="btn zIndexBtn" style="background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;display:inline-block">浮于文字上方</button><button class="btn zIndexBtn1" style="display:none;background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;">衬于文字下方</button><div class="picBox" style=""></div><img src="" alt="" class="outputPic" id="outputPic" style=""></main>';
+var html='<main id="main" style="background:transparent"><button class="btn picBoxBtn" style="display:inline-block"><i class="fa fa-lock" aria-hidden="true"></i> </button><button class="outputmodel" style="background:transparent"><i class="fa fa-unlock" aria-hidden="true"></i> </button><!--叠放次序--><button class="btn zIndexBtn" style="background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;display:none">浮于文字上方</button><button class="btn zIndexBtn1" style="display:inline-block;background:transparent !important;box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);border-radius:50px;">衬于文字下方</button><div class="picBox" style="background:transparent"></div><img src="" alt="" class="outputPic" id="outputPic" style=""></main>';
 
 var content = window.getSelection().toString();
 var sel, range;
@@ -303,18 +371,15 @@ $(".picBoxBtn")[n].style.display="inline-block";
 
 $(".picBoxBtn").click(function(){       
 var n = $(".picBoxBtn").index(this);
-//document.getElementById('textarea').innerText=n;
 var canvasBox = $(".picBox")[n];
     var canvas = new _Canvas({
       box: canvasBox, // 容器
       bgColor: 'rgba(255,255,255,100%)',   
-
-             // 背景色
       bgPhoto: 'none',  
-              // 背景图
       photoModel: 'adaption', // 载入图片模式(设置后添加图片时默认为当前设置模式)
-      model: 'Cascade' // 编辑模式
+      model: 'Cascade' 
     })
+
     var timer;
     canvas.init({
       dragEvent: function (e1, e2) {
@@ -355,7 +420,7 @@ var canvasBox = $(".picBox")[n];
     $('.file').change(function () {
       canvas.addPhoto({
         url: getUrl(this.files[0]),
-        model: 200,
+        model: 540,
         callback: function () {
           console.log('成功添加本地图片')
         }
@@ -449,8 +514,8 @@ var h = prompt("输入高度值","");
     // 复原
     $('.changeWH2').click(function () {
       canvas.changeParams({
-        width: 750,
-        height: 600
+        width: 1080,
+        height: 1020
       })
     })
 
@@ -466,13 +531,9 @@ var h = prompt("输入高度值","");
 var n = $(".outputmodel").index(this);
 document.getElementById('outputPic').id='outputPic'+n;
 var c = "#outputPic"+n;
-
-
-
-
       canvas.toDataURL({
-        width: 750,
-        height: 600,
+        width: 980,
+        height: 2040,
         type: 'image/png',
         callback: function (url) {
           $(c).attr('src', url);
@@ -488,8 +549,19 @@ var c = document.getElementById(c);
 var html=c.innerHTML;  
 c.outerHTML='<div class="picBox" >'+html+"</div>";
 },100)
-
     })
+
+
+    $('.zIndexBtn1').click(function(){
+var n = $(".zIndexBtn1").index(this);
+var canvasBox = $(".picBox")[n];
+var c = $(".outputPic")[n];
+canvasBox.style.zIndex="-2";
+c.style.zIndex="-1";    
+canvas.style.backgroundcolor='rgba(255,255,255,0%)';
+this.style.display="none";
+$(".zIndexBtn")[n].style.display="inline-block";   
+})
 
 
 
@@ -500,23 +572,9 @@ var c = $(".outputPic")[n];
 canvasBox.style.zIndex="2";
 c.style.zIndex="2";    
 $(".zIndexBtn")[n].style.display="none";
-$(".zIndexBtn1")[n].style.display="inline-block";                  
+$(".zIndexBtn1")[n].style.display="inline-block";    
+              
 })
-
-
-    $('.zIndexBtn1').click(function(){
-var n = $(".zIndexBtn1").index(this);
-var canvasBox = $(".picBox")[n];
-var c = $(".outputPic")[n];
-canvasBox.style.zIndex="-2";
-c.style.zIndex="-1";    
-this.style.display="none";
-$(".zIndexBtn")[n].style.display="inline-block";   
-})
-
-
-
-
 
 
 
@@ -554,9 +612,8 @@ $(".zIndexBtn")[n].style.display="inline-block";
 <button id="codeout-button" onclick="codeOut()">导出</button>
 
 
-
-<div id="textarea" class="t2" contenteditable="true" onkeyup="wordCount()">
-<content id="content">
+<content id="content" style="z-index:5000">
+<div id="textarea" class="t2" onkeyup="wordCount()" contenteditable="true">
 <p>   
 <br>
 </p>
@@ -567,16 +624,22 @@ $(".zIndexBtn")[n].style.display="inline-block";
 <ol id="ol">
 <li style="display:none;"> <a></a></li>
 </ol>
-</content>
 </div>
-
+<a contenteditable="false" href="#" class="menuLink_1">︽ </a>     
+<a contenteditable="false" id="menu-link" class="menuLink_2">+</a>
+<ul id="menu-ul">
+</ul>
+</content>
 
 <textarea id="c" style="opacity:0;position:fixed;top:100%"></textarea>
 
 
+<div id="textarea1" class="t5"></div>
 
 
 
+
+<canvas id="canvas" width="1080" height="" style="touch-action: none;"></canvas>'
 
 
 
@@ -769,21 +832,15 @@ $(".zIndexBtn")[n].style.display="inline-block";
 <button id="out-button" onclick="outdent()">⇤</button>
 
 <surbutton id="insert-button" onclick="insert1()">⊕
-<div id="insert-nav">
-<cbutton style="" id="insert-cbutton" onmouseover="insert2()">◥</cbutton>
-
-<button id="pre-button" onclick="pre()"><i class="fa fa-code"></i></button>
+<div id="insert-nav" style="z-index:5000">
+<cbutton id="insert-cbutton" onmouseover="insert2()">◥</cbutton>
 
 
-<button id="quote-button" onclick="quote()" style="font-size:3.2rem;margin:0 0 0 -0.2rem">「」
+<button id="quote-button" onclick="quote()" style="font-size:3.2rem;">「」
 </button>
 
-
-<!--参考文献-->
-<button id="r-button" onclick="reference()" style="font-size:3rem;padding:0.5rem 0 0 2rem">[1]</button>
-
-<surbutton id="note-button" style="font-size:3rem;padding:0rem 0 0rem 2rem">( )
-<div id="note-nav" >
+<surbutton id="note-button" style="font-size:3rem;padding:0 0 0 2.2rem">( )
+<div id="note-nav">
 <!--术语-->
 <button id="dfn-button" onclick="dfn()" style="font-size:2.7rem !important;">dfn
 </button>
@@ -797,16 +854,35 @@ $(".zIndexBtn")[n].style.display="inline-block";
 </div>
 </surbutton>
 
+<!--书籍条目-->
+<button id="book-button" onclick="book()" style="font-size:3rem;margin-left:-1.5rem;margin-right:2rem !important;padding-top:0.5rem;">
+【 】
+</button>
 
+
+
+
+<!--参考文献-->
+<button id="r-button" onclick="reference()" style="font-size:3rem;padding-top:0.5rem;">[1]</button>
+
+
+
+<!--锚点-->
+<button id="mark-button" onclick="bookmark()" style="font-size:3.5rem;margin-left:-1rem;margin-right:2rem">
+<i class="fa fa-anchor"></i>
+</button>
+
+
+<!--信息框-->
 <surbutton id="info-button" style="">
-<i class="fa fa-info-circle"></i>
+<i class="fa fa-info-circle  fa-fw"></i>
 <div id="info-nav">
 
 <surbutton id="em-button" onclick="em()">！
 <div id="em-nav">
 
-<button id="em1-button" onclick="em1()">1</button>
-<button id="em2-button" onclick="em2()">2</button>
+<button id="em1-button" onclick="em1()">A</button>
+<button id="em2-button" onclick="em2()">B</button>
 
 </div>
 </surbutton>
@@ -833,21 +909,11 @@ $(".zIndexBtn")[n].style.display="inline-block";
 
 
 
-
-
-<!--锚点-->
-<button id="mark-button" onclick="bookmark()">
-<i class="fa fa-anchor"></i>
-</button>
-
-<button id="book-button" onclick="book()" style="font-size:2.7rem;margin:0rem;width:auto;">
-【 】
-</button>
-
+<button id="pre-button" onclick="pre()"><i class="fa fa-code  fa-fw"></i></button>
 
 
 <surbutton id="tex-button" onclick="tex1()">
-<span style="font-family:times;font-size:2.9rem;margin:0 2.7rem">Tex</span>
+<span style="font-family:times;font-size:2.9rem;">Tex</span>
 <div id="tex-nav">
 <cbutton id="tex-cbutton" onmouseover="tex2()" style="margin:0rem -1.1rem !important;z-index:5 !important;font-size:4rem">◥</cbutton>
 <iframe src="https://latexlive.com" width="100%" height="100%" frameborder="0" style="position:fixed;left:0%;top:0%;right:0%;bottom:0%"></iframe>
@@ -864,11 +930,16 @@ document.getElementById('tex-nav').style.display='none';
 </script>
 
 
+<button id="pic-button" class="draw" onclick="addCanvas()">□</button>
+        
+
+
+
 
 
 
 <surbutton id="menu-button" onclick="priMenu()">
-<span style="font-size:4.2rem;margin:0 4.1rem">≡</span>
+<span style="font-size:4.8rem;">≡</span>
 </surbutton>
 <div id="menu-nav">
 <cbutton id="menu-cbutton" onmouseover="closemenunav()" style="zoom:4;margin:-1.1rem -2.5rem !important">◥</cbutton>
@@ -896,15 +967,19 @@ function priMenu(){
 document.getElementById("menu-tip").style.display="block";
 document.getElementById("menu-nav").style.display="block";
 //初始化
+
 var content = document.getElementById("content").innerHTML;
 document.getElementById("menu-ul").innerHTML = content;
 document.getElementById("menu-ul").style.display="none";
 //删除正文
+
     var section = document.querySelectorAll("#menu-ul >section");
     var i;
     for (i = 0; i < section.length; i++) {
 section[i].parentNode.removeChild(section[i]);}
 }
+
+
 //删除未选标题
 function chooseH(){
 var str1 = document.getElementById("menu-select");
@@ -963,12 +1038,6 @@ document.getElementById("menu-ul").style.display="block";
 document.getElementById("menu-tip").style.display="none";
 }
 </script>
-
-
-
-
-
-
 
 
 
@@ -1063,10 +1132,7 @@ document.getElementById("button2").style.zIndex="4";
 
 
 
-<a href="#" class="menuLink_1">︽ </a>     
-<a id="menu-link" class="menuLink_2">+</a>
-<ul id="menu-ul" contenteditable="true">
-</ul>
+
 
 <script type="text/javascript">  	
 window.onload = function(){   
@@ -1187,7 +1253,8 @@ button2.className="b1";
 button3.className="b3";
 output.className="output1";
 fsbutton.className="fullView-button2";
-fsbutton.innerHTML="半屏"
+fsbutton.innerHTML="半屏";
+document.getElementById('content').className="content";
 }else{
 temp=1;
 t.className="t2";
@@ -1195,10 +1262,177 @@ button2.className="b2";
 button3.className="b4";
 output.className="output2";
 fsbutton.className="fullView-button1";
-fsbutton.innerHTML="全屏"
+fsbutton.innerHTML="全屏";
 }
 })
 </script>
+
+<script>
+
+function addCanvas(){
+ <!--添加画布-->
+document.getElementById('pic-nav').style.display="flex";
+document.getElementById('canvas').style.display="block";
+      
+<!--确保置地-->
+var h= document.body.scrollHeight;
+document.getElementById('canvas').height = h;
+
+///////////////画布      
+var el = document.getElementById('canvas');
+        var ctx = el.getContext('2d');
+        ctx.strokeStyle = 'CornflowerBlue';
+        ctx.lineWidth = 10;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        var isDrawing;//标记是否要绘制
+        //存储坐标点
+        let points = [];
+        el.onpointerdown = function (e) {
+            console.log('pointerdown');
+            isDrawing = true;
+            points.push({ x: e.clientX, y: e.clientY });
+        };
+        el.onpointermove = function (e) {
+            console.log('pointermove');
+            if (isDrawing) {
+                draw(e.clientX, e.clientY);
+            }
+
+        };
+        el.onpointerup = function (e) {
+            if (isDrawing) {
+                draw(e.clientX, e.clientY);
+            }
+            points = [];
+            isDrawing = false;
+        };
+
+        function draw(mousex, mousey) {
+            points.push({ x: mousex, y: mousey });
+            ctx.beginPath();
+            let x = (points[points.length - 2].x + points[points.length - 1].x) / 2,
+                y = (points[points.length - 2].y + points[points.length - 1].y) / 2;
+            if (points.length == 2) {
+                ctx.moveTo(points[points.length - 2].x, points[points.length - 2].y);
+                ctx.lineTo(x, y);
+            } else {
+                let lastX = (points[points.length - 3].x + points[points.length - 2].x) / 2,
+                    lastY = (points[points.length - 3].y + points[points.length - 2].y) / 2;
+                ctx.moveTo(lastX, lastY);
+                ctx.quadraticCurveTo(points[points.length - 2].x, points[points.length - 2].y, x, y);
+            }
+            ctx.stroke();
+            points.slice(0, 1);
+
+        }
+
+
+
+}
+
+
+
+<!--转图-->
+function DownloadFile(){
+var file = document.getElementById("download");
+var canvas = document.getElementById("canvas");
+var imgDataSrc = canvas.toDataURL('image/png');
+file.download = imgDataSrc;
+file.href = imgDataSrc;
+canvas.id = canvas.name;
+
+};
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="pic-nav">
+<cbutton style="font-size:4rem;margin:-3.1rem -2.5rem !important" onmouseover="closePicNav()">◥</cbutton>
+
+
+<button id="pic-zIndex-button" class="draw">完成</button>
+
+<button id="addPic-button" class="draw" onclick="addPic()">插入</button>
+
+<button><a id="download" class="draw" href=" " download=" " onclick="DownloadFile()" >下载图片</a></button>
+</div>
+
+        
+<script>
+function addPic(){
+var canvas = document.getElementById("canvas");
+var imgDataSrc = canvas.toDataURL('image/png');
+document.execCommand("insertImage",true,imgDataSrc);
+
+
+var c = document.getElementById('canvas');       
+var ctx = c.getContext('2d');
+ctx.clearRect(0,0,1080,2040)
+}
+
+
+var anniu = document.getElementById("pic-zIndex-button");
+anniu.addEventListener('click',function(){
+var t
+= document.getElementById("textarea");
+var c
+= document.getElementById("canvas")        
+if(temp==1){                
+temp=0;             
+anniu.innerHTML="绘画";  
+document.getElementById("canvas").style.display="none";
+t.style.zIndex="5";
+t.style.backgroundColor="transparent";
+document.getElementById('textarea1').style.display="block";      
+}else{                       
+temp=1;
+anniu.innerHTML="完成";    
+c.style.zIndex="1000";
+document.getElementById("canvas").style.display="block";
+}        
+})
+
+
+
+
+function closePicNav(){
+document.getElementById("canvas").style.display="none";
+document.getElementById("pic-nav").style.display="none";
+document.getElementById("button3").style.zIndex="61";
+document.getElementById("button2").style.zIndex="60";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
