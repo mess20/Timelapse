@@ -179,22 +179,22 @@ document.getElementById("article").innerHTML=t
 .replace(new RegExp('〉' , "g"), '   ')
 //分割线*
 .replace(new RegExp('---' , "g"), '<hr>')
-//三级标题
+//三级标题*
 .replace(new RegExp('««' , "g"), '<h4>')
 .replace(new RegExp('»»' , "g"), '</h4>')
-//一级标题
+//一级标题*
 .replace(new RegExp('‹' , "g"), '<h2>')
 .replace(new RegExp('›' , "g"), '</h2>')
-//二级标题
+//二级标题*
 .replace(new RegExp('«' , "g"), '<h3>')
 .replace(new RegExp('»' , "g"), '</h3><br>')
 //链接
 .replace(new RegExp('「a（' , "g"), '<a href="')
 .replace(new RegExp('）a」' , "g"), '"><i class="fa fa-paperclip" aria-hidden="true"></i></a>')
-//强调*
+//强调
 .replace(new RegExp('【' , "g"), '<l>')
 .replace(new RegExp('】' , "g"), '</l>')
-//文献
+//文献*
 .replace(new RegExp('「（' , "g"), '<dfn class="reference-index"><span>')
 .replace(new RegExp('）」' , "g"),'</span></dfn>')
 //特殊*
