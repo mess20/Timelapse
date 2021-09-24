@@ -1,4 +1,4 @@
-
+function timemark(){
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=t
 //分割线
@@ -20,3 +20,4 @@ document.getElementById("article").innerHTML=t
 
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=marked(t);
+}
