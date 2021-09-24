@@ -4,8 +4,8 @@ document.getElementById("article").innerHTML=t
 //分割线
 .replace(new RegExp('---' , "g"), '<hr>')
 //强调
-.replace(new RegExp('【' , "g"), '<l>')
-.replace(new RegExp('】' , "g"), '</l>')
+.replace(new RegExp('【' , "g"), '<mark>')
+.replace(new RegExp('】' , "g"), '</mark>')
 //特殊
 .replace(new RegExp('（' , "g"), '<n>')
 .replace(new RegExp('）' , "g"), '</n>')
@@ -20,4 +20,13 @@ document.getElementById("article").innerHTML=t
 
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=marked(t);
-}
+};
+function copy_allow(){
+document.getElementById('copy-button').style.display="block";
+document.getElementById('copy-area').style.display="block";
+document.getElementById("copy-area").oncopy ="";
+};
+function copy() {
+            var e = document.getElementById("copy-area");
+            e.select(); document.execCommand("Copy");             document.getElementById('copy-finish').style.display="block";
+setTimeout("document.getElementById('copy-finish').style.display=\"none\" ", 700);}
