@@ -20,6 +20,10 @@ document.getElementById("article").innerHTML=t
 
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=marked(t);
+setTimeout(function(){
+document.getElementById('appear1').className="show';
+document.getElementById('appear2').className="show';
+},5000);
 };
 function copy_allow(){
 document.getElementById('copy-button').style.display="block";
