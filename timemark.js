@@ -16,7 +16,7 @@ document.getElementById("article").innerHTML=t
 .replace(new RegExp('｝' , "g"), '</note></dfn>')
 //文献
 .replace(new RegExp('〔' , "g"), '<dfn class="reference-index"><span>')
-.replace(new RegExp('〕' , "g"),'</span></dfn>')
+.replace(new RegExp('〕' , "g"),'</span></dfn>');
 
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=marked(t);
