@@ -1,4 +1,4 @@
-function timemark(){
+window.onload=function timemark(){
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=t
 //分割线
