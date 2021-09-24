@@ -569,6 +569,20 @@ border-color: rgba(84,100,93,18%);
 }
 
 
-
+mark{
+box-shadow:0px -32px 		hsla(165,49%,92%,100%) inset;
+background:none
+}
+n,dfn{
+color:#6483B0 !important
+}
+ol a{
+font-size:90%;
+color:black !important;
+}
+ol a:hover{
+color:#6483B0 !important;
+border-bottom:solid #6483B0 !important;
+}
 
 
