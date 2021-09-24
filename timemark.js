@@ -1,4 +1,5 @@
-window.onload=function timemark(){var t = document.getElementById("article").innerHTML;
+function timemark(){
+var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=t
 //分割线
 .replace(new RegExp('---' , "g"), '<hr>')
