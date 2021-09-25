@@ -7,18 +7,7 @@ user-select: none;
 -webkit-tap-highlight-color:transparent;
 outline:none;
 }
-svg{
-display:inline-block;
-line-height:6rem;
-align-items: center;
-border:none;
-width: 3rem;
-height: 3rem;
-border-radius: 50%;
-margin:auto 0 auto 0;
-overflow: visible;
-color:black;
-}
+
 /*关键词*/
 k {
 border-style:none none solid none;
