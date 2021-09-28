@@ -1,12 +1,23 @@
-window.onload=function timemark(){
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=t
+//代码
+.replace(new RegExp('“' , "g"), '<textarea>')
+.replace(new RegExp('”' , "g"), '</textarea>')
+.replace(new RegExp('‘' , "g"), '<blockquote>')
+.replace(new RegExp('’' , "g"), '</blockquote>')
 //分割线
 .replace(new RegExp('---' , "g"), '<hr>')
+//分点
+.replace(new RegExp('‹' , "g"), '<div style="display:flex;margin:4rem 0;"><div style="background-color: rgb(31, 73, 125); color: rgb(255, 255, 255);padding:0rem 1.4rem;margin:0.5rem 2rem 0.5rem 0;height:4rem;width:auto;line-height:4rem;align-items:center;font-size:2.4rem;">')
+.replace(new RegExp('›' , "g"),'</div>')
+.replace(new RegExp('«' , "g"), '<div style="color: rgb(51,51, 51);font-size:3rem;">')
+.replace(new RegExp('»' , "g"), '</div></div>')
 //强调
-.replace(new RegExp('【' , "g"), '<mark>')
-.replace(new RegExp('】' , "g"), '</mark>')
+.replace(new RegExp('【' , "g"), '<l>')
+.replace(new RegExp('】' , "g"), '</l>')
 //特殊
+.replace(new RegExp('！（' , "g"), '<span style="color:rgba(199,77,70,100%);">')
+.replace(new RegExp('）' , "g"), '</span>')
 .replace(new RegExp('（' , "g"), '<n>')
 .replace(new RegExp('）' , "g"), '</n>')
 //dfn
@@ -20,11 +31,16 @@ document.getElementById("article").innerHTML=t
 
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=marked(t);
-setTimeout(function(){
-document.getElementById('appear1').className="show';
-document.getElementById('appear2').className="show';
-},5000);
-};
+
+var t = document.body.innerHTML;
+document.body.innerHTML=t
+.replace(new RegExp('“' , "g"), '<textarea>')
+.replace(new RegExp('”' , "g"), '</textarea>')
+.replace(new RegExp('‘' , "g"), '<blockquote>')
+.replace(new RegExp('’' , "g"), '</blockquote>');
+
+
+
 function copy_allow(){
 document.getElementById('copy-button').style.display="block";
 document.getElementById('copy-area').style.display="block";
