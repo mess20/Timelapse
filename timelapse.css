@@ -476,7 +476,8 @@ border-color: rgba(84,100,93,18%);
 }
 
 
-
+h3,h4,h5{
+color:black}
 
 
 
@@ -532,4 +533,12 @@ margin:2rem 0;
 padding: 2rem;
 width:100%;
 border:none;
+}
+	
+l{
+box-shadow:0px -35px rgba(258,233,100,100%) inset;
+display:inline-block;
+line-height:4rem;
+font-size:2.7rem;
+padding:0;
 }
