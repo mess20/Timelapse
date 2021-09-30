@@ -1,0 +1,410 @@
+<html>
+<head>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<title>library</title>
+
+<style>
+*{
+user-select: none;   
+-webkit-tap-highlight-color:transparent;
+outline:none;
+}
+body{
+font-size:2.4rem;
+background:#333;
+margin:0rem -0.5rem;
+color:#333;
+background:black;
+}
+header{
+padding-top:0rem;
+height:100%;
+background:url(https://z3.ax1x.com/2021/09/30/4IhitA.jpg) center no-repeat;
+background-size:100%;
+}
+#ssl{
+position:fixed;
+left:0;
+right:0;
+top:0;
+padding-left: 6%;
+padding-right: 6%;
+padding-bottom:1rem;
+padding-top:5.5rem;
+width:88%;
+margin-bottom:10rem;
+font-family:Arial,Georgia,'Century Gothic';
+font-size:3.2rem;
+color:#333;
+background-color:rgb(252, 252, 252);
+box-shadow: 0px 0 24px rgba(0, 0, 0, 0.35);
+}
+#ssl textarea{
+width:85%;
+padding:1rem 1.5rem;
+border:none;
+font-family:Arial,Georgia,'Century Gothic';
+font-size:2.7rem;
+display:inline;
+font-weight:300;
+cursor-color:white;
+background-color:white;
+box-shadow: 6px 6px 8px 0 rgba(100,140,165,0.3);
+}
+#ssl textarea:hover{
+background:white;
+box-shadow: 0px 15px 30px 0 rgba(0, 0, 0, 0.2);
+}
+#ssl span{
+padding-bottom:3rem;
+font-size:2.5rem;
+color:rgba(118,120,102,0%);
+}
+#ssl .Fa-search{
+color:rgba(30,10,50,90%);
+}
+#ssl span:hover{
+color:rgba(30,28,60,80%);
+}
+#ssl span:hover .Fa-search{
+color:#eee !important
+}
+#menu-button_2{
+border-radius: 50%;
+box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+color: rgba(0, 0, 0, 0.3);
+position: fixed;
+right:4rem;
+bottom:6rem;
+font-size:4rem;
+text-align:center;
+width: 90px; 
+height: 90px; 
+line-height:90px;
+text-decoration:none;
+background:white;
+z-index:4;
+}
+
+#menu-button_1{
+width: 90px; 
+height: 90px; 
+border-radius: 50%;
+position: fixed;
+right:4rem;
+bottom:6rem;
+-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+color: rgba(0, 0, 0, 0.3);
+font-size: 3rem;
+font-weight:800;
+text-align:center;
+line-height:90px;
+text-decoration:none;
+background:white;
+z-index:4;
+}
+#menu-button_sur{
+width: 90px; 
+height: 90px; 
+border-radius: 50%;
+position: fixed;
+right:4rem;
+bottom:6rem;
+-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+color: rgba(0, 0, 0, 0.3);
+font-size: 4rem;
+text-align:center;
+line-height:90px;
+text-decoration:none;
+background:white;
+z-index:4;
+}
+#menu-button_sur:hover #menu-button_1{
+bottom:20rem;
+}
+#menu-button_sur:hover #menu-button_2{
+//bottom:13rem;
+}
+main{
+background:white;
+}
+main .rule{
+padding:3rem 3rem;
+}
+.bookcase{
+padding:3rem 0rem;
+box-shadow:0 5px 20px 0 rgba(0, 0, 0, 0.3);
+}
+.bookcase #bookcase{
+color:black;
+display:flex;
+margin:0;
+width:auto;
+flex-wrap:wrap;
+flex-direction: row;
+overflow-y:auto;
+height:60rem;
+}
+#bookcase div{
+padding-top:20px;
+height:30rem;
+display:flex;
+width:auto;
+margin:0;
+flex-wrap:nowrap;
+background:transparent;
+box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.6);
+}
+#bookcase a{
+border-radius:5px;
+display:inline-block;
+width:7rem;
+height:100%;
+text-align:center;
+line-height:30rem;
+align-items:center;
+color:black;
+box-shadow: 0px 5px 12px 4px rgba(0, 0, 0, 0.35);
+text-decoration:none;
+background:pink;
+}
+#bookcase a:hover{
+box-shadow: -10px 20px 50px 0 rgba(0, 0, 0, 0.45);
+z-index:4;
+}
+
+footer{
+font-size:1.4rem;
+padding:10rem 0rem;
+background-color:#333; 
+text-align:center; 
+height:50%;
+display:flex;
+flex-direction: column;
+justify-content:center;
+align-items:center;
+font-family:museo-slab,Georgia,'Century Gothic';
+text-decoration:underline;
+zoom:2;
+}
+footer *{
+margin:2rem 0rem;
+color:#eee !important; 
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+<header id="header">
+<div class="" id="ssl">
+<span class="fa-stack fa-lg" id="search-button" onclick="a1()">
+<i class="fa Fa-circle  fa-stack-2x" aria-hidden="true"></i>
+<i class="fa Fa-search  fa-stack-1x" aria-hidden="true"></i> 
+</span>
+<textarea placeholder="Have something to search for?" id="search-input" rows="1">
+</textarea>
+</div>
+</header>
+
+
+
+<div class="menu-button" id="menu-button_sur">+
+<a href="#header" class="menu-button" id="menu-button_1">∧</a>     
+<a class="menu-button" id="menu-button_2">+</a>
+</div>
+
+
+
+
+<main>
+
+<div class="rule">
+<h2>RULE</h2>
+
+</div>
+
+
+
+
+<div class="rule" id="1">
+<h2>RULE5</h2>
+
+</div>
+
+
+<div class="rule" id="4">
+<h2>RULE3</h2>
+
+</div>
+
+<div class="rule" id="2">
+<h2>RULE2</h2>
+
+</div>
+
+
+
+<div class="rule" id="3">
+<h2>RULE2</h2>
+
+</div>
+
+<div class="rule" id="5">
+<h2>RULE1</h2>
+
+</div>
+
+
+
+
+
+<div class="bookcase">
+<div id="bookcase">
+<div>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+</div>
+<div>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+</div>
+<div>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+</div>
+<div>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+</div>
+<div>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+
+</div>
+</div>
+</div>
+
+</main>
+
+
+
+
+<footer>
+
+<svg width="48px" height="48px" viewBox="0 0 115 115" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Group-5"><path d="M57.5,115 C89.2563731,115 115,89.2563731 115,57.5 C115,52.4563432 114.35062,47.5643573 113.130908,42.9030901 C106.949535,19.2802844 86.1200099,1.58315429 60.9313228,0.100691086 C59.796089,0.0338776673 58.6520008,-2.27373675e-13 57.5,-2.27373675e-13 C54.9466598,-2.27373675e-13 52.4321909,0.166427577 49.9668493,0.489026689 C47.3438571,0.832254962 44.7764762,1.3522667 42.2770585,2.03670985 C17.9082975,8.70987693 0,31.013585 0,57.5 C0,89.2563731 25.7436269,115 57.5,115 Z" id="Oval-3" fill="#F9C6C2"></path><path d="M41.4228787,2.27777688 L114.846412,61.7349817 C114.813776,62.1832975 114.775999,62.6301873 114.733141,63.0755922 C113.579937,75.0604021 108.74768,85.9700954 101.379281,94.6617619 C90.8319783,107.103221 75.0881849,115 57.5,115 C25.7436269,115 0,89.2563731 0,57.5 C0,31.3240258 17.4909601,9.23328414 41.4228787,2.27777688 Z" id="Combined-Shape" fill="#9AC6E8"></path></g></svg>
+
+<a  href="" class="">
+timelapse
+</a>
+
+
+
+</footer>
+</body>
+
+
+<script>
+function a1(){          
+var x = document.getElementById("search-input").value;
+window.location.href = "#"+x;
+}
+</script>
+
+
+
+</html>
+<script>
+var page=1;
+window.onscroll = function(ev) {   
+if ((window.innerHeight + window.scrollY) >= 2040) {           
+ifrm = document.createElement("IFRAME");         ifrm.src="https://mess20.github.io/black";         
+ifrm.style.width = 100+"%";         ifrm.style.height = 1000000+"%";         ifrm.style.border = "none";         document.body.appendChild(ifrm);         
+page++   
+}
+};
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
