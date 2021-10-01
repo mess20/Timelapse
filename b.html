@@ -1,0 +1,113 @@
+<html>
+<link href="https://mess20.github.io/room.css" rel="stylesheet">
+
+<style type="text/css">
+html{
+font-size:16px;
+}
+body{
+background:rgba(252,236,163,20%) !important;
+}
+.note-box{
+display:flex;flex-direction:row;justify-content:space-around;flex-warp:warp;width:100%
+}
+.n{
+font-size:2rem;
+border:none;
+background:rgba(252,236,163,80%);
+margin: 2rem auto;
+padding:6rem 2rem;
+width: 80%;
+height:18rem;
+justify-content: center;
+align-items: center;
+border-radius:50px;
+word-wrap: break-word;
+box-shadow:0px 2px 15px rgba(0, 0, 0, 0.3)
+}
+.n a{
+color:black;
+text-decoration:none;
+border-bottom:solid black 2px;
+padding-bottom:4px;
+}
+.n:hover{
+line-height:5rem;
+width:93%;
+margin: 2rem 0;
+border-radius:0;
+width:100% !important;
+height:60rem !important;
+position:absolute;
+background:rgba(252,236,163,100%);
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="note-box" style="">
+
+<textarea class="n" style="background:white;text-align:center;width:45%;height:500;">
+房间门上贴的一张纸
+甜品：春日限定抹茶团子🍡
+</textarea>
+
+
+
+
+<textarea class="n" style="background:lightyellow;height:auto;text-align:center;width:45%;height:500;">贴在墙上的米黄色便签纸
+</textarea>
+</div>
+
+
+<div class="note-box" style="">
+
+<textarea class="n" style="height:auto;text-align:center;width:45%;height:500;">贴在墙上的米黄色便签纸
+</textarea>
+
+<textarea class="n" style="height:auto;text-align:center;width:45%;height:500;">贴在墙上的米黄色便签纸
+</textarea>
+
+</div>
+
+<div class="note-box" style="">
+
+<textarea class="n" style="height:auto;text-align:center;width:45%;height:500;">贴在墙上的米黄色便签纸
+</textarea>
+
+<textarea class="n" style="height:auto;text-align:center;width:45%;height:500;">贴在墙上的米黄色便签纸
+</textarea>
+
+</div>
+
+</body>
+</html>
+
+
+<script>
+<!--取消可编辑性-->
+var a = document.querySelectorAll('textarea');
+var i;
+for (i = 0; i < a.length; i++){
+a[i].setAttribute("disabled", "disabled");
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
