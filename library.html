@@ -9,13 +9,18 @@ user-select: none;
 -webkit-tap-highlight-color:transparent;
 outline:none;
 }
+
 body{
 font-size:2.4rem;
 background:#333;
-margin:0rem -0.5rem;
+padding:0;
+margin:0;
 color:#333;
-background:black;
+display:flex;
+width:100%;
+flex-direction: column;
 }
+
 header{
 padding-top:0rem;
 height:100%;
@@ -29,7 +34,7 @@ right:0;
 top:0;
 padding-left: 6%;
 padding-right: 6%;
-padding-bottom:1rem;
+padding-bottom:1.5rem;
 padding-top:5.5rem;
 width:88%;
 margin-bottom:10rem;
@@ -39,7 +44,7 @@ color:#333;
 background-color:rgb(252, 252, 252);
 box-shadow: 0px 0 24px rgba(0, 0, 0, 0.35);
 }
-#ssl textarea{
+#search-input{
 width:85%;
 padding:1rem 1.5rem;
 border:none;
@@ -130,12 +135,16 @@ bottom:20rem;
 //bottom:13rem;
 }
 main{
-background:white;
+background:#eee;
+display:flex;
+width:100%;
+flex-direction: column;
 }
 main .rule{
-padding:3rem 3rem;
+background:white !important;
 }
 .bookcase{
+background:white;
 padding:3rem 0rem;
 box-shadow:0 5px 20px 0 rgba(0, 0, 0, 0.3);
 }
@@ -160,23 +169,63 @@ background:transparent;
 box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.6);
 }
 #bookcase a{
+font-family:"宋体",times;
 border-radius:5px;
-display:inline-block;
-width:7rem;
+display:flex;
+width:7rem ;
 height:100%;
-text-align:center;
-line-height:30rem;
-align-items:center;
 color:black;
 box-shadow: 0px 5px 12px 4px rgba(0, 0, 0, 0.35);
 text-decoration:none;
 background:pink;
 }
+#bookcase a *{
+display:block;
+flex-wrap:wrap;
+text-align:center;
+width:3rem;
+overflow:hidden;
+height:auto;
+max-height:80%;
+margin:auto;
+}
 #bookcase a:hover{
 box-shadow: -10px 20px 50px 0 rgba(0, 0, 0, 0.45);
 z-index:4;
 }
-
+div a{
+color:black;
+text-decoration:none;
+border-bottom:solid black 2px;
+padding-bottom:4px;
+}
+textarea:not(#search-input),.n{
+border:none;
+font-size:2rem;
+font-family:times;
+background:rgba(255,255, 255, 40%);
+margin: 1rem auto;
+padding:4rem 2rem;
+width: 90%;
+height:18rem;
+justify-content: center;
+align-items: center;
+border-radius:20px;
+box-shadow:0 0 1000px rgba(0, 0, 0, 0)
+}
+.n{
+width: 83%;
+font-size:2.5rem;
+}
+textarea:not(#search-input):hover,.n:hover{
+width: 100%;
+margin: 2rem 0;
+border-radius:0;
+height:1000px !important;
+}
+.n:hover{
+width: 93.5%
+}
 footer{
 font-size:1.4rem;
 padding:10rem 0rem;
@@ -194,7 +243,7 @@ zoom:2;
 footer *{
 margin:2rem 0rem;
 color:#eee !important; 
-
+border-bottom:none
 }
 </style>
 
@@ -226,39 +275,25 @@ color:#eee !important;
 
 <main>
 
-<div class="rule">
-<h2>RULE</h2>
 
+
+
+
+<div class="n" style="background:white;height:auto;text-align:center;">
+<a href="https://drrr.wiki/%E6%8C%82%E5%9C%A8%E5%A2%99%E5%A3%81%E4%B8%8A%E7%9A%84%E7%95%99%E8%A8%80%E6%9D%BF">挂在墙壁上的留言板</a>
 </div>
 
 
+<textarea class="rule">
+RULE
 
-
-<div class="rule" id="1">
-<h2>RULE5</h2>
-
-</div>
-
-
-<div class="rule" id="4">
-<h2>RULE3</h2>
-
-</div>
-
-<div class="rule" id="2">
-<h2>RULE2</h2>
-
-</div>
+</textarea>
 
 
 
-<div class="rule" id="3">
-<h2>RULE2</h2>
 
-</div>
-
-<div class="rule" id="5">
-<h2>RULE1</h2>
+<div class="" id="">
+<h2></h2>
 
 </div>
 
@@ -269,7 +304,7 @@ color:#eee !important;
 <div class="bookcase">
 <div id="bookcase">
 <div>
-<a href="">1</a>
+<a href="https://mess20.github.io/Fantasy">塞在书柜里的日记本</a>
 <a href="">2</a>
 <a href="">1</a>
 <a href="">2</a>
@@ -361,6 +396,24 @@ color:#eee !important;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <footer>
 
 <svg width="48px" height="48px" viewBox="0 0 115 115" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Group-5"><path d="M57.5,115 C89.2563731,115 115,89.2563731 115,57.5 C115,52.4563432 114.35062,47.5643573 113.130908,42.9030901 C106.949535,19.2802844 86.1200099,1.58315429 60.9313228,0.100691086 C59.796089,0.0338776673 58.6520008,-2.27373675e-13 57.5,-2.27373675e-13 C54.9466598,-2.27373675e-13 52.4321909,0.166427577 49.9668493,0.489026689 C47.3438571,0.832254962 44.7764762,1.3522667 42.2770585,2.03670985 C17.9082975,8.70987693 0,31.013585 0,57.5 C0,89.2563731 25.7436269,115 57.5,115 Z" id="Oval-3" fill="#F9C6C2"></path><path d="M41.4228787,2.27777688 L114.846412,61.7349817 C114.813776,62.1832975 114.775999,62.6301873 114.733141,63.0755922 C113.579937,75.0604021 108.74768,85.9700954 101.379281,94.6617619 C90.8319783,107.103221 75.0881849,115 57.5,115 C25.7436269,115 0,89.2563731 0,57.5 C0,31.3240258 17.4909601,9.23328414 41.4228787,2.27777688 Z" id="Combined-Shape" fill="#9AC6E8"></path></g></svg>
@@ -385,7 +438,31 @@ window.location.href = "#"+x;
 
 
 </html>
+
+
 <script>
+<!--取消可编辑性-->
+var a = document.querySelectorAll('textarea');
+var i;
+for (i = 0; i < a.length; i++){
+a[i].setAttribute("disabled", "disabled");
+};
+document.getElementById('search-input').removeAttribute("disabled");
+</script>
+
+
+<script>
+<!-- 书柜-->
+var a = document.querySelectorAll('#bookcase a');
+var i;
+for (i = 0; i < a.length; i++){
+var t = a[i].innerHTML;
+a[i].innerHTML="<span>"+t+"</span>"
+};
+</script>
+
+<script>
+<!--无限滚动-->
 var page=1;
 window.onscroll = function(ev) {   
 if ((window.innerHeight + window.scrollY) >= 2040) {           
@@ -395,16 +472,6 @@ page++
 }
 };
 </script>
-
-
-
-
-
-
-
-
-
-
 
 
 
