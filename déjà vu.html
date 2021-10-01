@@ -3,13 +3,25 @@
 <head>
 <meta charset="utf-8"/ >
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://Restrechinamynd.github.io/all.css" type="text/css"> 
+
 
 <style>
+body{
+background:#333;
+}
+
 .note-card-button{
+position: absolute;
+background:#eee;
+color:#333;
+}
+.note-card-button:hover{
+background:white;
+color:black;
 }
 .note-card{
 display:none;
-
 }
 .note-card-button:hover .note-card{
 display:block;
@@ -19,6 +31,7 @@ margin: auto;
 width:100%;
 height:1100;
 position:fixed;
+z-index:3;
 }
 
 #mycanvas{
@@ -58,20 +71,29 @@ position:fixed;
 margin:0 auto;
 z-index:1;
 }
-
+#card-nav{
+display:flex;
+justify-content:space-around;
+padding:10rem 0;
+align-items:center;
+z-index:2;
+}
+#card-nav>*{
+display:block;
+height:6rem;
+line-height:6rem;
+padding: auto auto;
+text-align:center;
+z-index:2;
+font-size:2.2rem !important;
+width:13rem;
+}
 
 #btn{
-position:fixed;
-display:inline-block;
-top:5%;
-left:5%;
 text-align:center;
 font-size:1.8rem;
-width:13rem;
  -webkit-transition-duration:0.4s;
  transition-duration:0.4s;
- padding: 20px 32px;
- text-align:center;
  background-color: white;
  color:black;
  border:3px solid #4CAF50;
@@ -82,18 +104,11 @@ width:13rem;
  color: white;
 }
 #download{
-position:fixed;
-display:inline-block;
-top:5%;
-left:75%;
 text-align:center;
 font-size:1.8rem;
-width:8rem;
  -webkit-transition-duration:0.4s;
  transition-duration:0.4s;
- padding: 20px 32px;
- text-align:center;
- background-color: white;
+  background-color: white;
  color:black;
 text-decoration:none;
  border:3px solid #4CAF50;
@@ -104,16 +119,9 @@ text-decoration:none;
  color: white;
 }
 .color1,.color2{
-position:fixed;
-display:inline-block;
-top:5%;
 text-align:center;
-font-size:1.8rem;
-width:8rem;
  -webkit-transition-duration:0.4s;
  transition-duration:0.4s;
- padding: 20px 32px;
- text-align:center;
  background-color: white;
  color:black;
 text-decoration:none;
@@ -123,14 +131,6 @@ text-decoration:none;
 .color1:hover,.color2:hover{
  background-color:#4CAF50;
  color: white;
-}
-.color1{
-left:28%;
-
-}
-.color2{
-left:50%;
-
 }
 #card-title{
 right:5%;
@@ -142,7 +142,8 @@ width:90%;
 display:block;
 color:#333;
 font-size:3rem;
-font-family: "Arial";
+font-size:2.6rem; 
+font-family:"KaiTi_GB2312","Cursive";
 letter-spacing:0.1rem;
 word-spacing:0rem;
 border:none;
@@ -159,8 +160,8 @@ padding:0 1rem;
 height:40%;
 display:block;
 color:#333;
-font-size: 2.7rem;
-font-family: "Arial";
+font-size:2.6rem; 
+font-family:"KaiTi_GB2312","Cursive";
 line-height:6rem;
 letter-spacing:0.1rem;
 word-spacing:0rem;
@@ -187,17 +188,14 @@ z-index:1;
 
 
 
-<div class="note-card-button">
-
-anwo
-
+<fbb class="note-card-button">déjà vu Card
 
 <div class="note-card">
 <!--假-->
 
 <textarea type="text"  id="card-title" value="" maxlength="24" rows="1" placeholder="title"></textarea>
 
-<textarea type="text"  id="card-content" value="" maxlength="81" placeholder="content"></textarea>
+<textarea type="text"  id="card-content" value="" maxlength="300" placeholder="content"></textarea>
 
 <canvas id="mycanvas-pre" width="900" height="1100"></canvas>
 
@@ -206,15 +204,16 @@ anwo
 <canvas id="mycanvas" width="900" height="1100">
 </canvas>
 
+<div id="card-nav">
 <div class="color1"><input type="color" id="color1" style="zoom:1.5;opacity:0;margin-right:-3rem;" value="" />底色</div>
 <div class="color2"><input type="color" id="color2" style="zoom:1.5;opacity:0;margin-right:-3rem;" value="" />文字</div>
 <input id="btn" type="button" value="定制卡片" />
 <a id="download"  href=" " download=" ">收入囊中</a>
-
+</div>
 
 
 </div>
-</div>
+</fbb>
 
 <script type="text/javascript">
 var title = document.getElementById("card-title");
@@ -229,7 +228,9 @@ document.getElementById("mycanvas-pre").style.backgroundColor=color1;
 };
 document.getElementById("color2").onchange = function changPreColor2(){
 var color2 =document.getElementById("color2").value;
-document.getElementById("card-content").style.color=color2;}
+document.getElementById("card-content").style.color=color2;
+document.getElementById("card-title").style.color=color2;
+}
 
 btn.onclick = function(){
 if(content.value.length != 0){
@@ -261,7 +262,7 @@ ctx.fillText(title.value, pl,220);
 ctx.lineWidth=500; 
 var str = content.value;
 var lineWidth = 0;
-var canvasWidth = "470";
+var canvasWidth = "800";
 var initWidth=78;
 var initHeight=400;
 var lastSubStrIndex= 0; 
