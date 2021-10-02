@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+    <meta charset="UTF-8">
+<link rel="stylesheet" href="https://restrechinamynd.github.io/all.css" type="text/css"> 
+
+    <link rel="stylesheet" href="http://v.bootstrapmb.com/2020/4/dfgag7656/style.css">
+</head>
+
+<style>
+#bookcase{
+display:flex;
+position:fixed;
+left:0;
+top:50%;
+width:100%;
+height:30%;
+background:;
+padding:7.5% 10% 10% 10%;
+flex-wrap:wrap;
+flex-direction: row;
+z-index:101
+}
+#bookcase a{
+font-family:"宋体",times;
+border-radius:5px;
+display:flex;
+width:13%;
+color:black;
+box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.3);
+text-decoration:none;
+background:pink;
+height:100%;
+}
+#bookcase a *{
+display:block;
+flex-wrap:wrap;
+text-align:center;
+width:3rem;
+overflow:hidden;
+height:auto;
+max-height:80%;
+margin:auto;
+}
+#bookcase a:hover{
+box-shadow: -10px 20px 50px 0 rgba(0, 0, 0, 0.45);
+z-index:101;
+}
+
+img{
+box-shadow:0px -0px 1000px rgba(0, 0, 0, 1);
+}
+svg{
+background:box-shadow:0px 0px 1000px 0 rgba(255, 255, 200, 0.2) inset;border-radius:50px;
+}
+header-mask1{
+width:100%;
+height:50%;
+top:0;
+left:0;
+position:fixed;
+background-color:transparent;
+background-image:linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0.9),rgba(0,0,0,0.4),rgba(0,0,0,0.2),rgba(0,0,0,0),rgba(0,0,0,0));
+z-index:3
+}
+body-mask{
+display:block;
+background:rgba(255,217,102,0.2);
+width:100%;
+height:100%;
+position:fixed;
+left:0;
+top:0;
+z-index:100
+}
+.liquid:hover{
+box-shadow:0px 0px 50px rgba(255, 255, 255, 1)
+}
+html{
+font-size:16px;
+}
+body {
+font-size:2.2rem;
+color:#333;
+font-family: Arial;
+margin: 0;
+padding:0;
+width:100%;
+background-color: white;
+display:flex;
+flex-direction: column;
+}
+header{
+margin: 0;
+padding:0;
+width:100%;
+height:50%;
+position:absolute;
+top:0;
+left:0;
+background:url('https://www.hualigs.cn/image/6157d22de2c5c.jpg') no-repeat center;
+background-color:rgba(0,0,0,0)
+background-size: cover;
+overflow:hidden
+}
+header-mask{
+font-size:2.7rem;
+display:block;
+height:25%;
+width:100%;
+padding:3rem;
+background:rgba(255,255,255,50%);
+position:absolute;
+bottom:0;
+}
+
+main{
+display:block;
+margin-top:65%;
+z-index:101
+}
+
+
+.wall-left{
+display:block;
+position:fixed;
+top:0%;
+left:0%;
+height:100%;
+width:4%;
+background:url("https://www.hualigs.cn/image/6157d605af0f7.jpg");
+box-shadow:10px 0 20px rgba(0, 0, 0, 0.7);
+z-index:4
+}
+table-top{
+display:block;
+position:fixed;
+top:50%;
+height:4%;
+width:100%;
+background:rgba(255,251,251,100%);
+box-shadow:0px 0px 10px rgba(0, 0, 0, 0.2);
+z-index:2
+}
+table-bottom{
+display:block;
+position:fixed;
+top:75%;
+left:0%;
+height:4%;
+width:100%;
+background:rgba(245,241,241,100%);
+box-shadow:0px 20px 30px rgba(0, 0, 0, 0.5);
+z-index:2
+}
+table-left{
+display:block;
+position:fixed;
+top:50%;
+left:0%;
+height:25%;
+width:10%;
+background:rgba(241,238,238,100%);
+box-shadow:10px 0px 20px rgba(0, 0, 0, 0.4)
+}
+table-right{
+display:block;
+position:fixed;
+top:50%;
+right:0;
+height:25%;
+width:7%;
+background:rgba(243,240,240,100%);
+box-shadow:-10px 0px 10px rgba(0, 0, 0, 0.3)
+}
+article{
+text-align:justify; 
+text-justify:inter-ideograph;
+word-wrap:break-word;
+word-break:break-all;
+padding:4rem;
+}
+
+
+footer{
+display:block;
+padding:2.7rem;
+}
+</style>
+<script>
+</script>
+</head>
+<body>
+<body-mask>
+</body-mask>
+<header>
+<header-mask1>
+</header-mask1>
+<header-mask>
+奇妙屋
+</header-mask>
+
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:11%;width:40%;position:absolute;left:-5%;top:10%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:13%;width:48%;position:absolute;left:14%;top:10%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:42%;top:10%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:12%;width:40%;position:absolute;left:56%;top:13%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:77%;top:11%">
+
+
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:-10%;top:21%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:12%;width:40%;position:absolute;left:5%;top:20%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:26%;top:23%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:42%;top:20%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:12%;width:40%;position:absolute;left:56%;top:23%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:77%;top:21%">
+
+<svg width="150" height="150" viewBox="0 0 200 200" style="position:absolute;left:79%;top:16%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+
+<svg width="150" height="150" viewBox="0 0 200 200" style="position:absolute;left:45%;top:15%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+
+
+<svg width="100" height="100" viewBox="0 0 150 150" style="position:absolute;left:3%;top:10%;background:;box-shadow:0px 0px 100px 0 rgba(255, 255, 255, 0.5) inset;border-radius:50px;">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+
+<svg width="150" height="150" viewBox="0 0 200 200" style="position:absolute;left:57%;top:8%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+
+
+
+<svg width="80" height="80" viewBox="0 0 200 200" style="position:absolute;left:20%;top:24%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+<svg width="100" height="100" viewBox="0 0 200 200" style="position:absolute;left:25%;top:21%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+<svg width="100" height="100" viewBox="0 0 200 200" style="position:absolute;left:90%;top:23%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+</header>
+
+<main>
+<a href="" class="wall-left"></a>
+<table-top></table-top>
+<table-bottom></table-bottom>
+<table-left></table-left>
+<table-right></table-right>
+
+<div id="bookcase">
+<a href="https://mess20.github.io/Fantasy">塞在书柜里的日记本</a>
+<a href="">2</a>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">1</a>
+
+
+
+</div>
+
+<article id="article">
+
+
+<page id="page1">
+
+</page>
+
+</article>
+</main>
+
+
+<footer>
+</footer>
+
+
+
+
+    <!-- partial:index.partial.html -->
+    <div class="container" style="zoom:0.4;position:fixed;left:20%;top:22%;background:transparent">
+        <div class="test-tube">
+
+            <div class="line-top" style="">
+                <span class="line-top__line1" style=""></span>
+                <span class="line-top__line2" style=""></span>
+            </div>
+
+            <div class="top" style=""></div>
+
+            <div class="liquid" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#a231ff" fill-opacity="1" d="M0,192L80,208C160,224,320,256,480,234.7C640,213,800,139,960,117.3C1120,96,1280,128,1360,144L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+                <div class="liquid__bottom"></div>
+            </div>
+
+            <div class="tube" style=""></div>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src="http://v.bootstrapmb.com/2020/4/dfgag7656/script.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>
+
+<script>
+<!-- 书柜-->
+var a = document.querySelectorAll('#bookcase a');
+var i;
+for (i = 0; i < a.length; i++){
+var t = a[i].innerHTML;
+a[i].innerHTML="<span>"+t+"</span>"
+};
+</script>
+
+
+
+
+
