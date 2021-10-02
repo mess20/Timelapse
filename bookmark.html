@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+div{
+font-size:3rem;
+margin:100rem 0;
+}
+.fbb{
+display:block;
+position:fixed;
+top:2%;
+right:5%;
+font-size:2rem;
+height:5rem;
+line-height:5rem;
+align-items:center;
+color:white;
+background:#6699ff;
+border:none;
+border-radius:6px;
+padding:0rem 2.5rem;
+margin:0;
+-webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+z-index:11;
+}
+.fbb:hover{
+color:white;
+background:rgba(102, 153, 255,75%)
+}
+.bookmark-button{
+font-size:100%;
+color:white;
+border:none;
+width:80%;
+text-align:center;
+margin:0 10%;
+padding:1rem 3rem;
+background:#6699ff;
+box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+outline:none;
+}
+
+
+.bookmark-button-hover{
+font-size:100%;
+color:white;
+border:none;
+width:80%;
+text-align:center;
+margin:0 10%;
+padding:1rem 3rem;
+background:rgba(250, 53, 53,100%);
+box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+outline:none;
+animation:animation1 1s;
+}
+
+@keyframes animation1{
+from{
+background:#6699ff;
+}
+to{
+background:rgba(250, 53, 53,100%);
+}
+
+}
+ol{
+position:fixed;
+right:0;
+top:0;
+}
+#bookmark-btn{
+display:none;
+}
+#wbk{
+position:fixed;
+top:30%;
+margin:0 20% 0 20%;
+width:60%;
+display:none;
+height:6rem;
+line-height:6rem;
+text-align:center;
+border-radius:0px;
+outline:none;
+border:none;
+padding:1rem;
+background:#fff5ee;
+box-shadow:0 0 0 2000px rgba(20,20,20,0.5)
+}
+</style>
+
+
+</head>
+<body>
+    <div class="div">
+        <div class="div1">
+            <p class="p"></p>
+            <ol>
+                
+            </ol>
+        </div>
+
+        <textarea id="wbk" style="border:;" placeholder="命名书签"></textarea>
+        <input id="bookmark-btn" type="button" class="fbb" value="确定" />
+    </div>
+
+
+
+<button class="bookmark-button" onclick="bk1(this)">bookmark</button>
+
+<div id="1">hh</div>
+<div class="" id="2">
+<h2>hhjj
+</h2>
+
+</div>
+
+
+<div class="" id="3">
+<h2></h2>
+jnn
+</div>
+
+<div class="" id="4">
+<h2></h2>
+nnn
+</div>
+
+
+
+<div class="" id="5">
+<h2></h2>
+nnn
+</div>
+
+
+<script>
+function bk1(obj){
+obj.className="bookmark-button-hover";
+document.getElementById("bookmark-btn").style.display="block";
+document.getElementById("wbk").style.display="block";
+}
+</script>
+
+
+    <script>
+        var p = document.getElementsByClassName("p")[0];
+        var ul = document.getElementsByTagName("ol")[0];
+        var wbk = document.getElementById("wbk");
+        var btn = document.getElementById("bookmark-btn");
+        var num = 0;
+        btn.onclick = function(){
+            if(wbk.value.length != 0){
+
+document.getElementById("bookmark-btn").style.display="none";
+document.getElementById("wbk").style.display="none";
+                var li = document.createElement("li");
+                var em = document.createElement('em');
+                var a = document.createElement("a");
+                var span = document.createElement("span");
+                var e=wbk.value;
+                li.innerHTML = "<a href='#"+e+"'>"+e+"</a>";
+                li.insertBefore(em,li.firstChild);
+                
+                span.innerHTML = '  <i class="fa fa-tint" aria-hidden="true" style="color:cornflowerblue"></i>';
+                li.appendChild(span);
+                
+                a.innerHTML = "  删除";
+                a.setAttribute("href","javascript:void(0)");
+                li.appendChild(a);
+                
+                
+                wbk.value = "";
+                ul.appendChild(li);
+                
+                fn1();
+                fn2();
+            }else{
+                alert("请输入内容")
+            }
+        }
+        
+        function fn1(){
+            var ali = document.getElementsByTagName('li');
+            var ee = document.getElementsByTagName('em');
+            for(var i=0;i<ali.length;i++){
+                //ee[i].innerHTML = i + 1 + ".";
+            }
+            
+            var ss = document.getElementsByTagName('span');
+            for(var i=0;i<ali.length;i++){
+             ss[i].innerHTML = '  <i class="fa fa-tint" aria-hidden="true" style="color:cornflowerblue"></i>';
+            }
+            if(ali.length == 0){
+                p.style.display = "block";
+            }
+            
+        }
+        function fn2(){
+            var aa = document.getElementsByTagName("a");
+            for(var i=0;i<aa.length;i++){
+                aa[i].onclick = function(){
+                    this.parentNode.parentNode.removeChild(this.parentNode);
+                    fn1();
+                }
+                
+            }
+        }
+        
+    </script>
+</body>
+</html>
