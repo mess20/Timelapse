@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>奇妙屋
+</title>
+    <meta charset="UTF-8">
+<link rel="stylesheet" href="https://restrechinamynd.github.io/all.css" type="text/css"> 
+
+    <link rel="stylesheet" href="http://v.bootstrapmb.com/2020/4/dfgag7656/style.css">
+</head>
+
+<style>
+#box{
+position:fixed;
+left:11%;
+top:85%;
+width:24%;
+height:14%;
+background:#DEB887;
+box-shadow:-10px 0px 20px rgba(0, 0, 0, 1);
+}
+#light{
+z-index:102;
+right:0%;
+top:40%;
+height:10%;
+width:18%;
+position:fixed;
+display:block;
+background:white;
+}
+#light:hover{
+box-shadow:0px 0px 20px rgba(255, 255, 250,1);
+}
+#rabbit{
+z-index:102;
+}
+dfn{
+font-style:normal;
+z-index:102;
+}
+note{
+display:none;
+}
+dfn:hover note{
+font-size:2.4rem;
+position:absolute;
+display:block;
+color:black;
+background:white;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+padding:1.4rem;
+z-index:102;
+border-radius:10px;
+}
+#bookcase{
+display:flex;
+position:fixed;
+left:0;
+top:50%;
+width:100%;
+height:30.5%;
+background:transparent;
+padding:7.5% 5% 10% 10%;
+flex-wrap:wrap;
+flex-direction: row;
+z-index:101
+}
+#bookcase a{
+font-family:"宋体",times;
+border-radius:5px;
+display:flex;
+width:12%;
+color:black;
+box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.9);
+text-decoration:none;
+height:100%;
+font-size:2rem;
+}
+#bookcase a span{
+display:block;
+flex-wrap:wrap;
+text-align:center;
+width:3.6rem;
+overflow:hidden;
+height:auto;
+max-height:80%;
+margin:auto;
+}
+#bookcase .a2 span{
+display:block;
+flex-wrap:wrap;
+text-align:center;
+width:5rem;
+overflow:hidden;
+height:auto;
+max-height:80%;
+margin:auto;
+}
+#bookcase a:hover{
+box-shadow: -10px 20px 50px 0 rgba(0, 0, 0, 0.45);
+z-index:101;
+}
+
+header img{
+box-shadow:0px -0px 1000px rgba(0, 0, 0, 1);
+}
+header svg{
+box-shadow:0px 0px 1000px 0 rgba(255, 255, 200, 0.2) inset;border-radius:50px;
+}
+header-mask1{
+width:100%;
+height:50%;
+top:0;
+left:0;
+position:fixed;
+background-color:transparent;
+background-image:linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0.9),rgba(0,0,0,0.4),rgba(0,0,0,0.2),rgba(0,0,0,0),rgba(0,0,0,0));
+z-index:1
+}
+body-mask{
+background:rgba(255,217,102,0.2);
+display:block;
+width:100%;
+height:100%;
+position:fixed;
+left:0;
+top:0;
+z-index:100
+}
+.liquid:hover{
+box-shadow:0px 0px 50px rgba(255, 255, 255, 1);
+z-index:10
+}
+html{
+font-size:16px;
+}
+body {
+font-size:2.2rem;
+color:#333;
+font-family: Arial;
+margin: 0;
+padding:0;
+width:100%;
+display:flex;
+flex-direction: column;
+background:#6483B0;
+}
+header{
+margin: 0;
+padding:0;
+width:100%;
+height:50%;
+position:fixed;
+top:0;
+left:0;
+background:url('https://www.hualigs.cn/image/6157d22de2c5c.jpg') no-repeat center;
+background-size: cover;
+overflow:hidden
+}
+
+main{
+z-index:102;
+}
+
+.wall-left{
+display:block;
+position:fixed;
+top:0%;
+left:0%;
+height:100%;
+width:4%;
+background:url("https://www.hualigs.cn/image/6157d605af0f7.jpg");
+box-shadow:10px 0 20px rgba(0, 0, 0, 0.7);
+z-index:4
+}
+
+tool-table-top{
+display:block;
+position:fixed;
+top:50%;
+left:0;
+height:4%;
+width:100%;
+background:rgba(255,251,251,100%);
+box-shadow:0px -50px 120px rgba(0, 0, 0, 0.5);
+z-index:-1
+}
+tool-table-bottom{
+display:block;
+position:fixed;
+top:75%;
+left:0%;
+height:4%;
+width:100%;
+background:rgba(255,251,251,100%);
+box-shadow:0px 20px 30px rgba(0, 0, 0, 0.5);
+z-index:-1
+}
+tool-table-left{
+display:block;
+position:fixed;
+top:50%;
+left:0%;
+height:25%;
+width:10%;
+background:rgba(241,238,238,100%);
+z-index:-2;
+box-shadow:10px 0px 20px rgba(0, 0, 0, 0.4)
+}
+tool-table-right{
+display:block;
+position:fixed;
+top:50%;
+right:0;
+height:25%;
+width:7%;
+background:rgba(243,240,240,100%);
+z-index:-2;
+box-shadow:-10px 0px 10px rgba(0, 0, 0, 0.3)
+}
+
+table-top{
+display:block;
+position:fixed;
+top:79%;
+left:0;
+height:4%;
+width:100%;
+background:#B07B61;
+box-shadow:0px 20px 20px rgba(0, 0, 0, 0.2);
+z-index:0
+}
+table-bottom{
+display:block;
+position:fixed;
+top:99%;
+left:0%;
+height:4%;
+width:100%;
+background:#8B4513;
+box-shadow:0px 20px 30px rgba(0, 0, 0, 0.5);
+z-index:2
+}
+table-left{
+display:block;
+position:fixed;
+top:79%;
+left:0%;
+height:25%;
+width:10%;
+background:#8B4513;
+z-index:-2;
+box-shadow:10px 0px 20px rgba(0, 0, 0, 0.4)
+}
+table-right{
+display:block;
+position:fixed;
+top:79%;
+right:0;
+height:25%;
+width:7%;
+background:#8B4513;
+z-index:-2;
+box-shadow:-10px 0px 10px rgba(0, 0, 0, 0.3)
+}
+
+article{
+text-align:justify; 
+text-justify:inter-ideograph;
+word-wrap:break-word;
+word-break:break-all;
+padding:4rem;
+}
+
+
+footer{
+display:block;
+padding:2.7rem;
+}
+</style>
+<script>
+</script>
+</head>
+<body>
+<body-mask>
+</body-mask>
+<header>
+<header-mask1>
+</header-mask1>
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:11%;width:40%;position:absolute;left:-5%;top:10%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:13%;width:48%;position:absolute;left:14%;top:10%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:42%;top:10%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:12%;width:40%;position:absolute;left:56%;top:13%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:77%;top:11%">
+
+
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:-10%;top:21%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:12%;width:40%;position:absolute;left:5%;top:20%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:26%;top:23%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:42%;top:20%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:12%;width:40%;position:absolute;left:56%;top:23%">
+<img src="https://z3.ax1x.com/2021/10/02/4HvOjf.png" style="height:10%;width:33%;position:absolute;left:77%;top:21%">
+
+<svg width="150" height="150" viewBox="0 0 200 200" style="position:absolute;left:79%;top:16%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+
+<svg width="150" height="150" viewBox="0 0 200 200" style="position:absolute;left:45%;top:15%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+
+
+<svg width="100" height="100" viewBox="0 0 150 150" style="position:absolute;left:3%;top:10%;background:;box-shadow:0px 0px 100px 0 rgba(255, 255, 255, 0.5) inset;border-radius:50px;">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+
+<svg width="150" height="150" viewBox="0 0 200 200" style="position:absolute;left:57%;top:8%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+
+
+
+<svg width="80" height="80" viewBox="0 0 200 200" style="position:absolute;left:20%;top:24%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+<svg width="100" height="100" viewBox="0 0 200 200" style="position:absolute;left:25%;top:21%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+<svg width="100" height="100" viewBox="0 0 200 200" style="position:absolute;left:90%;top:23%">
+<polygon points="80,10 40,140 150,50 10,50 130,140" style="fill:yellow;stroke-width:5;fill-rule:nonzero;" />
+</svg>
+
+</header>
+
+
+
+
+<main>
+
+
+
+
+
+<div style="position:fixed;right:42%;top:45%;background:rgba(223, 210, 206,100%);height:5%;width:4%;border-radius:100px;"></div>
+<img id="rabbit" src="https://z3.ax1x.com/2021/10/02/4bHWEn.png" style="position:fixed;right:35%;top:40%;zoom:0.2">
+
+
+<img id="clock" src="https://z3.ax1x.com/2021/10/02/4qpGm6.png" style="position:fixed;right:18%;top:43.5%;zoom:0.2">
+
+<img id="candy1" src="https://z3.ax1x.com/2021/10/02/4q9uHf.png" style="position:fixed;right:58%;top:47%;zoom:0.5">
+
+<img id="candy2" src="https://z3.ax1x.com/2021/10/02/4q9Jvn.png" style="position:fixed;right:50%;top:45%;zoom:0.5">
+
+<div id="light" style="">
+<div  style="position:fixed;right:0.2%;top:40%;background:rgba(255,165,0,80%);height:10%;width:18%;border-radius:5px;margin:0;padding:0;box-shadow:16px 5px 15px  rgba(0, 0, 0, 0.3);"></div>
+<img src="https://z3.ax1x.com/2021/10/02/4bXVeg.png" style="zoom:0.79;position:fixed;right:0%;top:40%;box-shadow:160px 0px 80px  rgba(255, 250, 100, 0.6) inset;margin:0;padding:0;">
+</div>
+
+
+
+<a href="https://restrechinamynd.github.io/Fantasy" class="wall-left"></a>
+<table-top></table-top>
+<table-bottom></table-bottom>
+<table-left></table-left>
+<table-right></table-right>
+
+<tool-table-top></tool-table-top>
+<tool-table-bottom></tool-table-bottom>
+<tool-table-left></tool-table-left>
+<tool-table-right></tool-table-right>
+
+<div id="box"></box>
+
+<div id="bookcase">
+<a href="" class="a2" style="background:Tomato;font-size:1rem ;">An Annoying Subject</a>
+<a href="" style="font-size:2rem ;background:#F0F8FF;color:#BCD4E3;padding:0 2rem">学习笔记</a>
+<a style="color:#C75872;background:rgba(255,253,250,100%);font-weight:500;">流动的宴席</a>
+<a href="" style="color:#FA8072;background:#333;font-size:2rem ;padding:0 2rem">红与黑</a>
+<a href=""  style=";font-size:2rem;background:#FFC1E0;color:#f2ecde;">APS</a>
+<a href="" style="font-size:2rem ;background:Honeydew;color:#ADD8E6">云品</a>
+<a href="https://mess20.github.io/Fantasy" style="background:brown;color:#FA8072;font-size:2.01rem"><dfn>曼<div style="margin:-0.5rem 0;">•</div>哈斯古王朝<note>塞在书柜里的日记本
+</note></dfn></a>
+<a href="https://restrechinamynd.github.io/déjà vu" class="a2" style="font-size:2rem ;background:#F0F8FF;color:hsla(355,40%,55%,100%);">déjà vu</a>
+
+</div>
+
+<article id="article">
+
+
+<page id="page1">
+
+</page>
+
+</article>
+
+    <!-- partial:index.partial.html -->
+
+    <div class="container" style="zoom:0.31;position:fixed;left:20%;top:29%;background:transparent;z-index:102">
+        <div class="test-tube">
+
+            <div class="line-top" style="">
+                <span class="line-top__line1" style=""></span>
+                <span class="line-top__line2" style=""></span>
+            </div>
+
+            <div class="top" style=""></div>
+
+            <div class="liquid" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#a231ff" fill-opacity="1" d="M0,192L80,208C160,224,320,256,480,234.7C640,213,800,139,960,117.3C1120,96,1280,128,1360,144L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+                <div class="liquid__bottom" style="box-shadow:0px 0px 30px rgba(255, 255, 255, 1);"></div>
+            </div>
+
+            <div class="tube" style="box-shadow:0px 0px 30px rgba(255, 255, 255, 1);"></div>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src="http://v.bootstrapmb.com/2020/4/dfgag7656/script.js"></script>
+
+
+
+
+</main>
+
+
+<footer>
+</footer>
+
+
+
+
+
+</body>
+</html>
+
+<script>
+<!-- 书柜-->
+var a = document.querySelectorAll('#bookcase a');
+var i;
+for (i = 0; i < a.length; i++){
+var t = a[i].innerHTML;
+a[i].innerHTML="<span>"+t+"</span>"
+};
+</script>
+
+
+
+
+
