@@ -310,19 +310,20 @@ tip{
 display:none;
 }
 .section1 a:hover tip{
-font-size:1rem;
-position:absolute;
+font-size:4rem !important;
+position:fixed;
+top:0;
+left:0;
 display:block;
 background:black;
 color:white;
 align-items: center;
-line-height:6vh;
-height:6vh;
-width:16vh;
-padding:auto 1rem;
-border:0.5px solid gold;
-border-radius: 8%;
-zoom:2;
+text-align:center;
+line-height:15vh;
+height:15vh;
+width:100%;
+padding:auto;
+zoom:;
 }
 
 .section1 img{
@@ -356,14 +357,15 @@ border-radius: 50%;
 align-items: center;
 justify-content: center;
 overflow: visible;
-  animation-name: example;
-  animation-duration: 0.5s;
+}
+#img1{
+  animation-name: example1;
+  animation-duration: 1s;
   animation-timing-function: linear;
-  animation-delay: 5s;
-  animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
 }
 
-@keyframes example {
+@keyframes example1 {
   0%   { left:0px; top:0px;}
   25%  { left:20px; top:0px;}
   50%  { left:20px; top:20px;}
@@ -371,9 +373,20 @@ overflow: visible;
   100% { left:0px; top:0px;}
 }
 
+#img2{
+  animation-name: example2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example2 {
+  0%   { left:-100px; top:0px;}
+  60% { left:-40px; top:0px;}
+  100% { left:-60px; top:0px;}
+}
+
 
 /*tags*/
-
 .div{
 font-size: 1.5rem;
 background:white;
@@ -615,23 +628,23 @@ box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.4);
 <content class="content">
     <section class="section1">
 <div class="keywords">
-<img src="https://www.hualigs.cn/image/61134110ab5cc.jpg">
+<img src="https://www.hualigs.cn/image/61134110ab5cc.jpg" id="img1">
 <page>Come on！<p style="text-align:center">Please choose one. 请选择其中一项。</p>
 </page>
 </div>
 <div class="big-indexblock-box">
 <div class="indexblock-box">
-<a id="a1" onclick="return false" href="" class="indexblock2" style="background:url('https://www.hualigs.cn/image/6114a2d09c5d1.jpg');">A <tip> art 艺术 </tip></a>
-<a id="a2" onclick="return false" href="" class="indexblock3" style="background:url('https://www.hualigs.cn/image/6114bdf5e65d0.jpg');">B <tip> book 阅读 </tip></a>
+<a id="a1" onclick="return false" href="" class="indexblock2" style="background:url('https://www.hualigs.cn/image/6114a2d09c5d1.jpg');">A <tip style="zoom:0.5;"> art 艺术 </tip></a>
+<a id="a2" onclick="return false" href="" class="indexblock3" style="background:url('https://www.hualigs.cn/image/6114bdf5e65d0.jpg');">B <tip  style="zoom:1.7;"> book 阅读 </tip></a>
 <a id="a3" href="" class="indexblock1" style="background:url('https://www.hualigs.cn/image/6114a2d8d1a7c.jpg');">G <tip> game 游戏 </tip></a>
 </div>
 <div class="indexblock-box">
 <a id="a4" href="https://utopiapublishinghouse.github.io/#id-4" class="indexblock1" style="background:url('https://www.hualigs.cn/image/6114a2f78b897.jpg');">L <tip> learn 学习 </tip></a>
-<a id="a5" href="https://restrechinamynd.github.io/1" class="indexblock4" style="background:url('https://www.hualigs.cn/image/6114be6a74855.jpg');">M<tip> movie 电影 </tip></a>
+<a id="a5" href="https://restrechinamynd.github.io/1" class="indexblock4" style="background:url('https://www.hualigs.cn/image/6114be6a74855.jpg');">M<tip  style="zoom:3.2;"> movie 电影 </tip></a>
 <a id="a6" href="https://restrechinamynd.github.io/" class="indexblock1" style="background:url('https://www.hualigs.cn/image/6114a2d47a8bb.jpg');">W <tip> write 写作 </tip></a>
 </div>
 <div class="indexblock-box">
-<a id="a7" href="" class="indexblock3" style="background:url('https://www.hualigs.cn/image/6114c264f387c.jpg');">X <tip> Magic 神秘 </tip></a>
+<a id="a7" href="" class="indexblock3" style="background:url('https://www.hualigs.cn/image/6114c264f387c.jpg');">X <tip  style="zoom:1.7;"> Magic 神秘 </tip></a>
 <a id="a8" href="" class="indexblock1" style="background:url('https://www.hualigs.cn/image/6114a2d5eeee7.jpg');">Y <tip> hearsay 西风信息 </tip></a>
 <a id="a9" href="" class="indexblock1" style="background:url('https://www.hualigs.cn/image/6114a2def16cd.jpg');">N <tip> others 其他 </tip></a>
 </div>
@@ -643,7 +656,7 @@ box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.4);
     <section class="section2">
 
 <div class="keywords">
-<img src="https://www.hualigs.cn/image/611340d0f1026.jpg">
+<img src="https://www.hualigs.cn/image/611340d0f1026.jpg" id="img2">
 <page>Follow me.</page>
 </div>
 
@@ -706,65 +719,12 @@ box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.4);
 
 
 
-
-
-
-<indexblock>
-<page>
-
-</page></indexblock>
-
-
-
-<indexblock><a href="">笔记</a>
-</indexblock>
-
-
-
+<indexblock><page></page></indexblock>
 
 
 <indexblock><page></page></indexblock>
 
 
-
-<indexblock>
-skylight／星空
-<page>
-<div id="Skylight">
-<div class="div">
-<iframe src="https://mess20.github.io/" width="300" height="400">
-</iframe>
-降落／wonder（学习，春）
-</div>
-
-
-<div class="div">
-<iframe src="https://mess20.github.io/" width="300" height="400">
-</iframe>
-孤豚／mother-tongue（现世，夏）
-
-</div>
-
-
-
-<div class="div" id="Déjà Vu">
-<iframe src="https://mess20.github.io/" width="300" height="400">
-</iframe>
-溯游／Déjà Vu（爱好）
-seek
-</div>
-
-<div class="div">
-<iframe src="https://mess20.github.io/" width="300" height="400">
-</iframe>
-流逝／Timelapse（理想，冬）
-flow
-</div>
-
-
-</div>
-</page>
-</indexblock>
 
 
 
