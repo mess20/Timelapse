@@ -357,6 +357,7 @@ border-radius: 8px;
 outline:none;
 margin-top:3rem;
 overflow:auto;
+max-height:36rem;
 }
 #copy-finish{
 display:none;
