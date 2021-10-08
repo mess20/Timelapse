@@ -33,37 +33,37 @@ background:#888;
 <body>
 
 
-<div id="input" style="position:fixed;left:0;right:50%;padding:5rem 2rem;height:100%;background:#444;color:#F4F4F4;">
-Example
-<textarea  id="content" style="height:100%;width:100%;background:#444;color:#F4F4F4;padding:0 0rem;" onkeyup="timemark()">
-- 标题
-# 一级标题 
-## 二级标题
 
-- **分割线**
----
+<div style="position:fixed;left:0;right:50%;padding:5rem 2.2rem;height:100%;background:#444;font-size:2rem;color:#F4F4F4;" > 
+<b>Example</b><br>
+<div id="input" onkeyup="timemark()" contenteditable="true">
+- 标题<br>
+# 一级标题 <br>
+## 二级标题<br>
 
-- 重点
-【重点】
+- **分割线**<br>
+---<br>
 
-- **特殊**
-（特殊）
-「插入」｛插入内容，选填。｝
-“强调”
+- 重点<br>
+【重点】<br>
 
-- 链接
-https://restrechinamynd.github.io/all.css
+- **特殊**<br>
+（特殊）<br>
+「插入」｛插入内容，选填。｝<br>
+“强调”<br>
 
-- 参考
-- https://restrechinamynd.github.io/timepalse
--  https://restrechinamynd.github.io/new
-- https://restrechinamynd.github.io/all.css
-</textarea>
+- 链接<br>
+https://restrechinamynd.github.io/all.css<br>
+
+- 参考<br>
+- https://restrechinamynd.github.io/timepalse<br>
+-  https://restrechinamynd.github.io/new<br>
+- https://restrechinamynd.github.io/all.css<br>
+</div>
 </div>
 
-
-<div style="padding:5rem 2rem;left:50%;font-size:2.4rem;background:#F7F8FA;position:fixed;right:0;height:100%">
-Pre
+<div style="padding:5rem 1rem;left:50%;font-size:2.5rem;background:#F7F8FA;position:fixed;right:0;height:100%;">
+<b>Pre</b><br>
 <div id="output">
 </div>
 </div>
@@ -88,42 +88,8 @@ document.execCommand("Copy");
 
 
 <script>
-var t = document.getElementById("output").innerHTML;
-document.getElementById("output").innerHTML=t
-//代码
-.replace(new RegExp('“' , "g"), '<textarea>')
-.replace(new RegExp('”' , "g"), '</textarea>')
-.replace(new RegExp('‘' , "g"), '<blockquote>')
-.replace(new RegExp('’' , "g"), '</blockquote>')
-//分割线
-.replace(new RegExp('---' , "g"), '<hr>')
-//分点
-.replace(new RegExp('‹' , "g"), '<div style="display:flex;margin:4rem 0;"><div style="background-color: rgb(31, 73, 125); color: rgb(255, 255, 255);padding:0rem 1.4rem;margin:0.5rem 2rem 0.5rem 0;height:4rem;width:auto;line-height:4rem;align-items:center;font-size:2.4rem;">')
-.replace(new RegExp('›' , "g"),'</div>')
-.replace(new RegExp('«' , "g"), '<div style="color: rgb(51,51, 51);font-size:3rem;">')
-.replace(new RegExp('»' , "g"), '</div></div>')
-//强调
-.replace(new RegExp('【' , "g"), '<l>')
-.replace(new RegExp('】' , "g"), '</l>')
-//特殊
-.replace(new RegExp('！（' , "g"), '<span style="color:rgba(199,77,70,100%);">')
-.replace(new RegExp('）' , "g"), '</span>')
-.replace(new RegExp('（' , "g"), '<n>')
-.replace(new RegExp('）' , "g"), '</n>')
-//dfn
-.replace(new RegExp('「' , "g"), '<dfn>')
-.replace(new RegExp('」' , "g"), '<note>')
-.replace(new RegExp('｛' , "g"), '')
-.replace(new RegExp('｝' , "g"), '</note></dfn>')
-//文献
-.replace(new RegExp('〔' , "g"), '<dfn class="reference-index"><span>')
-.replace(new RegExp('〕' , "g"),'</span></dfn>');
-
-var t = document.getElementById("output").innerHTML;
-document.getElementById("output").innerHTML=marked(t);
-
 function timemark(){
-var t = document.getElementById("content").innerHTML;
+var t = document.getElementById("input").innerHTML;
 document.getElementById("output").innerHTML=t
 //代码
 .replace(new RegExp('“' , "g"), '<textarea>')
@@ -153,13 +119,49 @@ document.getElementById("output").innerHTML=t
 //文献
 .replace(new RegExp('〔' , "g"), '<dfn class="reference-index"><span>')
 .replace(new RegExp('〕' , "g"),'</span></dfn>');
-
 var t = document.getElementById("output").innerHTML;
 document.getElementById("output").innerHTML=marked(t);
-
 }
 
 </script>
+
+<script>
+var t = document.getElementById("input").innerHTML;
+document.getElementById("output").innerHTML=t
+//代码
+.replace(new RegExp('“' , "g"), '<textarea>')
+.replace(new RegExp('”' , "g"), '</textarea>')
+.replace(new RegExp('‘' , "g"), '<blockquote>')
+.replace(new RegExp('’' , "g"), '</blockquote>')
+//分割线
+.replace(new RegExp('---' , "g"), '<hr>')
+//分点
+.replace(new RegExp('‹' , "g"), '<div style="display:flex;margin:4rem 0;"><div style="background-color: rgb(31, 73, 125); color: rgb(255, 255, 255);padding:0rem 1.4rem;margin:0.5rem 2rem 0.5rem 0;height:4rem;width:auto;line-height:4rem;align-items:center;font-size:2.4rem;">')
+.replace(new RegExp('›' , "g"),'</div>')
+.replace(new RegExp('«' , "g"), '<div style="color: rgb(51,51, 51);font-size:3rem;">')
+.replace(new RegExp('»' , "g"), '</div></div>')
+//强调
+.replace(new RegExp('【' , "g"), '<l>')
+.replace(new RegExp('】' , "g"), '</l>')
+//特殊
+.replace(new RegExp('！（' , "g"), '<span style="color:rgba(199,77,70,100%);">')
+.replace(new RegExp('）' , "g"), '</span>')
+.replace(new RegExp('（' , "g"), '<n>')
+.replace(new RegExp('）' , "g"), '</n>')
+//dfn
+.replace(new RegExp('「' , "g"), '<dfn>')
+.replace(new RegExp('」' , "g"), '<note>')
+.replace(new RegExp('｛' , "g"), '')
+.replace(new RegExp('｝' , "g"), '</note></dfn>')
+//文献
+.replace(new RegExp('〔' , "g"), '<dfn class="reference-index"><span>')
+.replace(new RegExp('〕' , "g"),'</span></dfn>');
+
+var t = document.getElementById("output").innerHTML;
+document.getElementById("output").innerHTML=marked(t);
+</script>
+
+
 
 	
 
