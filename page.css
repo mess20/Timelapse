@@ -72,7 +72,7 @@ padding:0 0rem;
 height:15%;
 background:rgba(235,236,240,100%);
 box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
-animation-name: up;
+animation-name: up1;
   animation-duration: 0.4s;
   animation-iteration-count: 1;
 }
@@ -90,7 +90,7 @@ margin:0 5%;
 display:none;
 }
 
-@keyframes up {
+@keyframes up1 {
   0%   { 
 height:7%;
 background:black;
