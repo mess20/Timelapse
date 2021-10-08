@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<title>an annoying subject</title>
+
+<head>
+<meta name="description" content="">
+<meta name="keywords" content="Chinese">
+<Link href="" rel="Shortcut Icon">
+<script src="https://restrechinamynd.github.io/child-animation.js"></script>    
+<link href="https://restrechinamynd.github.io/timelapse.css" rel="stylesheet">
+<link rel="stylesheet" href="https://restrechinamynd.github.io/page.css" type="text/css"> 
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+body{
+background:rgb(254, 255, 253);
+padding:2rem;
+width:100%;
+}
+main{
+font-size:2rem !important;
+}
+button{
+display:block;
+font-size:2.4rem;
+width:20rem;
+height:6rem;
+padding:1rem 3rem;
+height:6rem;
+padding:1rem 3rem;
+margin:2rem 32px;
+line-height:3.5rem;
+text-align:center;
+transition-duration:0.4s;
+background:#f5f5f5;
+color:white !important;
+text-decoration:none;
+border:none;
+border-radius: 20px;
+}
+
+button:hover{
+background-color:rgba(1,102,255,100%);
+border:none;
+color: white;
+}
+button:hover *{
+color: white !important;
+}
+button.g{	 
+}
+button.g:hover{
+background-color:#4CAF50;
+color: white;
+bac
+}
+</style>
+</head>
+
+<body>
+<main>
+<div class="tool_nav">
+<button></button>
+<button></button>
+
+<button class="g"></button>
+</div>
+
+<div class="tool_nav">
+<button></button>
+<button></button>
+<button></button>
+</div>
+
+
+
+
+
+
+
+
+</main>
+</body>
+</html>
