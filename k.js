@@ -14,7 +14,7 @@ var D = "<k>" + C + "</k>";
 document.getElementById("article").innerHTML= str.replace(new RegExp(C , "g"), D);
 
 document.getElementById("searched-button").addEventListener('click',function searched() {
-document.getElementById("article").innerHTML= str.replace(new RegExp(D , "g"), C);
+main.innerHTML= str.replace(new RegExp(D , "g"), C);
 document.getElementById("searched-button").style.display="none";
 })
 }
