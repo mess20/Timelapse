@@ -52,7 +52,7 @@ color:#666;
 text-align:justify; 
 text-justify:inter-ideograph;
 font-family: 微软雅黑;
-font-size:2rem !important;
+font-size:2.2rem !important;
 padding:0;
 margin:5rem 0;
 }
@@ -308,7 +308,7 @@ position:absolute;
 left:0rem;
 bottom:5rem;
 width:auto;
-height:auto; 
+height:; 
 padding:1rem 2rem;
 text-align:center;
 transition-duration:0.4s;
