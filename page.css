@@ -192,6 +192,10 @@ border-radius:10px;
 border-bottom:solid 10px cornflowerblue;
 padding-bottom:2px;
 }
+k {
+border-bottom:solid 4px cornflowerblue;
+padding-bottom:2px;
+}
 fbb{
 display:none;
 position:fixed;
