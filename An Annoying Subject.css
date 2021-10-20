@@ -80,7 +80,7 @@ color:rgb(135,115,104);
 html{
 font-size:16px;
 }
-body{
+body,body1{
 background-image: linear-gradient(to  bottom, #D1E1FB,rgb(220,230,239),rgb(221,213,224),rgb(236,240,241),rgb(245,214,229),rgb(255,216,217));
 color:rgb(56,47,46);
 padding:0rem;
