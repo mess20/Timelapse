@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title> Math173</title>
+		<meta name='robots' content='max-image-preview:large' />
+<script type="text/javascript" >                function apbct_attach_event_handler__backend(elem, event, callback){                    if(typeof window.addEventListener === "function") elem.addEventListener(event, callback);                    else                                              elem.attachEvent(event, callback);                }                apbct_attach_event_handler__backend(window, 'load', function(){                    ctSetCookie('ct_checkjs', '3beed837d911b9d51426ab80c069c22c897a21389e8d6c911433d75563872bf8' );                });    </script><link rel='dns-prefetch' href='//lanqi.org' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/lanqi.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+		<style>
+		.apbct_wc_honeypot {
+			display: none !important;
+		}
+		</style><link rel='stylesheet' id='foundation_google_fonts-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C600%7CRoboto%3A400%2C700%2C400italic%2C700italic&#038;ver=07078a97d66756f213dbca3e379bf084' type='text/css' media='' />
+<style id='foundation_google_fonts-inline-css' type='text/css'>
+.heading-font{
+	 font-family: 'Lato', sans-serif;
+}
+.body-font{
+	 font-family: 'Roboto', sans-serif;
+}
+
+</style>
+<link rel='stylesheet' id='foundation-framework-style-css'  href='http://lanqi.org/wp-content/plugins/wptouch/themes/foundation/default/style.css?ver=7eb635b5cfe4c465b46ea8aedc691148' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='http://lanqi.org/wp-includes/css/dist/block-library/style.min.css?ver=5.7.2' type='text/css' media='all' />
+<link rel='stylesheet' id='pc_google_analytics-frontend-css'  href='http://lanqi.org/wp-content/plugins/pc-google-analytics/assets/css/frontend.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wptouch-theme-css-css'  href='http://lanqi.org/wp-content/plugins/wptouch/themes/bauhaus/default/style.css?ver=7eb635b5cfe4c465b46ea8aedc691148' type='text/css' media='all' />
+<script type='text/javascript' src='http://lanqi.org/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='http://lanqi.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='ct_public_functions-js-extra'>
+/* <![CDATA[ */
+var ctPublicFunctions = {"_ajax_nonce":"a569e03551","_rest_nonce":"913c133594","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"http:\/\/lanqi.org\/index.php?rest_route=\/","_apbct_ajax_url":"http:\/\/lanqi.org\/wp-content\/plugins\/cleantalk-spam-protect\/lib\/Cleantalk\/ApbctWP\/Ajax.php","data__set_cookies":"1","data__set_cookies__alt_sessions_type":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://lanqi.org/wp-content/plugins/cleantalk-spam-protect/js/apbct-public--functions.min.js?ver=5.163.1' id='ct_public_functions-js'></script>
+<script type='text/javascript' id='ct_public-js-extra'>
+/* <![CDATA[ */
+var ctPublic = {"pixel__setting":"0","pixel__enabled":"","pixel__url":null,"data__email_check_before_post":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://lanqi.org/wp-content/plugins/cleantalk-spam-protect/js/apbct-public.min.js?ver=5.163.1' id='ct_public-js'></script>
+<script type='text/javascript' src='http://lanqi.org/wp-content/plugins/cleantalk-spam-protect/js/cleantalk-modal.min.js?ver=5.163.1' id='cleantalk-modal-js'></script>
+<script type='text/javascript' src='http://lanqi.org/wp-content/plugins/pc-google-analytics/assets/js/frontend.min.js?ver=1.0.0' id='pc_google_analytics-frontend-js'></script>
+<link rel="https://api.w.org/" href="http://lanqi.org/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://lanqi.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://lanqi.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.7.2" />
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		ga('create', 'UA-82826121-1', 'auto');
+		ga('send', 'pageview');
+		
+		</script>
+<style type="text/css">
+.MathJax {
+    margin: 0 4px 0 4px !important;
+}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}},
+    "HTML-CSS": {linebreaks: {automatic: true}, scale:85, minScaleAdjust:40},
+    SVG: {linebreaks: {automatic: true}, scale:85, minScaleAdjust:40}
+});
+</script>
+<script type="text/javascript" src="http://cdn.lanqi.org/mathjax2/2.7.2/MathJax.js?config=TeX-AMS_SVG"></script><style data-context="foundation-flickity-css">/*! Flickity v2.0.2
+http://flickity.metafizzy.co
+---------------------------------------------- */.flickity-enabled{position:relative}.flickity-enabled:focus{outline:0}.flickity-viewport{overflow:hidden;position:relative;height:100%}.flickity-slider{position:absolute;width:100%;height:100%}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab}.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{cursor:-webkit-grabbing;cursor:grabbing}.flickity-prev-next-button{position:absolute;top:50%;width:44px;height:44px;border:none;border-radius:50%;background:#fff;background:hsla(0,0%,100%,.75);cursor:pointer;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.flickity-prev-next-button:hover{background:#fff}.flickity-prev-next-button:focus{outline:0;box-shadow:0 0 0 5px #09f}.flickity-prev-next-button:active{opacity:.6}.flickity-prev-next-button.previous{left:10px}.flickity-prev-next-button.next{right:10px}.flickity-rtl .flickity-prev-next-button.previous{left:auto;right:10px}.flickity-rtl .flickity-prev-next-button.next{right:auto;left:10px}.flickity-prev-next-button:disabled{opacity:.3;cursor:auto}.flickity-prev-next-button svg{position:absolute;left:20%;top:20%;width:60%;height:60%}.flickity-prev-next-button .arrow{fill:#333}.flickity-page-dots{position:absolute;width:100%;bottom:-25px;padding:0;margin:0;list-style:none;text-align:center;line-height:1}.flickity-rtl .flickity-page-dots{direction:rtl}.flickity-page-dots .dot{display:inline-block;width:10px;height:10px;margin:0 8px;background:#333;border-radius:50%;opacity:.25;cursor:pointer}.flickity-page-dots .dot.is-selected{opacity:1}</style><style data-context="foundation-slideout-css">.slideout-menu{position:fixed;left:0;top:0;bottom:0;right:auto;z-index:0;width:256px;overflow-y:auto;-webkit-overflow-scrolling:touch;display:none}.slideout-menu.pushit-right{left:auto;right:0}.slideout-panel{position:relative;z-index:1;will-change:transform}.slideout-open,.slideout-open .slideout-panel,.slideout-open body{overflow:hidden}.slideout-open .slideout-menu{display:block}.pushit{display:none}</style><style data-context="foundation-wptouch-icons-css">[class*=" icon-"]:before,[class*=" wptouch-icon-"]:before,[class^=icon-]:before,[class^=wptouch-icon-]:before{font-family:wptouch-icons;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em}.icon-arrow-left:before,.wptouch-icon-arrow-left:before{content:'\e800'}.icon-caret-down:before,.wptouch-icon-caret-down:before{content:'\e801'}.icon-arrow-combo:before,.wptouch-icon-arrow-combo:before{content:'\e802'}.icon-yelp:before,.wptouch-icon-yelp:before{content:'\e803'}.icon-key:before,.wptouch-icon-key:before{content:'\e804'}.icon-left-open-big:before,.wptouch-icon-left-open-big:before{content:'\e805'}.icon-user:before,.wptouch-icon-user:before{content:'\e806'}.icon-signin:before,.wptouch-icon-signin:before{content:'\e807'}.icon-signout:before,.wptouch-icon-signout:before{content:'\e808'}.icon-search:before,.wptouch-icon-search:before{content:'\e809'}.icon-reorder:before,.wptouch-icon-reorder:before{content:'\e80a'}.icon-basket:before,.wptouch-icon-basket:before{content:'\e80b'}.icon-angle-right:before,.wptouch-icon-angle-right:before{content:'\e80c'}.icon-angle-left:before,.wptouch-icon-angle-left:before{content:'\e80d'}.icon-chevron-up:before,.wptouch-icon-chevron-up:before{content:'\e80e'}.icon-chevron-down:before,.wptouch-icon-chevron-down:before{content:'\e80f'}.icon-chevron-left:before,.wptouch-icon-chevron-left:before{content:'\e810'}.icon-chevron-right:before,.wptouch-icon-chevron-right:before{content:'\e811'}.icon-comment:before,.wptouch-icon-comment:before{content:'\e812'}.icon-comments:before,.wptouch-icon-comments:before{content:'\e813'}.icon-circle-arrow-left:before,.wptouch-icon-circle-arrow-left:before{content:'\e814'}.icon-circle-arrow-right:before,.wptouch-icon-circle-arrow-right:before{content:'\e815'}.icon-pencil:before,.wptouch-icon-pencil:before{content:'\e816'}.icon-reply:before,.wptouch-icon-reply:before{content:'\e817'}.icon-envelope-alt:before,.wptouch-icon-envelope-alt:before{content:'\e818'}.icon-list-ul:before,.wptouch-icon-list-ul:before{content:'\e819'}.icon-tags:before,.wptouch-icon-tags:before{content:'\e81a'}.icon-twitter:before,.wptouch-icon-twitter:before{content:'\e81b'}.icon-google-plus:before,.wptouch-icon-google-plus:before{content:'\e81c'}.icon-google-plus-sign:before,.wptouch-icon-google-plus-sign:before{content:'\e81d'}.icon-facebook:before,.wptouch-icon-facebook:before{content:'\e81e'}.icon-facebook-sign:before,.wptouch-icon-facebook-sign:before{content:'\e81f'}.icon-instagram:before,.wptouch-icon-instagram:before{content:'\e820'}.icon-tumblr:before,.wptouch-icon-tumblr:before{content:'\e821'}.icon-pinterest:before,.wptouch-icon-pinterest:before{content:'\e822'}.icon-pinterest-sign:before,.wptouch-icon-pinterest-sign:before{content:'\e823'}.icon-vine:before,.wptouch-icon-vine:before{content:'\e824'}.icon-book-open:before,.wptouch-icon-book-open:before{content:'\e825'}.icon-youtube:before,.wptouch-icon-youtube:before{content:'\e826'}.icon-linkedin-sign:before,.wptouch-icon-linkedin-sign:before{content:'\e827'}.icon-plus:before,.wptouch-icon-plus:before{content:'\e828'}.icon-rss-sign:before,.wptouch-icon-rss-sign:before{content:'\e829'}.icon-time:before,.wptouch-icon-time:before{content:'\e82a'}.icon-camera-retro:before,.wptouch-icon-camera-retro:before{content:'\e82b'}.icon-play:before,.wptouch-icon-play:before{content:'\e82c'}.icon-filter:before,.wptouch-icon-filter:before{content:'\e82d'}.icon-minus:before,.wptouch-icon-minus:before{content:'\e82e'}.icon-ok-sign:before,.wptouch-icon-ok-sign:before{content:'\e82f'}.icon-layout-tiles:before,.wptouch-icon-layout-tiles:before{content:'\e830'}.icon-layout-list:before,.wptouch-icon-layout-list:before{content:'\e831'}.icon-resize-full:before,.wptouch-icon-resize-full:before{content:'\e832'}.icon-cancel:before,.wptouch-icon-cancel:before{content:'\e833'}.icon-cancel-circled:before,.wptouch-icon-cancel-circled:before{content:'\e834'}.icon-star:before,.wptouch-icon-star:before{content:'\e835'}.icon-remove-sign:before,.wptouch-icon-remove-sign:before{content:'\e836'}.icon-map-marker:before,.wptouch-icon-map-marker:before{content:'\e837'}.icon-cloud:before,.wptouch-icon-cloud:before{content:'\e838'}.icon-cloud-download:before,.wptouch-icon-cloud-download:before{content:'\e839'}.icon-info-sign:before,.wptouch-icon-info-sign:before{content:'\e83a'}.icon-copy:before,.wptouch-icon-copy:before{content:'\e83b'}.icon-download:before,.wptouch-icon-download:before{content:'\e83c'}.icon-external-link:before,.wptouch-icon-external-link:before{content:'\e83d'}.icon-warning-sign:before,.wptouch-icon-warning-sign:before{content:'\e83e'}.icon-compass:before,.wptouch-icon-compass:before{content:'\e83f'}.icon-trash:before,.wptouch-icon-trash:before{content:'\e840'}.icon-th:before,.wptouch-icon-th:before{content:'\e841'}.icon-menu:before,.wptouch-icon-menu:before{content:'\e842'}.icon-double-angle-up:before,.wptouch-icon-double-angle-up:before{content:'\e843'}.icon-arrow-down:before,.wptouch-icon-arrow-down:before{content:'\e844'}.icon-caret-right:before,.wptouch-icon-caret-right:before{content:'\e845'}.icon-caret-left:before,.wptouch-icon-caret-left:before{content:'\e846'}.icon-caret-up:before,.wptouch-icon-caret-up:before{content:'\e847'}.icon-vimeo:before,.wptouch-icon-vimeo:before{content:'\e848'}.icon-phone:before,.wptouch-icon-phone:before{content:'\e849'}.icon-angle-up:before,.wptouch-icon-angle-up:before{content:'\e84a'}.icon-angle-down:before,.wptouch-icon-angle-down:before{content:'\e84b'}.icon-refresh:before,.wptouch-icon-refresh:before{content:'\e84c'}.icon-info:before,.wptouch-icon-info:before{content:'\e84d'}.icon-chat:before,.wptouch-icon-chat:before{content:'\e84e'}.icon-check:before,.wptouch-icon-check:before{content:'\e84f'}</style><link rel="icon" href="http://lanqi.org/wp-content/uploads/2021/01/QQ20210107-234043@2x.png" sizes="32x32" />
+<link rel="icon" href="http://lanqi.org/wp-content/uploads/2021/01/QQ20210107-234043@2x.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="http://lanqi.org/wp-content/uploads/2021/01/QQ20210107-234043@2x.png" />
+<meta name="msapplication-TileImage" content="http://lanqi.org/wp-content/uploads/2021/01/QQ20210107-234043@2x.png" />
+<style>.ios7.web-app-mode.has-fixed header{ background-color: rgba(45,53,63,.88);}</style><meta name="viewport" content="initial-scale=1.0, maximum-scale=3.0, user-scalable=no, width=device-width" /><link rel="apple-touch-icon-precomposed" href="http://lanqi.org/wp-content/plugins/wptouch/admin/images/default-bookmark.png" />
+
+<!-- Foundation Styles -->
+<style type='text/css'>
+.wptouch-menu .menu-tree a,.wptouch-menu .menu-tree span{color:rgba(0,0,0,.65);text-shadow:rgba(255,255,255,.3) 0 1px 0}.wptouch-menu .menu-tree>li{border-bottom:1px solid rgba(0,0,0,.08);border-top:1px solid rgba(255,255,255,.1)}.menu-tree li{clear:both;position:relative;line-height:100%}.wptouch-menu ul ul{display:none}.menu-tree li span{-webkit-transition-duration:.3s;-o-transition-duration:.3s;transition-duration:.3s;display:block;-webkit-box-shadow:inset rgba(0,0,0,.15) 1px 0 0;box-shadow:inset rgba(0,0,0,.15) 1px 0 0;border-left:1px solid rgba(255,255,255,.1);padding:15px;float:right}.menu-tree li span.toggle{-webkit-box-shadow:inset rgba(0,0,0,.2) 0 4px 4px;box-shadow:inset rgba(0,0,0,.2) 0 4px 4px;border:none}.menu-tree li span:before{font-family:wptouch-icons;content:"\e80f"}.menu-tree li span.toggle:before{content:"\e80e";font-weight:400;font-style:normal}ul.menu-tree ul span,ul.menu-tree.no-parent-links span{border:none;-webkit-box-shadow:none;box-shadow:none}.menu-tree li a{display:block;-o-text-overflow:ellipsis;-ms-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;padding-top:15px;padding-bottom:15px;padding-right:32px}.menu-tree li img{width:26px;height:26px;position:relative;float:left;padding-right:6px;top:8px;padding-left:6px}.menu-tree>.open-tree{background:rgba(0,0,0,.03);-webkit-box-shadow:inset rgba(0,0,0,.25) 0 0 4px;box-shadow:inset rgba(0,0,0,.25) 0 0 4px;border-top-color:rgba(0,0,0,.2);margin-top:-1px;padding-top:1px}.menu-tree li.no-icon{padding-left:10px}.menu-tree ul li{border-style:none!important;clear:both;padding-left:15px}.rtl .menu-tree li span{-webkit-transition-duration:.3s;-o-transition-duration:.3s;transition-duration:.3s;float:left;-webkit-box-shadow:inset rgba(0,0,0,.15) -1px 0 0;box-shadow:inset rgba(0,0,0,.15) -1px 0 0;border-right:1px solid rgba(255,255,255,.1);border-left:none}.rtl .menu-tree li span.toggle{-webkit-box-shadow:inset rgba(0,0,0,.2) 0 4px 4px;box-shadow:inset rgba(0,0,0,.2) 0 4px 4px;border:none}.rtl .menu-tree li.menu-item img{float:right}.rtl .menu-tree li.menu-item a{padding-left:32px;padding-right:0}.rtl .menu-tree li.no-icon{padding-right:10px}.rtl .menu-tree ul li{padding-left:0;padding-right:15px}.dark-header .wptouch-menu .menu-tree a,.dark-header .wptouch-menu .menu-tree span{color:rgba(255,255,255,.9);text-shadow:rgba(0,0,0,.3) 0 -1px 0}.dark-header .wptouch-menu .menu-tree span:before{color:rgba(255,255,255,.9);text-shadow:rgba(0,0,0,.5) 0 -1px 0}.dark-header .wptouch-menu .menu-tree>li.menu-item{border-bottom:1px solid rgba(0,0,0,.12);border-top:1px solid rgba(255,255,255,.06)}</style>
+<meta name="theme-color" content="#2d353f">		<link rel="canonical" href="http://lanqi.org/" />	</head>
+
+	<body class="home blog light-body dark-header light-post-head css-videos body-font smartphone portrait android ios7 theme-bauhaus circles off-canvas list-view fonts-lato_roboto">
+
+		
+		
+			<div class="pushit pushit-left">
+		<div id="menu" class="wptouch-menu show-hide-menu">
+			<ul class="menu-tree parent-links"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><img src="http://lanqi.org/wp-content/plugins/wptouch/resources/icons/elegant/Paper.png" alt="menu-icon" /><a href="http://lanqi.org" class="title">首页</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><img src="http://lanqi.org/wp-content/wptouch-data/icons/classic/Calendar.png" alt="menu-icon" /><a href="http://lanqi.org/everyday/" class="title">每日一题</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><img src="http://lanqi.org/wp-content/plugins/wptouch/resources/icons/elegant/Paper.png" alt="menu-icon" /><a href="http://lanqi.org/solution/" class="title">解题展示</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><img src="http://lanqi.org/wp-content/plugins/wptouch/resources/icons/elegant/Paper.png" alt="menu-icon" /><a href="http://lanqi.org/skills/" class="title">方法技巧</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><img src="http://lanqi.org/wp-content/plugins/wptouch/resources/icons/elegant/Paper.png" alt="menu-icon" /><a href="http://lanqi.org/exercises/" class="title">练习题集</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><img src="http://lanqi.org/wp-content/plugins/wptouch/resources/icons/elegant/Paper.png" alt="menu-icon" /><a href="http://lanqi.org/geometry/" class="title">平面几何</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><img src="http://lanqi.org/wp-content/plugins/wptouch/resources/icons/elegant/Paper.png" alt="menu-icon" /><a href="http://lanqi.org/interests/" class="title">趣味数学</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><img src="http://lanqi.org/wp-content/plugins/wptouch/resources/icons/elegant/Paper.png" alt="menu-icon" /><a href="http://lanqi.org/special/" class="title">自招竞赛</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><img src="http://lanqi.org/wp-content/plugins/wptouch/resources/icons/elegant/Paper.png" alt="menu-icon" /><a href="http://lanqi.org/bugs/" class="title">错在哪里</a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-category"><img src="http://lanqi.org/wp-content/plugins/wptouch/resources/icons/elegant/Paper.png" alt="menu-icon" /><a href="http://lanqi.org/problems/" class="title">问题征解</a></li></ul>
+					</div>
+	</div>
+
+<div class="page-wrapper">
+
+	<!-- Back Button for Web-App Mode -->
+	<div class="wptouch-icon-arrow-left back-button tappable"><!-- css-button --></div>
+
+	<header id="header-title-logo">
+					<div id="search-toggle" class="search-toggle tappable search-right" role="button"><!--icon-search--></div>
+				<a href="http://lanqi.org" class="header-center tappable">
+							<div class="heading-font site-title">Math173</div>
+					</a>
+		<div id="menu-toggle" class="menu-btn tappable show-hide-toggle menu-left" data-effect-target="menu" data-menu-target="menu" role="button"><!--icon-reorder--></div>
+	</header>
+
+		<div id="search-dropper">
+		<div id="wptouch-search-inner">
+			<form method="get" id="searchform" action="http://lanqi.org/">
+				<input type="text" name="s" id="search-text" placeholder="搜索此网站&hellip;" />
+				<input name="submit" type="submit" id="search-submit" value="搜索" class="button-dark" />
+			</form>
+		</div>
+	</div>
+	
+	<div class="content-wrap">
+
+		
+	
+		
+				
+<div id="content">
+
+			<div class="post section post-32297 post-name-%e6%af%8f%e6%97%a5%e4%b8%80%e9%a2%982469 post-author-1 not-single not-page no-thumbnail show-thumbs">
+		<!-- post loop -->
+<a href="http://lanqi.org/everyday/32297/" class="loop-link tappable clearfix ">
+
+			<div class="date-circle">
+			<span class="month">10月</span>
+			<span class="day">19</span>
+		</div>
+	
+			<span class="post-meta body-font">
+			2021年10月19日		 			 </span>
+	 
+	<h2 class="post-title heading-font">每日一题[2469]恰好相逢</h2>
+
+			<div class="post-meta comments">
+			1个回应		</div>
+	
+			<i class="arrow wptouch-icon-angle-right"></i>
+		<span class="bottom-border"><!--css border--></span>
+</a>
+	</div> <!-- post classes -->
+		<div class="post section post-32296 post-name-%e6%af%8f%e6%97%a5%e4%b8%80%e9%a2%982468 post-author-1 not-single not-page no-thumbnail show-thumbs">
+		<!-- post loop -->
+<a href="http://lanqi.org/everyday/32296/" class="loop-link tappable clearfix ">
+
+			<div class="date-circle">
+			<span class="month">10月</span>
+			<span class="day">18</span>
+		</div>
+	
+			<span class="post-meta body-font">
+			2021年10月18日		 			 </span>
+	 
+	<h2 class="post-title heading-font">每日一题[2468]组合构造</h2>
+
+			<div class="post-meta comments">
+			1个回应		</div>
+	
+			<i class="arrow wptouch-icon-angle-right"></i>
+		<span class="bottom-border"><!--css border--></span>
+</a>
+	</div> <!-- post classes -->
+		<div class="post section post-32295 post-name-%e6%af%8f%e6%97%a5%e4%b8%80%e9%a2%982467 post-author-1 not-single not-page no-thumbnail show-thumbs">
+		<!-- post loop -->
+<a href="http://lanqi.org/everyday/32295/" class="loop-link tappable clearfix ">
+
+			<div class="date-circle">
+			<span class="month">10月</span>
+			<span class="day">17</span>
+		</div>
+	
+			<span class="post-meta body-font">
+			2021年10月17日		 			 </span>
+	 
+	<h2 class="post-title heading-font">每日一题[2467]展开</h2>
+
+			<div class="post-meta comments">
+			无回应		</div>
+	
+			<i class="arrow wptouch-icon-angle-right"></i>
+		<span class="bottom-border"><!--css border--></span>
+</a>
+	</div> <!-- post classes -->
+		<div class="post section post-32294 post-name-%e6%af%8f%e6%97%a5%e4%b8%80%e9%a2%982466 post-author-1 not-single not-page no-thumbnail show-thumbs">
+		<!-- post loop -->
+<a href="http://lanqi.org/everyday/32294/" class="loop-link tappable clearfix ">
+
+			<div class="date-circle">
+			<span class="month">10月</span>
+			<span class="day">16</span>
+		</div>
+	
+			<span class="post-meta body-font">
+			2021年10月16日		 			 </span>
+	 
+	<h2 class="post-title heading-font">每日一题[2466]回归几何意义</h2>
+
+			<div class="post-meta comments">
+			无回应		</div>
+	
+			<i class="arrow wptouch-icon-angle-right"></i>
+		<span class="bottom-border"><!--css border--></span>
+</a>
+	</div> <!-- post classes -->
+		<div class="post section post-32293 post-name-%e6%af%8f%e6%97%a5%e4%b8%80%e9%a2%982465 post-author-1 not-single not-page no-thumbnail show-thumbs">
+		<!-- post loop -->
+<a href="http://lanqi.org/everyday/32293/" class="loop-link tappable clearfix ">
+
+			<div class="date-circle">
+			<span class="month">10月</span>
+			<span class="day">15</span>
+		</div>
+	
+			<span class="post-meta body-font">
+			2021年10月15日		 			 </span>
+	 
+	<h2 class="post-title heading-font">每日一题[2465]积分</h2>
+
+			<div class="post-meta comments">
+			无回应		</div>
+	
+			<i class="arrow wptouch-icon-angle-right"></i>
+		<span class="bottom-border"><!--css border--></span>
+</a>
+	</div> <!-- post classes -->
+		<div class="post section post-32292 post-name-%e6%af%8f%e6%97%a5%e4%b8%80%e9%a2%982464 post-author-1 not-single not-page no-thumbnail show-thumbs">
+		<!-- post loop -->
+<a href="http://lanqi.org/everyday/32292/" class="loop-link tappable clearfix ">
+
+			<div class="date-circle">
+			<span class="month">10月</span>
+			<span class="day">14</span>
+		</div>
+	
+			<span class="post-meta body-font">
+			2021年10月14日		 			 </span>
+	 
+	<h2 class="post-title heading-font">每日一题[2464]回归定义</h2>
+
+			<div class="post-meta comments">
+			无回应		</div>
+	
+			<i class="arrow wptouch-icon-angle-right"></i>
+		<span class="bottom-border"><!--css border--></span>
+</a>
+	</div> <!-- post classes -->
+		<div class="post section post-32291 post-name-%e6%af%8f%e6%97%a5%e4%b8%80%e9%a2%982463 post-author-1 not-single not-page no-thumbnail show-thumbs">
+		<!-- post loop -->
+<a href="http://lanqi.org/everyday/32291/" class="loop-link tappable clearfix ">
+
+			<div class="date-circle">
+			<span class="month">10月</span>
+			<span class="day">13</span>
+		</div>
+	
+			<span class="post-meta body-font">
+			2021年10月13日		 			 </span>
+	 
+	<h2 class="post-title heading-font">每日一题[2463]倾斜的椭圆</h2>
+
+			<div class="post-meta comments">
+			无回应		</div>
+	
+			<i class="arrow wptouch-icon-angle-right"></i>
+		<span class="bottom-border"><!--css border--></span>
+</a>
+	</div> <!-- post classes -->
+		<div class="post section post-32290 post-name-%e6%af%8f%e6%97%a5%e4%b8%80%e9%a2%982462 post-author-1 not-single not-page no-thumbnail show-thumbs">
+		<!-- post loop -->
+<a href="http://lanqi.org/everyday/32290/" class="loop-link tappable clearfix ">
+
+			<div class="date-circle">
+			<span class="month">10月</span>
+			<span class="day">12</span>
+		</div>
+	
+			<span class="post-meta body-font">
+			2021年10月12日		 			 </span>
+	 
+	<h2 class="post-title heading-font">每日一题[2462]不动点与特征根</h2>
+
+			<div class="post-meta comments">
+			无回应		</div>
+	
+			<i class="arrow wptouch-icon-angle-right"></i>
+		<span class="bottom-border"><!--css border--></span>
+</a>
+	</div> <!-- post classes -->
+		<div class="post section post-32289 post-name-%e6%af%8f%e6%97%a5%e4%b8%80%e9%a2%982461 post-author-1 not-single not-page no-thumbnail show-thumbs">
+		<!-- post loop -->
+<a href="http://lanqi.org/everyday/32289/" class="loop-link tappable clearfix ">
+
+			<div class="date-circle">
+			<span class="month">10月</span>
+			<span class="day">11</span>
+		</div>
+	
+			<span class="post-meta body-font">
+			2021年10月11日		 			 </span>
+	 
+	<h2 class="post-title heading-font">每日一题[2461]同余方程组</h2>
+
+			<div class="post-meta comments">
+			无回应		</div>
+	
+			<i class="arrow wptouch-icon-angle-right"></i>
+		<span class="bottom-border"><!--css border--></span>
+</a>
+	</div> <!-- post classes -->
+		<div class="post section post-32288 post-name-%e6%af%8f%e6%97%a5%e4%b8%80%e9%a2%982460 post-author-1 not-single not-page no-thumbnail show-thumbs">
+		<!-- post loop -->
+<a href="http://lanqi.org/everyday/32288/" class="loop-link tappable clearfix ">
+
+			<div class="date-circle">
+			<span class="month">10月</span>
+			<span class="day">10</span>
+		</div>
+	
+			<span class="post-meta body-font">
+			2021年10月10日		 			 </span>
+	 
+	<h2 class="post-title heading-font">每日一题[2460]构造与递推</h2>
+
+			<div class="post-meta comments">
+			无回应		</div>
+	
+			<i class="arrow wptouch-icon-angle-right"></i>
+		<span class="bottom-border"><!--css border--></span>
+</a>
+	</div> <!-- post classes -->
+
+
+	<!-- show the load more if we have more posts/pages -->
+			<a class="load-more-link tappable no-ajax" href="javascript:return false;" rel="http://lanqi.org/page/2/">
+			加载更多条目&hellip;
+		</a>
+	
+
+</div><!-- #content -->
+
+		
+		
+<!-- Add custom html / content here to be placed above the switch link -->		
+		<div class="footer">
+			<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?33427a2890ff49c4777392ed83c8108e";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script type='text/javascript' id='foundation_base-js-extra'>
+/* <![CDATA[ */
+var wptouchFdn = {"ajaxLoading":"Loading\u2026","isRTL":"0"};
+/* ]]> */
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type='text/javascript' id='wptouch-front-ajax-js-extra'>
+/* <![CDATA[ */
+var wptouchMain = {"ajaxurl":"http:\/\/lanqi.org\/wp-admin\/admin-ajax.php","siteurl":"http:\/\/lanqi.org\/","security_nonce":"97847e78d4","current_shortcode_url":"\/?wptouch_shortcode=1","query_vars":"[]"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://lanqi.org/wp-content/wptouch-data/cache/wptouch-6341261f3029fc683c46a2d43a37cf7f783c6662.js' defer='defer'></script>
+<script type='text/javascript' src='http://lanqi.org/wp-includes/js/wp-embed.min.js?ver=5.7.2' id='wp-embed-js'></script>
+<style>.page-wrapper { background-color: #f9f9f8; }
+body, header, .wptouch-menu, .pushit, #search-dropper, .date-circle, .list-view .list-carousel { background-color: #2d353f; }
+.content-wrap a, #slider a p:after { color: #35c4ff; }
+.dots li.active, #switch .active { background-color: #35c4ff; }
+.bauhaus, form#commentform button#submit, form#commentform input#submit { background-color: #6dfdb9; }
+</style><!--Bauhaus v2.2.5-->		</div>
+		
+		
+		
+</body>
+</html>
