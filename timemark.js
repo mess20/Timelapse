@@ -8,7 +8,7 @@ document.getElementById("article").innerHTML=t
 //分割线
 .replace(new RegExp('---' , "g"), '<hr>')
 //分点
-.replace(new RegExp('‹' , "g"), '<div style="display:flex;margin:4rem 0;"><div style="background-color: rgb(31, 73, 125); color: rgb(255, 255, 255);padding:0rem 1.4rem;margin:0.5rem 2rem 0.5rem 0;height:4rem;width:auto;line-height:4rem;align-items:center;font-size:2.4rem;">')
+.replace(new RegExp('‹' , "g"), '<div style="display:flex;margin:4rem 0;"><div class="jx-index" style="background-color: rgb(31, 73, 125); color: rgb(255, 255, 255);padding:0rem 1.4rem;margin:0.5rem 2rem 0.5rem 0;height:4rem;width:auto;line-height:4rem;align-items:center;font-size:2.4rem;">')
 .replace(new RegExp('›' , "g"),'</div>')
 .replace(new RegExp('«' , "g"), '<div style="color: rgb(51,51, 51);font-size:3rem;">')
 .replace(new RegExp('»' , "g"), '</div></div>')
