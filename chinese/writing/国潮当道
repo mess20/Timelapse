@@ -1,0 +1,194 @@
+<html>
+<head>
+<title></title>
+<script src="https://restrechinamynd.github.io/child-animation.js"></script>    
+<link href="https://restrechinamynd.github.io/timelapse.css" rel="stylesheet">
+<link rel="stylesheet" href="https://restrechinamynd.github.io/page.css" type="text/css"> 
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+
+<style>
+body{
+}
+
+article-title{
+display:flex;
+margin:2rem 0 12rem 0;
+}
+article-title *{
+box-shadow:0px -35px rgba(258,233,100,100%) inset;
+display:inline-block;
+margin:auto;
+}
+#article{
+color:#666;
+background:white;
+padding: 0rem;
+width:100%;
+font-weight:399;
+line-height:5.4rem;
+border:none;
+text-align:justify; 
+text-justify:inter-ideograph;
+font-size:1.6rem !important;
+}
+fork-require{
+box-shadow: 0 0 0 10000px  rgba(0, 0, 0, 0.8) !important;
+}
+fork-require d{
+font-size:2.4rem;
+font-weight:399;
+line-height:5rem;
+text-align:justify; 
+text-justify:inter-ideograph;
+}
+blockstrong{
+font-size:2rem;
+display:block;
+width: 90%;
+font-weight:400;
+line-height:4.25rem;
+left:0;
+margin: 0.25em 0rem;
+padding:1.5rem;
+border-left:1rem solid rgb(235,236,240);
+}
+blockstrong spcl{
+color:#6483B0 !important;
+border-bottom:4px solid #6483B0 !important;
+margin-right:2rem;
+}
+textarea{
+padding:2.7rem 3.4rem;
+}
+
+
+
+</style>
+</head>
+<body>
+<div id="down" class="appear1" style="background:url('https://s4.ax1x.com/2021/12/04/odBV4s.png') no-repeat center;background-size:cover;"></div>
+<div id="up" class="appear2">
+<article-title><span 
+style="box-shadow:0px -35px pink inset;">作文素材</span></article-title>
+
+
+
+<article id="article">
+
+<blockstrong>
+<spcl>来源</spcl>网络<br>
+
+</blockstrong>
+
+<h1>国潮当道</h1>
+<h3>标题</h3>
+
+
+<h3>提纲</h3>
+
+
+<h3>素材</h3>
+«‹›解释»
+顾名思义，新国潮拆解开来可分『新』和『国潮』两部分。新，意味着新风貌、新气象、新特点，可以是老国货重出江湖、推陈出新，当然也可以是新锐品牌另辟蹊径、标新立异。国潮则意味着这种潮流是植根本土的、民族特有的，与传统文化价值观密不可分的时尚。如果说『新』是外衣，『国』才是内核和精髓，二者相辅相成，缺一不可。
+<br>
+
+
+<h5>好段</h5>
+
+
+«‹›转»
+新国潮强势崛起，对于国货无疑是一次难得的机遇。但互联网时代，多少『网红』从一飞冲天到一地鸡毛只在旦夕之间。如何利用风口、乘势而上，让新国潮从一时红变『长红』，才是当前面临的真正难题。
+
+
+<h5>好段</h5>
+
+
+
+
+
+«‹›»
+
+<h5>好段</h5>
+<p>首先，<b>新国潮要当得起网红，糅得进科技，秀得出颜值。</b><u>相比早年间把『国潮』[0GO印在产品上，生怕别人不知道这是时髦，近年来，新国潮开辟了时尚、前沿、个性的设计风格。</u>或是地方化的内容，加国际化表达，比如《舌尖上的中国》，把中国民间那些看起来乡土气干足的食物，拍成了充满文化内涵的纪录片；或是传统文创搭载高科技元素，包括注重品牌形象的打造，利用好直播电商这一『超级引擎』，打造跨界联名等语题和噱头。具言以蔽之，<b>领风气之先</b>成为新国潮发展的重要动力。</p>
+
+<p>其次，新国潮要守得住传统，留得住初心，显得出特色。国潮产品大行其道，背后是品牌对本土文化的表达和彰显，是人们对中国文化的自信，对东方审美的日渐认可。<b>所谓越是民族的，越是世界的，放在品牌和产品上，亦是如此。当然，正如传统不等同于单一复古，中国元素也不一定就是龙凤呈祥。</b>国潮特色要体现在骨子里，全方位去阐释民族经典，弘扬优秀传统，让产品的呈现贴合中国文化的底蕴。</p>
+
+此外，<b>必须清醒地认识到，无论如何发掘传统价值、设计包装、跨界营销、广蹭热度，质量永远是任何产品的生命线。</b>在民族复兴的新长征路上，<b>国潮崛起绝非可有可无的点缀</b>，而应是经济发展的急先锋，社会进步的铺路石。<b>新国潮想要永远潮下去，最终还要靠过硬的产品来打造核心竞争力，以质量和口碑赢得长远。</b>
+
+</article>
+
+
+
+
+<div class="tool_nav">
+<a id="comment" href="http://techypedia.wikidot.com/forum/t-14164506/start#post-5089660"> 讨论</a>
+</div>
+
+
+
+
+
+<div class="bottom-nav">
+
+
+<i id="keyword-button" onclick="keyword()" class="fa fa-filter" aria-hidden="true"><dfn style="color:black !important" id="keyword-dfn">   搜索<note>关键词查询</note></dfn>
+<div id="keyword-nav">
+<div onclick="keyword1()">关键词选择</div>
+<div onclick="keyword2()">自定义</div>
+</div>
+</i>
+
+
+<i id="editor-button" class="fa fa-magic" aria-hidden="true" style="">  编辑
+<div class="editmenu">
+<a href="https://restrechinamynd.github.io/VisualEditor">可视化编辑器  »</a>
+<a href="https://restrechinamynd.github.io/LMLEditor">timemark  »</a>
+</div>
+</i> 
+</div>
+
+
+<fbb id="searched-button" style="height:5rem;padding:0rem 3rem">完成
+</fbb>
+<div id="keyword-ul">
+<button id="k1" onclick="key1()">1</button>
+<button id="k2" onclick="key2()">2</button>
+<button id="k3" onclick="key3()">3</button>
+
+<button id="k4" onclick="key4()">1</button>
+<button id="k5" onclick="key5()">2</button>
+<button id="k6" onclick="key6()">3</button>
+
+<button id="k7" onclick="key7()">1</button>
+<button id="k8" onclick="key8()">2</button>
+<button id="k9" onclick="key9()">3</button>
+
+<button id="k10" onclick="key10()">1</button>
+<button id="k11" onclick="key11()">2</button>
+<button id="k12" onclick="key12()">3</button>
+</div>
+
+</body>
+</html>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>    
+
+
+<script>
+var t = document.getElementById("article").innerHTML;
+document.getElementById("article").innerHTML=marked(t);
+</script>
+
+
+
+
+
+<script src="https://restrechinamynd.github.io/timemark.js"></script>    
+<script src="https://restrechinamynd.github.io/k.js"></script>    
+
