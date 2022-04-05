@@ -1,0 +1,575 @@
+<html>
+<style>
+html{
+font-size:16px;
+}
+*{
+outline:none;
+}
+body{
+font-size:1.8rem;
+line-height:4.4rem;
+background:rgb(246,246,246);
+width:100%;
+left:0;
+top:0;
+font-family:arial;
+position: relative;
+transition: all 1s;
+}
+img{
+zoom:0.7;
+padding:0;
+margin:auto 0;
+}
+svg{
+display:inline-block;
+line-height:6rem;
+align-items: center;
+border:none;
+width: 3rem;
+height: 3rem;
+border-radius: 50%;
+margin:auto 0 auto 0;
+overflow: visible;
+}
+info{
+font-size:1.2rem;
+display:block;
+padding:1rem 2.4rem;
+margin:2.4rem;
+background:rgb(231,240,250);
+}
+info a{
+color:#f8f8ff;
+border-bottom:4px solid f8f8ff;
+}
+
+article{
+display:block;
+font-weight:400;
+color:#333;
+font-size:1.2rem;
+padding:2.4rem;
+text-align:justify; 
+text-justify:inter-ideograph;
+}
+article-title{
+font-size:1.8rem
+}
+article-intro{
+display:block;
+height:10%;
+width:100%;
+background:rgba(255,255,255,0.5)
+color:#404040;
+line-height:6rem;
+font-size:80%;
+margin-top:3rem;
+margin-bottom:4rem;
+position:relative
+}
+author{
+position:absolute;
+display:inline-block;
+line-height:6rem;
+align-items: center;
+}
+author img{
+position:absolute;
+margin-left:2.9rem;
+}
+.avatar{
+  width: 7rem;
+  height: 7rem;
+  display: inline-block;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+position:absolute;
+right:rem;
+top:0;
+bottom:0;
+margin:;
+}
+author name{
+margin-left:12.5rem;
+}
+time{
+display: flex;
+flex-direction: row; 
+justify-content: space-around;
+}
+
+.appear1{
+position:relative;
+border:none;
+background:url(' https://huohua-component.huohuaschool.com/coverImage/prod/0330201010056_s.jpg') 100%;
+background-size:cover;
+width: 100%;
+height: 30%;
+  animation-name: down;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+zoom:-1;
+}
+.appear2{
+position:relative;
+background:white;
+margin:2.4rem auto;
+padding:2.4rem;
+font-size:2.7rem;
+border-radius: 25px;
+-webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+width:90%;
+min-height:60%;
+  animation-name: up;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+.show{
+position:relative;
+}
+@keyframes down {
+  0%   { left:0px; top:-40%;}
+  100% { left:0px; top:0px;}
+}
+@keyframes up {
+  0%   { left:0px;bottom:-60%;}
+  100% { left:0px; bottom:0%}
+}
+
+
+
+
+.tool_nav{
+width:100%;
+display: -webkit-flex;
+display: flex;
+justify-content: space-around;
+}
+
+
+#comment{
+display:inline-block;
+font-size:2.4rem;
+width:6rem;
+height:3.5rem;
+padding:1rem 3rem;
+margin:auto 32px;
+line-height:3.5rem;
+text-align:center;
+transition-duration:0.4s;
+background:rgba(1,102,255,70%);
+color:white;
+text-decoration:none;
+border:none;
+border-radius: 20px;
+}
+
+#comment:hover{
+background-color:rgba(1,102,255,100%);
+border:none;
+color: white;
+}
+
+#spread{
+font-size:2.4rem;
+width:12rem;
+height:auto 32px;
+padding:1rem 3rem;
+margin:auto;
+text-align:center;
+background-color: #f5f5f5;
+ color:black;
+border:none;
+text-decoration:none;
+ border-radius: 20px;
+transition-duration:0.4s;
+}
+
+#spread:hover{
+background-color:rgba(1,102,255,100%);
+border: none;
+color: white;
+}
+
+
+
+
+.tool_hidden_nav{
+display:none;
+}
+.more-button{
+font-weight:900;
+font-size:1.4rem;
+height: auto;
+margin: auto 32px;
+text-align:center;
+width:5rem;
+ transition-duration:0.4s;
+ padding: 20px 32px;
+ text-align:center;
+ background:transparent;
+ color:rgb(84,89,93);
+text-decoration:none;
+ border:none;
+ border-radius: 20px;
+}
+
+.more-button:hover .tool_hidden_nav{
+font-weight:400;
+display: -webkit-flex;
+display: flex;
+flex-direction:row;
+position: fixed;
+justify-content: space-around;
+    -webkit-align-items: center;
+    align-items: center;
+             bottom: 0px;
+             right: 0px;
+             width: 100%;
+             height: 12%;
+z-index:1;
+box-shadow: 0px 0px 0px 2500px rgba(0, 0, 0, 0.3);
+background:white;
+}
+
+#correction{
+font-size:2.3rem;
+width:16rem;
+text-align:center;
+transition-duration:0.4s;
+margin: 0 4rem;
+ padding:20px 32px;
+ text-align:center;
+ background-color: #f5f5f5;
+ color:black;
+ border:none;
+ border-radius: 20px;
+}
+#correction:hover{
+background-color:rgba(1,102,255,70%);
+border:none;
+color: white;
+}
+
+
+
+#approve-rate-watch{
+font-size:2.3rem;
+width:14rem;
+text-align:center;
+margin: 0 4rem;
+ transition-duration:0.4s;
+ padding: 20px 32px;
+ text-align:center;
+ background:#4CAF50;
+ color:white;
+text-decoration:none;
+ border:none;
+ border-radius: 20px;
+}
+
+#approve-rate-watch:hover{
+ background-color:rgba(1,102,255,100%);
+border:none;
+color: white;
+}
+
+/* 复制申请*/
+fork-request{
+display:inline-block;
+font-size:2.3rem;
+width:16rem;
+height:3.5rem;
+line-height:3.5rem;
+padding:20px 32px;
+margin: 0 4rem;
+text-align:center;
+transition-duration:0.4s;
+background-color: #f5f5f5;
+ color:black;
+ border:none;
+ border-radius: 20px;
+}
+
+fork-request:hover{
+background-color:rgba(1,102,255,100%);
+border:none;
+color:white;
+}
+fork-require{display:none;}
+fork-request:hover fork-require{
+text-align:left;
+font-size:2.3rem;
+color:black;
+position:fixed;
+display:block;
+margin:auto;
+padding:3rem 4rem 10rem  4rem;
+left:0;
+right:0;
+top:0;
+bottom:0;
+height:40%;
+width:60%;
+background:white;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+z-index:3;
+border-radius:30px;
+}
+#copy-area{
+display:none;
+}
+#copy-allow{
+font-size:2.2rem;
+position:absolute;
+left:0rem;
+bottom:3rem;
+width:auto;
+height:auto; 
+padding:1rem 2rem;
+text-align:center;
+transition-duration:0.4s;
+margin: auto 4rem;
+ background-color: #f5f5f5;
+ color:black;
+ border:none;
+ border-radius: 20px;
+}
+#copy-allow:hover{
+background-color:rgba(1,102,255,100%);
+border:none;
+color:white;
+}
+#copy-button{
+font-size:2.3rem;
+position:absolute;
+right:0rem;
+bottom:3rem;
+width:auto;
+display:none;
+ -webkit-transition-duration:0.4s;
+ transition-duration:0.4s;
+height:auto; 
+padding:1rem 3rem;
+text-align:center;
+margin: auto 4rem;
+ background-color: #F4F4F4;
+ color:black;
+ border:none;
+ border-radius: 20px;
+}
+
+#copy-button:hover{
+background-color:rgba(1,102,255,100%);
+border:none;
+color:white;
+}
+#copy-area{
+font-size:2rem;
+font-family:Arial;
+background:#222;
+color:#888;
+width:100%;
+border-radius: 8px;
+outline:none;
+}
+#copy-finish{
+display:none;
+position:fixed;
+right:0;
+left:0;
+top:10%;
+width:10rem;
+margin:0 auto;
+padding: 16px 32px;
+text-align:center;
+font-size:100%;
+ background-color:#4CAF50;
+ color: white;
+ border-radius: 50px;
+z-index:5
+}
+
+/*预览or呼出式解释补充*/
+abbr{
+}
+note{display:none;}
+abbr:hover note{
+position:absolute;
+display:block;
+color:black;
+background:white;
+box-shadow: 0 20px 0 rgba(0, 0, 0, 0.3) !important;
+padding:1.4rem;
+z-index:3;
+}
+dfn{
+font-style:normal;
+color:rgba(52,160,238,100%) 
+}
+dfn:hover note{
+font-size:2.4rem;
+position:absolute;
+display:block;
+color:black;
+background:white;
+box-shadow: 10px 10px 12px 0px rgba(0, 0, 0, 0.2) !important;
+padding:1.4rem 2rem;
+z-index:3;
+border-radius:20px;
+}
+
+
+/*引用*/
+.blockquote{
+display: -webkit-flex;
+display: flex;
+}
+
+
+
+
+</style>
+<body>
+
+
+
+
+<div id="down" class="appear1">
+</div>
+<div id="up" class="appear2">
+<article-title><h2>
+
+
+</h2></article-title>
+
+
+<div class="tool_nav">
+
+    
+<a id="comment">讨论</a>
+
+    <input type="button" id="spread" value="传播" />
+
+
+
+<div class="more-button" >• • •
+<div class="tool_hidden_nav">
+    <input type="button" id="correction" value="纠错" />
+
+    <input type="button"  id="approve-rate-watch" value="观点占比" onClick=" ();" />
+
+
+<fork-request>引用申请 
+<fork-require>
+<dfn>作者 </dfn>Restrechinamynd<br>
+<dfn>来源 </dfn><br>
+<dfn>版权声明 </dfn>本文采用 <dfn> CC BY 许可协议
+<note>
+只要保留原作者姓名，就可以基于商业目的传播、改编或者二次创作。
+</note> 
+</dfn> 授权。
+<br>
+<br>
+
+<dfn>Author </dfn> Restrechinamynd<br>
+<dfn>Link </dfn>https://restrechinamynd.github.io<br>/biology/classification<br>
+<dfn>Copyright Notice </dfn>All articles here are licensed under CC BY unless stating additionally.
+
+
+
+<div id="copy-allow" class="button" onclick="copy_allow()">我已了解</div>
+<input id="copy-button" type="button" class="button" onclick="copy()" value="复制"></input>
+<textarea id="copy-area">
+
+</textarea>
+
+</fork-require>
+
+</fork-request>
+
+
+<div id="copy-finish">已复制</div>
+
+<script>
+function copy_allow(){
+document.getElementById('copy-button').style.display="block";
+document.getElementById('copy-area').style.display="block";
+document.getElementById("copy-area").oncopy ="";
+};
+
+function copy() {
+            var e = document.getElementById("copy-area");
+            e.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            document.getElementById('copy-finish').style.display="block";
+setTimeout("document.getElementById('copy-finish').style.display=\"none\" ", 700);}
+        
+</script>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+<article-intro>
+<author>
+<img src="https://static.notedeep.com/FmQ5k5BWm-EQwvQG-9Ad-L4j3Nfw" class="avatar"  style="zoom:1;">
+<name>Restrechinamynd</name>
+</author>
+<br>
+<time>
+<svg t="1628910767669" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1616" width="200" height="200"><path d="M776.375 848.18164063H245.42773437c-54.31640625 0-98.52539063-43.06640625-98.52539062-95.97656251v-509.76562499c0-52.91015625 44.20898438-95.9765625 98.52539063-95.97656251h322.91015624c19.42382813 0 35.15625 15.73242188 35.15625001 35.15625s-15.73242188 35.15625-35.15625 35.15625H245.42773437c-15.55664063 0-28.21289063 11.51367188-28.21289062 25.6640625v509.67773438c0 14.15039063 12.65625 25.6640625 28.21289063 25.6640625h530.94726562c15.55664063 0 28.21289063-11.51367188 28.21289063-25.6640625V455.83789062c0-19.42382813 15.73242188-35.15625 35.15624999-35.15625s35.15625 15.73242188 35.15625 35.15625v296.27929688c0 52.99804688-44.12109375 96.06445313-98.52539062 96.06445313zM376.6484375 658.51367188c-9.31640625 0-18.54492188-3.69140625-25.48828125-10.89843751-13.359375-14.0625-12.83203125-36.29882813 1.14257813-49.74609375L833.6796875 138.9921875c14.0625-13.359375 36.29882813-12.83203125 49.74609375 1.14257813 13.359375 14.0625 12.83203125 36.29882813-1.14257813 49.74609375L400.90625 648.7578125c-6.76757813 6.50390625-15.55664063 9.75585938-24.2578125 9.75585938z" p-id="1617" fill="#000"></path></svg>
+<div>Created 2020-08-10</div> 
+<div>|</div>
+<svg t="1628901380202" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5526" width="200" height="200"><path d="M537.6 25.6c-179.2 0-337.92 97.28-419.84 245.76L0 153.6v332.8h332.8l-143.36-143.36c66.56-128 194.56-215.04 348.16-215.04C747.52 128 921.6 302.08 921.6 512s-174.08 384-384 384c-168.96 0-307.2-107.52-363.52-256H66.56c56.32 204.8 245.76 358.4 471.04 358.4C808.96 998.4 1024 778.24 1024 512S803.84 25.6 537.6 25.6z m-76.8 256V542.72l240.64 143.36 40.96-66.56-204.8-122.88v-215.04H460.8z" opacity=".9" p-id="5527" fill="#000"></path></svg>
+<div>Updated 2020-11-12</div>
+</time>
+
+</article-intro>
+
+
+<info>
+版权声明：本文采用 <dfn> CC BY 许可协议
+<note>
+只要保留原作者姓名，就可以基于商业目的传播、改编或者二次创作。
+</note> 
+</dfn> 授权。
+
+</info>
+
+<article>
+
+
+<p>
+关键：表头<br>
+记住：红进（多用电表）黑出<br>
+电压表电流表:外电路电源正极——＞红表笔——＞表头——＞黑表笔——＞外电路电源负极<br>
+欧姆表:外电路——＞红表笔——＞电源负极——＞电源正极——＞表头——＞黑表笔——＞外电路
+</p>
+
+</article>
+</div>
+
+</body>
+
+<script>
+setTimeout(function(){
+document.getElementById('appear1').className="show';
+document.getElementById('appear2').className="show';
+},5000)
+</script>
+</html>
