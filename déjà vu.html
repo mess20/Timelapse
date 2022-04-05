@@ -7,6 +7,34 @@
 
 
 <style>
+body-mask{
+display:none;
+background:rgba(255,217,102,0.2);
+width:100%;
+height:100%;
+position:fixed;
+left:0;
+top:0;
+z-index:100
+}
+body-mask-button:hover body-mask{
+display:block;
+}
+body-mask-button{
+left:8rem;
+top:2rem;
+display:block;
+height:rem;
+background:#F0E68C;
+padding:1.5rem 2rem;
+position:fixed;
+font-size:2rem;
+color:#555;
+text-align:center;
+text-align:justify;
+border-radius:10px;
+}
+
 body{
 background:#333;
 padding:10%;
@@ -351,6 +379,16 @@ file.href = imgDataSrc;
 
 
 </div>
+
+
+<div class="d">
+<span>望着窗外，只要想起一生中后悔的事，梅花便落满了南山。——张枣《镜中》
+</span>
+</div>
+
+<body-mask-button>add twilight <body-mask></body-mask></body-mask-button>
+
+
 
 
 </body>
