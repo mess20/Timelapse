@@ -1,1 +1,962 @@
+<html>
+<style>
 
+ol{
+margin-top:10rem;
+color:#6C7B8B;
+
+}
+article a{
+color:#6C7B8B !important;
+font-size:1rem;
+text-align:justify; 
+text-justify:inter-ideograph;
+color:black;
+text-decoration:none;
+outline:none;
+user-select: none;
+}
+a:hover,a:active,a:visited,a:link,a:focus{
+tap-highlight-color:rgba(0,0,255,0);
+}
+ol li:hover{
+color:#1d65b1;
+border-bottom:3px solid #1d65b1;
+}
+ol a:hover{
+color:#1d65b1 !important;
+}
+
+
+
+
+h1{
+color:#66A9BF;
+font-size:10rem;
+text-align:center;
+font-weight:300;
+margin-top:20rem;
+padding:0;
+margin-bottom:-2rem;
+}
+
+
+
+h2{
+color:#000;
+font-weight:500;
+padding:1rem 1.5rem;
+background:#f2ecde;
+color:#d3b17d;
+border-radius:50px;
+display:inline-block;
+margin:8rem 0rem 1rem 0;
+font-size:2.8rem;
+}
+h2::after{
+content:"";
+}
+
+h3{
+color:#6483B0;
+margin-top:4rem;
+}
+html{
+font-size:16px;
+}
+*{
+outline:none;
+}
+body{
+padding:0;
+font-size:1.8rem;
+line-height:4.4rem;
+background:rgb(246,246,246);
+width:100%;
+left:0;
+top:0;
+font-family:arial;
+position: relative;
+transition: all 1s;
+}
+img{
+zoom:0.7;
+padding:0;
+margin:auto 0;
+}
+svg{
+display:inline-block;
+line-height:6rem;
+align-items: center;
+border:none;
+width: 3rem;
+height: 3rem;
+border-radius: 50%;
+margin:auto 0 auto 0;
+overflow: visible;
+}
+info{
+font-size:1.2rem;
+display:block;
+padding:1rem 2.4rem;
+margin:2.4rem;
+background:rgb(231,240,250);
+}
+info a{
+color:#f8f8ff;
+border-bottom:4px solid f8f8ff;
+}
+
+article{
+display:block;
+font-weight:400;
+color:#333;
+font-size:1.2rem;
+padding:2.4rem;
+text-justify:inter-ideograph;
+}
+article-title{
+font-size:1.8rem;
+text-align:center
+}
+article-intro{
+display:block;
+height:10%;
+width:100%;
+background:rgba(255,255,255,0.5)
+color:#404040;
+line-height:6rem;
+font-size:80%;
+margin-top:3rem;
+margin-bottom:4rem;
+position:relative
+}
+author{
+position:absolute;
+display:inline-block;
+line-height:6rem;
+align-items: center;
+}
+author img{
+position:absolute;
+margin-left:0rem;
+}
+.avatar{
+  width: 7rem;
+  height: 7rem;
+  display: inline-block;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+position:absolute;
+top:0;
+bottom:0;
+margin:;
+}
+author name{
+margin-left:10rem;
+}
+time{
+display: flex;
+flex-direction: row; 
+justify-content: space-around;
+}
+
+.appear1{
+margin: 0;
+position:relative;
+border:none;
+background:url(' https://s1.ax1x.com/2022/04/05/qOSvkt.jpg') No-repeat;
+background-size:cover;
+width:100%;
+padding:2.4rem;
+height: 28%;
+  animation-name: down;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+zoom:-1;
+}
+.appear2{
+position:relative;
+padding:2.4rem;
+background:white;
+margin: 0;
+font-size:2.7rem;
+border-radius: 25px;
+-webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+width:100%;
+min-height:60%;
+  animation-name: up;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+.show{
+position:relative;
+}
+@keyframes down {
+  0% { left:0px; top:-40%;}
+  100% { left:0px; top:0px;}
+}
+@keyframes up {
+  0% { left:0px;bottom:-60%;}
+  100% { left:0px; bottom:0%}
+}
+
+
+
+
+.tool_nav{
+width:100%;
+display: -webkit-flex;
+display: flex;
+justify-content: space-around;
+}
+
+
+#comment{
+display:inline-block;
+font-size:2.4rem;
+width:6rem;
+height:3.5rem;
+padding:1rem 3rem;
+margin:auto 32px;
+line-height:3.5rem;
+text-align:center;
+transition-duration:0.4s;
+background:rgba(1,102,255,70%);
+color:white;
+text-decoration:none;
+border:none;
+border-radius: 20px;
+}
+
+#comment:hover{
+background-color:rgba(1,102,255,100%);
+border:none;
+color: white;
+}
+
+#spread{
+font-size:2.4rem;
+width:12rem;
+height:auto 32px;
+padding:1rem 3rem;
+margin:auto;
+text-align:center;
+background-color: #f5f5f5;
+ color:black;
+border:none;
+text-decoration:none;
+ border-radius: 20px;
+transition-duration:0.4s;
+}
+
+#spread:hover{
+background-color:rgba(1,102,255,100%);
+border: none;
+color: white;
+}
+
+
+
+
+.tool_hidden_nav{
+display:none;
+}
+.more-button{
+font-weight:900;
+font-size:1.4rem;
+height: auto;
+margin: auto 32px;
+text-align:center;
+width:5rem;
+ transition-duration:0.4s;
+ padding: 20px 32px;
+ text-align:center;
+ background:transparent;
+ color:rgb(84,89,93);
+text-decoration:none;
+ border:none;
+ border-radius: 20px;
+}
+
+.more-button:hover .tool_hidden_nav{
+font-weight:400;
+display: -webkit-flex;
+display: flex;
+flex-direction:row;
+position: fixed;
+justify-content: space-around;
+    -webkit-align-items: center;
+    align-items: center;
+             bottom: 0px;
+             right: 0px;
+             width: 100%;
+             height: 12%;
+z-index:1;
+box-shadow: 0px 0px 0px 2500px rgba(0, 0, 0, 0.3);
+background:white;
+}
+
+#correction{
+font-size:2.3rem;
+width:16rem;
+text-align:center;
+transition-duration:0.4s;
+margin: 0 4rem;
+ padding:20px 32px;
+ text-align:center;
+ background-color: #f5f5f5;
+ color:black;
+ border:none;
+ border-radius: 20px;
+}
+#correction:hover{
+background-color:rgba(1,102,255,70%);
+border:none;
+color: white;
+}
+
+
+
+#approve-rate-watch{
+font-size:2.3rem;
+width:14rem;
+text-align:center;
+margin: 0 4rem;
+ transition-duration:0.4s;
+ padding: 20px 32px;
+ text-align:center;
+ background:#4CAF50;
+ color:white;
+text-decoration:none;
+ border:none;
+ border-radius: 20px;
+}
+
+#approve-rate-watch:hover{
+ background-color:rgba(1,102,255,100%);
+border:none;
+color: white;
+}
+
+/* 复制申请*/
+fork-request{
+display:inline-block;
+font-size:2.3rem;
+width:16rem;
+height:3.5rem;
+line-height:3.5rem;
+padding:20px 32px;
+margin: 0 4rem;
+text-align:center;
+transition-duration:0.4s;
+background-color: #f5f5f5;
+ color:black;
+ border:none;
+ border-radius: 20px;
+}
+
+fork-request:hover{
+background-color:rgba(1,102,255,100%);
+border:none;
+color:white;
+}
+fork-require{display:none;}
+fork-request:hover fork-require{
+text-align:left;
+font-size:2.3rem;
+color:black;
+position:fixed;
+display:block;
+margin:auto;
+padding:3rem 4rem 10rem 4rem;
+left:0;
+right:0;
+top:0;
+bottom:0;
+height:40%;
+width:60%;
+background:white;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+z-index:3;
+border-radius:30px;
+}
+#copy-area{
+display:none;
+}
+#copy-allow{
+font-size:2.2rem;
+position:absolute;
+left:0rem;
+bottom:3rem;
+width:auto;
+height:auto; 
+padding:1rem 2rem;
+text-align:center;
+transition-duration:0.4s;
+margin: auto 4rem;
+ background-color: #f5f5f5;
+ color:black;
+ border:none;
+ border-radius: 20px;
+}
+#copy-allow:hover{
+background-color:rgba(1,102,255,100%);
+border:none;
+color:white;
+}
+#copy-button{
+font-size:2.3rem;
+position:absolute;
+right:0rem;
+bottom:3rem;
+width:auto;
+display:none;
+ -webkit-transition-duration:0.4s;
+ transition-duration:0.4s;
+height:auto; 
+padding:1rem 3rem;
+text-align:center;
+margin: auto 4rem;
+ background-color: #F4F4F4;
+ color:black;
+ border:none;
+ border-radius: 20px;
+}
+
+#copy-button:hover{
+background-color:rgba(1,102,255,100%);
+border:none;
+color:white;
+}
+#copy-area{
+font-size:2rem;
+font-family:Arial;
+background:#222;
+color:#888;
+width:100%;
+border-radius: 8px;
+outline:none;
+}
+#copy-finish{
+display:none;
+position:fixed;
+right:0;
+left:0;
+top:10%;
+width:10rem;
+margin:0 auto;
+padding: 16px 32px;
+text-align:center;
+font-size:100%;
+ background-color:#4CAF50;
+ color: white;
+ border-radius: 50px;
+z-index:5
+}
+
+/*预览or呼出式解释补充*/
+abbr{
+}
+note{display:none;}
+abbr:hover note{
+position:absolute;
+display:block;
+color:black;
+background:white;
+box-shadow: 0 20px 0 rgba(0, 0, 0, 0.3) !important;
+padding:1.4rem;
+z-index:3;
+}
+dfn{
+font-style:normal;
+color:rgba(52,160,238,100%) 
+}
+dfn:hover note{
+font-size:2.4rem;
+position:absolute;
+display:block;
+color:black;
+background:rgba(251, 250, 250, 0.95);;
+border-top: solid 0.5px rgba(0, 0, 100, 0.1);
+border-left: solid 0.5px rgba(0, 0, 100, 0.1);
+box-shadow: 15px 15px 24px 0px rgba(0, 0, 0, 0.2) !important;
+padding:1.4rem 2rem;
+left:5rem;
+right:5rem;
+z-index:3;
+border-radius:20px;
+}
+
+
+/*引用*/
+.blockquote{
+display: -webkit-flex;
+display: flex;
+}
+
+
+
+
+</style>
+<body>
+
+
+
+
+<div id="down" class="appear1">
+</div>
+<div id="up" class="appear2">
+<article-title><h1 style="font-size:8rem;color:#d3b17d;font-weight:400;padding:30rem 0rem 10rem 0;background:rgba(255,255,255,0.7);margin:-43rem -2.5rem 5rem -2.5rem;">biology</h1></article-title>
+
+
+<div class="tool_nav">
+
+    
+<a id="comment">讨论</a>
+
+    <input type="button" id="spread" value="传播" />
+
+
+
+<div class="more-button" >• • •
+<div class="tool_hidden_nav">
+    <input type="button" id="correction" value="纠错" />
+
+    <input type="button" id="approve-rate-watch" value="观点占比" onClick=" ();" />
+
+
+<fork-request>引用申请 
+<fork-require>
+<dfn>作者 </dfn>Restrechinamynd<br>
+<dfn>来源 </dfn><br>
+<dfn>版权声明 </dfn>本文采用 <dfn> CC BY 许可协议
+<note>
+只要保留原作者姓名，就可以基于商业目的传播、改编或者二次创作。
+</note> 
+</dfn> 授权。
+<br>
+<br>
+
+<dfn>Author </dfn> Restrechinamynd<br>
+<dfn>Link </dfn>https://restrechinamynd.github.io<br>/biology/classification<br>
+<dfn>Copyright Notice </dfn>All articles here are licensed under CC BY unless stating additionally.
+
+
+
+<div id="copy-allow" class="button" onclick="copy_allow()">我已了解</div>
+<input id="copy-button" type="button" class="button" onclick="copy()" value="复制"></input>
+<textarea id="copy-area">
+
+</textarea>
+
+</fork-require>
+
+</fork-request>
+
+
+<div id="copy-finish">已复制</div>
+
+<script>
+function copy_allow(){
+document.getElementById('copy-button').style.display="block";
+document.getElementById('copy-area').style.display="block";
+document.getElementById("copy-area").oncopy ="";
+};
+
+function copy() {
+            var e = document.getElementById("copy-area");
+            e.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            document.getElementById('copy-finish').style.display="block";
+setTimeout("document.getElementById('copy-finish').style.display=\"none\" ", 700);}
+        
+</script>
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+<article-intro>
+<author>
+<img src="https://static.notedeep.com/FmQ5k5BWm-EQwvQG-9Ad-L4j3Nfw" class="avatar" style="zoom:1;">
+<name>Restrechinamynd</name>
+</author>
+<br>
+<time>
+<svg t="1628910767669" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1616" width="200" height="200"><path d="M776.375 848.18164063H245.42773437c-54.31640625 0-98.52539063-43.06640625-98.52539062-95.97656251v-509.76562499c0-52.91015625 44.20898438-95.9765625 98.52539063-95.97656251h322.91015624c19.42382813 0 35.15625 15.73242188 35.15625001 35.15625s-15.73242188 35.15625-35.15625 35.15625H245.42773437c-15.55664063 0-28.21289063 11.51367188-28.21289062 25.6640625v509.67773438c0 14.15039063 12.65625 25.6640625 28.21289063 25.6640625h530.94726562c15.55664063 0 28.21289063-11.51367188 28.21289063-25.6640625V455.83789062c0-19.42382813 15.73242188-35.15625 35.15624999-35.15625s35.15625 15.73242188 35.15625 35.15625v296.27929688c0 52.99804688-44.12109375 96.06445313-98.52539062 96.06445313zM376.6484375 658.51367188c-9.31640625 0-18.54492188-3.69140625-25.48828125-10.89843751-13.359375-14.0625-12.83203125-36.29882813 1.14257813-49.74609375L833.6796875 138.9921875c14.0625-13.359375 36.29882813-12.83203125 49.74609375 1.14257813 13.359375 14.0625 12.83203125 36.29882813-1.14257813 49.74609375L400.90625 648.7578125c-6.76757813 6.50390625-15.55664063 9.75585938-24.2578125 9.75585938z" p-id="1617" fill="#000"></path></svg>
+<div>Created 2020-08-10</div> 
+<div>|</div>
+<svg t="1628901380202" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5526" width="200" height="200"><path d="M537.6 25.6c-179.2 0-337.92 97.28-419.84 245.76L0 153.6v332.8h332.8l-143.36-143.36c66.56-128 194.56-215.04 348.16-215.04C747.52 128 921.6 302.08 921.6 512s-174.08 384-384 384c-168.96 0-307.2-107.52-363.52-256H66.56c56.32 204.8 245.76 358.4 471.04 358.4C808.96 998.4 1024 778.24 1024 512S803.84 25.6 537.6 25.6z m-76.8 256V542.72l240.64 143.36 40.96-66.56-204.8-122.88v-215.04H460.8z" opacity=".9" p-id="5527" fill="#000"></path></svg>
+<div>Updated 2020-11-12</div>
+</time>
+
+</article-intro>
+
+
+<info>
+版权声明：本文采用 <dfn> CC BY 许可协议
+<note>
+只要保留原作者姓名，就可以基于商业目的传播、改编或者二次创作。
+</note> 
+</dfn> 授权。
+
+</info>
+
+<article>
+
+
+
+
+<h1>遗传</h1>
+
+
+<h2>细胞分裂</h2>
+<h3>细胞分裂方式</h3>
+<li>无丝分裂：原核生物<a href="#z1" id="zz1"><span style='color:#1d65b1;'>①</span></a>，真核生物高度分化的细胞（如蛙的红细胞）</li>
+<li>有丝分裂：真核生物产生体细胞</li>
+<li>减数分裂：真核生物产生生殖细胞</li>
+
+<h2>繁殖方式/增殖方式</h2>
+
+<h3>无性生殖（asexual reproduction）</h3>
+<h4>1）裂殖/分裂生殖（fission）</h4>
+<h5>分类</h5>
+a）以无丝分裂方式营无性分裂生殖
+<dd><b>单细胞生物</b>（原核生物、原生生物）<br>
+常见：二分裂（binary fission）</dd>
+b）以有丝分裂方式营无性分裂生殖
+<dd><b>大部分原生生物</b>（如草履虫、变形虫、眼虫）</dd>
+
+<h4>2）芽殖/出芽生殖（budding）</h4>酵母菌，水螅
+<h4>3）孢子生殖</h4>真菌，低等植物：部分原生生物（如衣藻）、蕨类等
+<h4>4）营养繁殖</h4>高等植物
+<h4>5）断裂生殖</h4>部分无脊椎动物
+
+
+<h3>有性生殖（Sexual reproduction）</h3>
+动物（包括原生动物），高等植物<br>
+特点：减数分裂（meiosis）<br>
+分类<br>
+<h4>1.  接合生殖（conjugation）</h4>
+单细胞生物：细菌，原生动物(如纤毛虫类)
+<h5>a）同配接合</h5> 如草履虫
+<h5>b）异配接合</h5> 如缘毛目类纤毛虫
+<br><br>
+
+<h4>2.  融合生殖（syngamy）</h4>
+单细胞生物群体，多细胞生物
+<h5>a）同配生殖（isogamy）</h5>
+生殖细胞：配子
+<h5>b）异配生殖（heterogamy）</h5>
+生殖细胞：配子
+<h5>c）卵配生殖（oogamy）</h5>
+生殖细胞：精子、卵细胞<br><br>
+性别决定<br>
+<li>雄异配型（XY型）<li>
+<li>雌异配型（ZW型）</li>
+<li>XO型性别决定</li>
+<li>ZO型性别决定</li>
+<li>染色体的单双倍数决定</li>
+<li>环境条件决定</li>
+<li>常染色体等位基因决定</li>
+<br><br>
+<h4>特殊：单性生殖（unisexual reproduction）</h4>
+多细胞生物，单细胞生物的群体
+
+<h5>a）孤雌生殖（parthenogenesis reproduction）</h5>
+蜜蜂、蚜虫
+<h5>b）孤雄生殖</h5>
+花药离体培养<br><br>
+
+<h4>相关概念</h4>
+<dd>生殖细胞<br>
+类型：<br>
+<li>孢子</li>
+<li>配子</li>
+</dd>
+
+
+
+
+<h1>变异<h1>
+<h2>相关概念</h2>
+<h3>诱变剂</h3>
+定义：能引起生物体遗传物质发生突然或根本的改变，使其基因突变或染色体变异达到自然水平以上的物质。<br>
+分类：生物诱变剂，化学诱变剂，物理诱变剂
+
+
+<h2>基因突变</h2>
+<h3>识记</h3>
+定义：DNA分子中发生碱基对的替换、增添和缺失，而引起的基因结构的改变，叫做基因突变。<br>
+特点：能产生新基因<br>
+分类：
+<li>自然突变</li>
+<li>诱发突变</li>
+
+<h3>应用</h3>
+<h4>诱变育种</h4>
+常见方法：化学诱变，物理诱变
+
+<h2>染色体异常(chromosomal aberration)</h2>
+
+<h3>染色体数目异常(numerical abnormalities of chromosomes)</h3>
+
+<h3>染色体结构异常(chromosomal structural abnormality)</h3>
+
+<h4>断裂愈合模型</h4>
+1）发生基础：断裂(breakage)<br><br>
+2）了解<br>
+<li>每一断裂产生两个断裂；</li>
+<li>染色单体的断端富有黏着性；</li>
+<li>没有着丝粒的片段在细胞分裂过程中因不能定向而易被丢失。</li><br>
+3）后果<br>
+<li>愈合(restitution)
+<dd>某一断裂的两个断裂端重新连接；</dd></li>
+<li>非重建性愈合(nonrestitution union)<dd>即不同断裂处的重新连接。某一断裂的一个或两个断裂端，可以跟另一断裂所产生的断裂端连接；</dd></li>
+<li>不愈合
+<dd>导致一个断裂端游离，例如末端部分缺失。</dd></li>
+
+<h4>分类</h4>
+<dfn>拓展
+<note>
+分类一<br>
+
+1） 平衡改变：未造成遗传物质的缺失或重复<br>
+
+2） 不平衡改变：造成遗传物质的缺失或重复<br>
+
+<br>
+
+分类二<br>
+
+1） 染色体畸变<br>
+
+2） 染色单体畸变<br>
+
+</note>
+</dfn>
+
+<h5><dfn>缺失（del）<note>染色体的断片未与断裂端连接</note></dfn></h5>
+
+1）末端缺失<br>
+
+2）中间缺失<br>
+
+
+<h5><dfn>重复（dup）<note>断片与同源染色体连接</note></dfn></h5>
+
+1）末端重复<br>
+
+2）中间重复<br>
+
+
+<h5><dfn>倒位（inv）<note>断片经180°倒转后再接到断端上</note></dfn></h5>
+
+1）臂内倒位<br>
+
+2）臂间倒位<br>
+
+
+<h5><dfn>互换/易位（translocation）<note>染色体片段移接到另一条非同源染色体上</note></dfn></h5>
+
+1) <dfn>染色体内易位（intrachromosomal translocation）/移位（shift）<note>易位发生在一条染色体内</note></dfn><br><br>
+
+2) <dfn>染色体间易位（interchromosomal translocation）<note>易位发生在两条同源或非同源染色体之间</note></dfn><br>
+
+a）<dfn>非相互易位/转位/单向易位<note>一条染色体断裂后，其断片易位到另一条染色体上。</note></dfn><br>
+   a.末端易位<br>
+   b.插入易位<br>
+
+b）<dfn>相互易位（t）（常见）<note>两条染色体相互交换无着丝粒断片。</note></dfn><br>
+
+    *罗伯逊易位（der/rob）：相互易位一种特殊情况。
+<br>
+<h5><dfn>环状染色体（r）<note>一条染色体的长、短臂同时各发生一次断裂后，含有着丝粒节段的长、短臂的断端相连。</note></dfn></h5>
+
+<h5><dfn>双着丝粒染色体（dic）<note>两条染色体分别发生一次断裂后，两个含有着丝粒的染色体的两臂断端相连接。</note></dfn></h5>
+
+<h5><dfn>等臂染色体（i）<note>在正常的细胞分裂中期，连接二姐妹染色单体的着丝粒进行纵裂，形成两条各具有长短臂的染色体。</note></dfn></h5>
+
+
+
+
+<h2>基因交流</h2>
+
+<h3>定义</h3>
+基因的重新组合。<br>
+
+<h3>分类</h3>
+<h4><dfn>1.垂直基因传递（vertical gene transfer，VGT）<note>指亲代向子代传递遗传物质，即遗传。</note></dfn></h4>
+例：真核生物同一物种间通过有性生殖进行基因交流。
+
+<h4><dfn>2.水平基因转移（horizontal gene transfer，HGT)<note>指差异生物个体之间，或单个细胞内部细胞器之间以及细胞器和细胞核之间所进行的遗传物质的交流。</note></dfn></h4>
+举例：
+<h5>1）病毒</h5>
+<li>噬菌体的重组</li>
+
+<h5>2）原核生物</h5>
+<li><dfn>转化（transformation）<note>通常是指细菌、非动物真核细胞和植物细胞中非病毒DNA的转移。</note></dfn></li>
+<li><dfn>转导（transduction）<note>病毒介导的DNA转移。</note></dfn></li>
+<li><dfn>接合（conjugation）<note>细菌间通过直接接触或桥状连接转移DNA。</note></dfn></li>
+
+<h5>3）真核生物</h5>
+<li>对于进行有性生殖的生物，<br>
+不同物种间存在生殖隔离，基因交流受阻。</li>
+<li><dfn>转染（Transfection）<note>通常是指将外源DNA导入真核细胞。</note></dfn></li>
+
+<h3>隔离（isolation）</h3>
+指基因不能自由交流的现象。
+
+<h2>基因重组（recombination）</h2>
+
+
+<h3>高中需记</h3>
+<h4>定义</h4>
+指在生物体进行有性生殖的过程中，控制不同性状的基因的重新组合。
+<h4>包括</h4>
+①基因的自由组合：减Ⅰ后期形成配子时，随着非同源染色体的自由组合，非等位基因自由组合。<br>
+②基因的交叉互换（？）：减Ⅰ四分体时期，随着同源染色体上的非姐妹染色单体的交叉互换，等位基因发生交换，导致染色单体上的基因重组。<br>
+③转化<br>
+④重组DNA技术
+<h4>应用</h4>
+杂交育种
+<h3>拓展</h3>
+<h4>定义</h4>
+狭义：涉及DNA分子内断裂—复合的基因交流。<br>
+广义：两个或两个以上的亲本DNA分子组合起来一个基因的DNA序列，即基因交流。（类似高中阶段知识。）<br>
+二者的区别造成了自由组合不属于狭义的基因重组。下面介绍狭义的基因重组。
+<h4>学说</h4>
+断裂愈合模型
+<h4>分类</h4>
+<h5>1）同源重组（homologous recombination）<note>大范围的DNA同源序列的联会。</note></dfn></h5>
+a.分类<br>
+<li>双向交换DNA分子，例：真核生物同源染色体间的交叉互换；</li>
+<li>单向转移DNA分子，即基因转换（gene conversion)，例：同源重组修复。</li><br>
+b.举例<br>
+上述水平基因转移举例<br>
+真核生物的非姐妹染色单体间的交叉互换<br>
+<h5>2）位点特异性重组（site-specific recombination）<note>小范围的DNA同源序列的联会，两个DNA分子并不交换对等的部分。</note></dfn></h5>
+a.常见：原核生物<br>
+b.举例：逆转录病毒将自身DNA整合到宿主DNA中
+<h5>3）异常重组（illegitimate recombination）</h5>
+a.举例：转座（transposition）/移位
+
+
+
+
+
+
+<h1>生物工程<h1>
+
+<h2>细胞工程</h2>
+<h2>酶工程</h2>
+<h2>蛋白质工程</h2>
+<h2>微生物工程</h2>
+<h2>基因工程（genetic engineering）</h2>
+
+<h3>识记</h3>
+1.特点：跨物种性<br><br>
+2.概念<br>
+1）狭义：仅指<dfn>DNA重组技术<note>定义：将目的基因导入受体细胞，使之按照人们的意愿稳定遗传并表达出新产物或新性状的技术。（按照人们的意愿，把一种生物的某种基因提取出来，加以修饰改造，然后放到另一种生物的细胞里，定向地改造生物的遗传性状。）<br>别称：基因拼接技术，重组DNA技术<br>三大基本元件：供体、受体、载体</note></dfn>；<br>
+2）广义：指DNA重组技术的产业化设计与应用。（这样好像不包括基因编辑。。。）
+
+<h3>了解</h3>
+<h4>水平基因转移，分为以下几种情况：</h4>
+1）从病毒到其他生物
+<dd>例：逆转录病毒将自身DNA整合到宿主DNA中。</dd><br>
+
+2）从原核生物到原核生物<dd>
+例：转化、接合，如耐药菌。</dd><br>
+
+3）从原核生物到真核生物（常以质粒、病毒为介导）
+<dd>例：转染、转基因。</dd>
+4）从真核生物到原核生物（常以质粒、病毒为介导）
+<dd>例：转基因。</dd>
+5）从真核生物到真核生物<dd>
+例：转染、转基因。</dd>
+<br>
+
+6）真核细胞内部。<dd>
+主要指叶绿体、线粒体及细胞核。</dd></br>
+
+<ul>
+<h4>注</h4>
+<li>环状DNA转入原核或低等真核细胞，受体细胞可以维持环状DNA的存在，称之为转化；</li>
+<li>线状或环状DNA转入高等真核细胞，受体细胞不可以维持线状或环状DNA的存在，在短时间表达后这些DNA将被降解，称之为转染/瞬时转化；</li>
+<li>线状或环状DNA转入高等真核细胞，受体细胞可以将转入的DNA整合到自己的DNA或染色体上，形成稳定的遗传株系，称之为稳定转化。</li>
+</ul><br>
+
+<h4>应用</h4>
+<li>基因转移技术（gene transfer technology）<dd>
+定义：将目的基因导入受体细胞的技术<br>
+分类：<br>
+<dd>1）基因转染技术（瞬时转化）<br>
+2）转基因技术（稳定转化）</dd></dd></li>
+
+<h3>技术发展</h3>
+<h4>1）<dfn>转基因技术（transgenic technique）<note>https://www.zhihu.com/answer/544945716</note></dfn>：将外源或内源遗传物质随机插入宿主基因组</h4><br>
+<h4>2）<dfn>基因编辑（gene editing）<note>http://www.360doc.cn/mip/951637228.html</note></dfn>：靶向基因修饰
+<h5>优点</h5>
+更精确、简便、成本低</h4>
+<h5>原理</h5>
+借助特异性DNA双链断裂（ DNA double - strand breaks DSBs ）激活细胞天然的修复机制。<br><br>
+途径：
+<li>同源重组修复（HDR）——基因重组</li>
+<li>非同源末端连接（NHEJ）——基因突变</li>
+<h5>技术迭代</h5>
+<li>锌指核酸酶（ZFN）</li>
+<li>转录激活因子样效应子（TALEN）</li>
+<li>规律成簇的间隔短回文重复（CRISPR）</li>
+<h5>常见：<dfn>「CRISPR-Cas9」基因编辑技术<note>https://zhuanlan.zhihu.com/p/137760447</note></dfn></h5>
+应用:
+<li>基因敲除（Knock-out）</li>
+<li>基因敲入（Knock-in）</li>
+<li>基因抑制（Repression）、基因激活（Activation）</li>
+
+
+<h1 style="font-size:3rem;color:#000;font-weight:500;text-align:left;margin-bottom:-8rem;">注</h1>
+<ol>
+<li id="z1"><a href="#zz1">原核细胞的分裂方式是否属于无丝分裂存在争议。</a></li>
+</ol>
+
+<h1 style="font-size:3rem;color:#000;font-weight:500;text-align:left;margin-bottom:-8rem;">参考</h1>
+<ol>
+
+<li><a href="https://www.zhihu.com/answer/544945716">如何解释「转基因技术」？ - 智能人工 的回答 - 知乎</a></li>
+<li><a href="https://mi.mbd.baidu.com/r/E5NdOLhKGQ?f=cp&u=655264222f211dcd">透视转基因育种：诠释基因横向传递的奥秘</a></li>
+
+<li><a href="https://zhuanlan.zhihu.com/p/137760447">CRISPR-Cas9基因编辑技术简介 - 知乎</a></li>
+
+
+<li><a href=""></a></li>
+
+
+</ol>
+
+
+
+</article>
+</div>
+
+</body>
+
+<script>
+setTimeout(function(){
+document.getElementById('appear1').className="show';
+document.getElementById('appear2').className="show';
+},5000)
+</script>
+</html>
