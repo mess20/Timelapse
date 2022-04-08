@@ -1,6 +1,6 @@
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=t
-.replace(new RegExp(''‘"g"), '<blockquote>')
+.replace(new RegExp('‘',"g"), '<blockquote>')
 .replace(new RegExp('’' , "g"), '</blockquote>')
 //分割线
 .replace(new RegExp('---' , "g"), '<hr>')
