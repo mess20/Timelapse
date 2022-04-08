@@ -27,12 +27,6 @@ document.getElementById("article").innerHTML=t
 .replace(new RegExp('〔' , "g"), '<dfn class="reference-index"><span>')
 .replace(new RegExp('〕' , "g"),'</span></dfn>');
 
-
-var t = document.getElementById("article").innerHTML;
-document.getElementById("article").innerHTML=marked(t);
-
-
-
 function copy_allow(){
 document.getElementById('copy-button').style.display="block";
 document.getElementById('copy-area').style.display="block";
