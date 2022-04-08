@@ -1,0 +1,336 @@
+<style>
+#menu-button{
+text-align:left;
+font-size:2.3rem;
+color:black;
+position:fixed;
+display:block;
+ padding: 20px 32px;
+ text-align:center;
+ background-color:rgba(1,102,255,70%);
+border:none;
+ color:white;
+left:5%;
+top:2%;
+background:;
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+border-radius:20px;
+}
+#chooseH-button{
+display:none;
+text-align:left;
+font-size:2.3rem;
+color:black;
+position:fixed;
+display:block;
+ padding: 20px 32px;
+ text-align:center;
+ background-color:;
+border:none;
+left:66%;
+top:2%;
+background:;
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+border-radius:20px;
+}
+#menu-select{
+display:none;
+zoom:4.5;
+left:50%;
+top:2%;
+position:fixed;
+}
+
+
+/*弹出式菜单*/
+.menuLink_1{
+width: 150px; 
+height: 150px; 
+border-radius: 50%;
+position: fixed;
+right:6.6rem;
+bottom:24rem;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+color: black;
+font-size:4.5rem;
+font-weight:900;
+display:block;
+text-align:center;
+font-weight:400;
+text-decoration:none;
+background:white;
+z-index:4;
+zoom:0.8
+}
+.menuLink_2 {
+width: 120px; 
+height: 120px; 
+border-radius: 50%;
+-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+position: fixed;
+right:5rem;
+bottom:30rem;
+color: black;
+font-weight:400;
+font-size: 4rem;
+text-align:center;
+line-height:120px;
+align-items: center;
+text-decoration:none;
+background:white;
+z-index:4;
+}
+
+
+#menu-ul{
+font-size:2.7rem;
+padding:0 0rem;
+overflow: auto; 
+background-color: rgba(255,255,255,100%);
+width:50%;
+display: none;
+top:0px;
+height:100%;
+position: fixed;
+z-index: 3;
+-webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+}
+ul{
+list-style-type: none;
+margin: 0;
+padding: 2.5rem 0rem 0rem 0rem;
+transition: all 2s;
+left: 0px;
+}
+#menu-ul h1{
+font-size:2.7rem;
+margin-left: 0rem !important;
+}
+#menu-ul h2{
+color:#555;
+font-size:2.7rem;
+margin-left: 1.5rem !important;
+}
+#menu-ul h3{
+color:#555;
+font-size:2.7rem;
+margin-left:3rem !important;
+}
+#menu-ul h4{
+color:#555;
+font-size:2.7rem;
+margin-left: 4.5rem !important;
+}
+#menu-ul h5{
+color:#555;
+font-size:2.7rem;
+margin-left:6rem !important;
+}
+#menu-ul h6{
+color:#555;
+font-size:2.7rem;
+margin-left:7.5rem  !important;
+}
+#menu-ul li{
+}
+li{
+list-style-type: none;
+}
+li img{
+width:20px;
+height:20px;
+}
+a{
+color:black;
+text-decoration:none;
+}
+li a{
+padding:1.2rem 2rem !important;
+display: block;
+  }
+li a:link {
+}
+li a:visited {
+}
+li a:hover{  
+background:rgba(1,102,255,30%);
+}
+li a:active {
+}
+ul summary{
+padding:1.2rem 3.4rem;
+outline:none;
+}
+
+ul summary:hover{
+background:rgba(1,102,255,30%);
+}
+
+</style>
+
+
+
+
+<button id="menu-button" onclick="priMenu()">启用目录</button>
+
+<select id="menu-select">
+<span>选择目录收录最低级别</span>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+</select>
+<button id="chooseH-button" onclick="chooseH()">设置完成</button>
+
+
+
+
+
+
+
+<script>		
+<!--用的是笨办法，正文必须用元素标签包裹-->
+//自动生成目录
+function priMenu(){
+document.getElementById("chooseH-button").style.display="block";
+document.getElementById("menu-select").style.display="block";
+//初始化
+var content = document.getElementById("content").innerHTML;
+document.getElementById("menu-ul").innerHTML = content;
+document.getElementById("menu-ul").style.display="none";
+//删除正文//////////////////////////
+    var section = document.querySelectorAll("#menu-ul >section,#menu-ul p,#menu-ul li,#menu-ul dd,#menu-ul dfn,#menu-ul note,#menu-ul br,#menu-ul a,#menu-ul span,#menu-ul pre,#menu-ul article");
+    var i;
+    for (i = 0; i < section.length; i++) {
+section[i].parentNode.removeChild(section[i]);}
+}
+//删除未选标题
+function chooseH(){
+var str1 = document.getElementById("menu-select");
+var str2 = str1.options[str1.selectedIndex].text;
+var str3 = parseInt(str2) + 1;
+var str4 = '#menu-ul ' + "h" +str3;
+var str5 = document.querySelectorAll(str4);
+    var i;
+    for (i = 0; i < str5.length; i++) {
+str5[i].parentNode.removeChild(str5[i]);
+}
+var str6 = parseInt(str2) + 2;
+var str7 = '#menu-ul ' + "h" +str6;
+var str8 = document.querySelectorAll(str7);
+    var i;
+    for (i = 0; i < str8.length; i++) {
+str8[i].parentNode.removeChild(str8[i]);
+}
+var str6 = parseInt(str2) + 2;
+var str7 = '#menu-ul ' + "h" +str6;
+var str8 = document.querySelectorAll(str7);
+    var i;
+    for (i = 0; i < str8.length; i++) {
+str8[i].parentNode.removeChild(str8[i]);
+}
+var str9 = parseInt(str2) + 3;
+var str10 = '#menu-ul ' + "h" +str9;
+var str11 = document.querySelectorAll(str10);
+    var i;
+    for (i = 0; i < str11.length; i++) {
+str11[i].parentNode.removeChild(str11[i]);
+}
+var str12 = parseInt(str2) + 4;
+var str13 = '#menu-ul ' + "h" +str12;
+var str14 = document.querySelectorAll(str13);
+    var i;
+    for (i = 0; i < str14.length; i++) {
+str14[i].parentNode.removeChild(str14[i]);
+}
+var str15 = parseInt(str2) + 5;
+var str16 = '#menu-ul ' + "h" +str15;
+var str17 = document.querySelectorAll(str16);
+    var i;
+    for (i = 0; i < str17.length; i++) {
+str17[i].parentNode.removeChild(str17[i]);
+}
+
+
+//添加锚点
+var str = document.querySelectorAll('#menu-ul h1,#menu-ul h2,#menu-ul h3,#menu-ul h4,#menu-ul h5,#menu-ul h6');
+    var i;
+    for (i = 0; i < str.length; i++) {
+var e1 = str[i].innerText;
+str[i].innerHTML= "<li><a href='#" + e1 + " '>" + e1 +"</a></li>";
+}
+
+//显示
+document.getElementById("menu-ul").style.display="block";
+document.getElementById("output").innerHTML = document.getElementById("menu-ul").innerHTML;
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="#" class="menuLink_1">︽ </a>     
+
+<a id="menu-link" class="menuLink_2">+</a>
+
+
+
+<textarea contenteditable="true" id="output" style="border:solid hsla(212,49%,98%,100%) 4px;width:70%;left:5%;top:63%;position:absolute;height:30%;box-shadow:10px 10px 20px hsla(212,49%,30%,100%);font-size:2rem;padding:2rem">output</textarea>
+
+
+
+<ul id="menu-ul" contenteditable="true">
+
+</ul>
+
+
+
+<script type="text/javascript">  
+	window.onload = function() {
+        var anniu =document.getElementById('menu-link');
+        var menu = document.getElementById('menu-ul');        
+        var temp = 1;       anniu.addEventListener('click',function(){
+            if(temp==1){
+                temp=0;
+                menu.style.display="block"
+            }else{
+                temp=1;
+                menu.style.display="none"
+            }
+        })
+		}
+
+    </script>
+
+
+
+
+
+<content id="content" contenteditable="true" style="border:solid hsla(195,49%,98%,100%) 4px;width:80%;top:10%;left:5%;position:absolute;height:45%;box-shadow:10px 10px 20px hsla(195,49%,1%,75%);font-size:2rem;padding:2rem;overflow:auto;">
+input
+</content>
+
+
+
+
+
