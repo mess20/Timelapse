@@ -1,1 +1,100 @@
 
+<style>
+.menuLink_1{width: 150px; height: 150px; border-radius: 50%;position: fixed;right:6.6rem;bottom:24rem;-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);color: black;font-size:4.5rem;font-weight:900;display:block;text-align:center;font-weight:400;text-decoration:none;background:white;z-index:4;zoom:0.8;line-height:110px;}.menuLink_2 {width: 120px; height: 120px; border-radius: 50%;-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);position: fixed;right:5rem;bottom:30rem;color: black;font-weight:400;font-size: 4rem;text-align:center;line-height:120px;align-items: center;text-decoration:none;background:white;z-index:4;} #menu-ul{font-size:2.7rem;padding:0 0rem;overflow: auto; background-color: rgba(255,255,255,100%);width:50%;display: none;top:0px;height:100%;position: fixed;z-index: 3;-webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);-moz-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);animation:SAH 1s;}@keyframes SAH{0% {width:0}100% {}}@keyframes END{0% {}100% {width:0;}} 
+
+ul{
+list-style-type: none;
+margin: 0;
+padding: 2.5rem 0rem 0rem 0rem;
+transition: all 2s;
+left: 0px;
+}
+#menu-ul a{
+padding:1.2rem 2rem !important;
+display: block;
+  }
+
+
+#menu-ul h1{
+font-size:2.7rem;
+margin-left: 0rem !important;
+}
+#menu-ul h2{
+color:#555;
+font-size:2.7rem;
+margin-left: 1.5rem !important;
+}
+#menu-ul h3{
+color:#555;
+font-size:2.7rem;
+margin-left:3rem !important;
+
+}
+#menu-ul h4{
+color:#555;
+font-size:2.7rem;
+margin-left: 4.5rem !important;
+}
+#menu-ul h5{
+color:#555;
+font-size:2.7rem;
+margin-left:6rem !important;
+}
+#menu-ul h6{
+color:#555;
+font-size:2.7rem;
+margin-left:7.5rem  !important;
+}
+ul h1{
+outline:none;
+}
+
+ul h1:hover{
+background:rgba(1,102,255,30%);
+}
+
+#menu-ul a{
+color:#333;
+text-decoration:none;
+outline:none;
+user-select: none;
+}
+
+</style>
+
+
+
+
+<a href="#" class="menuLink_1">︽ </a>     
+<a id="menu-link" class="menuLink_2">+</a>
+<ul id="menu-ul">
+</ul> 
+
+
+<script type="text/javascript">  
+	window.onload = function() {
+var str = document.querySelectorAll('article h1,article h2,article h3,article h4,article h5,article h6');
+    var i;
+    for (i = 0; i < str.length; i++) {
+var e1 = str[i].innerHTML;
+var e2 = str[i].innerText;
+str[i].innerHTML= "<span id='" + e2 + "'>" + e1 +"</span>";
+};
+
+        var anniu =document.getElementById('menu-link');
+        var menu = document.getElementById('menu-ul');      
+        var temp = 1;        anniu.addEventListener('click',function(){
+            if(temp==1){
+                temp=0;               menu.style.display="block";
+menu.style.animation="SAH 1s";
+            }else{    
+temp=1;   
+menu.style.animation="END 1s";
+setTimeout(
+function fn(){
+menu.style.display="none";
+}, 1000);
+}
+        })
+		}
+    </script>
