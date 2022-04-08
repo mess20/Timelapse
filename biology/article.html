@@ -59,7 +59,18 @@ z-index: 3;
 -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
 -moz-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
 box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+animation:SAH 1s;
 }
+@keyframes SAH{
+0% {width:0}
+100% {}
+}
+@keyframes END{
+0% {}
+100% {width:0;}
+}
+
+
 ul{
 list-style-type: none;
 margin: 0;
@@ -1220,28 +1231,22 @@ var e2 = str[i].innerText;
 str[i].innerHTML= "<span id='" + e2 + "'>" + e1 +"</span>";
 };
 
-
-
-
         var anniu =document.getElementById('menu-link');
-        var menu = document.getElementById('menu-ul');
-        
-        var temp = 1;
-        anniu.addEventListener('click',function(){
+        var menu = document.getElementById('menu-ul');      
+        var temp = 1;        anniu.addEventListener('click',function(){
             if(temp==1){
-                temp=0;
-                menu.style.display="block"
-            }else{
-                temp=1;
-                menu.style.display="none"
-            }
-
+                temp=0;               menu.style.display="block";
+menu.style.animation="SAH 1s";
+            }else{    
+temp=1;   
+menu.style.animation="END 1s";
+setTimeout(
+function fn(){
+menu.style.display="none";
+}, 1000);
+}
         })
-
-
-
 		}
-
     </script>
 
 
