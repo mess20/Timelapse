@@ -1,15 +1,10 @@
-
 <html>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>    
-
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link href="https://restrechinamynd.github.io/biology.css" rel="stylesheet">
 <style>
 
 </style>
 <body>
-
-
-
-
 <div id="down" class="appear1">
 </div>
 <div id="up" class="appear2">
@@ -185,6 +180,102 @@ jwjjjwjwkk**ekekkesks**e
 <li>孢子</li>
 <li>配子</li>
 </dd>
+
+
+<h2>基因表达（gene expression）</h2>
+
+<h3>基因表达</h3>
+定义：DNA->RNA->蛋白质的过程
+<h4>相关概念</h4>
+
+- 基因活性：基因表达的程度。
+- 基因调控：对基因表达的控制。
+
+<h3>基因调控（Gene regulation）</h3>
+<h4>类型</h4>
+
+##### 转录水平的调控（DNA水平的基因调控）
+
+- 机制：染色质结构对转录的影响
+- 举例：DNA修饰
+
+##### 转录后水平的调控（mRNA水平的基因调控）
+举例：RNA加工
+
+##### 翻译水平上的调控（蛋白质水平的基因调控）
+
+举例：
+ + 蛋白质合成
+ + 蛋白质修饰（磷酸化，甲基化，乙酰化，糖基化，泛素化）
+ + 蛋白质的寻靶运输（信号肽）
+
+<h4>「基因抑制（Repression）」 ｛https://mbd.baidu.com/ma/s/8OMsbnLL｝
+</h4>
+<h5>类型</h5>
+
++ DNA水平的基因抑制
+
+同义表达：转录水平的基因沉默
+
++ mRNA水平的基因抑制
+
+同义表达：转录后水平的基因沉默
+
++ 蛋白质水平的基因抑制
+
+---
+相关概念
+<h5>基因沉默（Gene Silencing）</h5>
+
+<h6>定义</h6>
+对基因表达的抑制。
+
+<h6>类型</h6>
+- 转录水平的基因沉默（tran-scriptional gene silencing，TGS）
+
+- 原因举例：
+- 启动子甲基化
+- DNA修饰（如DNA甲基化）
+- 染色体异染色质化（如巴氏小体，原因有蛋白质甲基化等）
+
+
+- 转录后水平的基因沉默（post-transcriptional gene silen-cing，PTGS）
+
+- 机理：同源mRNA特异性降解，即RNA干扰（RNA interference，RNAi）。
+
+
+<h4> 基因激活/活化（Activation）</h4>
+- 定义：抑制基因的活化。
+- 原因举例：
+启动子高甲基化
+
+
+<h4>基因过表达（gene overexpression）</h4>
+
+
+<h3>应用</h3>
+#### 位置效应
+由于外源DNA插入染色质的位置而导致的基因的异常表达。
+
+#### 基因工程
+
+#### 基因敲低（Gene Knock-down）
+通过同源mRNA特异性降解，人工抑制基因表达。
+##### 原理：转录后水平的基因沉默。
+
+#### 表观基因组编辑（Epigenome editing）——dCas9
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -453,10 +544,10 @@ b.举例：逆转录病毒将自身DNA整合到宿主DNA中</span>
 
 <span>应用:</span>
 
-<li> 基因敲入（gene knock-in）</li>
-<li> 基因敲除（gene knock-out）</li>
-<li> 基因激活（Activation）</li>
-<li> 基因抑制（Repression）</li>
+<li> 基因敲入（gene knock-in）——Cas9 nickase</li>
+<li> 基因敲除（gene knock-out）——Cas9</li>
+<li> 基因激活（Activation）——dCas9（dead Cas9）</li>
+<li> 基因抑制（Repression）——dCas9</li>
 <li> 基因过表达（gene overexpression）</li>
 
 
@@ -637,31 +728,22 @@ var e2 = str[i].innerText;
 str[i].innerHTML= "<span id='" + e2 + "'>" + e1 +"</span>";
 };
 
-        var anniu =document.getElementById('menu-link');
-        var menu = document.getElementById('menu-ul');      
-        var temp = 1;        anniu.addEventListener('click',function(){
-            if(temp==1){
-                temp=0;               menu.style.display="block";
-menu.style.animation="SAH 1s";
-            }else{    
+var anniu =document.getElementById('menu-link');
+var menu = document.getElementById('menu-ul');    var temp = 1;        anniu.addEventListener('click',function(){if(temp==1){               
+temp=0;              menu.style.display="block";
+menu.style.animation="SAH 1s";            
+}else{    
 temp=1;   
 menu.style.animation="END 1s";
 setTimeout(
 function fn(){
-menu.style.display="none";
-}, 1000);
-}
-        })
-		}
+menu.style.display="none";}, 1000);}})}
     </script>
-
-
 
  <script>
 var t = document.getElementById("article").innerHTML;
 document.getElementById("article").innerHTML=marked.parse(t);
  </script>
-
 <script src="https://restrechinamynd.github.io/page.js"></script>    
 
 
