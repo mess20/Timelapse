@@ -1,638 +1,8 @@
 
 <html>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>    
+
 <style>
-/*弹出式菜单*/
-.menuLink_1{
-width: 150px; 
-height: 150px; 
-border-radius: 50%;
-position: fixed;
-right:6.6rem;
-bottom:24rem;
--webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-color: black;
-font-size:4.5rem;
-font-weight:900;
-display:block;
-text-align:center;
-font-weight:400;
-text-decoration:none;
-background:white;
-z-index:4;
-zoom:0.8;
-line-height:110px;
-}
-.menuLink_2 {
-width: 120px; 
-height: 120px; 
-border-radius: 50%;
--webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-position: fixed;
-right:5rem;
-bottom:30rem;
-color: black;
-font-weight:400;
-font-size: 4rem;
-text-align:center;
-line-height:120px;
-align-items: center;
-text-decoration:none;
-background:white;
-z-index:4;
-}
-
-
-#menu-ul{
-font-size:2.7rem;
-padding:0 0rem;
-overflow: auto; 
-background-color: rgba(255,255,255,100%);
-width:50%;
-display: none;
-top:0px;
-height:100%;
-position: fixed;
-z-index: 3;
--webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
-animation:SAH 1s;
-}
-@keyframes SAH{
-0% {width:0}
-100% {}
-}
-@keyframes END{
-0% {}
-100% {width:0;}
-}
-
-
-ul{
-list-style-type: none;
-margin: 0;
-padding: 2.5rem 0rem 0rem 0rem;
-transition: all 2s;
-left: 0px;
-}
-#menu-ul a{
-padding:1.2rem 2rem !important;
-display: block;
-  }
-
-
-#menu-ul h1{
-font-size:2.7rem;
-margin-left: 0rem !important;
-}
-#menu-ul h2{
-color:#555;
-font-size:2.7rem;
-margin-left: 1.5rem !important;
-}
-#menu-ul h3{
-color:#555;
-font-size:2.7rem;
-margin-left:3rem !important;
-
-}
-#menu-ul h4{
-color:#555;
-font-size:2.7rem;
-margin-left: 4.5rem !important;
-}
-#menu-ul h5{
-color:#555;
-font-size:2.7rem;
-margin-left:6rem !important;
-}
-#menu-ul h6{
-color:#555;
-font-size:2.7rem;
-margin-left:7.5rem  !important;
-}
-ul h1{
-outline:none;
-}
-
-ul h1:hover{
-background:rgba(1,102,255,30%);
-}
-
-ol{
-margin-top:10rem;
-color:#6C7B8B;
-
-}
-article a{
-color:#6C7B8B !important;
-font-size:1rem;
-text-align:justify; 
-text-justify:inter-ideograph;
-color:black;
-text-decoration:none;
-outline:none;
-user-select: none;
-}
-#menu-ul a{
-color:#333;
-text-decoration:none;
-outline:none;
-user-select: none;
-}
-
-a:hover,a:active,a:visited,a:link,a:focus{
-tap-highlight-color:rgba(0,0,255,0);
-}
-ol li:hover{
-color:#1d65b1;
-border-bottom:3px solid #1d65b1;
-}
-ol a:hover{
-color:#1d65b1 !important;
-}
-
-
-
-
-article h1{
-color:#66A9BF;
-font-size:10rem;
-text-align:center;
-font-weight:300;
-margin-top:20rem;
-padding:0;
-margin-bottom:-2rem;
-}
-
-
-
-article h2{
-color:#000;
-font-weight:500;
-padding:1rem 1.5rem;
-background:#f2ecde;
-color:#d3b17d;
-border-radius:50px;
-display:inline-block;
-margin:8rem 0rem 1rem 0;
-font-size:2.8rem;
-}
-article h2::after{
-content:"";
-}
-
-article h3{
-color:#6483B0;
-margin-top:4rem;
-}
-html{
-font-size:16px;
-}
-*{
-outline:none;
-}
-body{
-padding:0;
-font-size:1.8rem;
-line-height:4.4rem;
-background:rgb(246,246,246);
-width:100%;
-left:0;
-top:0;
-font-family:arial;
-position: relative;
-transition: all 1s;
-}
-img{
-zoom:0.7;
-padding:0;
-margin:auto 0;
-}
-svg{
-display:inline-block;
-line-height:6rem;
-align-items: center;
-border:none;
-width: 3rem;
-height: 3rem;
-border-radius: 50%;
-margin:auto 0 auto 0;
-overflow: visible;
-}
-info{
-font-size:1.2rem;
-display:block;
-padding:1rem 2.4rem;
-margin:2.4rem;
-background:rgb(231,240,250);
-}
-info a{
-color:#f8f8ff;
-border-bottom:4px solid f8f8ff;
-}
-
-article{
-display:block;
-font-weight:400;
-color:#333;
-font-size:1.2rem;
-padding:2.4rem;
-text-justify:inter-ideograph;
-}
-article-title{
-font-size:1.8rem;
-text-align:center
-}
-article-intro{
-display:block;
-height:10%;
-width:100%;
-background:rgba(255,255,255,0.5)
-color:#404040;
-line-height:6rem;
-font-size:80%;
-margin-top:3rem;
-margin-bottom:4rem;
-position:relative
-}
-author{
-position:absolute;
-display:inline-block;
-line-height:6rem;
-align-items: center;
-}
-author img{
-position:absolute;
-margin-left:0rem;
-}
-.avatar{
-  width: 7rem;
-  height: 7rem;
-  display: inline-block;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-position:absolute;
-top:0;
-bottom:0;
-margin:;
-}
-author name{
-margin-left:10rem;
-}
-time{
-display: flex;
-flex-direction: row; 
-justify-content: space-around;
-}
-
-.appear1{
-margin: 0;
-position:relative;
-border:none;
-background:url(' https://s1.ax1x.com/2022/04/05/qOSvkt.jpg') No-repeat;
-background-size:cover;
-width:100%;
-padding:2.4rem;
-height: 28%;
-  animation-name: down;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-iteration-count: 1;
-zoom:-1;
-}
-.appear2{
-position:relative;
-padding:2.4rem;
-background:white;
-margin: 0;
-font-size:2.7rem;
-border-radius: 25px;
--webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-width:100%;
-min-height:60%;
-  animation-name: up;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-}
-.show{
-position:relative;
-}
-@keyframes down {
-  0% { left:0px; top:-40%;}
-  100% { left:0px; top:0px;}
-}
-@keyframes up {
-  0% { left:0px;bottom:-60%;}
-  100% { left:0px; bottom:0%}
-}
-
-
-
-
-.tool_nav{
-width:100%;
-display: -webkit-flex;
-display: flex;
-justify-content: space-around;
-}
-
-
-#comment{
-display:inline-block;
-font-size:2.4rem;
-width:6rem;
-height:3.5rem;
-padding:1rem 3rem;
-margin:auto 32px;
-line-height:3.5rem;
-text-align:center;
-transition-duration:0.4s;
-background:rgba(1,102,255,70%);
-color:white;
-text-decoration:none;
-border:none;
-border-radius: 20px;
-}
-
-#comment:hover{
-background-color:rgba(1,102,255,100%);
-border:none;
-color: white;
-}
-
-#spread{
-font-size:2.4rem;
-width:12rem;
-height:auto 32px;
-padding:1rem 3rem;
-margin:auto;
-text-align:center;
-background-color: #f5f5f5;
- color:black;
-border:none;
-text-decoration:none;
- border-radius: 20px;
-transition-duration:0.4s;
-}
-
-#spread:hover{
-background-color:rgba(1,102,255,100%);
-border: none;
-color: white;
-}
-
-
-
-
-.tool_hidden_nav{
-display:none;
-}
-.more-button{
-font-weight:900;
-font-size:1.4rem;
-height: auto;
-margin: auto 32px;
-text-align:center;
-width:5rem;
- transition-duration:0.4s;
- padding: 20px 32px;
- text-align:center;
- background:transparent;
- color:rgb(84,89,93);
-text-decoration:none;
- border:none;
- border-radius: 20px;
-}
-
-.more-button:hover .tool_hidden_nav{
-font-weight:400;
-display: -webkit-flex;
-display: flex;
-flex-direction:row;
-position: fixed;
-justify-content: space-around;
-    -webkit-align-items: center;
-    align-items: center;
-             bottom: 0px;
-             right: 0px;
-             width: 100%;
-             height: 12%;
-z-index:1;
-box-shadow: 0px 0px 0px 2500px rgba(0, 0, 0, 0.3);
-background:white;
-}
-
-#correction{
-font-size:2.3rem;
-width:16rem;
-text-align:center;
-transition-duration:0.4s;
-margin: 0 4rem;
- padding:20px 32px;
- text-align:center;
- background-color: #f5f5f5;
- color:black;
- border:none;
- border-radius: 20px;
-}
-#correction:hover{
-background-color:rgba(1,102,255,70%);
-border:none;
-color: white;
-}
-
-
-
-#approve-rate-watch{
-font-size:2.3rem;
-width:14rem;
-text-align:center;
-margin: 0 4rem;
- transition-duration:0.4s;
- padding: 20px 32px;
- text-align:center;
- background:#4CAF50;
- color:white;
-text-decoration:none;
- border:none;
- border-radius: 20px;
-}
-
-#approve-rate-watch:hover{
- background-color:rgba(1,102,255,100%);
-border:none;
-color: white;
-}
-
-/* 复制申请*/
-fork-request{
-display:inline-block;
-font-size:2.3rem;
-width:16rem;
-height:3.5rem;
-line-height:3.5rem;
-padding:20px 32px;
-margin: 0 4rem;
-text-align:center;
-transition-duration:0.4s;
-background-color: #f5f5f5;
- color:black;
- border:none;
- border-radius: 20px;
-}
-
-fork-request:hover{
-background-color:rgba(1,102,255,100%);
-border:none;
-color:white;
-}
-fork-require{display:none;}
-fork-request:hover fork-require{
-text-align:left;
-font-size:2.3rem;
-color:black;
-position:fixed;
-display:block;
-margin:auto;
-padding:3rem 4rem 10rem 4rem;
-left:0;
-right:0;
-top:0;
-bottom:0;
-height:40%;
-width:60%;
-background:white;
--webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
--moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-z-index:3;
-border-radius:30px;
-}
-#copy-area{
-display:none;
-}
-#copy-allow{
-font-size:2.2rem;
-position:absolute;
-left:0rem;
-bottom:3rem;
-width:auto;
-height:auto; 
-padding:1rem 2rem;
-text-align:center;
-transition-duration:0.4s;
-margin: auto 4rem;
- background-color: #f5f5f5;
- color:black;
- border:none;
- border-radius: 20px;
-}
-#copy-allow:hover{
-background-color:rgba(1,102,255,100%);
-border:none;
-color:white;
-}
-#copy-button{
-font-size:2.3rem;
-position:absolute;
-right:0rem;
-bottom:3rem;
-width:auto;
-display:none;
- -webkit-transition-duration:0.4s;
- transition-duration:0.4s;
-height:auto; 
-padding:1rem 3rem;
-text-align:center;
-margin: auto 4rem;
- background-color: #F4F4F4;
- color:black;
- border:none;
- border-radius: 20px;
-}
-
-#copy-button:hover{
-background-color:rgba(1,102,255,100%);
-border:none;
-color:white;
-}
-#copy-area{
-font-size:2rem;
-font-family:Arial;
-background:#222;
-color:#888;
-width:100%;
-border-radius: 8px;
-outline:none;
-}
-#copy-finish{
-display:none;
-position:fixed;
-right:0;
-left:0;
-top:10%;
-width:10rem;
-margin:0 auto;
-padding: 16px 32px;
-text-align:center;
-font-size:100%;
- background-color:#4CAF50;
- color: white;
- border-radius: 50px;
-z-index:5
-}
-
-/*预览or呼出式解释补充*/
-abbr{
-}
-note{display:none;}
-abbr:hover note{
-position:absolute;
-display:block;
-color:black;
-background:white;
-box-shadow: 0 20px 0 rgba(0, 0, 0, 0.3) !important;
-padding:1.4rem;
-z-index:3;
-}
-dfn{
-font-style:normal;
-color:rgba(52,160,238,100%) 
-}
-dfn:hover note{
-font-size:2.4rem;
-position:absolute;
-display:block;
-color:black;
-background:rgba(251, 250, 250, 0.95);;
-border-top: solid 0.5px rgba(0, 0, 100, 0.1);
-border-left: solid 0.5px rgba(0, 0, 100, 0.1);
-box-shadow: 15px 15px 24px 0px rgba(0, 0, 0, 0.2) !important;
-padding:1.4rem 2rem;
-left:5rem;
-right:5rem;
-z-index:3;
-border-radius:20px;
-}
-
-
-/*引用*/
-.blockquote{
-display: -webkit-flex;
-display: flex;
-}
-
-
-
 
 </style>
 <body>
@@ -744,8 +114,9 @@ setTimeout("document.getElementById('copy-finish').style.display=\"none\" ", 700
 
 </info>
 
-<article>
+<article id="article">
 
+jwjjjwjwkk**ekekkesks**e
 
 <h1>遗传</h1>
 
@@ -825,7 +196,26 @@ setTimeout("document.getElementById('copy-finish').style.display=\"none\" ", 700
 分类：生物诱变剂，化学诱变剂，物理诱变剂</span>
 
 
-<h2>基因突变</h2>
+
+## 突变（mutation）
+### 原因
+- DNA复制（特别是减数分裂）出错
+- DNA损伤后修复出错
+### 类型
+- 基因突变
+- 染色体变异（染色体畸变）
+
+<table id="tfhover" class="tftable" border="1" ><tbody><tr><th>类型&nbsp;<br></th><th>别称</th></tr><tr></tr><tr><td>替换</td><td>点突变（同义突变、错义突变）</td></tr><tr></tr><tr><td>插入<br>缺失<br></td><td>&nbsp;移码突变</td></tr><tr></tr></tbody></table>
+
+### 注意
+实际上染色体变异和基因突变的界限并不明确，特别是微细的染色体变异更是如此。
+
+### 猜测
+根据本人做题经验，高中划分基因突变与染色体变异主要依照突变结果。
+
+
+
+<h2>基因突变（gene mutation）</h2>
 <h3>识记</h3>
 <span>定义：DNA分子中发生碱基对的替换、增添和缺失，而引起的基因结构的改变，叫做基因突变。</span><br>
 <span>特点：能产生新基因</span><br>
@@ -907,7 +297,7 @@ a）<dfn>非相互易位/转位/单向易位<note>一条染色体断裂后，其
 b）<dfn>相互易位（t）（常见）<note>两条染色体相互交换无着丝粒断片。</note></dfn><br>
 
     *罗伯逊易位（der/rob）：相互易位一种特殊情况。
-<br></span>
+<br>
 <h5><dfn>环状染色体（r）<note>一条染色体的长、短臂同时各发生一次断裂后，含有着丝粒节段的长、短臂的断端相连。</note></dfn></h5>
 
 <h5><dfn>双着丝粒染色体（dic）<note>两条染色体分别发生一次断裂后，两个含有着丝粒的染色体的两臂断端相连接。</note></dfn></h5>
@@ -915,7 +305,7 @@ b）<dfn>相互易位（t）（常见）<note>两条染色体相互交换无着�
 <h5><dfn>等臂染色体（i）<note>在正常的细胞分裂中期，连接二姐妹染色单体的着丝粒进行纵裂，形成两条各具有长短臂的染色体。</note></dfn></h5>
 
 
-
+</span>
 
 <h2>基因交流</h2>
 
@@ -948,7 +338,8 @@ b）<dfn>相互易位（t）（常见）<note>两条染色体相互交换无着�
 
 
 <h3>高中需记</h3>
-<h4>定义</h4><span>
+<h4>定义</h4>
+<span>
 指在生物体进行有性生殖的过程中，控制不同性状的基因的重新组合。
 </span>
 <h4>包括</h4>
@@ -994,11 +385,16 @@ b.举例：逆转录病毒将自身DNA整合到宿主DNA中</span>
 <h2>微生物工程</h2>
 <h2>基因工程（genetic engineering）</h2>
 
-<h3>识记</h3><span>
-1.特点：跨物种性<br><br>
-2.概念<br>
-1）狭义：仅指<dfn>DNA重组技术<note>定义：将目的基因导入受体细胞，使之按照人们的意愿稳定遗传并表达出新产物或新性状的技术。（按照人们的意愿，把一种生物的某种基因提取出来，加以修饰改造，然后放到另一种生物的细胞里，定向地改造生物的遗传性状。）<br>别称：基因拼接技术，重组DNA技术<br>三大基本元件：供体、受体、载体</note></dfn>；<br>
-2）广义：指DNA重组技术的产业化设计与应用。（这样好像不包括基因编辑。。。）
+<h3>识记</h3>
+<span>
+1.特点：跨物种性
+
+2.别称：基因拼接技术，重组DNA重组技术（然而貌似NHEJ原理的基因敲除不属于DNA重组技术，存疑）
+
+3.定义：将目的基因（object gene）导入受体细胞（host cell），使之按照人们的意愿稳定遗传并表达出新产物或新性状的技术。
+
+4.三大基本元件：供体、受体、载体（vector）
+
 </span>
 <h3>了解</h3>
 <h4>水平基因转移，分为以下几种情况：</h4>
@@ -1021,12 +417,15 @@ b.举例：逆转录病毒将自身DNA整合到宿主DNA中</span>
 <span>6）真核细胞内部。</span><dd>
 主要指叶绿体、线粒体及细胞核。</dd></br>
 
-<ul>
+
 <h4>注</h4>
-<li>环状DNA转入原核或低等真核细胞，受体细胞可以维持环状DNA的存在，称之为转化；</li>
-<li>线状或环状DNA转入高等真核细胞，受体细胞不可以维持线状或环状DNA的存在，在短时间表达后这些DNA将被降解，称之为转染/瞬时转化；</li>
-<li>线状或环状DNA转入高等真核细胞，受体细胞可以将转入的DNA整合到自己的DNA或染色体上，形成稳定的遗传株系，称之为稳定转化。</li>
-</ul><br>
+
+- 环状DNA转入原核或低等真核细胞，受体细胞可以维持环状DNA的存在，称之为转化；
+
+- 线状或环状DNA转入高等真核细胞，受体细胞不可以维持线状或环状DNA的存在，在短时间表达后这些DNA将被降解，称之为转染/瞬时转化；
+
+- 线状或环状DNA转入高等真核细胞，受体细胞可以将转入的DNA整合到自己的DNA或染色体上，形成稳定的遗传株系，称之为稳定转化。
+<br>
 
 <h4>应用</h4>
 <li>基因转移技术（gene transfer technology）<dd>
@@ -1036,24 +435,30 @@ b.举例：逆转录病毒将自身DNA整合到宿主DNA中</span>
 2）转基因技术（稳定转化）</dd></dd></li>
 
 <h3>技术发展</h3>
-<h4>1）<dfn>转基因技术（transgenic technique）<note>https://www.zhihu.com/answer/544945716</note></dfn>：将外源或内源遗传物质随机插入宿主基因组</h4><br>
-<h4>2）<dfn>基因编辑（gene editing）<note>http://www.360doc.cn/mip/951637228.html</note></dfn>：靶向基因修饰</h4>
+<h4>1）<dfn>转基因技术（transgenic technology）<note>https://www.zhihu.com/answer/544945716</note></dfn>：将外源或内源遗传物质随机插入宿主基因组</h4><br>
+<span>相关酶：限制酶，连接酶等</span>
+<h4>2）<dfn>基因编辑（gene editing）<note>http://www.360doc.cn/mip/951637228.html</note></dfn>：利用部位特异性核酸酶靶向基因修饰</h4>
 <h5>优点</h5>
 <span>更精确、简便、成本低</span>
 <h5>原理</h5>
-<span>借助特异性DNA双链断裂（ DNA double - strand breaks DSBs ）激活细胞天然的修复机制。<br><br>
+<span>借助DNA双链断裂（DNA double - strand breaks DSBs）激活细胞天然的修复机制。<br><br>
 途径：</span>
 <li>同源重组修复（HDR）——基因重组</li>
-<li>非同源末端连接（NHEJ）——基因突变</li>
+<li>非同源末端连接（NHEJ）——基因突变（移码突变）</li>
 <h5>技术迭代</h5>
 <li>锌指核酸酶（ZFN）</li>
 <li>转录激活因子样效应子（TALEN）</li>
 <li>规律成簇的间隔短回文重复（CRISPR）</li>
-<h5>常见：<dfn>「CRISPR-Cas9」基因编辑技术<note>https://zhuanlan.zhihu.com/p/137760447</note></dfn></h5>
+<h5>常见：<dfn>“CRISPR-Cas9”基因编辑技术<note>https://zhuanlan.zhihu.com/p/137760447</note></dfn></h5>
+
 <span>应用:</span>
-<li>基因敲除（Knock-out）</li>
-<li>基因敲入（Knock-in）</li>
-<li>基因抑制（Repression）、基因激活（Activation）</li>
+
+<li> 基因敲入（gene knock-in）</li>
+<li> 基因敲除（gene knock-out）</li>
+<li> 基因激活（Activation）</li>
+<li> 基因抑制（Repression）</li>
+<li> 基因过表达（gene overexpression）</li>
+
 
 
 <h1 style="font-size:3rem;color:#000;font-weight:500;text-align:left;margin-bottom:-8rem;">注</h1>
@@ -1064,7 +469,7 @@ b.举例：逆转录病毒将自身DNA整合到宿主DNA中</span>
 <h1 style="font-size:3rem;color:#000;font-weight:500;text-align:left;margin-bottom:-8rem;">参考</h1>
 <ol>
 
-<li><a href="https://www.zhihu.com/answer/544945716">如何解释「转基因技术」？ - 智能人工 的回答 - 知乎</a></li>
+<li><a href="https://www.zhihu.com/answer/544945716">如何解释“转基因技术”？ - 智能人工 的回答 - 知乎</a></li>
 <li><a href="https://mi.mbd.baidu.com/r/E5NdOLhKGQ?f=cp&u=655264222f211dcd">透视转基因育种：诠释基因横向传递的奥秘</a></li>
 
 <li><a href="https://zhuanlan.zhihu.com/p/137760447">CRISPR-Cas9基因编辑技术简介 - 知乎</a></li>
@@ -1249,6 +654,16 @@ menu.style.display="none";
         })
 		}
     </script>
+
+
+
+ <script>
+var t = document.getElementById("article").innerHTML;
+document.getElementById("article").innerHTML=marked.parse(t);
+ </script>
+
+<script src="https://restrechinamynd.github.io/page.js"></script>    
+
 
 
 
