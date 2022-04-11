@@ -1,6 +1,8 @@
 <html>
 <head>
 <title></title>
+
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <link href="https://restrechinamynd.github.io/child.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>    
@@ -10,27 +12,33 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-
 <style>
-blockquote{
-font-size:1.7rem;
-color:#b23c5b;
-background:rgb(246,246,246);
-margin:2rem 0;
-padding: 2rem;
+#article{
+color:#6C7B8B;
+text-align:left; 
+text-justify:auto;
 }
-dfn:hover note{
-word-wrap:break-word;
-text-align:justify; 
-text-justify:inter-ideograph;
-right:5rem !important;
-left:5rem !important;
+article-title{
+text-align:center; 
 }
 h1{
 margin-top:25rem;
 }
+article-title h1{
+text-align:center; 
+margin-bottom:5rem;
+margin-top:3rem;
+}
 h2{
 margin-top:12.5rem;
+}
+h3{
+color:#4682B4;
+}
+h4{
+margin-top:7.5rem;
+font-size:2.5rem;
+font-weight:500;
 }
 h5{
 font-size:1.4rem;
@@ -41,13 +49,38 @@ font-size:1.4rem;
 color:#B0C4DE;
 border-bottom:dashed 2.2px #B0C4DE;
 }
-#article{
-color:#6C7B8B;
-text-align:left; 
-text-justify:auto;
+blockquote{
+font-size:1.7rem;
+color:#b23c5b;
+background:rgb(246,246,246);
+margin:2rem 0;
+padding: 2rem;
+}
+dfn{
+border-bottom:dashed 2px #6483B0;
+}
+dfn:hover note{
+word-wrap:break-word;
+text-align:justify; 
+text-justify:inter-ideograph;
+left:3rem;
+width:auto;
+padding:0.5rem 2rem;
+box-shadow: -5px -8px 24px 0 rgba(0, 48, 90, 0.2);
+max-width:50rem;
+}
+note{
+font-size:1rem;
+position:static;
+color:#6483B0;
+background:white;
+box-shadow: -5px -8px 24px 0 rgba(0, 48, 90, 0.2);
+padding:1.5rem 2rem;
+z-index:3;
+border-radius:26px;
 }
 table{
-border-color: rgba(84,100,93,60%);
+border-color:rgba(84,100,93,60%);
 }
 table.tftable {
 text-align:center;
@@ -87,6 +120,8 @@ border-bottom:solid rgba(84,100,93,30%) !important;
 tr:last-of-type{
 border-color: rgba(84,100,93,60%) !important;
 }
+
+
 </style>
 </head>
 
@@ -96,7 +131,7 @@ border-color: rgba(84,100,93,60%) !important;
 
 
 <div id="up" class="appear2">
-<article-title><h1></h1></article-title>
+<article-title><h1>高中知识大一统</h1></article-title>
 
 
 <div class="tool_nav">
@@ -119,9 +154,11 @@ border-color: rgba(84,100,93,60%) !important;
 </div>
 
 
+
 <article id="article">
 
-以下内容存疑，仅供参考。
+<note style="display:block;color:#C75872;"><i class="fa fa-exclamation-triangle" aria-hidden="true" style="display:inline-block;margin-right:2rem"></i>  以下内容存疑，仅供参考。</note>
+
 
 ## 物质及相互作用
 
@@ -179,6 +216,7 @@ border-color: rgba(84,100,93,60%) !important;
 ###### 次级键（secondary bond）
 
 <dd>例</dd>
+
 - 氢键（hydrogen bond）
 - 卤键
 - 金属原子与非金属原子间次级键（存在于金属配合物中）
@@ -218,7 +256,7 @@ border-color: rgba(84,100,93,60%) !important;
 #### 相关理论
 
 ##### Lewis酸碱理论
-##### 「价键理论」 ｛https://www.zhihu.com/answer/680323366｝
+##### 「价键理论」｛https://www.zhihu.com/answer/680323366｝
 ##### 杂化轨道理论
 
 
@@ -228,9 +266,9 @@ border-color: rgba(84,100,93,60%) !important;
 <table id="tfhover" class="tftable" border="1" ><tbody><tr><th>晶体类型</th><th>原子晶体</th><th>分子晶体</th><th>离子晶体</th><th>金属晶体</th></tr><tr></tr><tr><td>相互作用</td><td>共价键</td><td>范德华力<br>共价键</td><td>离子键</td><td>金属键</td></tr><tr></tr><tr><td>构成微粒</td><td>原子</td><td>分子</td><td>离子</td><td>金属原子</td></tr><tr></tr></tbody></table>
 
 
-
-<h1> «‹›知识纵横»</h1>
-
+<div style="margin-top:20rem">
+«‹›知识纵横»
+</div>
 
 
 ## 物态
@@ -241,7 +279,8 @@ border-color: rgba(84,100,93,60%) !important;
 
 
 - 界面
-- 张力
+
+#### 表面吸附
 
 #### 「张力（tension）」 ｛产生绷紧效果的力。｝
 
@@ -277,7 +316,7 @@ border-color: rgba(84,100,93,60%) !important;
 
 - 参考
 
-「多版本教材看“浸润与不浸润”教学疑难问题｜教研分享系列285__搜狐网」 ｛https://mbd.baidu.com/ma/s/eEr10mh8｝
+「多版本教材看“浸润与不浸润”教学疑难问题｜教研分享系列285__搜狐网」｛https://mbd.baidu.com/ma/s/eEr10mh8｝
 
 
 
@@ -290,43 +329,79 @@ $$
 
 
 
-## 分子动理论（kinetic theory of molecules）
+## 分子动理论（molecular kinetic theory）
 
 - 分子热运动（thermal motion）
 - 分子间相互作用
 - 模型：碰撞
 
-### 拓展
+### 相关概念
+
+- 系统
+- 外界
+
+#### 拓展
+
+<dd>状态函数</dd>
+
+- 体积 V
+- 压强 p
+- 温度 T
+- 熵 S
+
+<dd>具有能量量纲的状态函数</dd>
+
+- 内能 U
+- 焓 H
+- 吉布斯自由能 G
+- 亥姆霍兹自由能 A
+
+
+$$dU = TdS - PdV$$
+$$H = U + PV$$
+$$G = H - TS$$
+$$A = U - TS$$
+
+$$dA = - SdT - PdV$$
+$$dH = TdS + VdP$$
+$$dG = - SdT + VdP$$
+
+
 
 - 自由能（free energy）
 
-<dd>$△A=△U-T△S $
-
-U、T、S分别是该系统的内能、绝对温度、熵。</dd>
+- 「化学势（chemical potential）μ」 ｛https://zhuanlan.zhihu.com/p/28712969｝
 
 
-### 相平衡（phase equilibrium）
+### 「热力学平衡」 ｛（thermodynamic equilibrium），同义：相平衡（phase equilibrium）｝
 
 - 思想：动态平衡
 
-<dd>e.g.
-渗透势与重力势的平衡。</dd>
+#### 条件
 
-#### 考量
+- 热平衡（thermal equilibrium）
+- 力平衡（mechanical equilibrium）
+- 化学平衡（chemical equilibrium）
 
-- 热平衡
-- 力平衡
-- 化学平衡
-- 相平衡
+#### 热平衡
+
+#### 理想气体
+
+考量
+
+- 分子热运动
+- 碰撞
+
+
++ 道尔顿分压定律（Daltons law of partial pressures）
+
 
 #### 扩散（diffusion）
 
-考量因素
+考量
 
 - 分子热运动
 - 分子间相互作用
-- （其他的分子间相互作用力）
-
 
 #### 渗透（osmosis）
 
@@ -429,22 +504,23 @@ b. 渗透作用
 
 ###### 理论
    
- 1. **蒸腾-内聚力-张力学说
-（transpiration-cohesion-tension theory）**
-
-以水分子内聚力解释植物体内水分向上运输的学说。
+ 1. 「**蒸腾-内聚力-张力学说
+（transpiration-cohesion-tension theory）**」 ｛以水分子内聚力解释植物体内水分向上运输的学说。｝
 
 - 蒸腾
 
-<dd>植物因蒸腾产生「负压」并不是指气体的压力，而是由于水的内聚性产生的向内的力。</dd>
+<dd>植物因蒸腾产生「负压」｛并不是指气体的压力，而是由于水的内聚性产生的向内的力。｝形成向上的力</dd>
 
-- 水分子间内聚力（分子间相互力的表现）
+- 水柱重力
 
-<dd>使水柱连续</dd>
+<dd>向下的力</dd>
 
-- 水分子与导管或管胞内纤维素分子之间的附着力（导管或管胞内的毛细作用）
+- 「水分子间内聚力」 ｛水分子间的分子间相互力｝
 
-<dd> 使水柱连续</dd>
+- 水分子与导管或管胞内纤维素分子之间的附着力
+
+<dd>维持水柱的连续性</dd>
+
 
 <br>
 
@@ -493,10 +569,15 @@ b. 渗透作用
 - 有效碰撞理论
 - 过渡态理论（transition-state theory）
 
-#### 化学平衡
+#### 「化学平衡」 ｛https://www.zhihu.com/answer/1229940748｝
 
+应用：勒夏特列原理（Le Chatelier's principle）/化学平衡移动原理
 
+# 物理量及单位
 
+- 物理量（physical quantities）
+- 量纲（dimension）
+- 单位（unit）
 
 ---
 - 标题
