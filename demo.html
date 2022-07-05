@@ -4,16 +4,24 @@
 <link href="https://restrechinamynd.github.io/child.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>    
-<script src="https://restrechinamynd.github.io/timemark.js"></script>    
+<style>
+blockquote{
+font-size:1.7rem;
+color:#b23c5b;
+background:rgb(246,246,246);
+margin:2rem 0;
+padding: 2rem;
+}
+</style>
 </head>
 
 <body>
-<div id="down" class="appear1">
+<div id="down" class="appear1" style="background:url('https://huohua-component.huohuaschool.com/coverImage/prod/0330201010056_s.jpg')  no-repeat;background-size:cover;height:30%">
 </div>
 
 
 <div id="up" class="appear2">
-<article-title><h1>示例</h1></article-title>
+<article-title><h1></h1></article-title>
 
 
 <div class="tool_nav">
@@ -38,11 +46,21 @@
 
 
 <article id="article">
+<p>
+。
+</p>
 
+
+
+---
 - 标题
 ## 一级标题
 ### 二级标题
 #### 三级标题
+
+«‹›标题»
+
+
 
 - **分割线**
 ---
@@ -53,9 +71,11 @@
 
 - **特殊**
 
-（特殊）
+（正文）
 
 「文本」｛插入内容，选填。｝
+
+‘正文’
 
 - 注释
 
@@ -66,15 +86,24 @@
 https://restrechinamynd.github.io/all.css
 
 <ol id="ol">参考
-<li> <a href="#part2">https://restrechinamynd.github.io/timepalse</a></li>
 <li><a href="#part3">https://restrechinamynd.github.io/new</a></li>
-<li> <a>https://restrechinamynd.github.io/all.css</a></li>
 </ol>
 </article>
 </div>
 </body>
 
 </html>
+
+
+
+
+
+ <script>
+var t = document.getElementById("article").innerHTML;
+document.getElementById("article").innerHTML=marked.parse(t);
+ </script>
+
+<script src="https://restrechinamynd.github.io/page.js"></script>    
 
 
 
