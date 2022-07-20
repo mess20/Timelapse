@@ -1,5 +1,5 @@
 
-$("body").append("<div id=\"b1\" style=\"display:none;width:50px;height:50px;background:rgba(11, 243, 201,0.5);border-radius:30px;position:fixed;right:30px;bottom:130px;\"></div><div id=\"b\" style=\"width:50px;height:45px;background:rgb(11, 243, 201);border-radius:30px;position:fixed;right:30px;bottom:130px;\"></div><div id=\"cp\" style=\"margin-left:-50px;border-radius:15px;padding-top:32px;padding-bottom:32px;padding-left:19px;color:#000;font-size:19px;font-weight:700;width:0;height:40vh;background:rgba(255,245,225,1);position:fixed;left:0;bottom:50px;display:flex;flex-direction:column;justify-content:space-around;transition: all 0.5s;\"><div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>自动续房</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-1\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-1\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div>  <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>自动小字</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-2\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-2\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div>  <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>进房提示</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-3\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-3\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div>   <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>更换背景</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-4\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-4\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div> <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>更换字体</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-5\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-5\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div>  <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>字体大小</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-6\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-6\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div>  </div>")
+$("body").append("<div id=\"b1\" style=\"display:none;width:50px;height:50px;background:rgba(11, 243, 201,0.5);border-radius:30px;position:fixed;right:30px;bottom:130px;\"></div><div id=\"b\" style=\"width:50px;height:45px;background:rgb(11, 243, 201);border-radius:30px;position:fixed;right:30px;bottom:130px;\"></div><div id=\"cp\" style=\"margin-left:-50px;border-radius:15px;padding-top:32px;padding-bottom:32px;padding-left:19px;color:#000;font-size:19px;font-weight:700;width:0;height:45vh;background:rgba(255,245,225,1);position:fixed;left:0;bottom:50px;display:flex;flex-direction:column;justify-content:space-around;transition: all 0.5s;\">    <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>上传图片</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-7\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-7\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div>    <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>自动续房</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-1\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-1\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div>  <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>自动小字</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-2\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-2\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div>  <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>进房提示</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-3\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-3\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div>   <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>更换背景</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-4\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-4\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div> <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>更换字体</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-5\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-5\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div>  <div style=\"display:flex;align-items:center;justify-content:space-around;\"><div>字体大小</div><div class=\"f\" style=\"margin-left:15px;width:50px;height:30px;background:rgb(255,245,225);border:solid black 5px;border-radius:30px;\"></div><div id=\"o1-6\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;left:-45px;bottom:0px;\"></div><div id=\"o2-6\" style=\"width:20px;height:20px;background:rgb(0,0,0);border-radius:20px;position:relative;bottom:0px;left:-26px;\"></div></div>  </div>")
 
 $('#b').one('click', function() {
 $("#o2-1").css({"display":"none"})
@@ -8,6 +8,7 @@ $("#o2-3").css({"display":"none"});
 $("#o2-4").css({"display":"none"});
 $("#o2-5").css({"display":"none"});
 $("#o2-6").css({"display":"none"});
+$("#o2-7").css({"display":"none"});
 });
 $("#b").click(function(){
 $("#b").css({"display":"none"});
@@ -25,6 +26,45 @@ function a1(){
     let d = new Date();
     let datetime =d.getHours() + ":" + d.getMinutes();   
 $("[name='message']").val ("/me"+datetime);$("[name='post']").submit();};
+
+//上传图片
+
+
+$("#o1-7").click(function(){
+$("#o2-7").css({"display":"block"});
+$("#o1-7").css({"display":"none"});
+$("body").append("<label id=\"label1\" style=\"border-radius:30px;background:lightblue;box-shadow:rgba(100,100,255,0.2) 5px 5px 5px 0px;padding:5px 15px;position:fixed;top:40vh;left:30vw;right:30vw\">点击选择图片<input type=\"file\" style=\"display:none;\" onchange=\"imgAdd(this)\" ></label>");
+});
+
+function imgAdd(i) {  
+const reader = new FileReader();   
+reader.readAsDataURL(i.files[0]);
+reader.onload = function(){	
+$('#url-input').val(reader.result);
+$('#url-button-add').show();
+$("#label1").remove();
+}
+
+};
+
+
+
+
+
+$("#o2-7").click(function(){
+$("#o1-7").css({"display":"block"});
+$("#o2-7").css({"display":"none"});
+$('#url-button-del').click();
+});
+
+
+
+
+
+
+
+
+
 
 //自动挂房
 $("#o1-1").click(function(){
@@ -146,8 +186,6 @@ $(".tail-wrap").css({"display":"block"});
 
 }
 //imgChange
-
-
 
 //更换字体
 $("#o1-5").click(function(){
