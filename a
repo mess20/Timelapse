@@ -41,7 +41,8 @@ const reader = new FileReader();
 reader.readAsDataURL(i.files[0]);
 reader.onload = function(){	
 $('#url-input').val(reader.result);
-$('#url-button-add').show();
+$('#url-icon').click();
+$('#url-button-add').click();
 $("#label1").remove();
 }
 
