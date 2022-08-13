@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HTML Editor</title>
+<title>HTML editor</title>
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:image" content="https://www.w3schools.com/images/w3schools_logo_436_2.png">
@@ -855,12 +855,8 @@ btn.remove();
 function saveCode(){
 var OW = window.open('', "_blank", "");
 OW.document.open();
-var content =  document.getElementById('textareaCode').innerText;
-OW.document.write(content);
-}
-document.getElementById('textareawrapper').onkeyup = function(){
 var content =  document.getElementById('textareacontainer').innerText;
-document.getElementById('history').innerHTML = content;
+OW.document.write(content);
 }
 </script>
 
