@@ -855,7 +855,16 @@ btn.remove();
 
 };
 
-
+function saveCode(){
+var OW = window.open('', "_blank", "");
+OW.document.open();
+var content =  document.getElementById('textareaCode').innerText;
+OW.document.write(content);
+}
+document.getElementById('textareawrapper').onkeyup = function(){
+var content =  document.getElementById('textareacontainer').innerText;
+document.getElementById('history').innerHTML = content;
+}
 </script>
 
 
