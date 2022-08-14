@@ -4,8 +4,7 @@
 <meta charset="utf-8"/ >
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://Restrechinamynd.github.io/css/all.css" type="text/css"> 
-
-
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 <style>
 body-mask{
 display:none;
@@ -24,7 +23,6 @@ body-mask-button{
 left:8rem;
 top:2rem;
 display:block;
-height:rem;
 background:#F0E68C;
 padding:1.5rem 2rem;
 position:fixed;
@@ -422,6 +420,88 @@ file.href = imgDataSrc;
 </body>
  
 </html>
+
+
+
+
+
+<mask id="load-tip" style="display:block;position:fixed;width:100vw;height:100vh;left:0;top:0;padding:36vh 35vw;margin:0;background:#000;z-index:2;zoom:2.5">
+<i class="fa fa-spinner fa-spin" style="display:inline-block;font-size:4rem"></i>
+<p id='load-tip-span' style="display:inline-block;font-family:Arial;font-size:4rem;margin:0 2rem">Loading …</p>
+</mask>
+
+<script>
+//过渡画面
+window.onload = function () {
+setTimeout(function () {
+$('#load-tip').css({"-webkit-transition":"3s"});
+$('#load-tip').css({"transition":'3s'});
+$('#load-tip').css({"z-index":'-1'});
+$('#load-tip').css({"opacity":'0'});
+}, 1000)
+}
+</script>
+
+
+<script>
+function isMobile() {
+   var userAgentInfo = navigator.userAgent;
+   var mobileAgents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+   var mobile_flag = false;
+ 	//根据userAgent判断是否是手机
+    for (var v = 0; v < mobileAgents.length; v++) {
+       if (userAgentInfo.indexOf(mobileAgents[v]) > 0) {
+             mobile_flag = true;
+             break;
+       }
+    }
+    var screen_width = window.screen.width;
+    var screen_height = window.screen.height;
+   //根据屏幕分辨率判断是否是手机
+   if (screen_width > 325 && screen_height < 750) {
+       mobile_flag = true;
+   }
+   return mobile_flag;
+}
+
+var mobile_flag = isMobile();
+if (mobile_flag) {
+}else{
+autoAdjust();
+}
+
+//pc端自适应
+function autoAdjust(){
+$("*").css({"font-family":"kaiti,times","font-size":"48px"});
+$('#load-tip-span').css({"font-family":"Arial"});
+$("*").css({"line-height":"81px"});
+$("html").css({"display":"flex","flex-direction":"column"});
+$("body").css({"zoom":"0.4","margin":"0 auto",'width':'140vw'});
+$('body-mask-button').css({'left':'2rem','top':'2rem','display':'block','padding':'0.5rem 1rem',"font-family":"times"});
+$('fbb').remove();
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
