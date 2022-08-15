@@ -1,0 +1,427 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>the United System of Knowledge</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src = "https://mess20.github.io/DOLLARS-Extension/jquery.js"></script> 	
+<script src = "https://mess20.github.io/markdown.js"></script> 	
+
+<style>
+*{
+outline: none;
+tap-highlight-color:transparent;
+-webkit-tap-highlight-color:transparent;
+max-width:100vw;
+overflow:auto;
+}
+html{
+display:flex;
+flex-direction:column;
+}
+body{
+zoom:0.4;
+margin:auto;
+color:lightyellow;
+background:#1e1e1e;
+display:flex;
+flex-direction:column;
+}
+//待
+div{
+display:flex;
+flex-direction:column;
+margin-left:4rem;
+margin-top:2rem;
+margin-right:auto;
+max-width:80vw;
+padding:1rem 2rem;
+background:#222;
+border-radius:50px;
+transition:0.2s;	
+-webkit-transition:0.2s; 
+}
+textarea{
+color:#fff;
+font-size:1.4rem;
+display:block;
+width:75vw;
+margin:1rem auto;
+padding:1rem 2rem;
+background:#353534;
+border:none;
+border-radius:20px;
+}
+textarea:hover{
+height:50vh;
+transition:0.2s;	
+-webkit-transition:0.2s; 
+}
+session{
+//box-shadow:0 -20px 20px rgba(0,0,0,0.3);
+padding:4rem;
+margin-bottom:4rem;
+display:flex;
+flex-direction:column;
+color:#aaa;
+background:#000;
+font-size:2.5rem;
+line-height:5rem;
+border-radius:20px;
+}
+h1{
+color:#f1f1f1;
+font-size:2.5rem;
+display:flex;
+margin-top:6rem;
+margin-right:auto;
+padding:0.5rem 2rem;
+border-radius:50px;
+transition:0.2s;	
+-webkit-transition:0.2s; 
+}
+h1:hover{
+color:#000;
+
+}
+span{
+color:#F0F8FF;
+font-size:2.2rem;
+line-height:3.8rem;
+padding-left:1rem;
+}
+div:hover{
+color:#000;
+background:rgba(255,99,71,0.5);
+}
+div:hover span{
+color:#eee;
+}
+menu-btn{
+display:block;
+font-size:2.5rem;
+position:fixed;
+bottom:10rem;
+right:3rem;
+width:8rem;
+height:8rem;
+background:#444;
+border-radius:100%;
+text-align:center;
+align-items:center;
+line-height:8rem;
+z-index:1;
+}
+menu{
+display:block;
+background:rgba(30,40,50,0.95);
+color:rgba(0,0,0,0);
+height:100vh;
+position:fixed;
+width:28vw;
+left:-38vw;
+top:0;
+margin:0;
+padding:5rem 3rem;
+transition:0.2s;	
+-webkit-transition:0.2s; 
+}
+menu details{
+text-align:left;
+}
+menu a{
+color:#fff;
+display:block;
+text-decoration:none;
+line-height:6rem;
+padding-left:2rem;
+transition:0.5s;	
+-webkit-transition:0.5s; 
+}
+a:hover{
+color:gold;
+border-bottom:solid gold 2px;
+}
+menu.open{
+left:0;
+color:#fff;
+box-shadow:500px 0 500px 500px rgba(0,0,0,0.7);
+}
+a{
+color:#48727e;
+text-decoration:none;
+}
+dfn{
+font-style:normal;
+border-bottom:dashed 2px #aaa;
+}
+n{
+display:none;
+}
+dfn:hover n{
+display:flex;
+font-size:2.2rem;
+line-height:4rem;
+padding:1rem 2rem;
+margin:0 5rem;
+max-width:60vw;
+width:auto;
+height:auto;
+background:#222;
+box-shadow:10px 10px 10px rgba(50,50,50,0.3);
+border-radius:25px;
+position:absolute;
+}
+del{
+color:#86334f;
+}
+p{
+margin:0;
+}
+
+img{
+background:#eee;
+margin:2rem;
+}
+img.thumb{
+width:25vw;
+}
+table{
+font-size:2rem;
+}
+table th{
+padding:1rem;
+}
+table tr{
+color:#dee2c0;
+background:#5b5b4c;
+}
+table td{
+padding:1rem;
+color:#7f7f6e;
+background:#222;
+}
+textarea,pre,code{
+font-family: Consolas,'Courier New'
+}
+::-webkit-scrollbar{
+width: 20px;
+height: 20px;
+background-color:transparent;
+}
+::-webkit-scrollbar-thumb{
+border-radius: 10px;
+background-color:rgba(31,202,122,0.3);
+}
+::-webkit-scrollbar-thumb:hover{
+background:rgba(31,202,122,0.9);
+}
+</style>
+</head>
+<body>
+
+<mask id="load-tip" style="display:block;position:fixed;width:100vw;height:100vh;left:0;top:0;padding:36vh 35vw;margin:0;background:#000;z-index:2;zoom:2.5">
+<i class="fa fa-spinner fa-spin" style="display:inline-block;font-size:4rem"></i>
+<p style="display:inline-block;font-family:Arial;font-size:4rem;margin:0 2rem">Loading …</p>
+</mask>
+
+
+<session>
+
+## Example 
+
+# 标签
+
+【名词】｛解释｝
+
+〔文本〕（链接）
+
+**粗体**
+
+*斜体*
+
+_斜体_
+
+~~删除线~~
+
+https://mess20.github.io
+
+| Syntax | Description |
+|:-:|:-:|
+| Header | Title |
+| Paragraph  | Text |
+
+<img src="https://s1.328888.xyz/2022/08/11/6BszS.png">
+
+<img class="thumb" src="https://s1.328888.xyz/2022/08/11/6BoHp.png">
+
+## Code
+
+<img style="background:transparent;zoom:0.3;margin:0rem -5rem;opacity:0.7" src="https://s2.loli.net/2022/08/11/1ogJlOwKcjMd4aA.png">
+<img style="background:transparent;zoom:0.3;margin:-18rem -5rem;opacity:0.7" src="https://s2.loli.net/2022/08/11/E7UQZ6MGoywWF3d.png">
+
+```
+# 标签
+**粗体**
+*斜体*
+_斜体_
+~~删除线~~
+https://mess20.github.io
+
+| Syntax | Description |
+|:-:|:-:|
+| Header | Title |
+| Paragraph  | Text |
+
+<img src="https://s1.328888.xyz/2022/08/11/6BszS.png">
+<img class="thumb" src="https://s1.328888.xyz/2022/08/11/6BoHp.png">
+```
+</session>
+<session>
+
+
+
+
+</body>
+
+
+<script>
+window.onload = function () {
+setTimeout(function () {
+$('#load-tip').css({"-webkit-transition":"3s"});
+$('#load-tip').css({"transition":'0.3s'});
+$('#load-tip').css({"z-index":'-1'});
+$('#load-tip').css({"opacity":'0'});
+}, 1000)
+}
+</script>
+
+<script>
+var b = $("body").html();
+var b = marked.parse(b);
+$("body").html(b);
+</script>
+
+<script>
+var a = $("body").html();
+var a = a
+//分割线
+.replace(new RegExp('---' , "g"), '<hr>')
+//链接
+.replace(new RegExp('〔' , "g"), '<a href=" ')
+.replace(new RegExp('〕（' , "g"), ' "> ')
+.replace(new RegExp('）' , "g"),' <i class="fa fa-paperclip" aria-hidden="true"></i></a>')
+//注释
+.replace(new RegExp('【' , "g"), '<dfn>')
+.replace(new RegExp('】｛' , "g"), '<n>')
+.replace(new RegExp('｝' , "g"), '</n></dfn>')
+//引用
+.replace(new RegExp('“' , "g"), '「')
+.replace(new RegExp('”' , "g"), '」');
+$("body").html(a);
+</script>
+
+<script>
+$('h1').each(function(){
+var n = Math.round(Math.random()*(48-1)+1);
+if(n==1){c='FA8072'};
+if(n==2){c='A7D6F1'};
+if(n==3){c='F08080'};
+if(n==4){c='5F9EA0'};
+if(n==5){c='D495EC'};
+if(n==6){c='FF7F50'};
+if(n==7){c='B0E0E6'};
+if(n==8){c='FFD499'};
+if(n==9){c='8FBC8F'};
+if(n==10){c='A2DA65'};
+if(n==11){c='9BCD9B'};
+if(n==12){c='66CDAA'};
+if(n==13){c='F5DA81'};
+if(n==14){c='20B2AA'};
+if(n==15){c='FFC1E0'};
+if(n==16){c='ACE1AF'};
+if(n==17){c='4682B4'};
+if(n==18){c='6483B0'};
+if(n==19){c='848484'};
+if(n==20){c='FAC000'};
+if(n==21){c='FFD499'};
+if(n==22){c='F5DA81'};
+if(n==23){c='F0E68C'};
+if(n==24){c='859EFF'};
+if(n==25){c='FFEF61'};
+if(n==26){c='F08080'};
+if(n==27){c='B8BBDE'};
+if(n==28){c='C75872'};
+if(n==29){c='FF4500'};
+if(n==30){c='FF6347'};
+if(n==31){c='EB5E7C'};
+if(n==32){c='BCD4E3'};
+if(n==33){c='ADD8E6'};
+if(n==34){c='B4DBD4'};
+if(n==35){c='66A9BF'};
+if(n==36){c='4682B4'};
+if(n==37){c='BDB76B'};
+if(n==38){c='556B2F'};
+if(n==39){c='B07B61'};
+if(n==40){c='CDB7B5'};
+if(n==41){c='6C7B8B'};
+if(n==42){c='B0C4DE'};
+if(n==43){c='C3BED4'};
+if(n==44){c='E6E6FA'};
+if(n==45){c='66A9BF'};
+if(n==46){c='D8BFD8'};
+if(n==47){c='FFCCCC'};
+if(n==48){c='f2ecde'};
+var c = "#"+c;
+$(this).css({'background':c})
+})
+
+</script>
+
+
+</session>
+
+
+
+<menu-btn>目录
+<menu>
+
+<details>
+<summary> Areas</summary>
+</details>
+
+<details>
+<summary> Plots</summary>
+<a href="#国创">国创</a>
+<a href="#">.</a>
+<a href="#">.</a>
+</details>
+
+<details>
+<summary> </summary>
+<a href="#">.</a>
+<a href="#">.</a>
+<a href="#">.</a>
+</details>
+
+</menu>
+</menu-btn>
+
+
+
+
+<script>
+$('menu-btn').bind('click',function(){
+$('menu').attr("class","open");
+});
+
+$('session').bind('click',function(){
+$('menu').attr("class",'');
+});
+</script>
+
+
+
+</html>
+
+
+
