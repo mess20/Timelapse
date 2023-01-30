@@ -21,11 +21,11 @@ function isMobile() {
 	var mobile_flag = isMobile();
 	if (mobile_flag) {
 	var script = document.createElement('script');
-	script.src = "https://mess20.github.io/Timelapse/Hot-pot/mobile.js";
+	script.src = "mobile.js";
 	$('head')[0].appendChild(script);
 	}else{
 	var script = document.createElement('script');
-	script.src = "https://mess20.github.io/Timelapse/Hot-pot/pc.js";
+	script.src = "pc.js";
 	$('head')[0].appendChild(script);
 	}
 
